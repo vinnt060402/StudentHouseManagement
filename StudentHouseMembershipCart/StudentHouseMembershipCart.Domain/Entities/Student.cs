@@ -14,13 +14,11 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string? Address { get; set; }
 
         [ForeignKey("Role")]
-        public Guid RoleId { get; set; }
-        [ForeignKey("FeedBack")]
-        public Guid FeedbackId { get; set; }
+        public int RoleId { get; set; }
 
         // relationShip
         public virtual Role Role { get; set; }
-        public virtual FeedBack FeedBack { get; set; }
+        public IList<FeedBack> FeedBack { get; set; }
 
         public IList<Apartment> Apartment { get; private set; }
     }

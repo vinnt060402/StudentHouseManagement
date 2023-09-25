@@ -7,6 +7,9 @@ namespace StudentHouseMembershipCart.Domain.Entities
     { 
         public string BookingDetailName { get; set; } = null!;
         public double Price { get; set; }
+        public bool IsRe_Newed { get; set; }
+        public DateTime? RenewStartDate { get; set; }
+        public int remainingTaskDuration { get; set; }  
         public string ContractName { get; set; } = null!;
         public string ContractDescription { get; set; } = null!;
 

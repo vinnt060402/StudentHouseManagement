@@ -13,7 +13,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string Password { get; set; }
 
         [ForeignKey("Role")]
-        public Guid RoleId { get; set; }
+        public int RoleId { get; set; }
 
         // relationShip
         public virtual Role Role { get; set; }

@@ -23,8 +23,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     Birthday = DateTime.Parse("2023-05-09"),
                     Phone = "03030303",
                     Address = "da nang",
-                    RoleId = Guid.Parse("87791989-38CC-4A41-9526-2052BC34258E"),
-                    FeedbackId = Guid.Parse("0073AE3E-6374-4C66-9A7D-F2E1D411D3B2")
+                    RoleId = 1,
                 },
                 new Student
                 {
@@ -35,8 +34,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     Birthday = DateTime.Now,
                     Phone = "03030303",
                     Address = "hcm",
-                    RoleId = Guid.Parse("87791989-38CC-4A41-9526-2052BC34258E"),
-                    FeedbackId = Guid.Parse("0073AE3E-6374-4C66-9A7D-F2E1D411D3B2")
+                    RoleId = 2,
                 },
                 new Student
                 {
@@ -47,8 +45,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     Birthday = DateTime.Now,
                     Phone = "03030303",
                     Address = "ha-noi",
-                    RoleId = Guid.Parse("87791989-38CC-4A41-9526-2052BC34258E"),
-                    FeedbackId = Guid.Parse("5E6E3AC9-D41C-46F1-A4A4-E91ECEC521FD")
+                    RoleId = 3,
                 }
             );
         }

@@ -1,4 +1,7 @@
-﻿namespace StudentHouseMembershipCart.Domain.Common
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+
+namespace StudentHouseMembershipCart.Domain.Common
 {
     public class BaseAuditableEntity : BaseEntities, ISoftDelete
     {

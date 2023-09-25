@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Students;
+using StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentAccountEmailPassword;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,7 +21,7 @@ namespace StudentHouseMembershipCart.API.Controllers
         // GET: api/<studentsController>
         [HttpGet]
         [Route("getStudentByEmailPassword")]
-        public async Task<StudentDto> GetUserDetail([FromQuery] GetStudent_ByEmailPasswordQuery request)
+        public async Task<StudentDto> userDetail([FromQuery] GetStudent_ByEmailPasswordQuery request)
         {
             var response = await _mediator.Send(request);
             return response;
@@ -35,8 +36,10 @@ namespace StudentHouseMembershipCart.API.Controllers
 
         // POST api/<studentsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<Guid> Post([FromBody] CreateStudentCommand request)
         {
+            var response = await _mediator.Send(request);
+            return response;
         }
 
         // PUT api/<studentsController>/5

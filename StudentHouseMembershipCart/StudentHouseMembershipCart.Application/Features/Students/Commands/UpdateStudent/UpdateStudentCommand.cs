@@ -50,7 +50,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
             student.Email = request.NewEmail;
             student.Birthday = request.NewBirthday;
             student.Address = request.NewAddress;
-            student.RoleId = request.NewRoleId;
+            student.RoleId = 1;
             // convert to domain entity object
             var studentUpdate = _mapper.Map<Student>(student);
 

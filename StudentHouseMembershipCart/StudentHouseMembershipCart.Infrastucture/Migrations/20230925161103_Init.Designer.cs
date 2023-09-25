@@ -12,8 +12,8 @@ using StudentHouseMembershipCart.Infrastucture.DatabaseContext;
 namespace StudentHouseMembershipCart.Infrastucture.Migrations
 {
     [DbContext(typeof(StudentHouseMembershipCartDatabaseContext))]
-    [Migration("20230925135230_ThirdDatabase")]
-    partial class ThirdDatabase
+    [Migration("20230925161103_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,8 +53,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -105,9 +105,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.AttendReport", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid>("BookingDetailId")
                         .HasColumnType("uniqueidentifier");
@@ -219,6 +218,9 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsRe_Newed")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime?>("LastModified")
                         .HasColumnType("datetime2");
 
@@ -230,6 +232,12 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<DateTime?>("RenewStartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("remainingTaskDuration")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -278,9 +286,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Category", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
@@ -292,6 +299,9 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
@@ -301,7 +311,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Category");
                 });
@@ -351,33 +361,9 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FeedBack");
+                    b.HasIndex("StudentId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("0073ae3e-6374-4c66-9a7d-f2e1d411d3b2"),
-                            AttendReportId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3509),
-                            FeedBackDescription = "",
-                            FeedBackImage = "",
-                            FeedBackName = "hihi",
-                            FeedBackRating = "",
-                            IsDelete = false,
-                            StudentId = new Guid("00000000-0000-0000-0000-000000000000")
-                        },
-                        new
-                        {
-                            Id = new Guid("5e6e3ac9-d41c-46f1-a4a4-e91ecec521fd"),
-                            AttendReportId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3536),
-                            FeedBackDescription = "",
-                            FeedBackImage = "",
-                            FeedBackName = "hahah",
-                            FeedBackRating = "",
-                            IsDelete = false,
-                            StudentId = new Guid("00000000-0000-0000-0000-000000000000")
-                        });
+                    b.ToTable("FeedBack");
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Package", b =>
@@ -400,9 +386,6 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsRe_Newed")
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModified")
@@ -570,9 +553,11 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Role", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"), 1L, 1);
 
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
@@ -583,6 +568,9 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -597,32 +585,35 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("RoleId");
 
                     b.ToTable("Role");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b778f89a-a306-42a4-84fd-1be8f795dc1a"),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3730),
+                            RoleId = 1,
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9029),
                             Description = "Description",
+                            Id = new Guid("b778f89a-a306-42a4-84fd-1be8f795dc1a"),
                             IsDelete = false,
                             RoleName = "Staff"
                         },
                         new
                         {
-                            Id = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3734),
+                            RoleId = 2,
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9057),
                             Description = "Description",
+                            Id = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
                             IsDelete = false,
                             RoleName = "Student"
                         },
                         new
                         {
-                            Id = new Guid("b5196cae-9e27-434e-bfd3-2c9db9205eef"),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3736),
+                            RoleId = 3,
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9060),
                             Description = "Description",
+                            Id = new Guid("b5196cae-9e27-434e-bfd3-2c9db9205eef"),
                             IsDelete = false,
                             RoleName = "Admin"
                         });
@@ -634,8 +625,9 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
@@ -714,8 +706,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("staffName")
                         .IsRequired()
@@ -750,9 +742,6 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("FeedbackId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
@@ -769,17 +758,14 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("StudentName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FeedbackId")
-                        .IsUnique();
 
                     b.HasIndex("RoleId");
 
@@ -788,44 +774,41 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719440"),
+                            Id = new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719420"),
                             Address = "da nang",
                             Birthday = new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3844),
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9249),
                             Email = "Staff@gmail.com",
-                            FeedbackId = new Guid("0073ae3e-6374-4c66-9a7d-f2e1d411d3b2"),
                             IsDelete = false,
                             Password = "MANAGER",
                             Phone = "03030303",
-                            RoleId = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
+                            RoleId = 1,
                             StudentName = "Staff"
                         },
                         new
                         {
                             Id = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"),
                             Address = "hcm",
-                            Birthday = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3959),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3958),
+                            Birthday = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9369),
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9367),
                             Email = "Manager@gmail.com",
-                            FeedbackId = new Guid("0073ae3e-6374-4c66-9a7d-f2e1d411d3b2"),
                             IsDelete = false,
                             Password = "MANAGER",
                             Phone = "03030303",
-                            RoleId = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
+                            RoleId = 2,
                             StudentName = "Manager"
                         },
                         new
                         {
                             Id = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"),
                             Address = "ha-noi",
-                            Birthday = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3980),
-                            Created = new DateTime(2023, 9, 25, 20, 52, 29, 768, DateTimeKind.Local).AddTicks(3973),
+                            Birthday = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9376),
+                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9370),
                             Email = "MapDit@gmail.com",
-                            FeedbackId = new Guid("5e6e3ac9-d41c-46f1-a4a4-e91ecec521fd"),
                             IsDelete = false,
                             Password = "123546",
                             Phone = "03030303",
-                            RoleId = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
+                            RoleId = 3,
                             StudentName = "MapDit"
                         });
                 });
@@ -936,6 +919,17 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                     b.Navigation("Staff");
                 });
 
+            modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.FeedBack", b =>
+                {
+                    b.HasOne("StudentHouseMembershipCart.Domain.Entities.Student", "Students")
+                        .WithMany("FeedBack")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Students");
+                });
+
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Package", b =>
                 {
                     b.HasOne("StudentHouseMembershipCart.Domain.Entities.Admin", "Admin")
@@ -1012,19 +1006,11 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Student", b =>
                 {
-                    b.HasOne("StudentHouseMembershipCart.Domain.Entities.FeedBack", "FeedBack")
-                        .WithOne("Students")
-                        .HasForeignKey("StudentHouseMembershipCart.Domain.Entities.Student", "FeedbackId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("StudentHouseMembershipCart.Domain.Entities.Role", "Role")
                         .WithMany("Student")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("FeedBack");
 
                     b.Navigation("Role");
                 });
@@ -1061,9 +1047,6 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.FeedBack", b =>
                 {
                     b.Navigation("AttendReports")
-                        .IsRequired();
-
-                    b.Navigation("Students")
                         .IsRequired();
                 });
 
@@ -1108,6 +1091,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Student", b =>
                 {
                     b.Navigation("Apartment");
+
+                    b.Navigation("FeedBack");
                 });
 #pragma warning restore 612, 618
         }

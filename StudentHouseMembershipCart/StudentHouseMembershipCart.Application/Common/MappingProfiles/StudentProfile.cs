@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using StudentHouseMembershipCart.Application.Features.Students;
+using StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent;
 using StudentHouseMembershipCart.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
         {
             CreateMap<StudentDto, Student>().ReverseMap();
             CreateMap<Student, StudentDto>().ReverseMap();
+            CreateMap<CreateStudentCommand, Student>().ReverseMap();
         }
     }
 }
