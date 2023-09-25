@@ -1,9 +1,12 @@
 ﻿using StudentHouseMembershipCart.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class Role : BaseAuditableEntity 
     {
+        [Key]
+        public int RoleId { get; set; }
         public string RoleName { get; set; } 
         public string Description { get; set; } 
 

@@ -19,8 +19,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public virtual Student Students { get; set; }
         public virtual AttendReport AttendReports { get; set; }
 
-        public IList<AttendReport> AttendReport { get; private set; }
-        public IList<Student> Student { get; private set; }
     }
 
 }

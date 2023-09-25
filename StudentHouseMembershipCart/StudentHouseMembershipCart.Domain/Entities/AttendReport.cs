@@ -5,6 +5,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class AttendReport : BaseAuditableEntity 
     {
+        public string Id { get; set; }  
         public DateTime DateDoPackage { get; set; }
 
         [ForeignKey("BookingDetail")]
@@ -17,9 +18,8 @@ namespace StudentHouseMembershipCart.Domain.Entities
         // relationShip
         public virtual BookingDetail BookingDetail { get; set; }
         public virtual ReportWork ReportWork { get; set; }
-        public virtual FeedBack FeedBacks { get; set; }
 
-        public IList<FeedBack> FeedBack { get; private set; }
+        public virtual FeedBack FeedBack { get; set; }
 
     }
 

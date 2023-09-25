@@ -18,7 +18,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students
         public string? Address { get; set; }
 
         
-        public Guid RoleId { get; set; }
+        public int RoleId { get; set; }
         
         public Guid FeedbackId { get; set; }
 

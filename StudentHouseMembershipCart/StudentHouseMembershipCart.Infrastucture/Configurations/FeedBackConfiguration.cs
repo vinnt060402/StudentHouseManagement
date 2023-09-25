@@ -8,7 +8,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
     {
         public void Configure(EntityTypeBuilder<FeedBack> builder)
         {
-            builder.HasData(
+/*            builder.HasData(
                 new FeedBack
                 {
                     Id = Guid.Parse("0073AE3E-6374-4C66-9A7D-F2E1D411D3B2"),
@@ -26,7 +26,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     FeedBackImage = "",
                     FeedBackRating = ""
                 }
-            );
+            );*/
         }
     }
 }
