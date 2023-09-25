@@ -7,6 +7,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string RegionName { get; set; } = null!;
 
         //Relationship
-        public IList<Apartment> Apartments { get; private set; }
+        public IList<Apartment> Apartment { get; private set; }
     }
 }

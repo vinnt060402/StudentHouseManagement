@@ -14,5 +14,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         //Relationship
         public virtual Student Student { get; set; }
         public virtual Region Region { get; set; }
+
+        public IList<Booking> Booking { get; set; }
     }
 }

@@ -13,8 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Features\" />
+    <Folder Include="Features\Students\Commands\DeleteStudent\" />
+    <Folder Include="Features\Students\Commands\UpdateStudent\" />
+    <Folder Include="Features\Students\Queries\GetStudentById\" />
+    <Folder Include="Features\Students\Queries\GetStudentAccountEmailPassword\" />
+    <Folder Include="Features\Students\Queries\GetAllStudent\" />
   </ItemGroup>
 
   <ItemGroup>
