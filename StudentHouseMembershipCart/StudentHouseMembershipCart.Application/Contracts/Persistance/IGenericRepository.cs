@@ -1,6 +1,11 @@
 ﻿using StudentHouseMembershipCart.Domain.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace StudentHouseMembershipCart.Application.Contracts
+namespace StudentHouseMembershipCart.Application.Contracts.Persistance
 {
     public interface IGenericRepository<T> where T : BaseAuditableEntity
     {
