@@ -20,10 +20,9 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         // relationShip
         public virtual Role Role { get; set; }
-        public virtual FeedBack FeedBacks { get; set; }
+        public virtual FeedBack FeedBack { get; set; }
 
         public IList<Apartment> Apartment { get; private set; }
-        public IList<FeedBack> FeedBack { get; private set; }
     }
 
 }

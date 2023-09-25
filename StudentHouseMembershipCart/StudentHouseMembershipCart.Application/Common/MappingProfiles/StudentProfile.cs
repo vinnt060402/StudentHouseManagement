@@ -14,7 +14,7 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
         public StudentProfile()
         {
             CreateMap<StudentDto, Student>().ReverseMap();
-            
+            CreateMap<Student, StudentDto>().ReverseMap();
         }
     }
 }
