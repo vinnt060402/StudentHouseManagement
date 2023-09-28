@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StudentHouseMembershipCart.Infrastucture.Migrations
 {
-    public partial class Init : Migration
+    public partial class i : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -473,32 +473,32 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "RoleId", "CreateBy", "Created", "Description", "Id", "IsDelete", "LastModified", "LastModifiedBy", "RoleName" },
-                values: new object[] { 1, null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9029), "Description", new Guid("b778f89a-a306-42a4-84fd-1be8f795dc1a"), false, null, null, "Staff" });
+                values: new object[] { 1, null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1888), "Description", new Guid("b778f89a-a306-42a4-84fd-1be8f795dc1a"), false, null, null, "Staff" });
 
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "RoleId", "CreateBy", "Created", "Description", "Id", "IsDelete", "LastModified", "LastModifiedBy", "RoleName" },
-                values: new object[] { 2, null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9057), "Description", new Guid("87791989-38cc-4a41-9526-2052bc34258e"), false, null, null, "Student" });
+                values: new object[] { 2, null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1911), "Description", new Guid("87791989-38cc-4a41-9526-2052bc34258e"), false, null, null, "Student" });
 
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "RoleId", "CreateBy", "Created", "Description", "Id", "IsDelete", "LastModified", "LastModifiedBy", "RoleName" },
-                values: new object[] { 3, null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9060), "Description", new Guid("b5196cae-9e27-434e-bfd3-2c9db9205eef"), false, null, null, "Admin" });
+                values: new object[] { 3, null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1914), "Description", new Guid("b5196cae-9e27-434e-bfd3-2c9db9205eef"), false, null, null, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Student",
                 columns: new[] { "Id", "Address", "Birthday", "CreateBy", "Created", "Email", "IsDelete", "LastModified", "LastModifiedBy", "Password", "Phone", "RoleId", "StudentName" },
-                values: new object[] { new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"), "ha-noi", new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9376), null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9370), "MapDit@gmail.com", false, null, null, "123546", "03030303", 3, "MapDit" });
+                values: new object[] { new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"), "ha-noi", new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2254), null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2249), "MapDit@gmail.com", false, null, null, "123546", "03030303", 3, "MapDit" });
 
             migrationBuilder.InsertData(
                 table: "Student",
                 columns: new[] { "Id", "Address", "Birthday", "CreateBy", "Created", "Email", "IsDelete", "LastModified", "LastModifiedBy", "Password", "Phone", "RoleId", "StudentName" },
-                values: new object[] { new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"), "hcm", new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9369), null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9367), "Manager@gmail.com", false, null, null, "MANAGER", "03030303", 2, "Manager" });
+                values: new object[] { new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"), "hcm", new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2248), null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2245), "Manager@gmail.com", false, null, null, "MANAGER", "03030303", 2, "Manager" });
 
             migrationBuilder.InsertData(
                 table: "Student",
                 columns: new[] { "Id", "Address", "Birthday", "CreateBy", "Created", "Email", "IsDelete", "LastModified", "LastModifiedBy", "Password", "Phone", "RoleId", "StudentName" },
-                values: new object[] { new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719420"), "da nang", new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9249), "Staff@gmail.com", false, null, null, "MANAGER", "03030303", 1, "Staff" });
+                values: new object[] { new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719420"), "da nang", new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2128), "Staff@gmail.com", false, null, null, "MANAGER", "03030303", 1, "Staff" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Admin_RoleId",

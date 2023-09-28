@@ -12,8 +12,8 @@ using StudentHouseMembershipCart.Infrastucture.DatabaseContext;
 namespace StudentHouseMembershipCart.Infrastucture.Migrations
 {
     [DbContext(typeof(StudentHouseMembershipCartDatabaseContext))]
-    [Migration("20230925161103_Init")]
-    partial class Init
+    [Migration("20230928163026_i")]
+    partial class i
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -593,7 +593,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         new
                         {
                             RoleId = 1,
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9029),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1888),
                             Description = "Description",
                             Id = new Guid("b778f89a-a306-42a4-84fd-1be8f795dc1a"),
                             IsDelete = false,
@@ -602,7 +602,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         new
                         {
                             RoleId = 2,
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9057),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1911),
                             Description = "Description",
                             Id = new Guid("87791989-38cc-4a41-9526-2052bc34258e"),
                             IsDelete = false,
@@ -611,7 +611,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         new
                         {
                             RoleId = 3,
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9060),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(1914),
                             Description = "Description",
                             Id = new Guid("b5196cae-9e27-434e-bfd3-2c9db9205eef"),
                             IsDelete = false,
@@ -777,7 +777,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                             Id = new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719420"),
                             Address = "da nang",
                             Birthday = new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9249),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2128),
                             Email = "Staff@gmail.com",
                             IsDelete = false,
                             Password = "MANAGER",
@@ -789,8 +789,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         {
                             Id = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"),
                             Address = "hcm",
-                            Birthday = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9369),
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9367),
+                            Birthday = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2248),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2245),
                             Email = "Manager@gmail.com",
                             IsDelete = false,
                             Password = "MANAGER",
@@ -802,8 +802,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Migrations
                         {
                             Id = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"),
                             Address = "ha-noi",
-                            Birthday = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9376),
-                            Created = new DateTime(2023, 9, 25, 23, 11, 2, 909, DateTimeKind.Local).AddTicks(9370),
+                            Birthday = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2254),
+                            Created = new DateTime(2023, 9, 28, 23, 30, 25, 781, DateTimeKind.Local).AddTicks(2249),
                             Email = "MapDit@gmail.com",
                             IsDelete = false,
                             Password = "123546",
