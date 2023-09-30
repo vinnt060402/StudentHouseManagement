@@ -10,12 +10,9 @@
     <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
+    <PackageReference Include="MailKit" Version="4.2.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Students\Queries\GetStudentById\" />
-    <Folder Include="Features\Students\Queries\GetAllStudent\" />
+    <PackageReference Include="MimeKit" Version="4.2.0" />
   </ItemGroup>
 
   <ItemGroup>
