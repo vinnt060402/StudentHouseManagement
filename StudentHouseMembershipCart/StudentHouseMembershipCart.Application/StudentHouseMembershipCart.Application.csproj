@@ -19,4 +19,10 @@
     <ProjectReference Include="..\StudentHouseMembershipCart.Domain\StudentHouseMembershipCart.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Packages\Commands\CreatePackage\" />
+    <Folder Include="Features\Packages\Commands\DeletePackage\" />
+    <Folder Include="Features\Packages\Commands\UpdatePackage\" />
+  </ItemGroup>
+
 </Project>
