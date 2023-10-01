@@ -29,7 +29,6 @@
 *.cache
 *.editorconfig
 *.dgspec.json
-*.json
 *.props
 *.suo
 *.user
