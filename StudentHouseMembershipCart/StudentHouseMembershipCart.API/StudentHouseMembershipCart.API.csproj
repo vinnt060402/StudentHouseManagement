@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentHouseMembershipCart.Application\StudentHouseMembershipCart.Application.csproj" />
+    <ProjectReference Include="..\StudentHouseMembershipCart.Identity\StudentHouseMembershipCart.Identity.csproj" />
     <ProjectReference Include="..\StudentHouseMembershipCart.Infrastucture\StudentHouseMembershipCart.Infrastucture.csproj" />
   </ItemGroup>
 

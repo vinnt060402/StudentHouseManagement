@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Domain.Entities;
+﻿/*using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Contracts.Persistance
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Contracts.Persistance
 
     }
 }
+*/
