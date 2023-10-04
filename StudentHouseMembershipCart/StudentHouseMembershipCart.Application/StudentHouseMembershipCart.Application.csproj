@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Packages\**" />
+    <EmbeddedResource Remove="Features\Packages\**" />
+    <None Remove="Features\Packages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
@@ -20,9 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Packages\Commands\CreatePackage\" />
-    <Folder Include="Features\Packages\Commands\DeletePackage\" />
-    <Folder Include="Features\Packages\Commands\UpdatePackage\" />
+    <Folder Include="Features\Bookings\" />
+    <Folder Include="Features\BookingDetails\" />
+    <Folder Include="Features\Services\" />
+    <Folder Include="Features\Packageee\" />
   </ItemGroup>
 
 </Project>

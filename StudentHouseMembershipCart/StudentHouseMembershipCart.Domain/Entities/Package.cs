@@ -8,7 +8,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string PackageName { get; set; } = null!;
         public int weekNumberBooking { get; set; }
         public int numberOfPerWeekDoPackage { get; set; }
-        public string Image { get; set; } = null!;
+        public string? Image { get; set; }
         [ForeignKey("Admin")]
         public Guid AdminId { get; set; }
 

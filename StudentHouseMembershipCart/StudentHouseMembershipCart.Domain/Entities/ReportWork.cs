@@ -6,7 +6,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
     public class ReportWork : BaseAuditableEntity 
     { 
         public string DescriptionProcess { get; set; }
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         [ForeignKey("Staff")]
         public Guid StaffId { get; set; }

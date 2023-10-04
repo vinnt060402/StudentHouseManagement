@@ -8,7 +8,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
         public string Quantity { get; set; }
-        public string Image { get; set;}
+        public string? Image { get; set;}
 
         [ForeignKey("Category")]
         public string CategoryId { get; set; } = null!;
