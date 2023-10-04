@@ -4,10 +4,11 @@ using StudentHouseMembershipCart.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.IdentityModels;
+using StudentHouseMembershipCart.Application.Common.Interfaces;
 
 namespace StudentHouseMembershipCart.Identity.DbContext
 {
-    public class StudentHouseMembershipCartDatabaseContext : IdentityDbContext<ApplicationUser>
+    public class StudentHouseMembershipCartDatabaseContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
     {
         public StudentHouseMembershipCartDatabaseContext(DbContextOptions<StudentHouseMembershipCartDatabaseContext> options) : base(options)
         {
@@ -55,5 +56,6 @@ namespace StudentHouseMembershipCart.Identity.DbContext
             }
             return base.SaveChangesAsync(cancellationToken);
         }
+
     }
 }
