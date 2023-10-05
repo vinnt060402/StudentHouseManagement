@@ -7,15 +7,16 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class Student : BaseAuditableEntity
     {
-        public DateTime Birthday { get; set; }
+        public DateTime? Birthday { get; set; }
         public string? Phone { get; set; }
         public string? Address { get; set; }
+
         [ForeignKey("ApplicationUser")]
-        public string ApplicationUserId { get; set; } = null!;
+        public string ApplicationUserId { get; set; }
 
 
         // relationShip
-        public virtual ApplicationUser ApplicationUser { get; set; } = null!;
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public IList<FeedBack>? FeedBack { get; set; }
 

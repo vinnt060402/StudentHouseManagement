@@ -5,10 +5,7 @@ namespace StudentHouseMembershipCart.Application.Models.Identity
     public class RegistrationRequest
     {
         [Required]
-        public string FirstName { get; set; } = null!;
-
-        [Required]
-        public string LastName { get; set; } = null!;
+        public string FullName { get; set; } = null!;
 
         [Required]
         [EmailAddress]

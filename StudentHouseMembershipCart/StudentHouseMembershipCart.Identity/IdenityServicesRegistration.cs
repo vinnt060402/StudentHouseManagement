@@ -6,9 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Contracts.Identity;
 using StudentHouseMembershipCart.Application.Contracts.Persistance;
 using StudentHouseMembershipCart.Application.Models.Identity;
+using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 using StudentHouseMembershipCart.Identity.DbContext;
 using StudentHouseMembershipCart.Identity.Repositories;
@@ -27,6 +29,10 @@ namespace StudentHouseMembershipCart.Identity
             {
                 option.UseSqlServer(configuration.GetConnectionString("StudentHouseMembershipCart"));
             });
+
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<StudentHouseMembershipCartDatabaseContext>());
+            services.AddScoped<IApplicationDbContext, StudentHouseMembershipCartDatabaseContext>();
+
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<StudentHouseMembershipCartDatabaseContext>()
@@ -130,6 +136,7 @@ namespace StudentHouseMembershipCart.Identity
             services.AddScoped<IReportWorkRepository, ReportWorkeRepository>();
             services.AddScoped<IServiceRepository, ServiceRepository>();
             services.AddScoped<IStaffRepository, StaffRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
 
             return services;
         }

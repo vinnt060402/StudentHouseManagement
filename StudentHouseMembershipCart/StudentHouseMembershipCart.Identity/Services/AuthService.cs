@@ -62,8 +62,7 @@ namespace StudentHouseMembershipCart.Identity.Services
             {
                 Email = request.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                FirstName = request.FirstName,
-                LastName = request.LastName,
+                FullName = request.UserName,
                 UserName = request.UserName,
                 EmailConfirmed = true,
             };

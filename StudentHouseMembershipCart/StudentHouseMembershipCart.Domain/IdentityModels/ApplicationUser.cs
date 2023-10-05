@@ -5,13 +5,13 @@ namespace StudentHouseMembershipCart.Domain.IdentityModels
 {
     public class ApplicationUser : IdentityUser
     {
-        public string? FirstName { get; set; }
-        public string? LastName { get; set; }
+        public string FullName { get; set; }
+        
 
         // relationship
-        public virtual Student? Student { get; set; }
-        public virtual Admin? Admin { get; set; }
-        public virtual Staff? Staff { get; set; }
+        public virtual Student Student { get; set; }
+        public virtual Admin Admin { get; set; }
+        public virtual Staff Staff { get; set; }
 
     }
 }

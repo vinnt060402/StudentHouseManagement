@@ -6,7 +6,6 @@ namespace StudentHouseMembershipCart.Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-
         public DbSet<Admin> Admin { get; set; }
         public DbSet<Apartment> Apartment { get; set; }
         public DbSet<AttendReport> AttendReport { get; set; }

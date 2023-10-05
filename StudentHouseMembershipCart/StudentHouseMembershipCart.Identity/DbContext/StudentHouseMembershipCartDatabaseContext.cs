@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Domain.Common;
 using StudentHouseMembershipCart.Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.IdentityModels;
-using StudentHouseMembershipCart.Application.Common.Interfaces;
 
 namespace StudentHouseMembershipCart.Identity.DbContext
 {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Org.BouncyCastle.Asn1.Ocsp;
 using StudentHouseMembershipCart.Application.Contracts.Identity;
 using StudentHouseMembershipCart.Application.Models.Identity;
 using StudentHouseMembershipCart.Domain.IdentityModels;
@@ -25,8 +26,7 @@ namespace StudentHouseMembershipCart.Identity.Services
             {
                 Email = endUser.Email,
                 Id = endUser.Id,
-                FirstName = endUser.FirstName,
-                LastName = endUser.LastName
+                FullName = endUser.FullName,
             };
         }
 
@@ -37,8 +37,7 @@ namespace StudentHouseMembershipCart.Identity.Services
             {
                 Id = q.Id,
                 Email = q.Email,
-                FirstName = q.FirstName,
-                LastName = q.LastName
+                FullName = q.FullName,
             }).ToList();
         }
     }
