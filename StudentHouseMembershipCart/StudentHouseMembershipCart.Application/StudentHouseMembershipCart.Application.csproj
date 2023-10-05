@@ -9,16 +9,19 @@
   <ItemGroup>
     <Compile Remove="Features\BookingDetails\**" />
     <Compile Remove="Features\Bookings\**" />
+    <Compile Remove="Features\Orders\**" />
     <Compile Remove="Features\Packageee\**" />
     <Compile Remove="Features\Packages\**" />
     <Compile Remove="Features\Services\**" />
     <EmbeddedResource Remove="Features\BookingDetails\**" />
     <EmbeddedResource Remove="Features\Bookings\**" />
+    <EmbeddedResource Remove="Features\Orders\**" />
     <EmbeddedResource Remove="Features\Packageee\**" />
     <EmbeddedResource Remove="Features\Packages\**" />
     <EmbeddedResource Remove="Features\Services\**" />
     <None Remove="Features\BookingDetails\**" />
     <None Remove="Features\Bookings\**" />
+    <None Remove="Features\Orders\**" />
     <None Remove="Features\Packageee\**" />
     <None Remove="Features\Packages\**" />
     <None Remove="Features\Services\**" />
@@ -38,6 +41,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Staff\Commands\DeleteStaff\" />
+    <Folder Include="Features\Staff\Commands\UpdateStaff\" />
+    <Folder Include="Features\Staff\Queries\GetStaff\" />
+    <Folder Include="Features\Bookings\" />
+    <Folder Include="Features\BookingDetails\" />
+    <Folder Include="Features\Services\" />
+    <Folder Include="Features\Packageee\" />
     <Folder Include="Features\Orders\" />
   </ItemGroup>
 

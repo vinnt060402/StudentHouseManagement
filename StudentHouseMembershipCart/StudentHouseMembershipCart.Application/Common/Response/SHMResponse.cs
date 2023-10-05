@@ -1,6 +1,7 @@
 ﻿namespace StudentHouseMembershipCart.Application.Common.Response
 {
-    public class ActionResult
+    public class SHMResponse
     {
+        public string Message { get; set; } = "";
     }
 }

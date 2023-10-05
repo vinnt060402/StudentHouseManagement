@@ -12,12 +12,15 @@ using StudentHouseMembershipCart.Identity.DbContext;
 namespace StudentHouseMembershipCart.Identity.Migrations
 {
     [DbContext(typeof(StudentHouseMembershipCartDatabaseContext))]
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
     [Migration("20231005160120_InitDatabase")]
     partial class InitDatabase
 ========
     [Migration("20231004163140_init")]
     partial class init
 >>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+    [Migration("20231005143556_nguyenvi")]
+    partial class nguyenvi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,21 +61,36 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "f4acd751-7c92-4ddb-87b1-1015aeefe97d",
+========
+                            ConcurrencyStamp = "351e6557-bde4-4ffd-8016-193af4b7e929",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "d33a2300-21ed-4214-a19f-e946b15903dd",
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "ae9d2f02-8a25-4130-a824-349bca59870f",
+========
+                            ConcurrencyStamp = "4671fe9f-20eb-41ec-8116-58f8c0f0d242",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "632680aa-84df-41b8-a68d-0a3fc1be8b89",
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "88fb343b-640a-4ff4-9521-4dd657c95884",
+========
+                            ConcurrencyStamp = "9a658561-b620-4e06-bb2e-63f3b089d84a",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "76bb2b02-f613-4083-95cd-20ab8f9e3317",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -926,16 +944,30 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "5107eacc-cf0c-4d8b-9e34-03f261f7a54e",
+========
+                            ConcurrencyStamp = "b5a9f91b-1657-4356-8778-0edc2ba19921",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "c4b1092c-ffc8-4bfc-9da9-a8c72a37fb00",
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEHq8HvBT9+H2oPKnjS/GvthUYdWhvn5nMXYPoBJK6DpHCkRtP11x9thON9FKwn86Tg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "10767fa9-3097-4f89-826e-f2525150b7de",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEDtVAf6/uiO8dpmVrA/zsgu6FsGG46b2hcSw0bwiT2nWp6qoiLCC8pGfoHFGWlEiGA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "a58262ae-1820-410e-9001-19440520a570",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAEM3XhHyFYh+Xf4k6Vqj8Rnvg27mcVCeFxeDLdSUkvV1REX/l+v7w4Tdj8HstMPfHIQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "20805722-ade8-4e47-8649-bf363c7d4220",
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -943,16 +975,30 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "9e4c6a07-ec56-4c38-b8fd-df5086707aca",
+========
+                            ConcurrencyStamp = "0fa70a96-a365-4417-8cca-244d1e049eb2",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "de7cbada-48a6-448b-ac11-9f253a2c4d16",
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAECaPCqv6qLvY670w+mqxeoIuD78Y9UM4qJBBtdXF+mo1Cu8mNU6o1DFcNiZRrrLTnA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "749fe1d7-6c9a-44b4-b073-cdb48cc76aa7",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEPmJ4csNdy0VZESoTR7IvjQWRQY+cYvvKOl3X5FvdIJej80eePacSA2bko5WgMI8Og==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d21a2d1c-e7b4-4cf2-967a-38a63fff4919",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAECjWs2lZrsj8EGUSTRdlFcfPiJWGDur1lR7G74xM+mluEEfBFBwoUVS83qbkQ3Egww==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "aa352dfe-2a8c-430e-baee-95f3957dcb69",
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -960,16 +1006,30 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             ConcurrencyStamp = "f176e620-ee67-4d87-b301-6e0d0a510416",
+========
+                            ConcurrencyStamp = "add8f8b9-a178-41a0-b7a7-abbe7cd01335",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            ConcurrencyStamp = "d70c0d11-afbb-456c-8296-d044f3d5d812",
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEPFu37+Yx38GacfDHMXw77R8LiLbegFjCfMGeiucVaI8e2+j6n9gikWjcw5Pc30nAw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "60a7c96b-a13c-4eff-8dcc-c42e11b69e52",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEGqT71pXT91mDnhzPHAgXjh5T+LxErzt26SnVXOpc3heUqv32iNaAVRWIKgRiw73LQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ea428630-23c5-4582-b978-9c42c0683765",
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.Designer.cs
+                            PasswordHash = "AQAAAAEAACcQAAAAEOsnzGPo3tzlgh+TtTxEvveM2+RKVsBLgY8Pc56OjeOIHkMwfKCAyGhVug3f/6dlDQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "66e5515b-b813-4c96-8f1f-af909f1bc7ed",
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         });

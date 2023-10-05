@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StudentHouseMembershipCart.Identity.Migrations
 {
-    public partial class init : Migration
+    public partial class nguyenvi : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -274,7 +274,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     ServiceDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.cs
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+========
+                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.cs
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -593,9 +597,18 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.cs
                     { "ROLE1", "f4acd751-7c92-4ddb-87b1-1015aeefe97d", "Student", "Student" },
                     { "ROLE2", "ae9d2f02-8a25-4130-a824-349bca59870f", "Staff", "Staff" },
                     { "ROLE3", "88fb343b-640a-4ff4-9521-4dd657c95884", "Admin", "Admin" }
+========
+                    { "ROLE1", "351e6557-bde4-4ffd-8016-193af4b7e929", "Student", "Student" },
+                    { "ROLE2", "4671fe9f-20eb-41ec-8116-58f8c0f0d242", "Staff", "Staff" },
+                    { "ROLE3", "9a658561-b620-4e06-bb2e-63f3b089d84a", "Admin", "Admin" }
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.cs
+                    { "ROLE1", "d33a2300-21ed-4214-a19f-e946b15903dd", "Student", "Student" },
+                    { "ROLE2", "632680aa-84df-41b8-a68d-0a3fc1be8b89", "Staff", "Staff" },
+                    { "ROLE3", "76bb2b02-f613-4083-95cd-20ab8f9e3317", "Admin", "Admin" }
                 });
 
             migrationBuilder.InsertData(
@@ -603,9 +616,18 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231005160120_InitDatabase.cs
                     { "ACCOUNT1", 0, "5107eacc-cf0c-4d8b-9e34-03f261f7a54e", "vi@gmail.com", true, "Nguyen Vi", false, null, "VI@GMAIL.COM", "VI@GMAIL.COM", "AQAAAAEAACcQAAAAEHq8HvBT9+H2oPKnjS/GvthUYdWhvn5nMXYPoBJK6DpHCkRtP11x9thON9FKwn86Tg==", null, false, "10767fa9-3097-4f89-826e-f2525150b7de", false, "vi@gmail.com" },
                     { "ACCOUNT2", 0, "9e4c6a07-ec56-4c38-b8fd-df5086707aca", "nhan@gmail.com", true, "Nguyen Nhan", false, null, "NHAN@GMAIL.COM", "NHAN@GMAIL.COM", "AQAAAAEAACcQAAAAECaPCqv6qLvY670w+mqxeoIuD78Y9UM4qJBBtdXF+mo1Cu8mNU6o1DFcNiZRrrLTnA==", null, false, "749fe1d7-6c9a-44b4-b073-cdb48cc76aa7", false, "nhan@gmail.com" },
                     { "ACCOUNT3", 0, "f176e620-ee67-4d87-b301-6e0d0a510416", "dai@gmail.com", true, "Nguyen Dai", false, null, "DAI@GMAIL.COM", "DAI@GMAIL.COM", "AQAAAAEAACcQAAAAEPFu37+Yx38GacfDHMXw77R8LiLbegFjCfMGeiucVaI8e2+j6n9gikWjcw5Pc30nAw==", null, false, "60a7c96b-a13c-4eff-8dcc-c42e11b69e52", false, "dai@gmail.com" }
+========
+                    { "ACCOUNT1", 0, "b5a9f91b-1657-4356-8778-0edc2ba19921", "vi@gmail.com", true, "Nguyen", "Vi", false, null, "VI@GMAIL.COM", "VI@GMAIL.COM", "AQAAAAEAACcQAAAAEDtVAf6/uiO8dpmVrA/zsgu6FsGG46b2hcSw0bwiT2nWp6qoiLCC8pGfoHFGWlEiGA==", null, false, "a58262ae-1820-410e-9001-19440520a570", false, "vi@gmail.com" },
+                    { "ACCOUNT2", 0, "0fa70a96-a365-4417-8cca-244d1e049eb2", "nhan@gmail.com", true, "Nguyen", "Nhan", false, null, "NHAN@GMAIL.COM", "NHAN@GMAIL.COM", "AQAAAAEAACcQAAAAEPmJ4csNdy0VZESoTR7IvjQWRQY+cYvvKOl3X5FvdIJej80eePacSA2bko5WgMI8Og==", null, false, "d21a2d1c-e7b4-4cf2-967a-38a63fff4919", false, "nhan@gmail.com" },
+                    { "ACCOUNT3", 0, "add8f8b9-a178-41a0-b7a7-abbe7cd01335", "dai@gmail.com", true, "Nguyen", "Dai", false, null, "DAI@GMAIL.COM", "DAI@GMAIL.COM", "AQAAAAEAACcQAAAAEGqT71pXT91mDnhzPHAgXjh5T+LxErzt26SnVXOpc3heUqv32iNaAVRWIKgRiw73LQ==", null, false, "ea428630-23c5-4582-b978-9c42c0683765", false, "dai@gmail.com" }
+>>>>>>>> 7a1bc77 (Commit):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231004163140_init.cs
+                    { "ACCOUNT1", 0, "c4b1092c-ffc8-4bfc-9da9-a8c72a37fb00", "vi@gmail.com", true, "Nguyen Vi", false, null, "VI@GMAIL.COM", "VI@GMAIL.COM", "AQAAAAEAACcQAAAAEM3XhHyFYh+Xf4k6Vqj8Rnvg27mcVCeFxeDLdSUkvV1REX/l+v7w4Tdj8HstMPfHIQ==", null, false, "20805722-ade8-4e47-8649-bf363c7d4220", false, "vi@gmail.com" },
+                    { "ACCOUNT2", 0, "de7cbada-48a6-448b-ac11-9f253a2c4d16", "nhan@gmail.com", true, "Nguyen Nhan", false, null, "NHAN@GMAIL.COM", "NHAN@GMAIL.COM", "AQAAAAEAACcQAAAAECjWs2lZrsj8EGUSTRdlFcfPiJWGDur1lR7G74xM+mluEEfBFBwoUVS83qbkQ3Egww==", null, false, "aa352dfe-2a8c-430e-baee-95f3957dcb69", false, "nhan@gmail.com" },
+                    { "ACCOUNT3", 0, "d70c0d11-afbb-456c-8296-d044f3d5d812", "dai@gmail.com", true, "Nguyen Dai", false, null, "DAI@GMAIL.COM", "DAI@GMAIL.COM", "AQAAAAEAACcQAAAAEOsnzGPo3tzlgh+TtTxEvveM2+RKVsBLgY8Pc56OjeOIHkMwfKCAyGhVug3f/6dlDQ==", null, false, "66e5515b-b813-4c96-8f1f-af909f1bc7ed", false, "dai@gmail.com" }
                 });
 
             migrationBuilder.InsertData(

@@ -2,19 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
-namespace StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent
+namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaff
 {
-    public class CreateStudentCommandValidator : AbstractValidator<CreateStudentCommand>
+    public class CreateStaffRequestValidator : AbstractValidator<CreateStaffRequest>
     {
-        private readonly IApplicationDbContext _context;
-        public CreateStudentCommandValidator(/*IApplicationDbContext context*/)
+        public CreateStaffRequestValidator()
         {
-            /*_context = context;*/
             RuleFor(p => p.UserName)
                 .NotEmpty().WithMessage("{UserName} is required")
                 .NotNull()
                 .MaximumLength(100).WithMessage("{UserName} must be fewer than 100 characters");
-                /*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*/
 
             RuleFor(p => p.FullName)
                 .NotEmpty().WithMessage("{FullName} is required")
@@ -47,13 +44,6 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 .Empty()
                 .Null().When(p => p.Address == null) // Kiểm tra giá trị null
                 .WithMessage("Phone number can be null");
-
-
         }
-
-        /*private async Task<bool> BeUniqueCustomerName(string customerName, CancellationToken token)
-        {
-            return await _context.Student.AllAsync(r => r.ApplicationUser.UserName == customerName) == false;
-        }*/
     }
 }
