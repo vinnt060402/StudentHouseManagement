@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -31,12 +31,12 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
 
         public async Task<List<Student>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
         {
-            /*var students = await _studentRepository.GetAsync();
+            *//*var students = await _studentRepository.GetAsync();
             if (students == null || students.Count() == 0) {
                 throw new NotFoundException(nameof(Student));
             }
 
-            var map = _mapper.Map<List<StudentDto>>(students);*/
+            var map = _mapper.Map<List<StudentDto>>(students);*//*
 
             var list = await _context.Student.Where(e => e.IsDelete == false)
                 .ProjectTo<StudentDto>(_mapper.ConfigurationProvider).ToListAsync();
@@ -45,3 +45,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
         }
     }
 }
+*/
