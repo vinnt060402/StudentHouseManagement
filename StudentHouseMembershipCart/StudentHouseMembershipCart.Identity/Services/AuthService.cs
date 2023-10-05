@@ -82,7 +82,7 @@ namespace StudentHouseMembershipCart.Identity.Services
         {
             var userClaims = await _userManager.GetClaimsAsync(user);
             var roles = await _userManager.GetRolesAsync(user);
-            var roleClaims = roles.Select(q => new Claim(ClaimTypes.Role, q)).ToList();
+            var roleClaims = roles.Select(q => new Claim("role", q)).ToList();
 
             var claims = new List<Claim>
             {

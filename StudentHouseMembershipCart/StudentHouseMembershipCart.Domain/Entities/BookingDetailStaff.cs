@@ -8,7 +8,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         [ForeignKey("BookingDetail")]
         public Guid BookingDetailId { get; set; }
         [ForeignKey("Staff")]
-        public Guid StaffId { get; set; }  
+        public Guid StaffId { get; set; } 
 
         // relationShip
         public virtual BookingDetail BookingDetail { get; set; }

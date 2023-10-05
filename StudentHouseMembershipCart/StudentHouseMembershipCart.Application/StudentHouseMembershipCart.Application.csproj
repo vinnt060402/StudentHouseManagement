@@ -37,4 +37,8 @@
     <ProjectReference Include="..\StudentHouseMembershipCart.Domain\StudentHouseMembershipCart.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Orders\" />
+  </ItemGroup>
+
 </Project>

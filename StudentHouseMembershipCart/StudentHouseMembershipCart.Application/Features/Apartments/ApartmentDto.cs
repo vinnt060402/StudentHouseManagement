@@ -9,7 +9,7 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments
 {
     public class ApartmentDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Address { get; set; }
 
         [ForeignKey("Student")]

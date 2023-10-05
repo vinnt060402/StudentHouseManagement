@@ -52,21 +52,21 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
-                            ConcurrencyStamp = "ca9c9b73-c36f-43a1-8cd9-e27800ae4c2f",
+                            ConcurrencyStamp = "f4acd751-7c92-4ddb-87b1-1015aeefe97d",
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
-                            ConcurrencyStamp = "25cdcd82-05fb-4472-b00b-1e4099a0f33f",
+                            ConcurrencyStamp = "ae9d2f02-8a25-4130-a824-349bca59870f",
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
-                            ConcurrencyStamp = "9d3bdbcb-bac9-4879-8c2b-f1cb48459c99",
+                            ConcurrencyStamp = "88fb343b-640a-4ff4-9521-4dd657c95884",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -274,8 +274,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.AttendReport", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("BookingDetailId")
                         .HasColumnType("uniqueidentifier");
@@ -455,8 +456,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Category", b =>
                 {
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
@@ -468,9 +470,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
@@ -480,7 +479,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Category");
                 });
@@ -551,7 +550,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
@@ -698,7 +696,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
@@ -726,9 +723,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreateBy")
                         .HasColumnType("nvarchar(max)");
@@ -737,7 +733,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDelete")
@@ -775,14 +770,13 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ApplicationUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("Birthday")
+                    b.Property<DateTime?>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreateBy")
@@ -801,7 +795,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("staffName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -825,7 +818,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("Birthday")
+                    b.Property<DateTime?>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreateBy")
@@ -873,10 +866,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("FullName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -929,17 +920,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d15e1fd8-a2f4-4b77-bae8-5d98fd64dc9d",
+                            ConcurrencyStamp = "5107eacc-cf0c-4d8b-9e34-03f261f7a54e",
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Nguyen",
-                            LastName = "Vi",
+                            FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK2962JivMIXR4iY8JCEJTJ8v4OIdsGT9gN6PfssHI/oSIs17XjKIuNdMc1/VJLQsw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHq8HvBT9+H2oPKnjS/GvthUYdWhvn5nMXYPoBJK6DpHCkRtP11x9thON9FKwn86Tg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "240f9236-4aaa-43cf-bb2c-5906b94821e7",
+                            SecurityStamp = "10767fa9-3097-4f89-826e-f2525150b7de",
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -947,17 +937,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "60c3d240-4fba-4e93-b750-d7fc9654bab9",
+                            ConcurrencyStamp = "9e4c6a07-ec56-4c38-b8fd-df5086707aca",
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Nguyen",
-                            LastName = "Nhan",
+                            FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDIE0gxJHeI/bNuZzUg8x02apyt0W3dvUeT4IqOPiDFtUZhK/kDiConDcjO69XBifg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECaPCqv6qLvY670w+mqxeoIuD78Y9UM4qJBBtdXF+mo1Cu8mNU6o1DFcNiZRrrLTnA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "def3c2f3-d0db-47ef-ae5c-dba08ef1f9b9",
+                            SecurityStamp = "749fe1d7-6c9a-44b4-b073-cdb48cc76aa7",
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -965,17 +954,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f0d2b16f-f9c8-45bc-ad31-77faa34622b3",
+                            ConcurrencyStamp = "f176e620-ee67-4d87-b301-6e0d0a510416",
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Nguyen",
-                            LastName = "Dai",
+                            FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENZKm4gCkf4RE4mDGj+/+mWv+ymSQHqHYFghy4C95Ln81puPIzWL8NAdLfUJxwsFjA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPFu37+Yx38GacfDHMXw77R8LiLbegFjCfMGeiucVaI8e2+j6n9gikWjcw5Pc30nAw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "53208991-f131-40ca-8dd0-fec23b115876",
+                            SecurityStamp = "60a7c96b-a13c-4eff-8dcc-c42e11b69e52",
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         });
@@ -1307,11 +1295,14 @@ namespace StudentHouseMembershipCart.Identity.Migrations
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.IdentityModels.ApplicationUser", b =>
                 {
-                    b.Navigation("Admin");
+                    b.Navigation("Admin")
+                        .IsRequired();
 
-                    b.Navigation("Staff");
+                    b.Navigation("Staff")
+                        .IsRequired();
 
-                    b.Navigation("Student");
+                    b.Navigation("Student")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

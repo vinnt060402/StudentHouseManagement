@@ -7,6 +7,7 @@ using StudentHouseMembershipCart.Application.Features.Students.Commands.DeleteSt
 using StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
+using StudentHouseMembershipCart.Domain.Entities;
 using System.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,7 +27,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
 
         [HttpGet]
         [Route("get-all-student")]
-        public async Task<List<StudentDto>> GetAllStudent()
+        public async Task<List<Student>> GetAllStudent()
         {
             var response = await _mediator.Send(new GetListStudentQuery());
             return response;

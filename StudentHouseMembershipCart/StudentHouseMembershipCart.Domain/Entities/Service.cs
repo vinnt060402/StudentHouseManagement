@@ -11,7 +11,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string? Image { get; set;}
 
         [ForeignKey("Category")]
-        public string CategoryId { get; set; } = null!;
+        public Guid CategoryId { get; set; }
 
         // relationShip
         public virtual Category Category { get; set; }

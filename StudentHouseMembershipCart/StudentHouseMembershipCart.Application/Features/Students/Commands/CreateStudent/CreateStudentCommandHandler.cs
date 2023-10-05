@@ -31,11 +31,11 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 throw new BadRequestException("The username already exists!");
             }
 
-            var validator = new CreateStudentCommandValidator(_context);
+            /*var validator = new CreateStudentCommandValidator(_context);
             var validatorResult = await validator.ValidateAsync(request);
             if (validatorResult.Errors.Any()) {
                 throw new BadRequestException("Invalid Create user", validatorResult);
-            }
+            }*/
 
             var user = new ApplicationUser
             {

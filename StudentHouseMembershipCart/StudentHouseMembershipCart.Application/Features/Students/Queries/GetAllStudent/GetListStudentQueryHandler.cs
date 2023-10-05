@@ -11,7 +11,7 @@ using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent
 {
-    public class GetListStudentQueryHandler : IRequestHandler<GetListStudentQuery, List<StudentDto>>
+    public class GetListStudentQueryHandler : IRequestHandler<GetListStudentQuery, List<Student>>
     {
         private IApplicationDbContext _context { get; set; }
         private readonly UserManager<ApplicationUser> _userManager;
@@ -29,7 +29,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
             _studentRepository = studentRepository;
         }
 
-        public async Task<List<StudentDto>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
+        public async Task<List<Student>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
         {
             /*var students = await _studentRepository.GetAsync();
             if (students == null || students.Count() == 0) {
@@ -41,7 +41,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
             var list = await _context.Student.Where(e => e.IsDelete == false)
                 .ProjectTo<StudentDto>(_mapper.ConfigurationProvider).ToListAsync();
 
-            return list;
+            return;
         }
     }
 }

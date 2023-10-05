@@ -6,9 +6,9 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class Staff : BaseAuditableEntity 
     { 
-        public string staffName { get; set; }
-        public string Address { get; set; }
-        public DateTime Birthday { get; set; }
+        public string? staffName { get; set; }
+        public string? Address { get; set; }
+        public DateTime? Birthday { get; set; }
 
         [ForeignKey("ApplicationUser")]
         public string ApplicationUserId { get; set; }

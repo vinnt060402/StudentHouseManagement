@@ -28,8 +28,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -54,9 +53,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 name: "Category",
                 columns: table => new
                 {
-                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -65,7 +63,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Category", x => x.CategoryId);
+                    table.PrimaryKey("PK_Category", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -220,9 +218,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    staffName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    staffName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -246,7 +244,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ApplicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -275,8 +273,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     ServiceName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ServiceDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -290,7 +288,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         name: "FK_Service_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Category",
-                        principalColumn: "CategoryId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                 });
 
@@ -302,7 +300,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     PackageName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     weekNumberBooking = table.Column<int>(type: "int", nullable: false),
                     numberOfPerWeekDoPackage = table.Column<int>(type: "int", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AdminId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -327,7 +325,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DescriptionProcess = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StaffId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreateBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -526,7 +524,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 name: "AttendReport",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DateDoPackage = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BookingDetailId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ReportWorkId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -595,19 +593,19 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "ROLE1", "ca9c9b73-c36f-43a1-8cd9-e27800ae4c2f", "Student", "Student" },
-                    { "ROLE2", "25cdcd82-05fb-4472-b00b-1e4099a0f33f", "Staff", "Staff" },
-                    { "ROLE3", "9d3bdbcb-bac9-4879-8c2b-f1cb48459c99", "Admin", "Admin" }
+                    { "ROLE1", "f4acd751-7c92-4ddb-87b1-1015aeefe97d", "Student", "Student" },
+                    { "ROLE2", "ae9d2f02-8a25-4130-a824-349bca59870f", "Staff", "Staff" },
+                    { "ROLE3", "88fb343b-640a-4ff4-9521-4dd657c95884", "Admin", "Admin" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "ACCOUNT1", 0, "d15e1fd8-a2f4-4b77-bae8-5d98fd64dc9d", "vi@gmail.com", true, "Nguyen", "Vi", false, null, "VI@GMAIL.COM", "VI@GMAIL.COM", "AQAAAAEAACcQAAAAEK2962JivMIXR4iY8JCEJTJ8v4OIdsGT9gN6PfssHI/oSIs17XjKIuNdMc1/VJLQsw==", null, false, "240f9236-4aaa-43cf-bb2c-5906b94821e7", false, "vi@gmail.com" },
-                    { "ACCOUNT2", 0, "60c3d240-4fba-4e93-b750-d7fc9654bab9", "nhan@gmail.com", true, "Nguyen", "Nhan", false, null, "NHAN@GMAIL.COM", "NHAN@GMAIL.COM", "AQAAAAEAACcQAAAAEDIE0gxJHeI/bNuZzUg8x02apyt0W3dvUeT4IqOPiDFtUZhK/kDiConDcjO69XBifg==", null, false, "def3c2f3-d0db-47ef-ae5c-dba08ef1f9b9", false, "nhan@gmail.com" },
-                    { "ACCOUNT3", 0, "f0d2b16f-f9c8-45bc-ad31-77faa34622b3", "dai@gmail.com", true, "Nguyen", "Dai", false, null, "DAI@GMAIL.COM", "DAI@GMAIL.COM", "AQAAAAEAACcQAAAAENZKm4gCkf4RE4mDGj+/+mWv+ymSQHqHYFghy4C95Ln81puPIzWL8NAdLfUJxwsFjA==", null, false, "53208991-f131-40ca-8dd0-fec23b115876", false, "dai@gmail.com" }
+                    { "ACCOUNT1", 0, "5107eacc-cf0c-4d8b-9e34-03f261f7a54e", "vi@gmail.com", true, "Nguyen Vi", false, null, "VI@GMAIL.COM", "VI@GMAIL.COM", "AQAAAAEAACcQAAAAEHq8HvBT9+H2oPKnjS/GvthUYdWhvn5nMXYPoBJK6DpHCkRtP11x9thON9FKwn86Tg==", null, false, "10767fa9-3097-4f89-826e-f2525150b7de", false, "vi@gmail.com" },
+                    { "ACCOUNT2", 0, "9e4c6a07-ec56-4c38-b8fd-df5086707aca", "nhan@gmail.com", true, "Nguyen Nhan", false, null, "NHAN@GMAIL.COM", "NHAN@GMAIL.COM", "AQAAAAEAACcQAAAAECaPCqv6qLvY670w+mqxeoIuD78Y9UM4qJBBtdXF+mo1Cu8mNU6o1DFcNiZRrrLTnA==", null, false, "749fe1d7-6c9a-44b4-b073-cdb48cc76aa7", false, "nhan@gmail.com" },
+                    { "ACCOUNT3", 0, "f176e620-ee67-4d87-b301-6e0d0a510416", "dai@gmail.com", true, "Nguyen Dai", false, null, "DAI@GMAIL.COM", "DAI@GMAIL.COM", "AQAAAAEAACcQAAAAEPFu37+Yx38GacfDHMXw77R8LiLbegFjCfMGeiucVaI8e2+j6n9gikWjcw5Pc30nAw==", null, false, "60a7c96b-a13c-4eff-8dcc-c42e11b69e52", false, "dai@gmail.com" }
                 });
 
             migrationBuilder.InsertData(

@@ -5,7 +5,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class Booking : BaseAuditableEntity
     {
-        public Guid Id { get; set; }
         public string Contract { get; set; } = null!;
         public double TotalPay { get; set; }    
         public DateTime StartDate { get; set; }

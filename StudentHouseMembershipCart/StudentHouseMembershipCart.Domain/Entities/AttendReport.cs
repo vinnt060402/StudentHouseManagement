@@ -4,8 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class AttendReport : BaseAuditableEntity 
-    {
-        public string Id { get; set; }  
+    { 
         public DateTime DateDoPackage { get; set; }
 
         [ForeignKey("BookingDetail")]
