@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment
 {
-    public class GetListApartmentQuery : IRequest<List<ApartmentDto>>
+    public class GetListApartmentQuery : IRequest<List<ApartmentResponse>>
     {
     }
 }

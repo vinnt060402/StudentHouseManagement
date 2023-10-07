@@ -29,7 +29,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
 
         [HttpGet]
         [Route("get-all-apartment")]
-        public async Task<List<ApartmentDto>> GetAllAparment()
+        public async Task<List<ApartmentResponse>> GetAllAparment()
         {
             var response = await _mediator.Send(new GetListApartmentQuery());
             return response;
@@ -43,7 +43,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
         {
             var response = await _mediator.Send(request);
             return CreatedAtAction(nameof(GetAllAparment), new { id = response });
-            /*return Ok(response);*/
+            return Ok(response);
         }
 
         [HttpDelete]

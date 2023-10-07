@@ -32,7 +32,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                 .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$")
                 .WithMessage("Invalid email address");
 
-            RuleFor(p => p.Phone)
+           /* RuleFor(p => p.Phone)
                 .Empty()
                 .Null().When(p => p.Phone == null) // Kiểm tra giá trị null
                 .WithMessage("Phone number can be null");
@@ -43,7 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
             RuleFor(p => p.Address)
                 .Empty()
                 .Null().When(p => p.Address == null) // Kiểm tra giá trị null
-                .WithMessage("Phone number can be null");
+                .WithMessage("Phone number can be null");*/
         }
     }
 }

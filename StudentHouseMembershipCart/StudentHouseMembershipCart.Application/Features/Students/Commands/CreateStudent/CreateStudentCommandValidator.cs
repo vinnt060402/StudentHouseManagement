@@ -19,7 +19,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
             RuleFor(p => p.FullName)
                 .NotEmpty().WithMessage("{FullName} is required")
                 .NotNull()
-                .MaximumLength(20).WithMessage("{FullName} must be fewer than 20 characters");
+                .MaximumLength(50).WithMessage("{FullName} must be fewer than 20 characters");
 
             RuleFor(p => p.Password)
                 .NotEmpty().WithMessage("Password is required")

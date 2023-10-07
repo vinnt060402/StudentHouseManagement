@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaff
 {
@@ -11,8 +12,11 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
         public string Password { get; set; }
         public string Email { get; set; }
 
+        
         public string? Phone { get; set; }
+        
         public string? Address { get; set; }
+        
         public DateTime? Birthday { get; set; }
     }
 }
