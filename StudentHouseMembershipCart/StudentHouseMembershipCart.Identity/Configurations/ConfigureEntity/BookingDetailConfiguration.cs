@@ -1,14 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudentHouseMembershipCart.Infrastucture.Configurations
+namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
 {
     public class BookingDetailConfiguration : IEntityTypeConfiguration<BookingDetail>
     {
@@ -17,6 +11,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
             builder.HasData(
                 new BookingDetail
                 {
+                    Id = Guid.Parse("BE08997C-61A5-4859-98A2-459C93DCA574"),
                     BookingDetailName = "Booking 1",
                     Price = 2222.2,
                     IsRe_Newed = true,
@@ -24,11 +19,12 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     remainingTaskDuration = 1,
                     ContractName = "Contract 1",
                     ContractDescription = "Description 1",
-                    BookingId = Guid.Parse("89311854-1527-420B-9D64-AAA01D6D4AC0"),
-                    PackageId = Guid.Parse("1D42CB7A-24DF-466E-943D-A0FE6AEB3FA4"),
+                    BookingId = Guid.Parse("8C5BCCD4-56B6-4B76-8D5B-888872A8B71F"),
+                    PackageId = Guid.Parse("EE75EA18-F6A7-4025-84B7-588AB1C6BF2D"),
                 },
                 new BookingDetail
                 {
+                    Id = Guid.Parse("035C6D92-8FB5-4635-8ACF-1821E7296DAE"),
                     BookingDetailName = "Booking 2",
                     Price = 3333.3,
                     IsRe_Newed = true,
@@ -36,11 +32,12 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     remainingTaskDuration = 2,
                     ContractName = "Contract 2",
                     ContractDescription = "Description 2",
-                    BookingId = Guid.Parse("46CA2B9C-057E-4C31-BB98-8E598DDCD797"),
-                    PackageId = Guid.Parse("078DBA69-6807-41D2-8625-C8E82060EB09"),
+                    BookingId = Guid.Parse("256FA734-309C-44A9-AF6A-8A97866FBFF5"),
+                    PackageId = Guid.Parse("98A974DB-90FB-453F-83CC-B49776EACFB3"),
                 },
                 new BookingDetail
                 {
+                    Id = Guid.Parse("2408CC34-D225-448E-979E-014D1EC860A3"),
                     BookingDetailName = "Booking 3",
                     Price = 3232.3,
                     IsRe_Newed = true,
@@ -48,8 +45,8 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     remainingTaskDuration = 3,
                     ContractName = "Contract 3",
                     ContractDescription = "Description 3",
-                    BookingId = Guid.Parse("800DF8E9-7C22-42EA-9F5F-B60C0C1B12E2"),
-                    PackageId = Guid.Parse("E973F080-07EF-4FBB-8CD2-CBB7A8A72A4D"),
+                    BookingId = Guid.Parse("85D3DA16-8F33-4C96-9792-1E6E17D3ECC8"),
+                    PackageId = Guid.Parse("68E3BF2B-2BD7-4428-AC39-148F1A186CBA"),
                 }
             );
         }

@@ -1,14 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using StudentHouseMembershipCart.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace StudentHouseMembershipCart.Infrastucture.Configurations
+namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
 {
     internal class ServiceConfiguration : IEntityTypeConfiguration<Service>
     {
@@ -21,7 +15,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     ServiceDescription = "Service is OK",
                     Quantity = "5",
                     Image = "abc",
-                    CategoryId = "Category 1",
+                    CategoryId = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
                 },
                 new Service
                 {
@@ -29,7 +23,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     ServiceDescription = "Service is OK",
                     Quantity = "4",
                     Image = "abc",
-                    CategoryId = "Category 2",
+                    CategoryId = Guid.Parse("9DF988F5-0382-4939-8EEE-09D47B182BBB"),
                 },
                 new Service
                 {
@@ -37,7 +31,7 @@ namespace StudentHouseMembershipCart.Infrastucture.Configurations
                     ServiceDescription = "Service is OK",
                     Quantity = "2",
                     Image = "abc",
-                    CategoryId = "Category 3",
+                    CategoryId = Guid.Parse("1819643B-2533-461D-8ACC-AA0628E0AF10"),
                 }
             );
         }

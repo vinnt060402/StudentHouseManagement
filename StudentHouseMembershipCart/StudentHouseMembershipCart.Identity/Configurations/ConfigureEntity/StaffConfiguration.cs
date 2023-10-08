@@ -1,49 +1,37 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using StudentHouseMembershipCart.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudentHouseMembershipCart.Infrastucture.Configurations
+namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
 {
-    internal class StaffConfiguration : IEntityTypeConfiguration<Staff>
+    public class StaffConfiguration : IEntityTypeConfiguration<Staff>
     {
         public void Configure(EntityTypeBuilder<Staff> builder)
         {
             builder.HasData(
                 new Staff
                 {
+                    Id = Guid.Parse("D36A73ED-78AE-46AF-BEFD-7B90CBCFC479"),
                     staffName = "Staff 1",
-                    Phone = 0256231142,
-                    Email = "staff1@gamil.com",
+                    ApplicationUserId = "ACCOUNT5",
                     Address = "Dong Nai",
                     Birthday = DateTime.Parse("1999-05-09"),
-                    Password = "123456",
-                    RoleId = 2
                 },
                 new Staff
                 {
+                    Id = Guid.Parse("C085539D-76BD-4FE8-9444-12C21DE6610B"),
                     staffName = "Staff 2",
-                    Phone = 0121365124,
-                    Email = "staff2@gamil.com",
+                    ApplicationUserId = "ACCOUNT6",
                     Address = "An Giang",
-                    Birthday = DateTime.Parse("1990-07-02"),
-                    Password = "123456",
-                    RoleId = 2
+                    Birthday = DateTime.Parse("1990-07-02")
                 },
                 new Staff
                 {
+                    Id = Guid.Parse("A8DED7DD-683F-4231-8C47-560375560EEA"),
                     staffName = "Staff 3",
-                    Phone = 0125945632,
-                    Email = "staff3@gamil.com",
+                    ApplicationUserId = "ACCOUNT7",
                     Address = "Long An",
                     Birthday = DateTime.Parse("2000-11-15"),
-                    Password = "123456",
-                    RoleId = 2
                 }
             );
         }

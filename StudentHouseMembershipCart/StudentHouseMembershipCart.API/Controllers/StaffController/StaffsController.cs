@@ -6,8 +6,6 @@ using StudentHouseMembershipCart.Application.Features.Staffs.Commands.DeleteStaf
 using StudentHouseMembershipCart.Application.Features.Staffs.Commands.UpdateStaff;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaff;
-using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
-using StudentHouseMembershipCart.Application.Features.Students;
 
 namespace StudentHouseMembershipCart.API.Controllers.StaffController
 {

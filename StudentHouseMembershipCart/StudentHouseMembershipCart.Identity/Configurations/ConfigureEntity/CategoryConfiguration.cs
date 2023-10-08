@@ -1,32 +1,27 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using StudentHouseMembershipCart.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace StudentHouseMembershipCart.Infrastucture.Configurations
+namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
 {
-    internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasData(
                 new Category
                 {
-                    CategoryId = "C001",
+                    Id = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
                     CategoryName = "Maintenance",
                 },
                 new Category
                 {
-                    CategoryId = "C002",
+                    Id = Guid.Parse("9DF988F5-0382-4939-8EEE-09D47B182BBB"),
                     CategoryName = "Utilities",
                 },
                 new Category
                 {
-                    CategoryId = "C003",
+                    Id = Guid.Parse("1819643B-2533-461D-8ACC-AA0628E0AF10"),
                     CategoryName = "Pet Services",
                 }
                 );
