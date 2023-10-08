@@ -23,6 +23,36 @@ namespace StudentHouseMembershipCart.Identity.Configurations
                 {
                     RoleId = "ROLE3",
                     UserId = "ACCOUNT3"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE1",
+                    UserId = "ACCOUNT9"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE1",
+                    UserId = "ACCOUNT10"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE1",
+                    UserId = "ACCOUNT11"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE2",
+                    UserId = "ACCOUNT7"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE2",
+                    UserId = "ACCOUNT6"
+                },
+                new IdentityUserRole<string>
+                {
+                    RoleId = "ROLE2",
+                    UserId = "ACCOUNT5"
                 }
                 );
         }

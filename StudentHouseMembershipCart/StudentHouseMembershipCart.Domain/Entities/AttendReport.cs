@@ -1,4 +1,5 @@
 ﻿using StudentHouseMembershipCart.Domain.Common;
+using StudentHouseMembershipCart.Domain.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentHouseMembershipCart.Domain.Entities
@@ -23,3 +24,4 @@ namespace StudentHouseMembershipCart.Domain.Entities
     }
 
 }
+

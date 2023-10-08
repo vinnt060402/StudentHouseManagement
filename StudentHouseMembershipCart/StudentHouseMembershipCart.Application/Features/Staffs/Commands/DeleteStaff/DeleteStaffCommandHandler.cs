@@ -29,6 +29,8 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 staff.IsDelete = true;
+                staff.LastModifiedBy = request.DeleteBy;
+                staff.LastModified = DateTime.Now;
                 _dbContext.Staff.Update(staff);
                 await _dbContext.SaveChangesAsync();
                 scope.Complete();

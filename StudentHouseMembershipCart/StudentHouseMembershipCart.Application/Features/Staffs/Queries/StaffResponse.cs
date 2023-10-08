@@ -21,7 +21,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries
     }
     public class ApplicationStaff
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string? FullName { get; set; }
         public string? UserName { get; set; }
         public string? NormalizedUserName { get; set; }

@@ -12,21 +12,18 @@
     <Compile Remove="Features\Orders\**" />
     <Compile Remove="Features\Packageee\**" />
     <Compile Remove="Features\Packages\**" />
-    <Compile Remove="Features\Services\**" />
     <Compile Remove="Features\Staff\**" />
     <EmbeddedResource Remove="Features\BookingDetails\**" />
     <EmbeddedResource Remove="Features\Bookings\**" />
     <EmbeddedResource Remove="Features\Orders\**" />
     <EmbeddedResource Remove="Features\Packageee\**" />
     <EmbeddedResource Remove="Features\Packages\**" />
-    <EmbeddedResource Remove="Features\Services\**" />
     <EmbeddedResource Remove="Features\Staff\**" />
     <None Remove="Features\BookingDetails\**" />
     <None Remove="Features\Bookings\**" />
     <None Remove="Features\Orders\**" />
     <None Remove="Features\Packageee\**" />
     <None Remove="Features\Packages\**" />
-    <None Remove="Features\Services\**" />
     <None Remove="Features\Staff\**" />
   </ItemGroup>
 
