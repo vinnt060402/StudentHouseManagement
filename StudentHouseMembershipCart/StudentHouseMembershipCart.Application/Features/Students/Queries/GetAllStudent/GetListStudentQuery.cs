@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent
 {
-    public class GetListStudentQuery : IRequest<List<Student>>
+    public class GetListStudentQuery : IRequest<List<StudentResponse>>
     {
 
     }

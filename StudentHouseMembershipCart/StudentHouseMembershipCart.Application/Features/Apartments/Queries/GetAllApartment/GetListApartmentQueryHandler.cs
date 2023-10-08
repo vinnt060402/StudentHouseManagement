@@ -10,7 +10,7 @@ using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment
 {
-    public class GetListApartmentQueryHandler : IRequestHandler<GetListApartmentQuery, List<ApartmentDto>>
+    public class GetListApartmentQueryHandler : IRequestHandler<GetListApartmentQuery, List<ApartmentResponse>>
     {
         private IApplicationDbContext _context { get; set; }
         private readonly UserManager<ApplicationUser> _userManager;
@@ -27,17 +27,35 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.Get
             _signInManager = signInManager;
         }
 
-        public async Task<List<ApartmentDto>> Handle(GetListApartmentQuery request, CancellationToken cancellationToken)
+        public async Task<List<ApartmentResponse>> Handle(GetListApartmentQuery request, CancellationToken cancellationToken)
         {
-            var list = await _context.Apartment.Where(s => s.IsDelete == false)
-                .Include(s => s.Student)
-                .Include(s => s.Region)
-                .ProjectTo<ApartmentDto>(_mapper.ConfigurationProvider).ToListAsync();
-            if(list == null) {
-                throw new NotFoundException(nameof(Apartment));
-            }
-
-            return list;
+            var apartments = await _context.Apartment.Where(s => !s.IsDelete)
+                                .Join(
+                                    _context.Student,
+                                    apartment => apartment.StudentId,
+                                    student => student.Id,
+                                    (apartment, student) => new 
+                                    {
+                                        Apartment = apartment,
+                                        Student = student
+                                    }
+                                )
+                                .Join(
+                                    _context.Region,
+                                    combined => combined.Apartment.RegionId,
+                                    region => region.Id,
+                                    (combined, region) => new ApartmentResponse
+                                    {
+                                        Id = combined.Apartment.Id,
+                                        Address = combined.Apartment.Address,
+                                        RegionId = combined.Apartment.RegionId,
+                                        StudentId = combined.Apartment.StudentId,
+                                        InforStudentData = combined.Student,
+                                        InforRegionData = region,
+                                    }
+                                )
+                                .ToListAsync();
+            return apartments;
         }
     }
 }

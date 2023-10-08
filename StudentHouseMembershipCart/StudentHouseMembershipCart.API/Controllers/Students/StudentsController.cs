@@ -27,7 +27,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
 
         [HttpGet]
         [Route("get-all-student")]
-        public async Task<List<Student>> GetAllStudent()
+        public async Task<List<StudentResponse>> GetAllStudent()
         {
             var response = await _mediator.Send(new GetListStudentQuery());
             return response;
@@ -38,7 +38,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
         [Route("register-student")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> CreateStudent([FromQuery]CreateStudentCommand request)
+        public async Task<ActionResult> CreateStudent(CreateStudentCommand request)
         {
             var response = await _mediator.Send(request);
             return CreatedAtAction(nameof(GetAllStudent), new { id = response });

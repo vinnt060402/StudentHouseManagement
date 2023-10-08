@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentHouseMembershipCart.Identity.DbContext;
 
@@ -11,9 +12,10 @@ using StudentHouseMembershipCart.Identity.DbContext;
 namespace StudentHouseMembershipCart.Identity.Migrations
 {
     [DbContext(typeof(StudentHouseMembershipCartDatabaseContext))]
-    partial class StudentHouseMembershipCartDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20231008091440_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,21 +54,21 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
-                            ConcurrencyStamp = "96bb1aba-f1bc-44b6-910f-3dd334ab1234",
+                            ConcurrencyStamp = "d3ecbdea-59d1-439c-a5e7-61771e1e4d0f",
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
-                            ConcurrencyStamp = "753b89fb-a320-498e-b26e-ce5ec4d8ae81",
+                            ConcurrencyStamp = "ad05fa8e-50c7-4d05-847c-530f863823fa",
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
-                            ConcurrencyStamp = "343d65e2-bbdb-4688-ba05-5ad19465e2a6",
+                            ConcurrencyStamp = "b7171e48-0868-437b-8179-e7cc9a91c4f0",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -920,16 +922,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a20aa1c5-fde9-416c-a851-18a9a888d322",
+                            ConcurrencyStamp = "af0f5ac5-08f3-4789-8e7c-4937ed7379b4",
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHK61C+OtJrhkw0ZGO8QJRYY17se2c1BwwhKx/44kjn70cZcPMcN4SLZelbYoFPJ2Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHnRK13WWs7oWSOGteNRemutproubAk/Gwtcq/t+MZPsXBkuCJER7m/sI4p6glMpVg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "63b004b0-641f-44b5-ad51-b7caf4103cc5",
+                            SecurityStamp = "66039d81-0645-42fa-b1ea-3435fc632f90",
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -937,16 +939,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ba9a9f71-98b8-46ab-b1e3-22e5295b2bb7",
+                            ConcurrencyStamp = "8779ab70-9569-48ae-990c-d4c79bb55700",
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEK9PCupiI236ZtCKZEWbEvkCPD8kFCtOv7MyVzTqtCR1uHgdmqPfUq+9P2wP9WJxig==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJOqTrGWpyHcIJSNp2X81zIzenpuZf92XNr/W2Eo2/42/vwwDhE8NxPwkLRWrRiFYg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "52d232f5-6924-40ea-b0df-d8e168692993",
+                            SecurityStamp = "93251d4d-0fb5-469c-9db8-50e15c348799",
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -954,16 +956,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c567bca-9fc9-47c9-aa18-6fbd32510ab9",
+                            ConcurrencyStamp = "975cb551-6709-469b-bf1d-e4ee5b48b936",
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMxky1p0gLICgR49a7tqFcYiaLVxCPoGeVd9uZB8pDatDFSMyqAW0DAq+tp/4DgCsw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBRGJ99FZ8wU3k4Tj01RP+IBfdKc6GoWNmdcgqIZLq0pmYfX3cLWn5GhAA83MzDX6w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8d5f2250-83b8-4fb1-98e1-7c06e8e9f525",
+                            SecurityStamp = "4556763e-63b9-4a83-8f38-9e2e987eecbf",
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         });

@@ -2,24 +2,21 @@
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
-namespace StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent
+namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaff
 {
-    public class CreateStudentCommandValidator : AbstractValidator<CreateStudentCommand>
+    public class CreateStaffRequestValidator : AbstractValidator<CreateStaffRequest>
     {
-        private readonly IApplicationDbContext _context;
-        public CreateStudentCommandValidator(/*IApplicationDbContext context*/)
+        public CreateStaffRequestValidator()
         {
-            /*_context = context;*/
             RuleFor(p => p.UserName)
                 .NotEmpty().WithMessage("{UserName} is required")
                 .NotNull()
                 .MaximumLength(100).WithMessage("{UserName} must be fewer than 100 characters");
-                /*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*/
 
             RuleFor(p => p.FullName)
                 .NotEmpty().WithMessage("{FullName} is required")
                 .NotNull()
-                .MaximumLength(50).WithMessage("{FullName} must be fewer than 20 characters");
+                .MaximumLength(20).WithMessage("{FullName} must be fewer than 20 characters");
 
             RuleFor(p => p.Password)
                 .NotEmpty().WithMessage("Password is required")
@@ -35,7 +32,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$")
                 .WithMessage("Invalid email address");
 
-            RuleFor(p => p.Phone)
+           /* RuleFor(p => p.Phone)
                 .Empty()
                 .Null().When(p => p.Phone == null) // Kiểm tra giá trị null
                 .WithMessage("Phone number can be null");
@@ -46,14 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
             RuleFor(p => p.Address)
                 .Empty()
                 .Null().When(p => p.Address == null) // Kiểm tra giá trị null
-                .WithMessage("Phone number can be null");
-
-
+                .WithMessage("Phone number can be null");*/
         }
-
-        /*private async Task<bool> BeUniqueCustomerName(string customerName, CancellationToken token)
-        {
-            return await _context.Student.AllAsync(r => r.ApplicationUser.UserName == customerName) == false;
-        }*/
     }
 }
