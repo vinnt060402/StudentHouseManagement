@@ -2,11 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaff;
+using StudentHouseMembershipCart.Application.Features.Staffs.Commands.DeleteStaff;
+using StudentHouseMembershipCart.Application.Features.Staffs.Commands.UpdateStaff;
+using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaff;
+using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
 using StudentHouseMembershipCart.Application.Features.Students;
-using StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent;
-using StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent;
-using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.API.Controllers.StaffController
 {
@@ -22,17 +23,40 @@ namespace StudentHouseMembershipCart.API.Controllers.StaffController
         }
 
         [HttpGet]
-        [Route("get-all-staff")]
+        [Route("staffs")]
         public async Task<List<StaffResponse>> GetAllStaff()
         {
             var response = await _mediator.Send(new GetListStaffQuery());
             return response;
         }
+        [HttpGet]
+        [Route("staffsbyId")]
+        public async Task<ActionResult<StaffResponse>> GetStaffById([FromQuery] GetStaffQuery request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
         [HttpPost]
-        [Route("register-staff")]
+        [Route("staffs")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<SHMResponse> CreateStaff([FromQuery] CreateStaffRequest request)
+        public async Task<SHMResponse> CreateStaff(CreateStaffRequest request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpPatch]
+        [Route("staffs")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<SHMResponse> UpdateStaff(UpdateStaffCommand request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpDelete]
+        [Route("staffs")]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<SHMResponse> DeleteStaff(DeleteStaffCommand request)
         {
             return await _mediator.Send(request);
         }

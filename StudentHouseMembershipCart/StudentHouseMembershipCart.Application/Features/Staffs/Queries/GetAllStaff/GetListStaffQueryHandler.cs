@@ -16,23 +16,18 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaf
     {
         private IApplicationDbContext _context { get; set; }
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IMapper _mapper;
-        private readonly IStaffRepository _staffRepository;
 
-        public GetListStaffQueryHandler(IApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IMapper mapper, IStaffRepository staffRepository)
+        public GetListStaffQueryHandler(IApplicationDbContext context, UserManager<ApplicationUser> userManager, IMapper mapper)
         {
             _context = context;
             _userManager = userManager;
-            _roleManager = roleManager;
-            _signInManager = signInManager;
             _mapper = mapper;
-            _staffRepository = staffRepository;
         }
+
         public async Task<List<StaffResponse>> Handle(GetListStaffQuery request, CancellationToken cancellationToken)
         {
-            var staff = await _context.Staff.Where(x => !x.IsDelete).ToListAsync();
+            var staff = await _context.Staff.ToListAsync();
             if (!staff.Any())
             {
                 throw new NotFoundException("Have no Staff!");
@@ -40,13 +35,21 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaf
             var listResult = new List<StaffResponse>();
             foreach (var item in staff)
             {
-                var staffInfor = await _userManager.FindByIdAsync(item.ApplicationUserId);
-                var result = new StaffResponse
+                try
                 {
-                    staffData = item,
-                    inforOfStaffData = staffInfor,
-                };
-                listResult.Add(result);
+                    var staffData = _mapper.Map<StaffData>(item);
+                    var staffInfor = await _userManager.FindByIdAsync(item.ApplicationUserId);
+                    var applicationStaffData = _mapper.Map<ApplicationStaff>(staffInfor);
+                    var result = new StaffResponse
+                    {
+                        staffData = staffData,
+                        inforOfStaffData = applicationStaffData,
+                    };
+                    listResult.Add(result);
+                } catch(Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
             }
             return listResult;
         }

@@ -2,11 +2,9 @@
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
-using StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaff;
 using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 using System.Transactions;
@@ -42,9 +40,13 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                 var staff = new ApplicationUser
                 {
                     Email = request.Email,
+                    NormalizedEmail = request.Email.ToUpper(),
                     SecurityStamp = Guid.NewGuid().ToString(),
                     UserName = request.UserName,
+                    NormalizedUserName = request.UserName.ToUpper(),
                     FullName = request.FullName,
+                    PhoneNumber = request.Phone,
+                    PhoneNumberConfirmed = true,
                     EmailConfirmed = true,
                 };
                 var result = await _userManager.CreateAsync(staff, request.Password);
@@ -61,8 +63,8 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                 {
                     staffName = request.FullName,
                     ApplicationUserId = staff.Id,
-                    Birthday = DateTime.Now,
-                    Address = "Long An"
+                    Birthday = request.Birthday,
+                    Address = request.Address,
                 };
                 await _dbContext.Staff.AddAsync(newStaff);
                 await _dbContext.SaveChangesAsync();
