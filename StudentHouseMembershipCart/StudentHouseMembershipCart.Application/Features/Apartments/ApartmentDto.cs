@@ -16,5 +16,6 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments
         public Guid StudentId { get; set; }
         [ForeignKey("Region")]
         public Guid RegionId { get; set; }
+
     }
 }

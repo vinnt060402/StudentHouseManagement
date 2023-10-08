@@ -29,43 +29,32 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.Get
 
         public async Task<List<ApartmentResponse>> Handle(GetListApartmentQuery request, CancellationToken cancellationToken)
         {
-            /*var apartmentList = await _context.Apartment.Where(s => s.IsDelete == false)
-                .Include(a => a.Student)
-                .Include(a => a.Region)
-                .ToListAsync();
-            if (!apartmentList.Any()) {
-                throw new NotFoundException(nameof(Apartment));
-            }
-
-            var listResult = new List<ApartmentResponse>();
-            foreach (var item in apartmentList) {
-                var studentInfo = await _context.Student.Where(s => s.Id == item.StudentId).SingleOrDefaultAsync();
-                var regionInfo = await _context.Region.Where(s => s.Id == item.RegionId).SingleOrDefaultAsync();
-                var result = new ApartmentResponse
-                {
-                    InforApartmentData = item,
-                    InforStudentData = studentInfo,
-                    InforRegionData = regionInfo
-                };
-                listResult.Add(result);
-            }*/
-            var apartments = await _context.Apartment
-                .Join(_context.Student,
-                      apartment => apartment.StudentId,
-                      student => student.Id,
-                      (apartment, student) => new { Apartment = apartment, Student = student })
-                .Join(_context.Region,
-                      combined => combined.Apartment.RegionId,
-                      region => region.Id,
-                      (combined, region) => new ApartmentResponse
-                      {
-                          InforApartmentData = combined.Apartment,
-                          InforStudentData = combined.Student,
-                          InforRegionData = region
-                      })
-                .Where(s => !s.InforApartmentData.IsDelete)
-                .ToListAsync();
-
+            var apartments = await _context.Apartment.Where(s => !s.IsDelete)
+                                .Join(
+                                    _context.Student,
+                                    apartment => apartment.StudentId,
+                                    student => student.Id,
+                                    (apartment, student) => new 
+                                    {
+                                        Apartment = apartment,
+                                        Student = student
+                                    }
+                                )
+                                .Join(
+                                    _context.Region,
+                                    combined => combined.Apartment.RegionId,
+                                    region => region.Id,
+                                    (combined, region) => new ApartmentResponse
+                                    {
+                                        Id = combined.Apartment.Id,
+                                        Address = combined.Apartment.Address,
+                                        RegionId = combined.Apartment.RegionId,
+                                        StudentId = combined.Apartment.StudentId,
+                                        InforStudentData = combined.Student,
+                                        InforRegionData = region,
+                                    }
+                                )
+                                .ToListAsync();
             return apartments;
         }
     }

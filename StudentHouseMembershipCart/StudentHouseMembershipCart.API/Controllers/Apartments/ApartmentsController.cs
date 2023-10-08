@@ -11,6 +11,8 @@ using StudentHouseMembershipCart.Application.Features.Apartments.Commands.Delete
 using StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateStudent;
 using StudentHouseMembershipCart.Application.Features.Students;
 using StudentHouseMembershipCart.Application.Features.Apartments.Commands.UpdateApartment;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
