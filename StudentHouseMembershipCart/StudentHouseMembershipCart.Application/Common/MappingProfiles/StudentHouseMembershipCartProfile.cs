@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using StudentHouseMembershipCart.Application.Features.Apartments;
+using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.Regions;
 using StudentHouseMembershipCart.Application.Features.Services;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
@@ -32,7 +33,11 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
             CreateMap<ApplicationUser, ApplicationStaff>();
 
             CreateMap<Service,ServiceData>().ReverseMap();
-            CreateMap<ServiceData,Service>().ReverseMap();
+            CreateMap<ServiceData, Service>().ReverseMap();
+
+            CreateMap<Category, CategoryData>().ReverseMap();
+            CreateMap<CategoryData, Category>().ReverseMap();
+
         }
     }
 }

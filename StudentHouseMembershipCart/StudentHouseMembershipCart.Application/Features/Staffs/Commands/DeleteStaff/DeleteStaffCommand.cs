@@ -6,5 +6,6 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
     public class DeleteStaffCommand : IRequest<SHMResponse>
     {
         public Guid Id { get; set; }
+        public string? DeleteBy { get; set; }
     }
 }

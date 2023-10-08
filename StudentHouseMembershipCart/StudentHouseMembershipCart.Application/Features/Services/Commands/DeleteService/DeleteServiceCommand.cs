@@ -6,5 +6,6 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Dele
     public class DeleteServiceCommand : IRequest<SHMResponse>
     {
         public string ServiceId { get; set; } = null!;
+        public string DeleteBy { get; set; } = null!;
     }
 }
