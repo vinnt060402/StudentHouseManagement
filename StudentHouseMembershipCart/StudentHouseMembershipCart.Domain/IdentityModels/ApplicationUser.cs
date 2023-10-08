@@ -5,7 +5,7 @@ namespace StudentHouseMembershipCart.Domain.IdentityModels
 {
     public class ApplicationUser : IdentityUser
     {
-        public string? FullName { get; set; }
+        public string FullName { get; set; }
         
 
         // relationship
