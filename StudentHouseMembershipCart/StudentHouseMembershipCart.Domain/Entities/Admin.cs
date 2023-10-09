@@ -14,7 +14,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         // relationShip
         public virtual ApplicationUser ApplicationUser { get; set; }
-        public IList<Package> Package { get; private set; }
+        
 
     }
 

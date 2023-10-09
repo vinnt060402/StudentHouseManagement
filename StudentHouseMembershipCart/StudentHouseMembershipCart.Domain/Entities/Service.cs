@@ -7,7 +7,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
     { 
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
-        public string Quantity { get; set; }
+        public double? Price { get; set; } 
         public string? Image { get; set;}
 
         [ForeignKey("Category")]

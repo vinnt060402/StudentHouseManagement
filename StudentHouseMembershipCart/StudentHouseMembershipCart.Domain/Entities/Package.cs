@@ -6,14 +6,15 @@ namespace StudentHouseMembershipCart.Domain.Entities
     public class Package : BaseAuditableEntity 
     { 
         public string PackageName { get; set; } = null!;
-        public int weekNumberBooking { get; set; }
-        public int numberOfPerWeekDoPackage { get; set; }
+        public int WeekNumberBooking { get; set; }
+        public int NumberOfPerWeekDoPackage { get; set; }
         public string? Image { get; set; }
-        [ForeignKey("Admin")]
-        public Guid AdminId { get; set; }
+        public double? TotalPrice { get; set; }
+        
+
 
         // relationShip
-        public virtual Admin Admin { get; set; }
+        
         public IList<BookingDetail> BookingDetail { get; private set; }
         public IList<PackageService> PackageService { get; private set; }
 
