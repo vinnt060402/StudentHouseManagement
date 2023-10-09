@@ -40,7 +40,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
             {
                 ServiceName = request.ServiceName,
                 ServiceDescription = request.ServiceDescription,
-                Quantity = request.Quantity,
+                /*Quantity = request.Quantity,*/
                 Image = request.ImageURL,
                 CategoryId = Guid.Parse(request.CategoryId),
                 CreateBy = request.CreateBy,

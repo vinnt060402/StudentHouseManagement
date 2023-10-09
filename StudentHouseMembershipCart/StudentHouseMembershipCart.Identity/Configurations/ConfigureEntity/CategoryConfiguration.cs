@@ -12,17 +12,37 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                 new Category
                 {
                     Id = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
-                    CategoryName = "Maintenance",
+                    CategoryName = "Rửa xe",
                 },
                 new Category
                 {
                     Id = Guid.Parse("9DF988F5-0382-4939-8EEE-09D47B182BBB"),
-                    CategoryName = "Utilities",
+                    CategoryName = "Nấu ăn cho em",
                 },
                 new Category
                 {
-                    Id = Guid.Parse("1819643B-2533-461D-8ACC-AA0628E0AF10"),
-                    CategoryName = "Pet Services",
+                    Id = Guid.Parse("375A894D-E8E5-4A84-A0B8-09F907992B46"),
+                    CategoryName = "Shipping",
+                },
+                new Category
+                {
+                    Id = Guid.Parse("8940E7F6-FD91-4402-A515-B9D55448C522"),
+                    CategoryName = "hỗ trợ tài chính",
+                },
+                new Category
+                {
+                    Id = Guid.Parse("21291667-7546-4825-9BAD-840D648900A3"),
+                    CategoryName = "dọn vệ sinh nhà cửa",
+                },
+                new Category
+                {
+                    Id = Guid.Parse("BA0F3F23-9425-44AD-9D73-A7608381FD5F"),
+                    CategoryName = "Bảo trì và sửa chữa",
+                },
+                new Category
+                {
+                    Id = Guid.Parse("A3CCB973-D6C4-4EF4-AE4B-36A97429A0B0"),
+                    CategoryName = "Giặt đồ",
                 }
                 );
         }

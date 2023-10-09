@@ -42,7 +42,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
             }
             service.ServiceName = request.ServiceName ?? service.ServiceName;
             service.ServiceDescription = request.ServiceDescription ?? service.ServiceDescription;
-            service.Quantity = request.Quantity ?? service.Quantity;
+            /*service.Quantity = request.Quantity ?? service.Quantity;*/
             service.Image = request.ImageURL ?? service.Image;
             service.CategoryId = request.CategoryId != null ? Guid.Parse(request.CategoryId) : service.CategoryId;
             service.LastModified = DateTime.Now;
