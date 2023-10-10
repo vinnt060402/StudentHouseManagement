@@ -7,7 +7,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
     {
         public string? ServiceName { get; set; }
         public string? ServiceDescription { get; set; }
-        public string? Quantity { get; set; }
+        public double? Price { get; set; }
         public string? ImageURL { get; set; }
         public string? CategoryId { get; set; }
         public string? CreateBy { get; set; }
