@@ -15,6 +15,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Maintenance & Repairs normal Package",
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
+                    DayDoServiceInWeek = "26",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -25,6 +26,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Nấu ăn package",
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
+                    DayDoServiceInWeek = "5",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -35,6 +37,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Hỗ trợ tài chính vippro package",
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
+                    DayDoServiceInWeek = "5",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -45,6 +48,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Rửa xe premium package",
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
+                    DayDoServiceInWeek = "4",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -55,6 +59,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Giặt đồ package",
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
+                    DayDoServiceInWeek = "2",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -65,6 +70,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Dọn vệ sinh nhà cửa package",
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
+                    DayDoServiceInWeek = "25",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
 
@@ -76,9 +82,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     PackageName = "Vận chuyên giao vận package",
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
+                    DayDoServiceInWeek = "37",
                     Image = null,
                     TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
-
                 }
             );
         }

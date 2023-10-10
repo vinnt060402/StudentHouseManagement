@@ -40,6 +40,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     var servicePriceInPackge = servicePrice * request.weekNumberBooking * request.numberOfPerWeekDoPackage;
                     totalPrice += servicePriceInPackge;
                 }
+                package.DayDoServiceInWeek = request.DayDoServiceInWeek;
                 package.TotalPrice = totalPrice;
                 package.WeekNumberBooking = request.weekNumberBooking;
                 package.NumberOfPerWeekDoPackage = request.numberOfPerWeekDoPackage;

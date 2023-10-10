@@ -8,6 +8,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string PackageName { get; set; } = null!;
         public int WeekNumberBooking { get; set; }
         public int NumberOfPerWeekDoPackage { get; set; }
+        public string? DayDoServiceInWeek { get; set; }
         public string? Image { get; set; }
         public double? TotalPrice { get; set; }
         

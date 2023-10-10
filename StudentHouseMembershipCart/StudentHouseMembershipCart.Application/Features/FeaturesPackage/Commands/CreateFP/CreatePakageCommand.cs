@@ -9,6 +9,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         public string PackageName { get; set; } = null!;
         public int weekNumberBooking { get; set; }
         public int numberOfPerWeekDoPackage { get; set; }
+        public string? DayDoServiceInWeek { get; set; }
         public string? ImageUrl { get; set; }
         public string? CreateBy { get; set; }
     }

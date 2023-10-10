@@ -6,6 +6,7 @@
         public string PackageName { get; set; }
         public int WeekNumberBooking { get; set; }
         public int NumberOfPerWeekDoPackage { get; set; }
+        public List<string>? DayDoInWeek { get; set; }
         public string Image { get; set; }
         public double TotalPrice { get; set; }
         public DateTime? Created { get; set; }
