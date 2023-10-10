@@ -5,11 +5,11 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
 {
     public class CreatePakageCommand : IRequest<SHMResponse>
     {
+        public List<Guid> ListServiceId { get; set; } = null!;
         public string PackageName { get; set; } = null!;
         public int weekNumberBooking { get; set; }
         public int numberOfPerWeekDoPackage { get; set; }
         public string? ImageUrl { get; set; }
-        public Guid AdminId { get; set; }
         public string? CreateBy { get; set; }
     }
 }

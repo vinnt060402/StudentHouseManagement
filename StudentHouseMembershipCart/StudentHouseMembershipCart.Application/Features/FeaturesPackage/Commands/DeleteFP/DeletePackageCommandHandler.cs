@@ -4,16 +4,20 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.PackageServices.Commands.DeletePackageServiceCommand;
+using System.Transactions;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Commands.DeleteFP
 {
     public class DeletePackageCommandHandler : IRequestHandler<DeletePackageCommand, SHMResponse>
     {
         private IApplicationDbContext _dbContext;
+        private IMediator _mediator;
 
-        public DeletePackageCommandHandler(IApplicationDbContext dbContext)
+        public DeletePackageCommandHandler(IApplicationDbContext dbContext, IMediator mediator)
         {
             _dbContext = dbContext;
+            _mediator = mediator;
         }
 
         public async Task<SHMResponse> Handle(DeletePackageCommand request, CancellationToken cancellationToken)
@@ -27,11 +31,20 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
             {
                 throw new BadRequestException("The package have been deleted!");
             }
-            package.IsDelete = true;
-            package.LastModified = DateTime.Now;
-            package.LastModifiedBy = request.DeleteBy;
-            _dbContext.Package.Update(package);
-            await _dbContext.SaveChangesAsync();
+            using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            {
+                package.IsDelete = true;
+                package.LastModified = DateTime.Now;
+                package.LastModifiedBy = request.DeleteBy;
+                _dbContext.Package.Update(package);
+                var deletePackageServiceRequest = new DeletePackageServiceCommand()
+                {
+                    PackageId = request.PackageId,
+                };
+                var deletePackageServiceResponse = await _mediator.Send(deletePackageServiceRequest);
+                await _dbContext.SaveChangesAsync();
+                scope.Complete();
+            }
             return new SHMResponse
             {
                 Message = Extensions.DeleteSuccessfully

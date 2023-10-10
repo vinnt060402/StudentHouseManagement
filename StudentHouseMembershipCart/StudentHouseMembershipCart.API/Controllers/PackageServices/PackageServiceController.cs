@@ -10,6 +10,7 @@ using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.PackageServices;
 using StudentHouseMembershipCart.Application.Features.PackageServices.Queries.ReadAllPackageService;
 using StudentHouseMembershipCart.Application.Features.PackageServices.Commands.CreatePackageServiceCommand;
+using StudentHouseMembershipCart.Application.Features.PackageServices.Commands.UpdatePackageServiceCommand;
 
 namespace StudentHouseMembershipCart.API.Controllers.PackageServices
 {
@@ -34,7 +35,7 @@ namespace StudentHouseMembershipCart.API.Controllers.PackageServices
         [Route("packageservices")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<SHMResponse> CreateCategory(CreatePackageServiceCommand request)
+        public async Task<SHMResponse> CreatePakageService(CreatePackageServiceCommand request)
         {
             return await _mediator.Send(request);
         }
@@ -42,7 +43,7 @@ namespace StudentHouseMembershipCart.API.Controllers.PackageServices
         [Route("packageservices")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<SHMResponse> UpdateCategory(UpdateCategoryCommand request)
+        public async Task<SHMResponse> UpdatePackageService(UpdatePackageServiceCommand request)
         {
             return await _mediator.Send(request);
         }
@@ -50,7 +51,7 @@ namespace StudentHouseMembershipCart.API.Controllers.PackageServices
         [Route("packageservices")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<SHMResponse> DeleteCategory(DeleteCategoryCommand request)
+        public async Task<SHMResponse> DeletePackageService(DeleteCategoryCommand request)
         {
             return await _mediator.Send(request);
         }

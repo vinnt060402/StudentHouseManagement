@@ -4,10 +4,10 @@
     {
         public Guid Id { get; set; }
         public string PackageName { get; set; }
-        public int weekNumberBooking { get; set; }
-        public int numberOfPerWeekDoPackage { get; set; }
+        public int WeekNumberBooking { get; set; }
+        public int NumberOfPerWeekDoPackage { get; set; }
         public string Image { get; set; }
-        public Guid AdminId { get; set; }
+        public double TotalPrice { get; set; }
         public DateTime? Created { get; set; }
         public string? CreateBy { get; set; }
         public DateTime? LastModified { get; set; }
