@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
+using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.StaffCategories.Commands.CreateStaffCategory;
 using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 using System.Transactions;
@@ -18,14 +20,16 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IMapper _mapper;
+        private IMediator _mediator;
 
-        public CreateStaffRequestHandler(IApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IMapper mapper)
+        public CreateStaffRequestHandler(IApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IMapper mapper, IMediator mediator)
         {
-            _dbContext = context;
+            _dbContext = dbContext;
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<SHMResponse> Handle(CreateStaffRequest request, CancellationToken cancellationToken)
@@ -68,13 +72,29 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                 };
                 await _dbContext.Staff.AddAsync(newStaff);
                 await _dbContext.SaveChangesAsync();
-                scope.Complete();
-                return new SHMResponse
+                var createStaffCategoryRequest = new CreateStaffCategoryCommand
                 {
-                    Message = "Create succesfully!"
+                    ListCategoryId = request.ListCategoryId,
+                    StaffId = newStaff.Id.ToString()
                 };
+                try
+                {
+                    var createStaffCategoryResponse = await _mediator.Send(createStaffCategoryRequest);
+                    if (createStaffCategoryResponse.Message != Extensions.CreateSuccessfully || createStaffCategoryResponse == null)
+                    {
+                        throw new BadRequestException("Can not create Staff");
+                    }
+                }catch(Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+                scope.Complete();
             }
-               
+
+            return new SHMResponse
+            {
+                Message = Extensions.CreateSuccessfully
+            };
         }
     }
 }

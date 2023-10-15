@@ -7,6 +7,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
 {
     public class CreateStaffRequest : IRequest<SHMResponse>
     {
+        public List<string> ListCategoryId { get; set; } = null!;
         public string UserName { get; set; }
         public string FullName { get; set; }
         public string Password { get; set; }

@@ -26,6 +26,7 @@ namespace StudentHouseMembershipCart.Identity.DbContext
         public DbSet<Category> Category { get; set; }
         public DbSet<FeedBack> FeedBack { get; set; }
         public DbSet<Package> Package { get; set; }
+        public DbSet<StaffCategory> StaffCategory { get; set; }
         public DbSet<PackageService> PackageService { get; set; }
         public DbSet<PaymentMethod> PaymentMethod { get; set; }
         public DbSet<Region> Region { get; set; }

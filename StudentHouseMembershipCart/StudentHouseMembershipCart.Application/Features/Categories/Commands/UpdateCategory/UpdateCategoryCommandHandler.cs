@@ -29,6 +29,7 @@ namespace StudentHouseMembershipCart.Application.Features.Categories.Commands.Up
             }
             category.CategoryName = request.CategoryName ?? category.CategoryName;
             category.LastModified = DateTime.Now;
+            category.Image = request.ImageUrl;
             category.LastModifiedBy = request.UpdateBy ?? category.LastModifiedBy;
             _dbContext.Category.Update(category);
             await _dbContext.SaveChangesAsync();

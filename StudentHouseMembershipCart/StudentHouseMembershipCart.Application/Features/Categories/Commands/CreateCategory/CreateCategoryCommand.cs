@@ -6,6 +6,7 @@ namespace StudentHouseMembershipCart.Application.Features.Categories.Commands.Cr
     public class CreateCategoryCommand : IRequest<SHMResponse>
     {
         public string? CategoryName { get; set; }
+        public string? ImageUrl { get; set; }
         public string? CreateBy { get; set; }
     }
 }

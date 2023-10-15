@@ -14,8 +14,8 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string ApplicationUserId { get; set; }
         // relationShip
         public virtual ApplicationUser ApplicationUser { get; set; }
-
         public IList<BookingDetailStaff> BookingDetailStaff { get; private set; }
+        public IList<StaffCategory> StaffCategories { get; set; }
         public IList<ReportWork> ReportWork { get; private set; }
 
     }

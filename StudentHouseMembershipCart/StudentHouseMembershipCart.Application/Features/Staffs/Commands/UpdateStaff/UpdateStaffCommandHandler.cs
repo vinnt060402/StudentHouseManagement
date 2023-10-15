@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
+using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.StaffCategories.Commands.UpdateStaffCategory;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 using System.Transactions;
 
@@ -15,12 +17,14 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Update
         private IApplicationDbContext _dbContext;
         private readonly UserManager<ApplicationUser> _userManager;
         private IMapper _mapper;
+        private IMediator _mediator;
 
-        public UpdateStaffCommandHandler(IApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, IMapper mapper)
+        public UpdateStaffCommandHandler(IApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, IMapper mapper, IMediator mediator)
         {
             _dbContext = dbContext;
             _userManager = userManager;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<SHMResponse> Handle(UpdateStaffCommand request, CancellationToken cancellationToken)
@@ -49,10 +53,20 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Update
                 _dbContext.Staff.Update(staff);
                 await _dbContext.SaveChangesAsync();
                 scope.Complete();
+                var updateStaffCategoryRequest = new UpdateStaffCategoryCommand
+                {
+                    ListCategoryId = request.ListCategoryId,
+                    StaffId = staff.Id.ToString()
+                };
+                var updateStaffCategoryResponse = await _mediator.Send(updateStaffCategoryRequest);
+                if (updateStaffCategoryResponse.Message != Extensions.UpdateSuccessfully || updateStaffCategoryResponse == null)
+                {
+                    throw new BadRequestException("Can not update Staff Staff");
+                }
             }
             return new SHMResponse
             {
-                Message = "Update successfully!!"
+                Message = Extensions.UpdateSuccessfully
             };
         }
     }
