@@ -7,20 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Features\BookingDetails\**" />
-    <Compile Remove="Features\Bookings\**" />
     <Compile Remove="Features\Orders\**" />
     <Compile Remove="Features\Packageee\**" />
     <Compile Remove="Features\Packages\**" />
     <Compile Remove="Features\Staff\**" />
-    <EmbeddedResource Remove="Features\BookingDetails\**" />
-    <EmbeddedResource Remove="Features\Bookings\**" />
     <EmbeddedResource Remove="Features\Orders\**" />
     <EmbeddedResource Remove="Features\Packageee\**" />
     <EmbeddedResource Remove="Features\Packages\**" />
     <EmbeddedResource Remove="Features\Staff\**" />
-    <None Remove="Features\BookingDetails\**" />
-    <None Remove="Features\Bookings\**" />
     <None Remove="Features\Orders\**" />
     <None Remove="Features\Packageee\**" />
     <None Remove="Features\Packages\**" />
@@ -38,6 +32,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentHouseMembershipCart.Domain\StudentHouseMembershipCart.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\BookingDetails\Commands\UpdateBookingDetailByAttendenceReporter\" />
+    <Folder Include="Features\StaffCategories\Queries\GetAllStaffCategory\" />
+    <Folder Include="Features\StaffCategories\Queries\GetStaffCategoryByStaffId\" />
   </ItemGroup>
 
 </Project>

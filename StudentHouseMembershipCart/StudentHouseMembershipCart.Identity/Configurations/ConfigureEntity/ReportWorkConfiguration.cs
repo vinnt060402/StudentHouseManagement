@@ -14,6 +14,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Id = Guid.Parse("991B3FF2-962F-439A-AEC6-051D522A8904"),
                     DescriptionProcess = "Giao hàng đến 123/8 Long Thạnh Mỹ, Quận 9. Thành Công!!!",
                     Image = "abc",
+                    AttendReportId = Guid.Parse("742A0CF9-14AE-47AC-963B-03A096EF80A2"),
                     StaffId = Guid.Parse("D36A73ED-78AE-46AF-BEFD-7B90CBCFC479"),
                 },
                 new ReportWork
@@ -21,6 +22,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Id = Guid.Parse("120E1AAA-EED0-445F-943A-20BC12F4B883"),
                     DescriptionProcess = "Lau tủ, Lau bếp, Rửa chén. Hoàn Thành",
                     Image = "abc",
+                    AttendReportId = Guid.Parse("D9A5AF9C-CE76-43AB-9FC4-46442E495F59"),
                     StaffId = Guid.Parse("C085539D-76BD-4FE8-9444-12C21DE6610B"),
                 },
                 new ReportWork
@@ -28,8 +30,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Id = Guid.Parse("BD3D72CC-551A-4ABF-B358-D6D980BDDB67"),
                     DescriptionProcess = "Sửa ống nước, thay van. Thành công",
                     Image = "abc",
+                    AttendReportId = Guid.Parse("275B2720-420D-4B33-835A-4651D92F1390"),
                     StaffId = Guid.Parse("A8DED7DD-683F-4231-8C47-560375560EEA"),
-                },
+                }/*
                 new ReportWork
                 {
                     Id = Guid.Parse("6F187FCD-C544-46C4-BDB1-38CD254FFCAE"),
@@ -57,7 +60,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     DescriptionProcess = "Thay nhớt, pha bột rửa xe, bơm bánh, kiểm tra hệ thống xe, lau khô",
                     Image = "abc",
                     StaffId = Guid.Parse("A8DED7DD-683F-4231-8C47-560375560EEA"),
-                }
+                }*/
             ) ;
         }
     }

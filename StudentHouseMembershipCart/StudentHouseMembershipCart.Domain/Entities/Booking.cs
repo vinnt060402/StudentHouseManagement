@@ -11,6 +11,11 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         [ForeignKey("Apartment")]
         public Guid ApartmentId { get; set; }
+        /// <summary>
+        /// 0. On going
+        /// 1. Finished
+        /// </summary>
+        public int? StatusContract { get; set; }
 
         // relationShip
         public virtual Apartment Apartment { get; set; }

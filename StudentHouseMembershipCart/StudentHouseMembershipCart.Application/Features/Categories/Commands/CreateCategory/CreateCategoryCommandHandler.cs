@@ -27,6 +27,7 @@ namespace StudentHouseMembershipCart.Application.Features.Categories.Commands.Cr
             var category = new Category
             {
                 CategoryName = request.CategoryName,
+                Image = request.ImageUrl,
                 CreateBy = request.CreateBy,
                 Created = DateTime.Now,
                 IsDelete = false

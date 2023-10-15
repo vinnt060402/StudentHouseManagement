@@ -10,16 +10,20 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         [ForeignKey("BookingDetail")]
         public Guid BookingDetailId { get; set; }
-        [ForeignKey("ReportWork")]
-        public Guid ReportWorkId { get; set; }
+        public Guid? ReportWorkId { get; set; }
+        /// <summary>
+        /// 0. Is Not Finish
+        /// 1. Is Finish by Staff
+        /// 2. Is Feedbacked by User
+        /// </summary>
+        public int? AttendenceStatus { get; set; }
         /*[ForeignKey("FeedBack")]
         public Guid FeedbackId { get; set; } */
 
         // relationShip
         public virtual BookingDetail BookingDetail { get; set; }
-        public virtual ReportWork ReportWork { get; set; }
-
         public virtual FeedBack FeedBack { get; set; }
+        public virtual ReportWork ReportWorks { get; set; }
 
     }
 

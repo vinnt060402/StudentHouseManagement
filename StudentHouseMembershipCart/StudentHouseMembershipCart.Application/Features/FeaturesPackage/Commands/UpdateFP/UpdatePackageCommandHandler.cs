@@ -42,6 +42,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 }
                 package.DayDoServiceInWeek = request.DayDoServiceInWeek;
                 package.TotalPrice = totalPrice;
+                package.PackageDescription = request.PackageDescription;
                 package.WeekNumberBooking = request.weekNumberBooking;
                 package.NumberOfPerWeekDoPackage = request.numberOfPerWeekDoPackage;
                 package.PackageName = request.PackageName ?? package.PackageName;

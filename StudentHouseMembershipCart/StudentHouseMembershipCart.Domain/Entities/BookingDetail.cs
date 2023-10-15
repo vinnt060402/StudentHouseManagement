@@ -5,14 +5,27 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class BookingDetail : BaseAuditableEntity 
     { 
-        public string BookingDetailName { get; set; } = null!;
-        public double Price { get; set; }
+        /// <summary>
+        /// This variable is mean that total price of
+        /// package price * quantiy of package ordered 
+        /// If booking detail is renewed, it will be add on
+        /// </summary>
+        public double TotalPriceOfQuantity { get; set; }
         public bool IsRe_Newed { get; set; }
         public DateTime? RenewStartDate { get; set; }
-        public int remainingTaskDuration { get; set; }  
-        public string ContractName { get; set; } = null!;
-        public string ContractDescription { get; set; } = null!;
-
+        public int RemainingTaskDuration { get; set; }
+        /// <summary>
+        /// The same with total price of booking det
+        /// </summary>
+        public int QuantityOfPackageOrdered { get; set; } = 0;
+        /// <summary>
+        /// 0. On going
+        /// 1. Finished
+        /// </summary>
+        public int? BookingDetailStatus { get; set; }
+        /// <summary>
+        /// Booking Id is Contract Id
+        /// </summary>
         [ForeignKey("Booking")]
         public Guid BookingId { get; set; }
         [ForeignKey("Package")]

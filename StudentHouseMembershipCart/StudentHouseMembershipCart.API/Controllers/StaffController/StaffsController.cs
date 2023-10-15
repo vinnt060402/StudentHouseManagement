@@ -5,6 +5,7 @@ using StudentHouseMembershipCart.Application.Features.Staffs.Commands.CreateStaf
 using StudentHouseMembershipCart.Application.Features.Staffs.Commands.DeleteStaff;
 using StudentHouseMembershipCart.Application.Features.Staffs.Commands.UpdateStaff;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
+using StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetAllStaffByCategoryId;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaff;
 
 namespace StudentHouseMembershipCart.API.Controllers.StaffController
@@ -33,6 +34,12 @@ namespace StudentHouseMembershipCart.API.Controllers.StaffController
         {
             var response = await _mediator.Send(request);
             return Ok(response);
+        }
+        [HttpGet]
+        [Route("staffsbyCategoryId")]
+        public async Task<List<StaffResponse>> GetStaffByCategoryId([FromQuery] GetAllStaffByCategoryIdQuery request)
+        {
+            return await _mediator.Send(request);
         }
         [HttpPost]
         [Route("staffs")]

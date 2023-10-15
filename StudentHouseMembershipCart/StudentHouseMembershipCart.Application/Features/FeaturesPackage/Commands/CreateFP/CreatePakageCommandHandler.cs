@@ -44,6 +44,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     WeekNumberBooking = request.weekNumberBooking,
                     NumberOfPerWeekDoPackage = request.numberOfPerWeekDoPackage,
                     DayDoServiceInWeek = request.DayDoServiceInWeek,
+                    PackageDescription = request.PackageDescription,
                     Image = request.ImageUrl,
                     TotalPrice = totalPrice,
                     CreateBy = request.CreateBy,
