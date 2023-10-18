@@ -11,6 +11,7 @@ using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.Re
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
 using Microsoft.AspNetCore.Authorization;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService;
 
 namespace StudentHouseMembershipCart.API.Controllers.Packs
 {
@@ -32,13 +33,19 @@ namespace StudentHouseMembershipCart.API.Controllers.Packs
         }
         [HttpGet]
         [Route("packagesbyid")]
-        public async Task<PackageData> GetPackageById([FromQuery] GetPakageByIdCommand request)
+        public async Task<PackageData> GetPackageById([FromQuery] GetPackageByIdCommand request)
         {
             return await _mediator.Send(request);
         }
         [HttpGet]
         [Route("packagesbycategoryid")]
         public async Task<List<PackageData>> GetPackageByCategoryId([FromQuery] GetListPackageByCategoryIdQuery request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("packageandservicebypackageid")]
+        public async Task<PackageDataAndServiceData> GetPackageAndServiceByPackageId([FromQuery] GetPackageDataWithServiceDataWithPackageIdQuery request)
         {
             return await _mediator.Send(request);
         }

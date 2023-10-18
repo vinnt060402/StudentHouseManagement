@@ -62,7 +62,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                 double totalPrice = 0;
                 foreach (var package in listPackageId)
                 {
-                    var getPackageIdRequest = new GetPakageByIdCommand
+                    var getPackageIdRequest = new GetPackageByIdCommand
                     {
                         PakageId = package
                     };
