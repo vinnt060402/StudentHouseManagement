@@ -8,8 +8,8 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         public List<Guid> ListServiceId { get; set; } = null!;
         public string? PackageDescription { get; set; }
         public string PackageName { get; set; } = null!;
-        public int weekNumberBooking { get; set; }
-        public int numberOfPerWeekDoPackage { get; set; }
+        public int WeekNumberBooking { get; set; }
+        public int NumberOfPerWeekDoPackage { get; set; }
         public string? DayDoServiceInWeek { get; set; }
         public string? ImageUrl { get; set; }
         public string? CreateBy { get; set; }

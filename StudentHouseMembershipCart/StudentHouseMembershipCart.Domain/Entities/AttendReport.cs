@@ -23,7 +23,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
         // relationShip
         public virtual BookingDetail BookingDetail { get; set; }
         public virtual FeedBack FeedBack { get; set; }
-        public virtual ReportWork ReportWorks { get; set; }
 
     }
 

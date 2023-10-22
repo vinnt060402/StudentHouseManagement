@@ -5,6 +5,7 @@ using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.CreateBookingDetail;
+using StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.UpdateBookingDetailNew;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
 using StudentHouseMembershipCart.Domain.Entities;
 using System.Transactions;
@@ -51,9 +52,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                                        select new ContractAtApartment
                                                        {
                                                            ApartmentId = ap.Id,
+                                                           BookingdetailId = bd.Id,
                                                            PackageId = pack.Id,
                                                            PackageName = pack.PackageName,
                                                            StartDate = b.StartDate,
+                                                           IsRe_Newed = bd.IsRe_Newed,
                                                            BookingDetailStatus = bd.BookingDetailStatus ?? 0
                                                        }
                                                    ).ToListAsync();
@@ -90,19 +93,24 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                 {
                     foreach (var item in listContractAtApartmentId)
                     {
-                        if (request.ListPackage.Select(x => x.PackageId).ToList().Contains(item.PackageId.ToString()) && item.BookingDetailStatus == 0)
+                        // Kiểm tra xem có PackageId của Request có cái nào trùng với Pcakge của căn hộ đó đang
+                        // Trong trạng thái on going hay không
+                        // Và kiểm tra trạng thái is renew, bởi vì đối với từng lần đăng ký trùng, thì hệ thống sẽ
+                        // Cập nhật lại hệ isrenew cho booking detail, nên chỉ kiếm những Booking detail nào có is renew bằng False
+                        // Nếu có thì cập nhật cái trạng thái 
+                        if (request.ListPackage.Select(x => x.PackageId).ToList().Contains(item.PackageId.ToString()) && 
+                                                                                           item.BookingDetailStatus == 0 &&
+                                                                                           item.IsRe_Newed)
                         {
-                            //Thực hiện việc update ở đây
-                            //TODO
-                            //Step 1: Gửi Booking ID cũ, Package Id cũ, ... các fields cần thiết khác cho việc update
-                        }
-                        else
-                        {
-                            //Thực hiện việc create ở đây
+                            var updateBookingDetail = new UpdateBookingDetailNewCommand
+                            {
+                                BookingDetailId = item.BookingdetailId,
+                                RenewStartDate = request.StartDate,
+                            };
+                            var updateBookingDetailResponse = await _mediator.Send(updateBookingDetail);
                         }
                     }
                 }
-                //Không có cái nào thì thực việc create toàn bộ ở đây
                 _dbContext.Booking.Add(booking);
                 await _dbContext.SaveChangesAsync();
                 foreach (var item in request.ListPackage)
@@ -133,10 +141,12 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
     #region ContractAtApartment
     public class ContractAtApartment
     {
+        public Guid BookingdetailId { get; set; }
         public Guid ApartmentId { get; set; }
         public Guid PackageId { get; set; }
         public string? PackageName { get; set; }
         public DateTime StartDate { get; set; }
+        public bool IsRe_Newed { get; set; }
         public int BookingDetailStatus { get; set; }
     }
     #endregion

@@ -5,5 +5,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
     public class GetTotalPriceOfPackageQuery : IRequest<double>
     {
         public string PackageId = null!;
+        public int WeekNumberBooking { get; set; }
+        public int NumberOfPerWeekDoPackage { get; set; }
     }
 }

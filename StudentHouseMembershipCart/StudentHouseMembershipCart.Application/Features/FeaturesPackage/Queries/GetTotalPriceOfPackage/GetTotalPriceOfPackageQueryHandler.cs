@@ -14,7 +14,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         }
         /// <summary>
         /// Get Total Price of Package
-        /// Total Price = Service Price ++
+        /// Total Price = (Service Price * WeekNumberBooking * NumberOfPerWeekDoPackage) ++
         /// Bussiness Rule
         /// If Service = 2, discout 5%,
         /// > 2, + 5 for each service (Max 20%)
@@ -38,7 +38,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 if (getService != null)
                 {
                     flag++;
-                    price += getService.Price ?? 0;
+                    price += (getService.Price * request.WeekNumberBooking * request.NumberOfPerWeekDoPackage)  ?? 0;
                 }
             }
             if(flag == 2)
