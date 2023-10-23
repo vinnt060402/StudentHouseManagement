@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent;
-using StudentHouseMembershipCart.Application.Features.Students;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Regions;
-using StudentHouseMembershipCart.Application.Features.Regions.Queries.GetAllRegion;
-using StudentHouseMembershipCart.Application.Features.Students.Commands.CreateStudent;
 using StudentHouseMembershipCart.Application.Features.Regions.Commands.CreateRegion;
-using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
+using StudentHouseMembershipCart.Application.Features.Regions.Queries.GetAllRegion;
 using StudentHouseMembershipCart.Application.Features.Regions.Queries.GetRegionById;
+using StudentHouseMembershipCart.Application.Features.Students;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
