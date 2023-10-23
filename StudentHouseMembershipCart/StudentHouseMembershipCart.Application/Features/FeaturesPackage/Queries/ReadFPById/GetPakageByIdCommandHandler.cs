@@ -31,7 +31,9 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
             var result = _mapper.Map<PackageData>(package);
             var getTotalPrice = new GetTotalPriceOfPackageQuery
             {
-                PackageId = package.Id.ToString()
+                PackageId = package.Id.ToString(),
+                NumberOfPerWeekDoPackage = package.NumberOfPerWeekDoPackage,
+                WeekNumberBooking = package.WeekNumberBooking
             };
             var getTotalPriceResponse = await _mediator.Send(getTotalPrice);
             result.DayDoInWeek = ReturnDayInWeekByDayDoServiceInWeek(package.DayDoServiceInWeek);
