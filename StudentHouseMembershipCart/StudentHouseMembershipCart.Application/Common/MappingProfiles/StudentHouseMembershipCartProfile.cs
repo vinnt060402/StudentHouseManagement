@@ -57,6 +57,15 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<PaymentMethod, PaymentMethodData>().ReverseMap();
             CreateMap<PaymentMethodData, PaymentMethod>().ReverseMap();
+
+            CreateMap<StudentData, Student>().ReverseMap();
+            CreateMap<Student, StudentData>().ReverseMap();
+
+            CreateMap<ApartmentData, Apartment>().ReverseMap();
+            CreateMap<Apartment, ApartmentData>().ReverseMap();
+
+            CreateMap<ApplicationStudent,ApplicationUser>().ReverseMap();
+            CreateMap<ApplicationUser, ApplicationStudent>().ReverseMap();
         }
     }
 }

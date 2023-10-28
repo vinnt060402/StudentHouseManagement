@@ -7,6 +7,7 @@ using StudentHouseMembershipCart.Application.Features.Students.Commands.DeleteSt
 using StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
+using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId;
 using StudentHouseMembershipCart.Domain.Entities;
 using System.Data;
 
@@ -27,7 +28,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
 
         [HttpGet]
         [Route("get-all-student")]
-        public async Task<List<StudentResponse>> GetAllStudent()
+        public async Task<List<Application.Features.Students.Queries.GetAllStudent.StudentResponse>> GetAllStudent()
         {
             var response = await _mediator.Send(new GetListStudentQuery());
             return response;
@@ -71,6 +72,13 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
         [HttpGet]
         [Route("get-student-by-id")]
         public async Task<ActionResult<StudentDto>> GetUserById([FromQuery] GetStudentByIdQuery request)
+        {
+            var response = await _mediator.Send(request);
+            return Ok(response);
+        }
+        [HttpGet]
+        [Route("studentid")]
+        public async Task<ActionResult<StudentDataNew>> GetUserByStudentId([FromQuery] GetStudentByStudentIdCommand request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);

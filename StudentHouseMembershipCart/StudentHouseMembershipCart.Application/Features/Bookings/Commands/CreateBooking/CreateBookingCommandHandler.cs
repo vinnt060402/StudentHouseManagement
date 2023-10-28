@@ -7,6 +7,7 @@ using StudentHouseMembershipCart.Application.Constant;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.CreateBookingDetail;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.UpdateBookingDetailNew;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
+using StudentHouseMembershipCart.Application.Features.PaymentHistorys.Commands.CreatePaymentHistory;
 using StudentHouseMembershipCart.Domain.Entities;
 using System.Transactions;
 
@@ -85,6 +86,17 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                 };
                 _dbContext.Booking.Add(booking);
                 await _dbContext.SaveChangesAsync();
+                //Tạo payment history
+                var createPaymentHistory = new CreatePaymentHistoryCommand
+                {
+                    BookingId = booking.Id,
+                    Amount = totalPrice,
+                    CreateBy = request.CreateBy,
+                    PaymentMethodId = Guid.Parse(request.PaymentMethodId),
+                    PaymentStatus = 1
+                };
+                var createPaymentHistoryResponse = await _mediator.Send(createPaymentHistory);
+
                 //Get List Service đã tồn tại và đang được status on going
                 //Kiểm tra xem list package nào trong request đang bị trùng
                 //Trùng thì Update Booking Detail

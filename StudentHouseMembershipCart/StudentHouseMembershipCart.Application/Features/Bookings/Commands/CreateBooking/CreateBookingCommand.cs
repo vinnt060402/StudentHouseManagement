@@ -11,6 +11,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
         /// UserName
         /// </summary>
         public string CreateBy { get; set; } = null!;
+        public string PaymentMethodId { get; set; } = null!;
         public List<PackageCreateDate> ListPackage { get; set; } = null!;
     }
     public class PackageCreateDate

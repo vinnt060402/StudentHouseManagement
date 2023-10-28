@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
+using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Contracts.Identity;
 using StudentHouseMembershipCart.Application.Models.Identity;
 using StudentHouseMembershipCart.Domain.IdentityModels;
@@ -16,11 +17,14 @@ namespace StudentHouseMembershipCart.Identity.Services
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _siginInManager;
         private readonly JwtSettings _jwtSettings;
+        private readonly IApplicationDbContext _dbcontext;
 
         public AuthService(UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> siginInManager,
-            IOptions<JwtSettings> jwtSettings)
+            IOptions<JwtSettings> jwtSettings,
+            IApplicationDbContext dbContext)
         {
+            _dbcontext = dbContext;
             this._userManager = userManager;
             this._siginInManager = siginInManager;
             this._jwtSettings = jwtSettings.Value;
@@ -41,9 +45,27 @@ namespace StudentHouseMembershipCart.Identity.Services
 
             JwtSecurityToken jwtSecurityToken = await GenerateToken(user);
 
+            var checkStudent = _dbcontext.Student.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var checkStaff = _dbcontext.Admin.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var checkAdmin = _dbcontext.Staff.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var userIdInTableMain = string.Empty;
+            if (checkStudent != null)
+            {
+                userIdInTableMain = checkStudent.Id.ToString();
+            }
+            else if (checkStaff != null)
+            {
+                userIdInTableMain = checkStaff.Id.ToString();
+            }
+            else if (checkAdmin != null)
+            {
+                userIdInTableMain = checkAdmin.Id.ToString();
+            }
+
             var response = new AuthResponse
             {
                 Id = user.Id,
+                UserIdInTableDb = userIdInTableMain,
                 Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
                 Email = user.Email,
                 UserName = user.UserName
@@ -83,17 +105,36 @@ namespace StudentHouseMembershipCart.Identity.Services
             var userClaims = await _userManager.GetClaimsAsync(user);
             var roles = await _userManager.GetRolesAsync(user);
             var roleClaims = roles.Select(q => new Claim("role", q)).ToList();
+            var roleInApplicationUser = await _userManager.GetRolesAsync(user);
+            #region
 
+            var checkStudent = _dbcontext.Student.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var checkStaff = _dbcontext.Admin.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var checkAdmin = _dbcontext.Staff.Where(x => x.ApplicationUserId == user.Id).SingleOrDefault();
+            var userIdInTableMain = string.Empty;
+            if(checkStudent != null)
+            {
+                userIdInTableMain = checkStudent.Id.ToString();
+            }
+            else if(checkStaff != null)
+            {
+                userIdInTableMain = checkStaff.Id.ToString();
+            }
+            else if(checkAdmin != null)
+            {
+                userIdInTableMain = checkAdmin.Id.ToString();
+            }
+            #endregion
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim("uid", user.Id)
+                new Claim("uid", user.Id),
+                new Claim("userIdInTableDb",userIdInTableMain)
             }
             .Union(userClaims)
             .Union(roleClaims);
-
             var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
 
             var sigingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
