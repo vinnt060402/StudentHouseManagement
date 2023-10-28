@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP
 {
@@ -10,11 +11,13 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
     {
         private IApplicationDbContext _dbContext;
         private IMapper _mapper;
+        private IMediator _mediator;
 
-        public GetAllPackageQueryHandler(IApplicationDbContext dbContext, IMapper mapper)
+        public GetAllPackageQueryHandler(IApplicationDbContext dbContext, IMapper mapper, IMediator mediator)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<List<PackageData>> Handle(GetAllPackageQuery request, CancellationToken cancellationToken)
@@ -27,8 +30,14 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
             var listResult = new List<PackageData>();
             foreach(var item in listPackage)
             {
+                var getTotalPrice = new GetTotalPriceOfPackageQuery
+                {
+                    PackageId = item.Id.ToString()
+                };
+                var getTotalPriceResponse = await _mediator.Send(getTotalPrice);
                 var result = _mapper.Map<PackageData>(item);
                 result.DayDoInWeek = ReturnDayInWeekByDayDoServiceInWeek(item.DayDoServiceInWeek);
+                result.TotalPrice = getTotalPriceResponse;
                 listResult.Add(result);
             }
             return listResult;

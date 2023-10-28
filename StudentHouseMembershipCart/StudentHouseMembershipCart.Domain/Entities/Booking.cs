@@ -20,7 +20,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         // relationShip
         public virtual Apartment Apartment { get; set; }
         public IList<BookingDetail> BookingDetail { get; private set; }
-        public IList<PaymentMethod> PaymentMethod { get; private set; }
+        public IList<PaymentHistory> PaymentMethod { get; private set; }
 
 
     }

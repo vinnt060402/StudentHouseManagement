@@ -5,10 +5,13 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
 {
     public class CreateBookingCommand : IRequest<SHMResponse>
     {
-        public string Contract { get; set; } = null!;
         public DateTime StartDate { get; set; }
         public string ApartmentId { get; set; } = null!;
+        /// <summary>
+        /// UserName
+        /// </summary>
         public string CreateBy { get; set; } = null!;
+        public string PaymentMethodId { get; set; } = null!;
         public List<PackageCreateDate> ListPackage { get; set; } = null!;
     }
     public class PackageCreateDate
@@ -16,5 +19,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
         public string PackageId { get; set; } = null!;
         public int QuantityOfPackageOrdered { get; set; }
     }
-
 }

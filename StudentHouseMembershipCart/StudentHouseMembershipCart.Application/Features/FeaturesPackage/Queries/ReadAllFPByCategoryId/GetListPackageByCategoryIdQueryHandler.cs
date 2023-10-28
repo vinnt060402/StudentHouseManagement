@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId
 {
@@ -10,11 +12,13 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
     {
         private IApplicationDbContext _dbContext;
         private IMapper _mapper;
+        private IMediator _mediator;
 
-        public GetListPackageByCategoryIdQueryHandler(IApplicationDbContext dbContext, IMapper mapper)
+        public GetListPackageByCategoryIdQueryHandler(IApplicationDbContext dbContext, IMapper mapper, IMediator mediator)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<List<PackageData>> Handle(GetListPackageByCategoryIdQuery request, CancellationToken cancellationToken)
@@ -42,8 +46,13 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
             var listResult = new List<PackageData>();
             foreach(var item in packageByCategoryId)
             {
-                var result =  _mapper.Map<PackageData>(item);   
-                listResult.Add(result);
+                var getPakcage = new GetPackageByIdCommand
+                {
+                    PakageId = item.Id.ToString()
+                };
+                var getPackageResponse = await _mediator.Send(getPakcage);
+
+                listResult.Add(getPackageResponse);
             }
             return listResult;
         }

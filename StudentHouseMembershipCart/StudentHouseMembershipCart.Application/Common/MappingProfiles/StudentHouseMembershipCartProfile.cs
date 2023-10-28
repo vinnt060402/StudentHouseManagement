@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using StudentHouseMembershipCart.Application.Features.Apartments;
+using StudentHouseMembershipCart.Application.Features.AttendenceReports;
+using StudentHouseMembershipCart.Application.Features.Bookings;
 using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 using StudentHouseMembershipCart.Application.Features.PackageServices;
+using StudentHouseMembershipCart.Application.Features.PaymentMethods;
 using StudentHouseMembershipCart.Application.Features.Regions;
 using StudentHouseMembershipCart.Application.Features.Services;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
@@ -45,6 +48,24 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<PackageService, PackageServiceData>().ReverseMap();
             CreateMap<PackageServiceData, PackageService>().ReverseMap();
+
+            CreateMap<Booking, BookingData>().ReverseMap();
+            CreateMap<BookingData, Booking>().ReverseMap();
+
+            CreateMap<AttendReport, AttendReportData>().ReverseMap();
+            CreateMap<AttendReportData, AttendReport>().ReverseMap();
+
+            CreateMap<PaymentMethod, PaymentMethodData>().ReverseMap();
+            CreateMap<PaymentMethodData, PaymentMethod>().ReverseMap();
+
+            CreateMap<StudentData, Student>().ReverseMap();
+            CreateMap<Student, StudentData>().ReverseMap();
+
+            CreateMap<ApartmentData, Apartment>().ReverseMap();
+            CreateMap<Apartment, ApartmentData>().ReverseMap();
+
+            CreateMap<ApplicationStudent,ApplicationUser>().ReverseMap();
+            CreateMap<ApplicationUser, ApplicationStudent>().ReverseMap();
         }
     }
 }

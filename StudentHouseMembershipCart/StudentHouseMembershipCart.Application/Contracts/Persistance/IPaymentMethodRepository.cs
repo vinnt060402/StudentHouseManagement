@@ -2,7 +2,7 @@
 
 namespace StudentHouseMembershipCart.Application.Contracts.Persistance
 {
-    public interface IPaymentMethodRepository : IGenericRepository<PaymentMethod>
+    public interface IPaymentMethodRepository : IGenericRepository<PaymentHistory>
     {
 
     }

@@ -17,7 +17,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
 
         public async Task<SHMResponse> Handle(CreateAttendenceReportCommand request, CancellationToken cancellationToken)
         {
-            DateTime startDate = new DateTime(request.StartDay.Year, request.StartDay.Month, request.StartDay.Day); // Thứ 3
+            DateTime startDate = new DateTime(request.StartDay.Year, request.StartDay.Month, request.StartDay.Day);
             int totalDaysA = request.TotalDayNeedWork;
             int workDaysPerWeekA = request.TotalDayWorkingInWeek;
             string workDaysA = request.DayDoBookingDetailInWeek;

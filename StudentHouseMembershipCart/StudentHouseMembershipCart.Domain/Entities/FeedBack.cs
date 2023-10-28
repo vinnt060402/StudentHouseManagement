@@ -9,7 +9,12 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public string FeedBackDescription { get; set; }
         public string FeedBackImage { get; set;}
         public string FeedBackRating { get; set;}
-
+        /// <summary>
+        /// 0. Can not Feedback
+        /// 1. Can Feedback
+        /// 2. Feedbacked
+        /// </summary>
+        public int FeedBackStatus { get; set;}
         [ForeignKey("Student")]
         public Guid StudentId { get; set; }
         [ForeignKey("AttendReport")]

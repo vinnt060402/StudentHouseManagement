@@ -1,18 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using StudentHouseMembershipCart.Application.Features.Regions.Queries.GetAllRegion;
-using StudentHouseMembershipCart.Application.Features.Regions;
-using StudentHouseMembershipCart.Application.Features.Regions.Commands.CreateRegion;
-using StudentHouseMembershipCart.Application.Features.Apartments.Commands.CreateApartment;
-using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment;
 using StudentHouseMembershipCart.Application.Features.Apartments;
-using StudentHouseMembershipCart.Application.Features.Students.Commands.DeleteStudent;
+using StudentHouseMembershipCart.Application.Features.Apartments.Commands.CreateApartment;
 using StudentHouseMembershipCart.Application.Features.Apartments.Commands.DeleteApartment;
-using StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateStudent;
-using StudentHouseMembershipCart.Application.Features.Students;
 using StudentHouseMembershipCart.Application.Features.Apartments.Commands.UpdateApartment;
-using System.Text.Json.Serialization;
-using System.Text.Json;
+using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment;
+using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByStudentId;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -37,11 +30,19 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
             return response;
         }
 
+
+        [HttpGet]
+        [Route("studentid")]
+        public async Task<List<ApartmentResponse>> GetAparmentByStudentId([FromQuery]GetApartmentByStudentIdCommand request)
+        {
+            var response = await _mediator.Send(request);
+            return response;
+        }
         [HttpPost]
         [Route("register-apartment")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> CreateApartment([FromQuery] CreateApartmentCommand request)
+        public async Task<ActionResult> CreateApartment(CreateApartmentCommand request)
         {
             var response = await _mediator.Send(request);
             return CreatedAtAction(nameof(GetAllAparment), new { id = response });
@@ -53,7 +54,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> Delete([FromQuery] DeleteApartmentCommand request)
+        public async Task<ActionResult> Delete(DeleteApartmentCommand request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);

@@ -17,6 +17,7 @@ namespace StudentHouseMembershipCart.Application.Common.Interfaces
         public DbSet<Package> Package { get; set; }
         public DbSet<StaffCategory> StaffCategory {  get; set; }
         public DbSet<PackageService> PackageService { get; set; }
+        public DbSet<PaymentHistory> PaymentHistory { get; set; }
         public DbSet<PaymentMethod> PaymentMethod { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<ReportWork> ReportWork { get; set; }
