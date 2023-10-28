@@ -29,7 +29,7 @@
 *.cache
 *.editorconfig
 *.dgspec.json
-*.json
+*.dotnet-tools.json
 *.props
 *.suo
 *.user

@@ -5,19 +5,21 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{35A341EA-96B2-41CC-91D9-11C0F94FF372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHouseMembershipCart.Application", "StudentHouseMembershipCart.Application\StudentHouseMembershipCart.Application.csproj", "{88DCA15C-3C7F-4B3E-8AA5-61A75E52AD22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHouseMembershipCart.Application", "StudentHouseMembershipCart.Application\StudentHouseMembershipCart.Application.csproj", "{88DCA15C-3C7F-4B3E-8AA5-61A75E52AD22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4D27A9D8-BDC3-4EF3-B6FC-3291B7B03C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHouseMembershipCart.Domain", "StudentHouseMembershipCart.Domain\StudentHouseMembershipCart.Domain.csproj", "{693CA250-03AB-4175-BE62-E081530A3B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHouseMembershipCart.Domain", "StudentHouseMembershipCart.Domain\StudentHouseMembershipCart.Domain.csproj", "{693CA250-03AB-4175-BE62-E081530A3B45}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastucture", "Infrastucture", "{EAB7EC59-1E23-4760-AC66-1ECAD6056546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHouseMembershipCart.Infrastucture", "StudentHouseMembershipCart.Infrastucture\StudentHouseMembershipCart.Infrastucture.csproj", "{819B3F93-88EB-462D-BC24-F48670C0AFD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHouseMembershipCart.Infrastucture", "StudentHouseMembershipCart.Infrastucture\StudentHouseMembershipCart.Infrastucture.csproj", "{819B3F93-88EB-462D-BC24-F48670C0AFD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebServiceAPI", "WebServiceAPI", "{2A78A25E-00C3-427C-A1EA-493FEB5832E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHouseMembershipCart.API", "StudentHouseMembershipCart.API\StudentHouseMembershipCart.API.csproj", "{62A8B6B5-A08D-4082-AD19-574488A82C65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentHouseMembershipCart.API", "StudentHouseMembershipCart.API\StudentHouseMembershipCart.API.csproj", "{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentHouseMembershipCart.Identity", "StudentHouseMembershipCart.Identity\StudentHouseMembershipCart.Identity.csproj", "{874F158D-9BB2-4714-8404-93F183D4EFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +39,14 @@ Global
 		{819B3F93-88EB-462D-BC24-F48670C0AFD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{819B3F93-88EB-462D-BC24-F48670C0AFD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{819B3F93-88EB-462D-BC24-F48670C0AFD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62A8B6B5-A08D-4082-AD19-574488A82C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62A8B6B5-A08D-4082-AD19-574488A82C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62A8B6B5-A08D-4082-AD19-574488A82C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62A8B6B5-A08D-4082-AD19-574488A82C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874F158D-9BB2-4714-8404-93F183D4EFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874F158D-9BB2-4714-8404-93F183D4EFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874F158D-9BB2-4714-8404-93F183D4EFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874F158D-9BB2-4714-8404-93F183D4EFE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,7 +55,8 @@ Global
 		{88DCA15C-3C7F-4B3E-8AA5-61A75E52AD22} = {35A341EA-96B2-41CC-91D9-11C0F94FF372}
 		{693CA250-03AB-4175-BE62-E081530A3B45} = {4D27A9D8-BDC3-4EF3-B6FC-3291B7B03C8D}
 		{819B3F93-88EB-462D-BC24-F48670C0AFD0} = {EAB7EC59-1E23-4760-AC66-1ECAD6056546}
-		{62A8B6B5-A08D-4082-AD19-574488A82C65} = {2A78A25E-00C3-427C-A1EA-493FEB5832E8}
+		{6F912216-E7A1-4958-8AA3-DE6A1A2A7FFD} = {2A78A25E-00C3-427C-A1EA-493FEB5832E8}
+		{874F158D-9BB2-4714-8404-93F183D4EFE6} = {EAB7EC59-1E23-4760-AC66-1ECAD6056546}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {434BF572-C827-4882-87C2-2FB69D45ACCB}
