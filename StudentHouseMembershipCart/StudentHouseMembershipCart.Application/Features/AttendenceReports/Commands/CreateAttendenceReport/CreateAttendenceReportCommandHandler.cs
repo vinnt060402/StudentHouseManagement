@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
@@ -45,7 +46,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             {
                 Task.WaitAll();
 
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
                 foreach (var dateDo in listAttendenceReport)
                 {
                     var createFeedback = new CreateFeedBackCommand
@@ -59,7 +60,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                throw new BadRequestException(ex.StackTrace);
             }
             Task.WaitAll();
 

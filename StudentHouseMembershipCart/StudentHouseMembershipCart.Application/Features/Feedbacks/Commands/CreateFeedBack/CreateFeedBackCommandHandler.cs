@@ -30,7 +30,7 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
                     CreateBy = request.CreateBy
                 };
                 _dbContext.FeedBack.Add(feedback);
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
 
                 Task.WaitAll();
 

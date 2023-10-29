@@ -36,7 +36,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
                 staff.LastModifiedBy = request.DeleteBy;
                 staff.LastModified = DateTime.Now;
                 _dbContext.Staff.Update(staff);
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
 
                 var deleteStaffCategory = new DeleteStaffCategoryByStaffIdComand
                 {

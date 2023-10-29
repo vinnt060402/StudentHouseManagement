@@ -58,7 +58,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
                     StaffId = request.StaffId
                 };
                 var createReportWorkResponse = await _mediator.Send(createReportWork);
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
 
                 scope.Complete();
             }

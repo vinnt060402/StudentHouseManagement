@@ -15,6 +15,6 @@
         public string? CreateBy { get; set; }
         public DateTime? LastModified { get; set; }
         public string? LastModifiedBy { get; set; }
-        public bool? IsDelete { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

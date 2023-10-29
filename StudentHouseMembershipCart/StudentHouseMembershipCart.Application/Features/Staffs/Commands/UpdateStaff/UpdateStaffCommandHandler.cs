@@ -51,7 +51,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Update
 
                 await _userManager.UpdateAsync(applicationStaff);
                 _dbContext.Staff.Update(staff);
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
                 scope.Complete();
                 var updateStaffCategoryRequest = new UpdateStaffCategoryCommand
                 {

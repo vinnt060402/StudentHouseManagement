@@ -43,7 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                 reportWork.ReportByStaffId = request.StaffId;
 
                 _dbContext.ReportWork.Update(reportWork);
- Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
+                await _dbContext.SaveChangesAsync();
 
 
 
