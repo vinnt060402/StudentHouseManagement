@@ -4,7 +4,7 @@ using StudentHouseMembershipCart.Application.Common.Interfaces;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetTotalStudentRegister
 {
-    public class GetTotalStudentRegisteredQueryHandler : IRequestHandler<GetTotalStudentRegisteredQuery, int>
+    public class GetTotalStudentRegisteredQueryHandler : IRequestHandler<GetTotalStudentRegisteredQuery, TotalStudentRegistered>
     {
         private IApplicationDbContext _dbContext;
 
@@ -13,11 +13,14 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetTo
             _dbContext = dbContext;
         }
 
-        public async Task<int> Handle(GetTotalStudentRegisteredQuery request, CancellationToken cancellationToken)
+        public async Task<TotalStudentRegistered> Handle(GetTotalStudentRegisteredQuery request, CancellationToken cancellationToken)
         {
             var student = await _dbContext.Student.ToListAsync();
             var total = student.Count;
-            return total;
+            return new TotalStudentRegistered
+            {
+                TotalNumber = total
+            };
         }
     }
 }

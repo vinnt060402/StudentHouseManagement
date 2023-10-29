@@ -1,6 +1,9 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
+﻿using MediatR;
+
+namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
 {
-    public class GetBookingDetailByBookingId
+    public class GetBookingDetailByBookingId : IRequest<List<BookingDetailData>>
     {
+        public Guid BookingId { get; set; } 
     }
 }

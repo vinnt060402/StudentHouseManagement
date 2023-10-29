@@ -37,7 +37,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
 
         [HttpGet]
         [Route("gettotalstudentregistered")]
-        public async Task<int> GetTotalStudent()
+        public async Task<TotalStudentRegistered> GetTotalStudent()
         {
             var response = await _mediator.Send(new GetTotalStudentRegisteredQuery());
             return response;
