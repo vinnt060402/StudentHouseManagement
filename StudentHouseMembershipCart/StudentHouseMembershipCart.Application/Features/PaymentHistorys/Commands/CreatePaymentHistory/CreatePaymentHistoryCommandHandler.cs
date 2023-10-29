@@ -29,7 +29,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Comman
                     CreateBy = request.CreateBy,
                 };
                 _dbContext.PaymentHistory.Add(paymentHistory);
-                await _dbContext.SaveChangesAsync();
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 return new SHMResponse
                 {
                     Message = Extensions.CreateSuccessfully

@@ -47,6 +47,8 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
             };
             _dbContext.BookingDetail.Add(bookdingDetail);
             await _dbContext.SaveChangesAsync();
+            Task.WaitAll();
+
 
             //TODO Create attendence report !!!
             var createAttenceReportRequest = new CreateAttendenceReportCommand

@@ -43,7 +43,9 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             _dbContext.AttendReport.AddRange(listAttendenceReport);
             try
             {
-                await _dbContext.SaveChangesAsync();
+                Task.WaitAll();
+
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 foreach (var dateDo in listAttendenceReport)
                 {
                     var createFeedback = new CreateFeedBackCommand
@@ -59,6 +61,8 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             {
                 Console.WriteLine(ex.ToString());
             }
+            Task.WaitAll();
+
             return new SHMResponse
             {
                 Message = Extensions.CreateSuccessfully

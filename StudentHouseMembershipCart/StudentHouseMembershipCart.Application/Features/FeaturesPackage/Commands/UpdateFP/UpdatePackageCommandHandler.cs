@@ -51,7 +51,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     UpdateBy = request.UpdateBy,
                 };
                 var updatePackageServiceResponse = await _mediator.Send(updatePackageServiceRequest);
-                await _dbContext.SaveChangesAsync();
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 scope.Complete();
             }
             return new SHMResponse

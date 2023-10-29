@@ -71,7 +71,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                     Address = request.Address,
                 };
                 await _dbContext.Staff.AddAsync(newStaff);
-                await _dbContext.SaveChangesAsync();
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 var createStaffCategoryRequest = new CreateStaffCategoryCommand
                 {
                     ListCategoryId = request.ListCategoryId,

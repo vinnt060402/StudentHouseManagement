@@ -42,7 +42,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     PackageId = request.PackageId,
                 };
                 var deletePackageServiceResponse = await _mediator.Send(deletePackageServiceRequest);
-                await _dbContext.SaveChangesAsync();
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 scope.Complete();
             }
             return new SHMResponse

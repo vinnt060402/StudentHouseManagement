@@ -55,7 +55,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     CreateBy = package.CreateBy,
                 };
                 var createPackageServiceResponse = await _mediator.Send(createPackageServiceRequest);
-                await _dbContext.SaveChangesAsync();
+ Task.WaitAll();await _dbContext.SaveChangesAsync();Task.WaitAll();
                 scope.Complete();
                 packageIdResult = package.Id.ToString();
             }
