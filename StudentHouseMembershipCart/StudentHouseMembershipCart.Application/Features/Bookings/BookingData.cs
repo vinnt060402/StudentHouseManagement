@@ -1,8 +1,11 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.Bookings
+﻿using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
+
+namespace StudentHouseMembershipCart.Application.Features.Bookings
 {
     public class BookingData
     {
         public Guid Id { get; set; }
+        public string? StudentName { get; set; }
         public string? Contract { get; set; }
         public double TotalPay { get; set; }
         public Guid ApartmentId { get; set; }
@@ -13,5 +16,6 @@
         public string? StatusContract { get; set; }
         public DateTime Created { get; set; }
         public bool IsDeleted { get; set; }
+        public List<BookingDetailData>? Details { get; set; }
     }
 }

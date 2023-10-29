@@ -12,6 +12,7 @@ using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.Re
 using Microsoft.AspNetCore.Authorization;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
 
 namespace StudentHouseMembershipCart.API.Controllers.Packs
 {

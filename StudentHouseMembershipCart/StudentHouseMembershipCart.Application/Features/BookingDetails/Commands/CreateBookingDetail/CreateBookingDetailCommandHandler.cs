@@ -51,6 +51,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
             //TODO Create attendence report !!!
             var createAttenceReportRequest = new CreateAttendenceReportCommand
             {
+                StudentId = request.StudentId,
                 BookingDetailId = bookdingDetail.Id.ToString(),
                 StartDay = request.StartDate,
                 TotalDayNeedWork = bookdingDetail.RemainingTaskDuration,

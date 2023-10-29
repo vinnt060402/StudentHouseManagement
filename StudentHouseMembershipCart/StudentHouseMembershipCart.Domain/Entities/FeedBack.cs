@@ -5,10 +5,10 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class FeedBack : BaseAuditableEntity 
     {
-        public string FeedBackName { get; set; }
-        public string FeedBackDescription { get; set; }
-        public string FeedBackImage { get; set;}
-        public string FeedBackRating { get; set;}
+        public string? FeedBackName { get; set; }
+        public string? FeedBackDescription { get; set; }
+        public string? FeedBackImage { get; set;}
+        public string? FeedBackRating { get; set;}
         /// <summary>
         /// 0. Can not Feedback
         /// 1. Can Feedback

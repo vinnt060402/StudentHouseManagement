@@ -8,6 +8,9 @@ using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.Bookings;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -33,6 +36,12 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         public async Task<List<BookingData>> GetAllBooking()
         {
             return await _mediator.Send(new GetAllBookingCommand());
+        }
+        [HttpGet]
+        [Route("datetime")]
+        public async Task<BookingDataForAdmin> GetAllPackagesByTimeOfAdmin([FromQuery]GetBookingByTimeOfAdminQuery request)
+        {
+            return await _mediator.Send(request);
         }
         [HttpGet]
         [Route("{apartmentId}")]

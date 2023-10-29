@@ -2,6 +2,8 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
+using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking
 {
@@ -9,20 +11,39 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
     {
         private IApplicationDbContext _dbContext;
         private IMapper _mapper;
+        private IMediator _mediator;
 
-        public GetAllBookingCommandHandler(IApplicationDbContext dbContext, IMapper mapper)
+        public GetAllBookingCommandHandler(IApplicationDbContext dbContext, IMapper mapper, IMediator mediator)
         {
             _dbContext = dbContext;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         public async Task<List<BookingData>> Handle(GetAllBookingCommand request, CancellationToken cancellationToken)
         {
             var listBooking = await _dbContext.Booking.OrderBy(x => x.Created).ToListAsync();
+
             List<BookingData> result = new List<BookingData>();
             foreach (var booking in listBooking)
             {
+
+
                 var bookingResult = _mapper.Map<BookingData>(booking);
+                var student = await (from st in _dbContext.Student
+                                     join ap in _dbContext.Apartment
+                                     on st.Id equals ap.StudentId
+                                     where ap.Id == bookingResult.ApartmentId
+                                     select st).SingleOrDefaultAsync();
+                if (student != null)
+                {
+                    var getstRequest = new GetStudentByStudentIdCommand
+                    {
+                        StudentId = student.Id,
+                    };
+                    var getstReponse = await _mediator.Send(getstRequest);
+                    bookingResult.StudentName = getstReponse.ApplicationUserData.FullName;
+                }
                 switch (booking.StatusContract)
                 {
                     case 1:
@@ -35,6 +56,13 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
                         bookingResult.StatusContract = "Pending";
                         break;
                 }
+                var bookingdetailrequest = new GetBookingDetailByBookingId
+                {
+                    BookingId = booking.Id,
+                };
+                var bddResponse = await _mediator.Send(bookingdetailrequest);
+                bookingResult.Details = bddResponse;
+
                 result.Add(bookingResult);
             }
             return result;

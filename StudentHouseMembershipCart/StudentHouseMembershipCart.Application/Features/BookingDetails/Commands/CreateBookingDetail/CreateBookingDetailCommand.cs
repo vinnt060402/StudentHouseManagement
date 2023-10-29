@@ -6,6 +6,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
     public class CreateBookingDetailCommand : IRequest<SHMResponse>
     {
         //public string? RemainingTaskDuration { get; set; }
+        public Guid StudentId { get; set; }
         public Guid BookingId { get; set; }
         public DateTime StartDate { get; set; } 
         public int? QuantityOfPackageOrdered { get; set; }
