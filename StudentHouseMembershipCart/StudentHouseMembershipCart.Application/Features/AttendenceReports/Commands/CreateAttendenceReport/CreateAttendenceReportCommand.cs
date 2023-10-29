@@ -5,6 +5,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
 {
     public class CreateAttendenceReportCommand : IRequest<SHMResponse>
     {
+        public Guid StudentId { get; set; }
         public DateTime StartDay { get; set; }
         public string DayDoBookingDetailInWeek { get; set; } = null!;
         public int TotalDayNeedWork { get; set; }

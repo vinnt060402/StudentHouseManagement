@@ -2,6 +2,7 @@
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.CreateFeedBack;
 using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Commands.CreateAttendenceReport
@@ -9,10 +10,12 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
     public class CreateAttendenceReportCommandHandler : IRequestHandler<CreateAttendenceReportCommand, SHMResponse>
     {
         private IApplicationDbContext _dbContext;
+        private IMediator _mediator;
 
-        public CreateAttendenceReportCommandHandler(IApplicationDbContext dbContext)
+        public CreateAttendenceReportCommandHandler(IApplicationDbContext dbContext, IMediator mediator)
         {
             _dbContext = dbContext;
+            _mediator = mediator;
         }
 
         public async Task<SHMResponse> Handle(CreateAttendenceReportCommand request, CancellationToken cancellationToken)
@@ -41,8 +44,18 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             try
             {
                 await _dbContext.SaveChangesAsync();
-
-            }catch(Exception ex)
+                foreach (var dateDo in listAttendenceReport)
+                {
+                    var createFeedback = new CreateFeedBackCommand
+                    {
+                        AttendReportId = dateDo.Id,
+                        StudentId = request.StudentId,
+                        CreateBy = dateDo.CreateBy
+                    };
+                    var createFeedbackResponse = _mediator.Send(createFeedback);
+                }
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }

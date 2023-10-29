@@ -30,6 +30,8 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
         {
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
+                var apartment = await _dbContext.Apartment.Where(x => x.Id == Guid.Parse(request.ApartmentId)).SingleOrDefaultAsync();
+                var studentId = apartment.StudentId.ToString();
                 //Đầu tiên kiểm tra xem ở căn hộ đó đã có họp đồng nào hay chưa
                 //Kiểm tra xem trong họp đồng đó nó đã có những package id nào
                 //Nếu trùng với bất kì package nào trong hợp đồng đã có thì
@@ -137,6 +139,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                             var package = await _dbContext.Package.Where(x => x.Id == Guid.Parse(item.PackageId)).SingleAsync();
                             var createBookingDetailRequest = new CreateBookingDetailCommand
                             {
+                                StudentId = Guid.Parse(studentId),
                                 BookingId = booking.Id,
                                 PackageId = Guid.Parse(item.PackageId),
                                 QuantityOfPackageOrdered = item.QuantityOfPackageOrdered,
@@ -153,6 +156,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                         var package = await _dbContext.Package.Where(x => x.Id == Guid.Parse(item.PackageId)).SingleAsync();
                         var createBookingDetailRequest = new CreateBookingDetailCommand
                         {
+                            StudentId = Guid.Parse(studentId),
                             BookingId = booking.Id,
                             PackageId = Guid.Parse(item.PackageId),
                             QuantityOfPackageOrdered = item.QuantityOfPackageOrdered,
