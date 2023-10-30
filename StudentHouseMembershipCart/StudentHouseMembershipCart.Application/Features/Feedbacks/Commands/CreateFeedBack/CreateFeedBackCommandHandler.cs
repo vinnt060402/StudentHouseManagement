@@ -20,8 +20,6 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
         {
             try
             {
-                Task.WaitAll();
-
                 var feedback = new FeedBack()
                 {
                     StudentId = request.StudentId,
@@ -31,9 +29,6 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
                 };
                 _dbContext.FeedBack.Add(feedback);
                 await _dbContext.SaveChangesAsync();
-
-                Task.WaitAll();
-
                 return new SHMResponse()
                 {
                     Message = Extensions.CreateSuccessfully

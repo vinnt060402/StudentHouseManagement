@@ -42,7 +42,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                 }
                 using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    var apartment = await _dbContext.Apartment.AsNoTracking().Where(x => x.Id == Guid.Parse(request.ApartmentId)).SingleOrDefaultAsync();
+                    var apartment = await _dbContext.Apartment.Where(x => x.Id == Guid.Parse(request.ApartmentId)).SingleOrDefaultAsync();
                     var studentId = apartment.StudentId.ToString();
                     //Đầu tiên kiểm tra xem ở căn hộ đó đã có họp đồng nào hay chưa
                     //Kiểm tra xem trong họp đồng đó nó đã có những package id nào
@@ -149,7 +149,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                         {
                             var check = listContractAtApartmentId.Where(x => x.PackageId == Guid.Parse(item.PackageId) &&
                                                                              x.BookingDetailStatus == 0 &&
-                                                                             !x.IsRe_Newed).SingleOrDefault();
+                                                                             !x.IsRe_Newed).FirstOrDefault();
                             if (check != null)
                             {
                                 var test = listPakageData.Where(x => x.Id == Guid.Parse(item.PackageId)).FirstOrDefault();

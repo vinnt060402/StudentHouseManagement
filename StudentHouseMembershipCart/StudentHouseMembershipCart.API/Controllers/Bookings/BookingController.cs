@@ -11,6 +11,7 @@ using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookin
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -52,6 +53,12 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
                 ApartmentId = apartmentId
             };
 
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("bookingid")]
+        public async Task<BookingData> GetBookingByBookingId([FromQuery]GetBookingAndBookingDetailByBookingIdCommand request)
+        {
             return await _mediator.Send(request);
         }
     }
