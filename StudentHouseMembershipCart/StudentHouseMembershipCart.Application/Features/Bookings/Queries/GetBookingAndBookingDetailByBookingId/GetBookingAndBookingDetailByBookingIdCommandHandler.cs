@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByApartmentId;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId;
@@ -37,6 +38,26 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
                 var bdd = _mapper.Map<BookingDetailData>(item);
                 Details.Add(bdd);
             }
+
+            var apartmentIdRequest = new GetApartmentByApartmentIdQuery()
+            {
+                ApartmentId = booking.ApartmentId
+            };
+            var apartmentResponse = await _mediator.Send(apartmentIdRequest);
+
+            switch (booking.StatusContract)
+            {
+                case 1:
+                    bd.StatusContract = "Finished";
+                    break;
+                case 0:
+                    bd.StatusContract = "On Going";
+                    break;
+                default:
+                    bd.StatusContract = "Pending";
+                    break;
+            }
+            bd.ApartmentData = apartmentResponse;
             bd.Details =  Details;
             return bd;
         }

@@ -19,7 +19,7 @@ namespace StudentHouseMembershipCart.API.Controllers.AttendReports
         }
         [HttpGet]
         [Route("bookingdetailid")]
-        public async Task<List<AttendReportData>> GetAttendReportByBookingDetailId([FromQuery]GetAttendReportByBookingDetailIdCommand request)
+        public async Task<AttendReportDataResponse> GetAttendReportByBookingDetailId([FromQuery]GetAttendReportByBookingDetailIdCommand request)
         {
             return await _mediator.Send(request);
         }

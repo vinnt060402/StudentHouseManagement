@@ -5,7 +5,7 @@ using StudentHouseMembershipCart.Application.Common.Interfaces;
 
 namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByBookingDetailId
 {
-    public class GetAttendReportByBookingDetailIdCommandHandler : IRequestHandler<GetAttendReportByBookingDetailIdCommand, List<AttendReportData>>
+    public class GetAttendReportByBookingDetailIdCommandHandler : IRequestHandler<GetAttendReportByBookingDetailIdCommand, AttendReportDataResponse>
     {
         private IApplicationDbContext _dbContext;
         private IMapper _mapper;
@@ -16,7 +16,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
             _mapper = mapper;
         }
 
-        public async Task<List<AttendReportData>> Handle(GetAttendReportByBookingDetailIdCommand request, CancellationToken cancellationToken)
+        public async Task<AttendReportDataResponse> Handle(GetAttendReportByBookingDetailIdCommand request, CancellationToken cancellationToken)
         {
             var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId).ToListAsync();
             List<AttendReportData> response = new List<AttendReportData>();
@@ -45,7 +45,11 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
                 }
                 response.Add(atdRpData);
             }
-            return response;
+            var result = new AttendReportDataResponse();
+            var bookingDetail = await _dbContext.BookingDetail.Where(x => x.Id == request.BookingDetailId).SingleOrDefaultAsync();
+            result.BookingDetail = bookingDetail;
+            result.AttendReports = response;
+            return result;
         }
     }
 }
