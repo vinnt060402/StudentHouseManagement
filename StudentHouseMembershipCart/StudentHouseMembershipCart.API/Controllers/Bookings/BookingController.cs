@@ -12,6 +12,7 @@ using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookin
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByStudentId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -58,6 +59,12 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         [HttpGet]
         [Route("bookingid")]
         public async Task<BookingData> GetBookingByBookingId([FromQuery]GetBookingAndBookingDetailByBookingIdCommand request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("studentid")]
+        public async Task<List<BookingData>> GetBookingByStudentId([FromQuery] GetBookingByStudentIdCommand request)
         {
             return await _mediator.Send(request);
         }
