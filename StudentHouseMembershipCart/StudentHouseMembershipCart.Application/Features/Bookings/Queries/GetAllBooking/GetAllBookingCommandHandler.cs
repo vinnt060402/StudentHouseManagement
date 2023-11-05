@@ -77,6 +77,15 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
                         bookingResult.StatusContract = "Pending";
                         break;
                 }
+                var bookingPaymentHistory = _dbContext.PaymentHistory.Where(x => x.BookingId == booking.Id).FirstOrDefault();
+                if(bookingPaymentHistory != null)
+                {
+                    bookingResult.PaymentMethodName = _dbContext.PaymentMethod.Where(x => x.Id == bookingPaymentHistory.PaymentMethodId).Select(x => x.PaymentMethodName).FirstOrDefault() ?? null;
+                }
+                else
+                {
+                    bookingResult.PaymentMethodName = null;
+                }
                 bookingResult.ApartmentData = apartmentResponse;
                 bookingResult.Details = bddResponse;
 

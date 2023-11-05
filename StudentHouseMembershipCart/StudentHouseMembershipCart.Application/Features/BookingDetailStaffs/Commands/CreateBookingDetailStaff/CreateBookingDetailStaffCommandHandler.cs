@@ -25,8 +25,6 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
         {
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-
-
                 var checkExistedAssign = await _dbContext.BookingDetailStaff.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).SingleOrDefaultAsync();
                 if (checkExistedAssign != null)
                 {

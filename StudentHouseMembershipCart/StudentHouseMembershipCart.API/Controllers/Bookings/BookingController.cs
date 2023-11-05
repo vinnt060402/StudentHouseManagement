@@ -53,7 +53,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             {
                 ApartmentId = apartmentId
             };
-
+                
             return await _mediator.Send(request);
         }
         [HttpGet]

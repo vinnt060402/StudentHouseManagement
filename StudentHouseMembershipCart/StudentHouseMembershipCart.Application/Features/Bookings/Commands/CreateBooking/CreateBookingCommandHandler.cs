@@ -80,13 +80,13 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                     double totalPrice = 0;
                     foreach (var package in listPackageId)
                     {
-                        var getPackageIdRequest = listPakageData.Where(x => x.Id == Guid.Parse(package)).Single(); /*new GetPackageByIdCommand
+                        var getPackageIdRequest = listPakageData.Where(x => x.Id == Guid.Parse(package)).FirstOrDefault(); /*new GetPackageByIdCommand
                         {
                             PakageId = package
                         };
 
                         var getPackageIdResponse = await _mediator.Send(getPackageIdRequest);*/
-                        var priceOfPackage = getPackageIdRequest.TotalPrice * request.ListPackage.Where(x => x.PackageId == package).Select(x => x.QuantityOfPackageOrdered).Single();
+                        var priceOfPackage = getPackageIdRequest.TotalPrice * request.ListPackage.Where(x => x.PackageId == package).Select(x => x.QuantityOfPackageOrdered).FirstOrDefault();
                         totalPrice += priceOfPackage ?? 0;
                     }
                     //TODO FIX CONTRACT
@@ -152,7 +152,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                                                              !x.IsRe_Newed).FirstOrDefault();
                             if (check != null)
                             {
-                                var test = listPakageData.Where(x => x.Id == Guid.Parse(item.PackageId)).FirstOrDefault();
+                                var packageDataRequest = listPakageData.Where(x => x.Id == Guid.Parse(item.PackageId)).First();
                                 //Thực hiện việc insert ở toàn bộ ở đây
                                 #region Create Booking Detail
                                 var createBookingDetailRequest = new CreateBookingDetailCommand
@@ -166,7 +166,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                     CreateBy = request.CreateBy,
 
                                 };
-                                var packageInCreateBookingDetail = createBookingDetailRequest.PackageDataRequest;
+                                var packageInCreateBookingDetail = packageDataRequest;
 
                                 if (packageInCreateBookingDetail.IsDelete)
                                 {
@@ -175,7 +175,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                 // Calc total day of work 
                                 var remainingtaskDuration = packageInCreateBookingDetail.NumberOfPerWeekDoPackage * packageInCreateBookingDetail.WeekNumberBooking * createBookingDetailRequest.QuantityOfPackageOrdered;
                                 // Calc price of booking detail
-                                var price = createBookingDetailRequest.QuantityOfPackageOrdered * packageInCreateBookingDetail.TotalPrice;
+                                var price = item.QuantityOfPackageOrdered * packageInCreateBookingDetail.TotalPrice;
                                 var bookdingDetail = new BookingDetail
                                 {
                                     TotalPriceOfQuantity = price ?? 0,
@@ -260,7 +260,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                 StudentId = Guid.Parse(studentId),
                                 BookingId = booking.Id,
                                 PackageId = Guid.Parse(item.PackageId),
-                                PackageDataRequest = listPakageData.Where(x => x.Id == Guid.Parse(item.PackageId)).Single(),
+                                PackageDataRequest = listPakageData.Where(x => x.Id == Guid.Parse(item.PackageId)).FirstOrDefault(),
                                 QuantityOfPackageOrdered = item.QuantityOfPackageOrdered,
                                 StartDate = request.StartDate,
                                 CreateBy = request.CreateBy,

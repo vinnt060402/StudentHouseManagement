@@ -7,6 +7,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings
     {
         public Guid Id { get; set; }
         public string? StudentName { get; set; }
+        public string? PaymentMethodName { get; set; }
         public string? Contract { get; set; }
         public double TotalPay { get; set; }
         public Guid ApartmentId { get; set; }
