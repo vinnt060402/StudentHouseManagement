@@ -30,7 +30,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
                 var data = await _dbContext.BookingDetail.Where(x => x.Id == item).FirstOrDefaultAsync();
                 if (data != null)
                 {
-                    var bdd = _mapper.Map<BookingDetailData>(item);
+                    var bdd = _mapper.Map<BookingDetailData>(data);
                     var bookingDetailByStaffIdModel = new BookingDetailByStaffIdModel
                     {
                         BookingDetailData = bdd
