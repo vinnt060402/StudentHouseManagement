@@ -16,8 +16,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
                     DayDoServiceInWeek = "26",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 250000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "Sửa chữa ....."
 
                 },
                 new Package
@@ -27,8 +28,8 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
                     DayDoServiceInWeek = "5",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 150000,  // price of sercive * numberOfWeekPackage * dicount%
 
                 },
                 new Package
@@ -38,8 +39,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
                     DayDoServiceInWeek = "5",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 3000000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "hỗ trợ tài chính ....."
 
                 },
                 new Package
@@ -49,8 +51,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
                     DayDoServiceInWeek = "4",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 50000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "Rửa xe....."
 
                 },
                 new Package
@@ -60,9 +63,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 1,
                     NumberOfPerWeekDoPackage = 1,
                     DayDoServiceInWeek = "2",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
-
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 100000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "Giặt đồ ....."
                 },
                 new Package
                 {
@@ -71,9 +74,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
                     DayDoServiceInWeek = "25",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
-
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 120000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "Dọn vệ sinh ....."
                 }
                 ,
                 new Package
@@ -83,8 +86,9 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     WeekNumberBooking = 6,
                     NumberOfPerWeekDoPackage = 2,
                     DayDoServiceInWeek = "37",
-                    Image = null,
-                    TotalPrice = 0,  // price of sercive * numberOfWeekPackage * dicount%
+                    Image = "https://res.cloudinary.com/dqqqgyqjl/image/upload/v1698421423/opuaf4ugi3y5iutu6vvp.jpg?fbclid=IwAR3rtgIeRmGXgoilgjIh0hupzfpXJCv_rArlNgBqTMkgRYwPL9wV0HJ9rEU",
+                    TotalPrice = 140000,  // price of sercive * numberOfWeekPackage * dicount%
+                    PackageDescription = "Vận chuyển ....."
                 }
             );
         }
