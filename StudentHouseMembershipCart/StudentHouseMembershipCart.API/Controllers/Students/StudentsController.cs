@@ -58,7 +58,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> Delete([FromQuery] DeleteStudentCommand request)
+        public async Task<ActionResult> Delete(DeleteStudentCommand request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);

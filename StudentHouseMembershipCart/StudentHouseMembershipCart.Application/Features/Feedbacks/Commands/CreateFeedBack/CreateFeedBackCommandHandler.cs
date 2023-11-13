@@ -29,7 +29,6 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
                 };
                 _dbContext.FeedBack.Add(feedback);
                 await _dbContext.SaveChangesAsync();
-
                 return new SHMResponse()
                 {
                     Message = Extensions.CreateSuccessfully

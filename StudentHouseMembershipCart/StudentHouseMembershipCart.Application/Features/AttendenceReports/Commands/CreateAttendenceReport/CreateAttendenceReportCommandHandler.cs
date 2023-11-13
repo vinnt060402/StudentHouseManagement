@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
@@ -43,6 +44,8 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             _dbContext.AttendReport.AddRange(listAttendenceReport);
             try
             {
+                Task.WaitAll();
+
                 await _dbContext.SaveChangesAsync();
                 foreach (var dateDo in listAttendenceReport)
                 {
@@ -57,8 +60,10 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                throw new BadRequestException(ex.StackTrace);
             }
+            Task.WaitAll();
+
             return new SHMResponse
             {
                 Message = Extensions.CreateSuccessfully

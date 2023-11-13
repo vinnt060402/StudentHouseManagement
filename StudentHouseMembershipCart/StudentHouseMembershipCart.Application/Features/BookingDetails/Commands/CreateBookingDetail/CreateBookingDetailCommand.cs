@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
+using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.CreateBookingDetail
 {
@@ -11,6 +13,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
         public DateTime StartDate { get; set; } 
         public int? QuantityOfPackageOrdered { get; set; }
         public Guid PackageId { get; set; }
+        public Package PackageDataRequest { get; set; } = null!;
         public string? CreateBy { get; set; }
     }
 }

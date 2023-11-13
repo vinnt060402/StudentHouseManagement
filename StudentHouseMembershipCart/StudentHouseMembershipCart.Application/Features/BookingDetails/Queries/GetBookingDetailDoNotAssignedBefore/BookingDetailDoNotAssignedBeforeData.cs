@@ -1,9 +1,10 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
+﻿namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries.GetBookingDetailDoNotAssignedBefore
 {
-    public class BookingDetailData
+    public class BookingDetailDoNotAssignedBeforeData
     {
+        public string? BookingDetailName { get; set; }
         public Guid Id { get; set; }
-        public double TotalPriceOfQuantity { get; set; }
+        public double TotalPriceQtity { get; set; }
         public bool IsRe_Newed { get; set; }
         public int RemainingTaskDuration { get; set; }
         public int QuantityOfPackageOrdered { get; set; }

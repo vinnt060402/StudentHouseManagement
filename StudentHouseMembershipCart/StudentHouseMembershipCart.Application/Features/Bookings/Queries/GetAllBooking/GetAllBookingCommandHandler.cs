@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByApartmentId;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId;
 
@@ -27,8 +28,6 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
             List<BookingData> result = new List<BookingData>();
             foreach (var booking in listBooking)
             {
-
-
                 var bookingResult = _mapper.Map<BookingData>(booking);
                 var student = await (from st in _dbContext.Student
                                      join ap in _dbContext.Apartment
@@ -61,6 +60,33 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
                     BookingId = booking.Id,
                 };
                 var bddResponse = await _mediator.Send(bookingdetailrequest);
+                var apartmentIdRequest = new GetApartmentByApartmentIdQuery()
+                {
+                    ApartmentId = booking.ApartmentId
+                };
+                var apartmentResponse = await _mediator.Send(apartmentIdRequest);
+                switch (booking.StatusContract)
+                {
+                    case 1:
+                        bookingResult.StatusContract = "Finished";
+                        break;
+                    case 0:
+                        bookingResult.StatusContract = "On Going";
+                        break;
+                    default:
+                        bookingResult.StatusContract = "Pending";
+                        break;
+                }
+                var bookingPaymentHistory = _dbContext.PaymentHistory.Where(x => x.BookingId == booking.Id).FirstOrDefault();
+                if(bookingPaymentHistory != null)
+                {
+                    bookingResult.PaymentMethodName = _dbContext.PaymentMethod.Where(x => x.Id == bookingPaymentHistory.PaymentMethodId).Select(x => x.PaymentMethodName).FirstOrDefault() ?? null;
+                }
+                else
+                {
+                    bookingResult.PaymentMethodName = null;
+                }
+                bookingResult.ApartmentData = apartmentResponse;
                 bookingResult.Details = bddResponse;
 
                 result.Add(bookingResult);

@@ -18,7 +18,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
 
         public async Task<SHMResponse> Handle(UpdateBookingDetailNewCommand request, CancellationToken cancellationToken)
         {
-            var bookingDetail = await _dbContext.BookingDetail.Where(x => x.Id == request.BookingDetailId).SingleOrDefaultAsync();
+            var bookingDetail = await _dbContext.BookingDetail.AsNoTracking().Where(x => x.Id == request.BookingDetailId).SingleOrDefaultAsync();
             if (bookingDetail == null)
             {
                 throw new NotFoundException("Can not find this booking detail!");
@@ -27,6 +27,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
             bookingDetail.RenewStartDate = request.RenewStartDate;
             _dbContext.BookingDetail.Update(bookingDetail);
             await _dbContext.SaveChangesAsync();
+            Task.WaitAll();
             return new SHMResponse
             {
                 Message = Extensions.UpdateSuccessfully

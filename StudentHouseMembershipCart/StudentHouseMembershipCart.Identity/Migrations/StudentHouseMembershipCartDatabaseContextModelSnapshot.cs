@@ -52,21 +52,21 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
-                            ConcurrencyStamp = "0e2dc6ac-eda8-4fc8-a7c1-ff65dedd3927",
+                            ConcurrencyStamp = "a47c2a66-7414-4cd7-b3b2-387952fd62d3",
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
-                            ConcurrencyStamp = "0b75157d-b213-472f-95a8-23224a7eba98",
+                            ConcurrencyStamp = "d944d3cc-7237-4281-a4b7-6c0faad9c264",
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
-                            ConcurrencyStamp = "d47a42b3-7a39-4ab1-a5d7-bfb709786356",
+                            ConcurrencyStamp = "948909f9-df50-4477-b4c0-3a303b77ac1e",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -267,7 +267,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("90ca347f-831f-4b75-98bb-ae825b3efc15"),
                             AdminName = "Admin",
                             ApplicationUserId = "ACCOUNT4",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 53, 957, DateTimeKind.Local).AddTicks(5391),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 763, DateTimeKind.Local).AddTicks(1979),
                             IsDelete = false
                         });
                 });
@@ -316,7 +316,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("9388a4e7-ae81-40d4-834c-463cfccb6f53"),
                             Address = "286,phuong 24, quan Hai Ba Trung, Ha Noi",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(8908),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9197),
                             IsDelete = false,
                             RegionId = new Guid("bd3db160-9064-458b-9974-aeaa876d1ef4"),
                             StudentId = new Guid("f9589c1a-3cbc-4215-bb84-b8fa7d719420")
@@ -325,7 +325,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("ee8bd315-0201-46db-bcab-b1292f97e91d"),
                             Address = "176, phuong 26, quan Binh Thanh, TP.HCM",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(8933),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9233),
                             IsDelete = false,
                             RegionId = new Guid("3a60f12a-8c9a-4985-a215-0c55438f363b"),
                             StudentId = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485")
@@ -334,7 +334,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("81f9a432-7e27-4b3e-a354-dfaf3f1c164c"),
                             Address = "145, phuong 5, quan Hoan Kiem, Ha Noi",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(8938),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9238),
                             IsDelete = false,
                             RegionId = new Guid("34303ccb-2c3e-4cee-84f3-b3352d67d790"),
                             StudentId = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939")
@@ -385,8 +385,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("d9a5af9c-ce76-43ab-9fc4-46442e495f59"),
                             BookingDetailId = new Guid("2408cc34-d225-448e-979e-014d1ec860a3"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9104),
-                            DateDoPackage = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9105),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9429),
+                            DateDoPackage = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9432),
                             IsDelete = false,
                             ReportWorkId = new Guid("120e1aaa-eed0-445f-943a-20bc12f4b883")
                         },
@@ -394,8 +394,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("275b2720-420d-4b33-835a-4651d92f1390"),
                             BookingDetailId = new Guid("be08997c-61a5-4859-98a2-459c93dca574"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9109),
-                            DateDoPackage = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9110),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9437),
+                            DateDoPackage = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9438),
                             IsDelete = false,
                             ReportWorkId = new Guid("b1bcf1d6-5b2e-43dd-8645-6738d6787924")
                         },
@@ -403,8 +403,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("046b87c6-e4b5-4f08-9951-9ebf4bc20993"),
                             BookingDetailId = new Guid("a2a79fb8-a2f5-4f98-9b36-22eeb1a1215c"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9114),
-                            DateDoPackage = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9116),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9441),
+                            DateDoPackage = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9442),
                             IsDelete = false,
                             ReportWorkId = new Guid("e104a356-2baf-4bf9-a3d8-b1463352c3e7")
                         },
@@ -412,8 +412,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("742a0cf9-14ae-47ac-963b-03a096ef80a2"),
                             BookingDetailId = new Guid("1f4d83e2-3713-4fff-9fc5-5373c20cc2cc"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9118),
-                            DateDoPackage = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9119),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9452),
+                            DateDoPackage = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9454),
                             IsDelete = false,
                             ReportWorkId = new Guid("991b3ff2-962f-439a-aec6-051d522a8904")
                         },
@@ -421,8 +421,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("ccba7e84-40ed-4d32-b98f-e3e5181a924f"),
                             BookingDetailId = new Guid("cd4de656-dbfe-4797-8f8d-130ded6a6774"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9126),
-                            DateDoPackage = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9127),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9457),
+                            DateDoPackage = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9458),
                             IsDelete = false,
                             ReportWorkId = new Guid("6323937a-3b10-4277-8d7b-e61368bd8cf9")
                         });
@@ -477,9 +477,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("8c5bccd4-56b6-4b76-8d5b-888872a8b71f"),
                             ApartmentId = new Guid("9388a4e7-ae81-40d4-834c-463cfccb6f53"),
                             Contract = "Hợp đồng Rửa xe",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9257),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9612),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9260),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9616),
                             TotalPay = 1234.5
                         },
                         new
@@ -487,9 +487,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("256fa734-309c-44a9-af6a-8a97866fbff5"),
                             ApartmentId = new Guid("ee8bd315-0201-46db-bcab-b1292f97e91d"),
                             Contract = "Hợp đồng giặt đồ",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9263),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9665),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9264),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9667),
                             TotalPay = 1222.5
                         },
                         new
@@ -497,9 +497,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("85d3da16-8f33-4c96-9792-1e6e17d3ecc8"),
                             ApartmentId = new Guid("81f9a432-7e27-4b3e-a354-dfaf3f1c164c"),
                             Contract = "Hợp đồng dọn vệ sinh nhà cửa",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9266),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9670),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9268),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9672),
                             TotalPay = 2233.3000000000002
                         },
                         new
@@ -507,9 +507,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("a39735c8-440d-440f-9a5f-932164975749"),
                             ApartmentId = new Guid("9388a4e7-ae81-40d4-834c-463cfccb6f53"),
                             Contract = "Hợp đồng dịch vụ hỗ trợ tài chính",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9270),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9702),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9271),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9703),
                             TotalPay = 2233.3000000000002
                         },
                         new
@@ -517,9 +517,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("3533264c-3bdd-4744-9023-481f5ec99cd6"),
                             ApartmentId = new Guid("ee8bd315-0201-46db-bcab-b1292f97e91d"),
                             Contract = "Hợp đồng vận chuyển đồ",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9273),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9706),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9274),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9709),
                             TotalPay = 2233.3000000000002
                         },
                         new
@@ -527,9 +527,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("ce7fdf8d-c130-4e5c-b2f4-6199153a5926"),
                             ApartmentId = new Guid("81f9a432-7e27-4b3e-a354-dfaf3f1c164c"),
                             Contract = "Hợp đồng nấu ăn cho em",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9276),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9711),
                             IsDelete = false,
-                            StartDate = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9278),
+                            StartDate = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9712),
                             TotalPay = 2233.3000000000002
                         });
                 });
@@ -592,7 +592,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("be08997c-61a5-4859-98a2-459c93dca574"),
                             BookingId = new Guid("8c5bccd4-56b6-4b76-8d5b-888872a8b71f"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9394),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9951),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("68e3bf2b-2bd7-4428-ac39-148f1a186cba"),
@@ -604,7 +604,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("035c6d92-8fb5-4635-8acf-1821e7296dae"),
                             BookingId = new Guid("256fa734-309c-44a9-af6a-8a97866fbff5"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9402),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9959),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("c0e52326-c1c2-4c58-a5d9-d6a768e0c7a9"),
@@ -616,7 +616,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("2408cc34-d225-448e-979e-014d1ec860a3"),
                             BookingId = new Guid("85d3da16-8f33-4c96-9792-1e6e17d3ecc8"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9406),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9963),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("d0e4fc80-5e14-4f54-b3d3-90fff85df063"),
@@ -628,7 +628,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("cd4de656-dbfe-4797-8f8d-130ded6a6774"),
                             BookingId = new Guid("a39735c8-440d-440f-9a5f-932164975749"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9474),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9967),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("649ce925-0cd1-4cb2-9fb2-4c6ae8ff521e"),
@@ -640,7 +640,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("a2a79fb8-a2f5-4f98-9b36-22eeb1a1215c"),
                             BookingId = new Guid("ce7fdf8d-c130-4e5c-b2f4-6199153a5926"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9478),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9980),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("68e3bf2b-2bd7-4428-ac39-148f1a186cba"),
@@ -652,7 +652,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("1f4d83e2-3713-4fff-9fc5-5373c20cc2cc"),
                             BookingId = new Guid("3533264c-3bdd-4744-9023-481f5ec99cd6"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9481),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 845, DateTimeKind.Local).AddTicks(9998),
                             IsDelete = false,
                             IsRe_Newed = true,
                             PackageId = new Guid("b17c9d4c-b164-4097-8d5f-03d2246da758"),
@@ -700,25 +700,25 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8aea7101-728a-4274-a4d6-34e75778645c"),
+                            Id = new Guid("7448f3f0-b4cd-4fb7-862a-495c7dd441b2"),
                             BookingDetailId = new Guid("be08997c-61a5-4859-98a2-459c93dca574"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9597),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1053),
                             IsDelete = false,
                             StaffId = new Guid("d36a73ed-78ae-46af-befd-7b90cbcfc479")
                         },
                         new
                         {
-                            Id = new Guid("9175de86-5589-4ff2-b982-4ba2610e98b9"),
+                            Id = new Guid("441f8556-e3e9-4db4-8d2b-67feeb32464a"),
                             BookingDetailId = new Guid("035c6d92-8fb5-4635-8acf-1821e7296dae"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9605),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1069),
                             IsDelete = false,
                             StaffId = new Guid("c085539d-76bd-4fe8-9444-12c21de6610b")
                         },
                         new
                         {
-                            Id = new Guid("13b8c3dc-e612-4afa-babe-5a32a7af1816"),
+                            Id = new Guid("c093b4b6-3efc-4146-9b1a-362a46a654ec"),
                             BookingDetailId = new Guid("2408cc34-d225-448e-979e-014d1ec860a3"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9608),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1073),
                             IsDelete = false,
                             StaffId = new Guid("a8ded7dd-683f-4231-8c47-560375560eea")
                         });
@@ -761,49 +761,49 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("8abb3dda-208b-4397-93c0-3a5269a90e3d"),
                             CategoryName = "Rửa xe",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9722),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1442),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("9df988f5-0382-4939-8eee-09d47b182bbb"),
                             CategoryName = "Nấu ăn cho em",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9726),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1449),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("375a894d-e8e5-4a84-a0b8-09f907992b46"),
                             CategoryName = "Shipping",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9727),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1452),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("8940e7f6-fd91-4402-a515-b9d55448c522"),
                             CategoryName = "hỗ trợ tài chính",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9730),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1455),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("21291667-7546-4825-9bad-840d648900a3"),
                             CategoryName = "dọn vệ sinh nhà cửa",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9732),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1458),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("ba0f3f23-9425-44ad-9d73-a7608381fd5f"),
                             CategoryName = "Bảo trì và sửa chữa",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9734),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1465),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("a3ccb973-d6c4-4ef4-ae4b-36a97429a0b0"),
                             CategoryName = "Giặt đồ",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9736),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1472),
                             IsDelete = false
                         });
                 });
@@ -864,7 +864,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("2372f547-375e-4f88-a726-37643180c585"),
                             AttendReportId = new Guid("d9a5af9c-ce76-43ab-9fc4-46442e495f59"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9847),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1661),
                             FeedBackDescription = "dọn dẹp cực kì có tâm, lao nhà quá sạch, đi muốn té tét đầu",
                             FeedBackImage = "/url/asdas/sadas",
                             FeedBackName = "Feedback dọn dẹp nhà cửa của căn hộ 0504 vinhomes",
@@ -877,7 +877,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("fc2e4d71-9e75-40d9-972c-a36ecad80887"),
                             AttendReportId = new Guid("275b2720-420d-4b33-835a-4651d92f1390"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9855),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1669),
                             FeedBackDescription = "Rửa xe sạch bon bon, soi thấy cục mụn, nhưng bơm bánh xe hơi căng",
                             FeedBackImage = "/url/asdas/sadas",
                             FeedBackName = "Feedback rửa xe máy winner X của a Vĩ",
@@ -890,7 +890,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("0730329f-ebcb-484d-8dd0-e32bb3de78a4"),
                             AttendReportId = new Guid("046b87c6-e4b5-4f08-9951-9ebf4bc20993"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9859),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1674),
                             FeedBackDescription = "Cơm cô 3 và chị 7 nấu rất là ngon và trắng, nói chung tuyệt cú mèo",
                             FeedBackImage = "/url/asdas/sadas",
                             FeedBackName = "Feedback nấu ăn cho em",
@@ -903,7 +903,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("53838b2b-a19f-422a-8f62-6363476c21da"),
                             AttendReportId = new Guid("742a0cf9-14ae-47ac-963b-03a096ef80a2"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9864),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1680),
                             FeedBackDescription = "vận chuyển đúng thời gian và quy định của kí túc xá, Quá đã pepsi ơi!!!",
                             FeedBackImage = "/url/asdas/sadas",
                             FeedBackName = "Feedback chuyển nhà cho sinh viên nghèo vượt khó",
@@ -916,7 +916,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("6863f4fb-eef5-4f26-8fcf-8736aa8ade95"),
                             AttendReportId = new Guid("ccba7e84-40ed-4d32-b98f-e3e5181a924f"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9868),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(1833),
                             FeedBackDescription = "Quả thật là vị cứu tinh đúng nghĩa, 10 điểm không có nhưng",
                             FeedBackImage = "/url/asdas/sadas",
                             FeedBackName = "Feedback hỗ trợ tài chánh cho sinh viên nghiện.",
@@ -978,7 +978,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("ee75ea18-f6a7-4025-84b7-588ab1c6bf2d"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9978),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2013),
                             DayDoServiceInWeek = "26",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 2,
@@ -989,7 +989,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("68e3bf2b-2bd7-4428-ac39-148f1a186cba"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9985),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2032),
                             DayDoServiceInWeek = "5",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 1,
@@ -1000,7 +1000,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("649ce925-0cd1-4cb2-9fb2-4c6ae8ff521e"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9988),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2036),
                             DayDoServiceInWeek = "5",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 1,
@@ -1011,7 +1011,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("4da4e6ad-3328-4f03-964e-c31e1a8421f3"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 17, DateTimeKind.Local).AddTicks(9995),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2040),
                             DayDoServiceInWeek = "4",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 1,
@@ -1022,7 +1022,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("c0e52326-c1c2-4c58-a5d9-d6a768e0c7a9"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2043),
                             DayDoServiceInWeek = "2",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 1,
@@ -1033,7 +1033,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("d0e4fc80-5e14-4f54-b3d3-90fff85df063"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(102),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2046),
                             DayDoServiceInWeek = "25",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 2,
@@ -1044,7 +1044,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("b17c9d4c-b164-4097-8d5f-03d2246da758"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(106),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2049),
                             DayDoServiceInWeek = "37",
                             IsDelete = false,
                             NumberOfPerWeekDoPackage = 2,
@@ -1093,7 +1093,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("d036463d-887e-4a3c-aaab-4fce577e43db"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(226),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2204),
                             IsDelete = false,
                             PackageId = new Guid("c0e52326-c1c2-4c58-a5d9-d6a768e0c7a9"),
                             ServiceId = new Guid("e430fcfb-de6a-4c64-a6ca-b607e1357843")
@@ -1101,7 +1101,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("95786a5f-3068-4628-ad2f-2bcc70de8661"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(233),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2211),
                             IsDelete = false,
                             PackageId = new Guid("d0e4fc80-5e14-4f54-b3d3-90fff85df063"),
                             ServiceId = new Guid("30743744-754b-4a87-b828-6186ccc7ece6")
@@ -1109,7 +1109,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("fc2c6cbb-1d78-48e4-be82-fc2870275030"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(236),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2218),
                             IsDelete = false,
                             PackageId = new Guid("4da4e6ad-3328-4f03-964e-c31e1a8421f3"),
                             ServiceId = new Guid("fa87282b-0c28-4dc7-831d-e1d8f8026270")
@@ -1117,7 +1117,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("b7a93559-d76d-40f3-973e-b550dbc8ad74"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(238),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2222),
                             IsDelete = false,
                             PackageId = new Guid("649ce925-0cd1-4cb2-9fb2-4c6ae8ff521e"),
                             ServiceId = new Guid("29140864-8e89-41b6-8fd7-a440800e6e00")
@@ -1125,7 +1125,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("d42d5044-1e4e-4c77-8e6e-0fae60ad1d17"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(242),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2226),
                             IsDelete = false,
                             PackageId = new Guid("ee75ea18-f6a7-4025-84b7-588ab1c6bf2d"),
                             ServiceId = new Guid("4fcc0684-ad33-433f-9338-d9e949b6f0d8")
@@ -1208,7 +1208,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("e587848f-e7c9-4d8d-830c-eddb838cdc25"),
                             CreateBy = "Admin",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(395),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2420),
                             IsDelete = false,
                             PaymentMethodName = "Cash"
                         },
@@ -1216,7 +1216,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("e49e2e39-8eca-42f5-8cfc-5deade7e331b"),
                             CreateBy = "Admin",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(399),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2425),
                             IsDelete = false,
                             PaymentMethodName = "Credit Card"
                         },
@@ -1224,7 +1224,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("07760009-74e9-49dc-a286-3885fc816596"),
                             CreateBy = "Admin",
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(401),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2428),
                             IsDelete = false,
                             PaymentMethodName = "Bank Transfer"
                         });
@@ -1263,98 +1263,98 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = new Guid("bd3db160-9064-458b-9974-aeaa876d1ef4"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(521),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2582),
                             IsDelete = false,
                             RegionName = "Quận 8"
                         },
                         new
                         {
                             Id = new Guid("3a60f12a-8c9a-4985-a215-0c55438f363b"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(523),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2586),
                             IsDelete = false,
                             RegionName = "Dong Nai"
                         },
                         new
                         {
                             Id = new Guid("34303ccb-2c3e-4cee-84f3-b3352d67d790"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(526),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2593),
                             IsDelete = false,
                             RegionName = "Quan Binh Thanh"
                         },
                         new
                         {
                             Id = new Guid("6db6d0cf-a3a4-4c12-8f0d-41c4ff579ae6"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(528),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2596),
                             IsDelete = false,
                             RegionName = "Quận 11"
                         },
                         new
                         {
                             Id = new Guid("62f16917-b22a-4b17-b93d-5a9f35c5b8f4"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(530),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2599),
                             IsDelete = false,
                             RegionName = "Quận 12"
                         },
                         new
                         {
                             Id = new Guid("83326cb5-b249-4ba3-aa98-87752a99df53"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(535),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2602),
                             IsDelete = false,
                             RegionName = "Hóc Môn"
                         },
                         new
                         {
                             Id = new Guid("006aeb5a-7574-40ca-a73e-da840eceb810"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(543),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2604),
                             IsDelete = false,
                             RegionName = "Quận 1"
                         },
                         new
                         {
                             Id = new Guid("2bb177e5-2180-4ce0-bbf2-af5bc9eeefcc"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(544),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2662),
                             IsDelete = false,
                             RegionName = "Quận 2"
                         },
                         new
                         {
                             Id = new Guid("3b0ab201-058e-4314-8b5c-df3c7d831ddc"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(546),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2665),
                             IsDelete = false,
                             RegionName = "Quận 3"
                         },
                         new
                         {
                             Id = new Guid("9ffbfc1a-45d7-42d1-b216-00f328fe1638"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(548),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2668),
                             IsDelete = false,
                             RegionName = "Quận 9"
                         },
                         new
                         {
                             Id = new Guid("2429516b-5620-4838-912f-f4826f5d28bd"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(550),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2673),
                             IsDelete = false,
                             RegionName = "Quận 7"
                         },
                         new
                         {
                             Id = new Guid("8725e1c4-e76b-4563-916b-a668516237e2"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(552),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2675),
                             IsDelete = false,
                             RegionName = "Quận 4"
                         },
                         new
                         {
                             Id = new Guid("0dbd39f5-cd9b-4e7f-8d53-851014a4efa0"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(554),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2679),
                             IsDelete = false,
                             RegionName = "Quận 5"
                         },
                         new
                         {
                             Id = new Guid("fc4cfb1b-063e-4f31-b25f-b0853a401350"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(557),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2682),
                             IsDelete = false,
                             RegionName = "Quận 6"
                         });
@@ -1424,7 +1424,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("991b3ff2-962f-439a-aec6-051d522a8904"),
                             AttendReportId = new Guid("742a0cf9-14ae-47ac-963b-03a096ef80a2"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(712),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2852),
                             DescriptionProcess = "Giao hàng đến 123/8 Long Thạnh Mỹ, Quận 9. Thành Công!!!",
                             Image = "abc",
                             IsDelete = false,
@@ -1435,7 +1435,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("120e1aaa-eed0-445f-943a-20bc12f4b883"),
                             AttendReportId = new Guid("d9a5af9c-ce76-43ab-9fc4-46442e495f59"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(716),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2859),
                             DescriptionProcess = "Lau tủ, Lau bếp, Rửa chén. Hoàn Thành",
                             Image = "abc",
                             IsDelete = false,
@@ -1446,7 +1446,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("bd3d72cc-551a-4abf-b358-d6d980bddb67"),
                             AttendReportId = new Guid("275b2720-420d-4b33-835a-4651d92f1390"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(720),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(2863),
                             DescriptionProcess = "Sửa ống nước, thay van. Thành công",
                             Image = "abc",
                             IsDelete = false,
@@ -1504,7 +1504,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("fa87282b-0c28-4dc7-831d-e1d8f8026270"),
                             CategoryId = new Guid("8abb3dda-208b-4397-93c0-3a5269a90e3d"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(847),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3037),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1515,7 +1515,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("9d3a81b8-a470-4f46-861e-772d55d73668"),
                             CategoryId = new Guid("8abb3dda-208b-4397-93c0-3a5269a90e3d"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(856),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3048),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1526,7 +1526,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("7635d149-2a74-4562-b779-c81056594bfb"),
                             CategoryId = new Guid("a3ccb973-d6c4-4ef4-ae4b-36a97429a0b0"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(859),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3053),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1537,7 +1537,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("e430fcfb-de6a-4c64-a6ca-b607e1357843"),
                             CategoryId = new Guid("a3ccb973-d6c4-4ef4-ae4b-36a97429a0b0"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(863),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3058),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1548,7 +1548,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("29140864-8e89-41b6-8fd7-a440800e6e00"),
                             CategoryId = new Guid("8940e7f6-fd91-4402-a515-b9d55448c522"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(868),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3061),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1559,7 +1559,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("a9a16dcf-6c63-4392-9ec2-be727fcd6081"),
                             CategoryId = new Guid("8abb3dda-208b-4397-93c0-3a5269a90e3d"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(871),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3065),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1570,7 +1570,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("1e064aca-ef1a-4705-9931-a49a807765fd"),
                             CategoryId = new Guid("375a894d-e8e5-4a84-a0b8-09f907992b46"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(874),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3069),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1581,7 +1581,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("16209d12-4e67-41e5-b419-f3285b8958e6"),
                             CategoryId = new Guid("375a894d-e8e5-4a84-a0b8-09f907992b46"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(877),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3073),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1592,7 +1592,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("fbda5a61-c0e1-4039-97a5-841fb84ec5ce"),
                             CategoryId = new Guid("9df988f5-0382-4939-8eee-09d47b182bbb"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(880),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3077),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1603,7 +1603,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("30743744-754b-4a87-b828-6186ccc7ece6"),
                             CategoryId = new Guid("21291667-7546-4825-9bad-840d648900a3"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(883),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3084),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1614,7 +1614,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("4fcc0684-ad33-433f-9338-d9e949b6f0d8"),
                             CategoryId = new Guid("ba0f3f23-9425-44ad-9d73-a7608381fd5f"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(886),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3088),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1625,7 +1625,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("6bbd52b8-a4b7-407e-baba-a4f4fca65d24"),
                             CategoryId = new Guid("ba0f3f23-9425-44ad-9d73-a7608381fd5f"),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(889),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3091),
                             Image = "abc",
                             IsDelete = false,
                             Price = 0.0,
@@ -1682,7 +1682,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Dong Nai",
                             ApplicationUserId = "ACCOUNT5",
                             Birthday = new DateTime(1999, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1009),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3399),
                             IsDelete = false,
                             staffName = "Staff 1"
                         },
@@ -1692,7 +1692,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "An Giang",
                             ApplicationUserId = "ACCOUNT6",
                             Birthday = new DateTime(1990, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1078),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3548),
                             IsDelete = false,
                             staffName = "Staff 2"
                         },
@@ -1702,7 +1702,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Long An",
                             ApplicationUserId = "ACCOUNT7",
                             Birthday = new DateTime(2000, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1084),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3558),
                             IsDelete = false,
                             staffName = "Staff 3"
                         });
@@ -1792,7 +1792,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Đà Nẵng",
                             ApplicationUserId = "ACCOUNT9",
                             Birthday = new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1202),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3790),
                             IsDelete = false,
                             Phone = "0961868641"
                         },
@@ -1801,8 +1801,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"),
                             Address = "Hồ Chí Minh",
                             ApplicationUserId = "ACCOUNT10",
-                            Birthday = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1215),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1213),
+                            Birthday = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3809),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3807),
                             IsDelete = false,
                             Phone = "0312357823"
                         },
@@ -1811,8 +1811,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"),
                             Address = "Hà Nội",
                             ApplicationUserId = "ACCOUNT11",
-                            Birthday = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1219),
-                            Created = new DateTime(2023, 10, 29, 14, 59, 54, 18, DateTimeKind.Local).AddTicks(1218),
+                            Birthday = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3817),
+                            Created = new DateTime(2023, 11, 8, 16, 12, 36, 846, DateTimeKind.Local).AddTicks(3816),
                             IsDelete = false,
                             Phone = "0987451632"
                         });
@@ -1891,16 +1891,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0870372d-a0a5-4391-b31e-a70628c2567b",
+                            ConcurrencyStamp = "5cb25fa2-5673-4144-aaa0-2096a4590de9",
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMF8y/Yr/al86aHFijpCyRoRQvYTbS/S6h2FM17QEiOCKExIG2loqU0Hrg9JdkvACQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPjPdyGFnPQ9/vny/hcm3f1TJdWxHOmiLhTL9Ski+uEhJv7T0jOvF+Qlqx1xgsUnvw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "5d15689d-a932-4b75-a6ed-e5df7627597d",
+                            SecurityStamp = "0726ad31-b381-4089-b183-1e5f3d6da75d",
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -1908,16 +1908,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "49584df2-e116-49e0-a87d-2d83d67ebd97",
+                            ConcurrencyStamp = "b561ddd3-f216-48cb-a959-cc47fcf5575b",
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIRaChqxRjY13athkMaVmFBedK5fOsFFjR5pC587FrSZOjjgeLSWjebzAggSTEjjtA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEuYhyh+mmefkgJm99zVd1TJr/q7STJBkRcD192EnfDXgvgTjymtyz38rdfBWPOMMg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a3702fd6-b0ce-47a5-a627-4470daf42ef0",
+                            SecurityStamp = "57947f46-2c64-4936-b4cb-4ffb52d1640e",
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -1925,16 +1925,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b9ae2d1b-08c2-485c-8321-cd70c1186c04",
+                            ConcurrencyStamp = "b4aa6cde-5c8a-43d0-b1c7-769a3f13411e",
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDxqlugeF3kyvJudO2ov1ZXIpZEafDleMkvXOltYLDXpLGDuxnUGQxV6TTewXScbIQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDYEQR7qQs8pwdRsvMQeIueIBhG1sx8xtk/mJSq4mklei/13zzUPIZgoiRl1aVTbGQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b71a9ca8-4ddb-4030-8286-fd7fe11126c8",
+                            SecurityStamp = "95bad86e-82f7-4510-a42c-3640d80eee28",
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         },
@@ -1942,16 +1942,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "da7c1d2e-6836-4392-9c03-dd693230be93",
+                            ConcurrencyStamp = "8a7df7e8-da0d-4e8c-b3e9-99dfb41c6c4b",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             FullName = "admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEdW583lZagLyuTtpH/+S3Io6R9ZpPqTOEHYi0/mqwkuXmBo9gnmjTbJTDPvz3Oqfg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEONR7mi5OyKl2WFYeZHObAD/rti6b5eVAGyvHmz2L74HwDLm2HYO+8VCa8Dl6WBYhA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7fc19432-039f-45f5-9d37-dfc6b6c09849",
+                            SecurityStamp = "1f770002-90e3-44ba-833e-4c0f73915f75",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -1959,16 +1959,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "23278479-9515-447d-864f-4ed5faf708ce",
+                            ConcurrencyStamp = "f9617612-c586-455a-805b-bfc18d063ea6",
                             Email = "staff1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF1@GMAIL.COM",
                             NormalizedUserName = "STAFF",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIBp0IqG+0o81jLht/osXiEA7C4YhWZoeBaH5KSdinRIbSOjv462XDzER+XrmzA+nA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDCWoptNp3fkTxeFSXDoIchFv97Z85GNpXoE+yKEZfi3+M5m+ZIyX1mTYbpx5YPQ8A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aae18ee9-eae9-41ef-a68b-575aa30de595",
+                            SecurityStamp = "68caca1c-1a87-4d94-b9fb-f13a1c714abd",
                             TwoFactorEnabled = false,
                             UserName = "staff"
                         },
@@ -1976,16 +1976,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c30ca50-3b9f-4046-b162-5153d1a544f1",
+                            ConcurrencyStamp = "a88bb1e4-bd21-4dbd-9c53-468cada4178d",
                             Email = "staff2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF2@GMAIL.COM",
                             NormalizedUserName = "STAFF2",
-                            PasswordHash = "AQAAAAEAACcQAAAAENqCS13x0OSFo9S9CgAXKh8fWX9gomg10X220eClnkck9QSjADIn87HIbuuFSQ1nrw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBi2UF4o0hRVucUjFiwX6LlIuYGBv8E9hescsMeH9YPRtXWmeVXX+tQc+QRXVpRjWA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0110e044-88d8-44f0-a536-9f5d7af2ad48",
+                            SecurityStamp = "2bd943dd-3e7d-4dd2-9cdf-0ce8a80a5285",
                             TwoFactorEnabled = false,
                             UserName = "staff2"
                         },
@@ -1993,16 +1993,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e8f52ea6-15f8-4129-9827-5d964a452b5d",
+                            ConcurrencyStamp = "638bb9cf-76ef-4b1c-961a-2e71c2623fc5",
                             Email = "staff3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF3@GMAIL.COM",
                             NormalizedUserName = "STAFF3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGXIRPRSQ2Aqk9PsCbg9yKJbm1jkGyviZxCPy4A/btuJYRgQjffHzED8xqvHrPmcAg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEALjMra6/S7C1QlpwMz4xTzUgZSE+/s3CgVqVlgjcQ0XMN11f7XNF/u0yRrfu6YKHA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7bb29150-d4a2-4caf-851d-902d671083d7",
+                            SecurityStamp = "c4f2c792-6b34-47e3-bff7-996b7a03617d",
                             TwoFactorEnabled = false,
                             UserName = "staff3"
                         },
@@ -2010,16 +2010,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c3139519-25b7-4057-9a51-33ead53e9148",
+                            ConcurrencyStamp = "f08c7b48-b773-4dfd-bc33-c5b184692de3",
                             Email = "student1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student1",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT1@GMAIL.COM",
                             NormalizedUserName = "STUDENT1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ2tQC39uBvB0D6okYvKgjdFyhcI7QmE3IDvCv5p4JGiX56X0pSISmhK+l9uajaLog==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ6wlvHwsUgppf2wiQsDDejvF8XoeRbAYuXJoossOzgCTGvf0vBAjSkaqq2yEInfBg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1a4df741-f495-4d01-bfe2-6ec1ea41128a",
+                            SecurityStamp = "c631563c-5ba6-49fe-afb8-98b76a8ce76d",
                             TwoFactorEnabled = false,
                             UserName = "student1"
                         },
@@ -2027,16 +2027,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0f488d1e-2211-485a-965a-05b4da0e89d3",
+                            ConcurrencyStamp = "f91c13f8-8c7f-4b4d-8e4b-3201cc1c7cd6",
                             Email = "student2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT2@GMAIL.COM",
                             NormalizedUserName = "STUDENT2",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ/zphKgBm5h7vKRhSKTf2HoN2IhjdDXsAnq2L7j8UzlI6Zk0iNC+Caq0Bp0mChiZQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB3RPz7plPJuvq7Di6fhIL9zfd9l72fnNWIwoTPeOYX2aEBE6qaC4EHcwIq66rcqhA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6447ae02-7fa1-4302-8a32-1a48af50cbae",
+                            SecurityStamp = "fcd23776-9ce0-48e4-a497-9f012133561c",
                             TwoFactorEnabled = false,
                             UserName = "student2"
                         },
@@ -2044,16 +2044,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT11",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e78bac97-5462-483d-a217-54563d7c9971",
+                            ConcurrencyStamp = "bf393241-0d53-4ad0-92a8-0cc4f71232b7",
                             Email = "student3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT3@GMAIL.COM",
                             NormalizedUserName = "STUDENT3",
-                            PasswordHash = "AQAAAAEAACcQAAAAELVZlW+v7M7mUe8lIRp4I+qvumyBHP4+M4TMUsLS13s/9Vgih6ajgpG+m+Y3uHgiXg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEG6DCDiqz614OxOjrvnGS3CXGy2q35ROB+HCFGZQTJ0vN1H/ukjbpsKBE9bYchdqzQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1a917a6f-4ac5-43fa-af00-a2234b785d33",
+                            SecurityStamp = "92b1ef6f-b88d-4935-b444-95c0ea3d682c",
                             TwoFactorEnabled = false,
                             UserName = "student3"
                         });
