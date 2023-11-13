@@ -27,14 +27,14 @@ namespace StudentHouseMembershipCart.API.Controllers.PaymentHistorys
         }
         [HttpGet]
         [Route("apartmentid")]
-        public async Task<List<PaymentHistoryData>> GetPaymentHistoryByApartmentId(GetPaymentHistoryByApartmentIdOfCustomerQuery request)
+        public async Task<List<PaymentHistoryData>> GetPaymentHistoryByApartmentId([FromQuery]GetPaymentHistoryByApartmentIdOfCustomerQuery request)
         {
             return await _mediator.Send(request);
         }
 
         [HttpGet]
         [Route("studentid")]
-        public async Task<List<PaymentHistoryData>> GetPaymentHistoryByStudentId(GetPaymentHistoryByCustomerIdOfCustomerCommand request)
+        public async Task<List<PaymentHistoryData>> GetPaymentHistoryByStudentId([FromQuery] GetPaymentHistoryByCustomerIdOfCustomerCommand request)
         {
             return await _mediator.Send(request);
         }

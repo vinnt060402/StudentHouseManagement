@@ -23,7 +23,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
 
         public async Task<PackageData> Handle(GetPackageByIdCommand request, CancellationToken cancellationToken)
         {
-            var package = await _dbContext.Package.Where(x => x.Id == Guid.Parse(request.PakageId)).SingleOrDefaultAsync();
+            var package = await _dbContext.Package.AsNoTracking().Where(x => x.Id == Guid.Parse(request.PakageId)).SingleOrDefaultAsync();
             if (package == null)
             {
                 throw new NotFoundException("Have no package!");
@@ -49,6 +49,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 char c = day.ElementAt(i);
                 switch (c)
                 {
+                    case '0':
                     case '1':
                         result.Add("Chủ Nhật");
                         break;

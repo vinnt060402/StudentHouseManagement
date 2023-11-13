@@ -11,9 +11,10 @@
         public string Image { get; set; }
         public double TotalPrice { get; set; }
         public DateTime? Created { get; set; }
+        public int PackageItem { get; set; } = 1;
         public string? CreateBy { get; set; }
         public DateTime? LastModified { get; set; }
         public string? LastModifiedBy { get; set; }
-        public bool? IsDelete { get; set; }
+        public bool IsDelete { get; set; }
     }
 }

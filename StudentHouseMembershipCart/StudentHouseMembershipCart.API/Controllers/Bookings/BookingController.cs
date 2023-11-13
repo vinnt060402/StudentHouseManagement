@@ -8,6 +8,11 @@ using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.Bookings;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByStudentId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -35,6 +40,12 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             return await _mediator.Send(new GetAllBookingCommand());
         }
         [HttpGet]
+        [Route("datetime")]
+        public async Task<BookingDataForAdmin> GetAllPackagesByTimeOfAdmin([FromQuery]GetBookingByTimeOfAdminQuery request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
         [Route("{apartmentId}")]
         public async Task<List<BookingData>> GetBookingByApartmentId(string apartmentId)
         {
@@ -42,7 +53,19 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             {
                 ApartmentId = apartmentId
             };
-
+                
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("bookingid")]
+        public async Task<BookingData> GetBookingByBookingId([FromQuery]GetBookingAndBookingDetailByBookingIdCommand request)
+        {
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("studentid")]
+        public async Task<List<BookingData>> GetBookingByStudentId([FromQuery] GetBookingByStudentIdCommand request)
+        {
             return await _mediator.Send(request);
         }
     }

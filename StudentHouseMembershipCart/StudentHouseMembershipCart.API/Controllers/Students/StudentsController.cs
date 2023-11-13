@@ -8,6 +8,7 @@ using StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateSt
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentById;
 using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId;
+using StudentHouseMembershipCart.Application.Features.Students.Queries.GetTotalStudentRegister;
 using StudentHouseMembershipCart.Domain.Entities;
 using System.Data;
 
@@ -34,6 +35,13 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
             return response;
         }
 
+        [HttpGet]
+        [Route("gettotalstudentregistered")]
+        public async Task<TotalStudentRegistered> GetTotalStudent()
+        {
+            var response = await _mediator.Send(new GetTotalStudentRegisteredQuery());
+            return response;
+        }
         // GET: api/<StudentsController>
         [HttpPost]
         [Route("register-student")]
@@ -50,7 +58,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> Delete([FromQuery] DeleteStudentCommand request)
+        public async Task<ActionResult> Delete(DeleteStudentCommand request)
         {
             var response = await _mediator.Send(request);
             return Ok(response);
