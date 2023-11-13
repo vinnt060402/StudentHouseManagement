@@ -43,10 +43,54 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                 reportWork.ReportByStaffId = request.StaffId;
 
                 _dbContext.ReportWork.Update(reportWork);
+                var bookingDetail = await (from bd in _dbContext.BookingDetail
+                                           join ar in _dbContext.AttendReport
+                                           on bd.Id equals ar.BookingDetailId
+                                           where ar.Id == request.AttendReportId
+                                           select bd).FirstOrDefaultAsync();
+                if (bookingDetail == null)
+                {
+                    throw new BadRequestException("Somethings is wrong!!");
+                }
+                bookingDetail.RemainingTaskDuration = bookingDetail.RemainingTaskDuration - 1;
+                _dbContext.BookingDetail.Update(bookingDetail);
+                if (bookingDetail.RemainingTaskDuration == 0)
+                {
+                    /// <summary>
+                    /// 0. On going
+                    /// 1. Finished
+                    /// </summary>
+                    bookingDetail.BookingDetailStatus = 1;
+                    //Check all bookingdetail of booking
+                    var listBookingdetail = await _dbContext.BookingDetail.Where(x => x.BookingId == bookingDetail.BookingId).ToListAsync();
+                    var totalBDinB = listBookingdetail.Count;
+                    var flag = 0;
+                    foreach (var item in listBookingdetail)
+                    {
+                        if (item.RemainingTaskDuration == 0)
+                        {
+                            flag++;
+                        }
+                    }
+                    if (flag == totalBDinB)
+                    {
+                        var booking = await _dbContext.Booking.Where(x => x.Id == bookingDetail.BookingId).FirstOrDefaultAsync();
+                        if (booking == null)
+                        {
+                            throw new BadRequestException("Somethings is wrong!!");
+                        }
+                        else
+                        {
+                            /// <summary>
+                            /// 0. On going
+                            /// 1. Finished
+                            /// </summary>
+                            booking.StatusContract = 1;
+                            _dbContext.Booking.Update(booking);
+                        }
+                    }
+                }
                 await _dbContext.SaveChangesAsync();
-
-
-
                 scope.Complete();
             }
             return new SHMResponse
