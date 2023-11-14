@@ -49,7 +49,7 @@ namespace StudentHouseMembershipCart.API.Controllers.StaffController
         {
             return await _mediator.Send(request);
         }
-        [HttpPatch]
+        [HttpPut]
         [Route("staffs")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]

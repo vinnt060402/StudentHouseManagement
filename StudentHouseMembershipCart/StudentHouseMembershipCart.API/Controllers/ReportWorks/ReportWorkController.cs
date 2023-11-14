@@ -27,7 +27,7 @@ namespace StudentHouseMembershipCart.API.Controllers.ReportWorks
         {
             return await _mediator.Send(request);
         }
-        [HttpPatch]
+        [HttpPut]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> UpdateReportWorkedByStaff(UpdateReportWorkByStaffCommand request)

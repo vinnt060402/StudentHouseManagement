@@ -39,7 +39,7 @@ namespace StudentHouseMembershipCart.API.Controllers.PackageServices
         {
             return await _mediator.Send(request);
         }
-        [HttpPatch]
+        [HttpPut]
         [Route("packageservices")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
