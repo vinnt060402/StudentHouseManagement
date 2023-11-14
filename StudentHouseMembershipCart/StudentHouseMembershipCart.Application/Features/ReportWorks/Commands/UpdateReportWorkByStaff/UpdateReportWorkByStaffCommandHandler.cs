@@ -57,7 +57,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                 {
                     AttendReportId = request.AttendReportId
                 };
-                var updateFeedbackStatusResponse = _mediator.Send(updateFeedbackStatus);
+                var updateFeedbackStatusResponse = await _mediator.Send(updateFeedbackStatus);
 
                 var bookingDetail = await (from bd in _dbContext.BookingDetail
                                            join ar in _dbContext.AttendReport
@@ -106,6 +106,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                         }
                     }
                 }
+                Task.WaitAll();
                 await _dbContext.SaveChangesAsync();
                 scope.Complete();
             }
