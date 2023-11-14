@@ -5,6 +5,7 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.UpdateFeedBackStatusByReportWorked;
 using System.Transactions;
 
 namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.UpdateReportWorkByStaff
@@ -43,6 +44,21 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                 reportWork.ReportByStaffId = request.StaffId;
 
                 _dbContext.ReportWork.Update(reportWork);
+                //Sau khi update ReportWork thì sửa status của attendreport 
+                var attendenceReport = await _dbContext.AttendReport.Where(x => x.Id == request.AttendReportId).FirstOrDefaultAsync();
+                if (attendenceReport == null)
+                {
+                    throw new BadRequestException("Can not found this report!");
+                }
+                attendenceReport.AttendenceStatus = 1;
+                _dbContext.AttendReport.Update(attendenceReport);
+                //Sau khi sửa status của attendreport, sửa status của feedback
+                var updateFeedbackStatus = new UpdateFeedBackStatusByReportWorkedCommand()
+                {
+                    AttendReportId = request.AttendReportId
+                };
+                var updateFeedbackStatusResponse = _mediator.Send(updateFeedbackStatus);
+
                 var bookingDetail = await (from bd in _dbContext.BookingDetail
                                            join ar in _dbContext.AttendReport
                                            on bd.Id equals ar.BookingDetailId

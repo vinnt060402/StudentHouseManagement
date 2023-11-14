@@ -185,7 +185,8 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                     BookingDetailStatus = 0,
                                     BookingId = createBookingDetailRequest.BookingId,
                                     PackageId = createBookingDetailRequest.PackageId,
-                                    CreateBy = createBookingDetailRequest.CreateBy
+                                    CreateBy = createBookingDetailRequest.CreateBy,
+                                    QuantityOfPackageOrdered = createBookingDetailRequest.QuantityOfPackageOrdered ?? 0,
                                 };
                                 _dbContext.BookingDetail.Add(bookdingDetail);
                                 #endregion
