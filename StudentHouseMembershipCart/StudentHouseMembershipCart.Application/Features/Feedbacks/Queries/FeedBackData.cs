@@ -6,6 +6,7 @@
         public string? FeedBackDescription { get; set; }
         public string? FeedBackImage { get; set; }
         public string? FeedBackRating { get; set; }
+        public string? DateFeedBack { get; set; }
         /// <summary>
         /// 0. Can not Feedback
         /// 1. Can Feedback

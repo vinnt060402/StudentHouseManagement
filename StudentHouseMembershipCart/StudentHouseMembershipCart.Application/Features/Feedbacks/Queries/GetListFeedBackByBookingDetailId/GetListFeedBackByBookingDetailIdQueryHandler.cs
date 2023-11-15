@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetListFeedBackByBookingDetailId
 {
@@ -32,22 +33,14 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetL
             List<FeedBackData> listData = new List<FeedBackData>();    
             foreach(var fb in listFeedback)
             {
-                var data = _mapper.Map<FeedBackData>(fb);   
-                if(data.FeedBackDescription == null)
+                var data = _mapper.Map<FeedBackData>(fb);
+                if (DateTime.Compare(fb.Created, fb.LastModified ?? DateTime.Now) < 0)
                 {
-                    data.FeedBackDescription = string.Empty;
+                    data.DateFeedBack = fb.LastModified.ToString();
                 }
-                if (data.FeedBackRating == null)
+                else
                 {
-                    data.FeedBackRating = string.Empty;
-                }
-                if (data.FeedBackImage == null)
-                {
-                    data.FeedBackImage = string.Empty;
-                }
-                if (data.FeedBackName == null)
-                {
-                    data.FeedBackName = string.Empty;
+                    data.DateFeedBack = null;
                 }
                 listData.Add(data);
             }

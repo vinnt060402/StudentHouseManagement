@@ -25,21 +25,13 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetF
                 throw new NotFoundException("Can not find this feedback!");
             }
             var data = _mapper.Map<FeedBackData>(feedback);
-            if (data.FeedBackDescription == null)
+            if (DateTime.Compare(feedback.Created, feedback.LastModified ?? DateTime.Now) < 0)
             {
-                data.FeedBackDescription = string.Empty;
+                data.DateFeedBack = feedback.LastModified.ToString();
             }
-            if (data.FeedBackRating == null)
+            else
             {
-                data.FeedBackRating = string.Empty;
-            }
-            if (data.FeedBackImage == null)
-            {
-                data.FeedBackImage = string.Empty;
-            }
-            if (data.FeedBackName == null)
-            {
-                data.FeedBackName = string.Empty;
+                data.DateFeedBack = null;
             }
             return data;
         }
