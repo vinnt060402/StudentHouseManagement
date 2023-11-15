@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId
 {

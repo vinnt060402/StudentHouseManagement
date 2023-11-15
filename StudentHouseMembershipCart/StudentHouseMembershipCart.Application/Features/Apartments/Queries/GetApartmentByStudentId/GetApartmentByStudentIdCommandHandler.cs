@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment;
+using StudentHouseMembershipCart.Application.Features.Students;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByStudentId
 {

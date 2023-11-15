@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
+using StudentHouseMembershipCart.Application.Features.Services;
+using StudentHouseMembershipCart.Application.Features.Services.Queries.ReadServiceById;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
 {

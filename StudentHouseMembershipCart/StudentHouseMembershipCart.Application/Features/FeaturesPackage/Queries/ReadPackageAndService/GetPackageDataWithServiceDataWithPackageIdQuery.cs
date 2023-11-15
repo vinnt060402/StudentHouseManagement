@@ -1,5 +1,4 @@
 ﻿using MediatR;
-sing MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
 {

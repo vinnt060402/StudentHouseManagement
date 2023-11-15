@@ -1,4 +1,6 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
+﻿using StudentHouseMembershipCart.Application.Features.Services;
+
+namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
 {
     public class PackageDataAndServiceData
     {

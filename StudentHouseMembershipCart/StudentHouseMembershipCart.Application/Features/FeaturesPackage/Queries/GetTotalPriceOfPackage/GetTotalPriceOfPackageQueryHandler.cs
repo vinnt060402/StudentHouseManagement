@@ -1,7 +1,4 @@
 ﻿using MediatR;
-using StudentHouseMembershipCart.Application.Common.Interfaces;
-
-sing MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
