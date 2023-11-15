@@ -18,7 +18,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
 
         public async Task<AttendReportDataResponse> Handle(GetAttendReportByBookingDetailIdCommand request, CancellationToken cancellationToken)
         {
-            var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId).ToListAsync();
+            var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId).OrderBy(x => x.DateDoPackage).ToListAsync();
             List<AttendReportData> response = new List<AttendReportData>();
             foreach (var item in attendReportData)
             {
