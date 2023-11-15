@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -64,3 +64,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
         }
     }
 }
+*/

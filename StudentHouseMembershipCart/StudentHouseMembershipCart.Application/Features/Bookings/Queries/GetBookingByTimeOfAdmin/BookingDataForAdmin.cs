@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin
+﻿/*namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin
 {
     public class BookingDataForAdmin
     {
@@ -6,3 +6,4 @@
         public List<BookingData>? ListBookingData { get; set; }    
     }
 }
+*/

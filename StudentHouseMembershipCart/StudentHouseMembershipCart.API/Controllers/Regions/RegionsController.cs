@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Regions;
 using StudentHouseMembershipCart.Application.Features.Regions.Commands.CreateRegion;
@@ -50,3 +50,4 @@ namespace StudentHouseMembershipCart.API.Controllers.Regions
         
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Application.Features.Apartments;
+﻿/*using StudentHouseMembershipCart.Application.Features.Apartments;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings
@@ -22,3 +22,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings
         public List<BookingDetailData>? Details { get; set; }
     }
 }
+*/

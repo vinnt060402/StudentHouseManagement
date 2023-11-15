@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.Categories.Queries
+﻿/*namespace StudentHouseMembershipCart.Application.Features.Categories.Queries
 {
     public class CategoryData
     {
@@ -13,3 +13,4 @@
 
     }
 }
+*/

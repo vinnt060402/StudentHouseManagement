@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
@@ -54,3 +54,4 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         }
     }
 }
+*/

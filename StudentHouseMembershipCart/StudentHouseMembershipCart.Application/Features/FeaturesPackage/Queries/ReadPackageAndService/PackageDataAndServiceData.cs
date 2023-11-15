@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Application.Features.Services;
+﻿/*using StudentHouseMembershipCart.Application.Features.Services;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
 {
@@ -8,3 +8,4 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         public List<ServiceData>? ListServiceData { get; set; }
     }
 }
+*/

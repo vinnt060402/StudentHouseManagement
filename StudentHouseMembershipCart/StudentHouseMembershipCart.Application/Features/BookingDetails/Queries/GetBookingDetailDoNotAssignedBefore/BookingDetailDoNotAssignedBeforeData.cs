@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries.GetBookingDetailDoNotAssignedBefore
+﻿/*namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries.GetBookingDetailDoNotAssignedBefore
 {
     public class BookingDetailDoNotAssignedBeforeData
     {
@@ -18,3 +18,4 @@
         public bool IsDelete { get; set; }
     }
 }
+*/

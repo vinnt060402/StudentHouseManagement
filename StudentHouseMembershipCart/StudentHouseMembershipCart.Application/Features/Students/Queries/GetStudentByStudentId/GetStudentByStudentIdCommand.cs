@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
         public Guid StudentId { get; set; } 
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+﻿/*using FluentValidation;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Commands.UpdateStudent
@@ -30,3 +30,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
         }
     }
 }
+*/

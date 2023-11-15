@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.PackageServices.Commands.DeletePackageServiceCommand
@@ -8,3 +8,4 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
         public string PackageId { get; set; } = null!;
     }
 }
+*/

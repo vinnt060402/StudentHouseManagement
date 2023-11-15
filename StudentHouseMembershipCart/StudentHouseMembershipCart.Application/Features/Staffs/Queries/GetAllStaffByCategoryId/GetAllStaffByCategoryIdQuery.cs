@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetAllStaffByCategoryId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetAllS
         public string CategoryId { get; set; }
     }
 }
+*/

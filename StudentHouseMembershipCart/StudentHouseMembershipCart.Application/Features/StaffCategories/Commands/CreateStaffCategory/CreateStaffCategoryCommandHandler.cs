@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
@@ -37,3 +37,4 @@ namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Comman
         }
     }
 }
+*/

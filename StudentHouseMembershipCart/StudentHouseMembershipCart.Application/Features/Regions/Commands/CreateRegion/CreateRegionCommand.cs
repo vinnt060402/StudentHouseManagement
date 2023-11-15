@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,3 +12,4 @@ namespace StudentHouseMembershipCart.Application.Features.Regions.Commands.Creat
         public string RegionName { get; set; }
     }
 }
+*/

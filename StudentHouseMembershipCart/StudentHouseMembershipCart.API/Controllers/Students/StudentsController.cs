@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Students;
@@ -94,3 +94,4 @@ namespace StudentHouseMembershipCart.API.Controllers.Students
 
     }
 }
+*/

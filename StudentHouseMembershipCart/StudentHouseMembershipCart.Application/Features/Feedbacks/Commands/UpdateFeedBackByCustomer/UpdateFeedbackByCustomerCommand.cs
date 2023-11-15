@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.UpdateFeedBackByCustomer
@@ -12,3 +12,4 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Upd
         public string FeedBackRating { get; set; }  
     }
 }
+*/

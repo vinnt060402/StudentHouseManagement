@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking
@@ -20,3 +20,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
         public int QuantityOfPackageOrdered { get; set; }
     }
 }
+*/

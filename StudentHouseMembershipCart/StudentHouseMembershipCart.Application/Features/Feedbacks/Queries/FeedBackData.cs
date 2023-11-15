@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries
+﻿/*namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries
 {
     public class FeedBackData
     {
@@ -15,3 +15,4 @@
         public int FeedBackStatus { get; set; }
     }
 }
+*/

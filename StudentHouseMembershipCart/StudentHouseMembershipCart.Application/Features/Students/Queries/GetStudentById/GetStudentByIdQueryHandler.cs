@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -41,3 +41,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
         }
     }
 }
+*/

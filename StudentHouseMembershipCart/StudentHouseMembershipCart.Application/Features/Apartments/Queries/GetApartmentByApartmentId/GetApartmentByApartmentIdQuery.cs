@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByApartmentId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.Get
         public Guid ApartmentId { get; set; }
     }
 }
+*/

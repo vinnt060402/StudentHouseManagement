@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Commands.CreateService
@@ -13,3 +13,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
         public string? CreateBy { get; set; }
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -73,3 +73,4 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
         }
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.AttendenceReports
+﻿/*namespace StudentHouseMembershipCart.Application.Features.AttendenceReports
 {
     public class AttendReportData
     {
@@ -12,3 +12,4 @@
         public string? FeedbackAvailable { get; set; }
     }
 }
+*/

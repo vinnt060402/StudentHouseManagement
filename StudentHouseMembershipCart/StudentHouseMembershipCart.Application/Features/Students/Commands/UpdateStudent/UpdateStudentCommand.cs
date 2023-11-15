@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,3 +19,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
         public DateTime Birthday { get; set; }
     }
 }
+*/

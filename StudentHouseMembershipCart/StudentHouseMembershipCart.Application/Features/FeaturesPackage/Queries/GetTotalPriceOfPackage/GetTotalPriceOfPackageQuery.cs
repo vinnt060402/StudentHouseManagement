@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage
 {
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         public int NumberOfPerWeekDoPackage { get; set; }
     }
 }
+*/

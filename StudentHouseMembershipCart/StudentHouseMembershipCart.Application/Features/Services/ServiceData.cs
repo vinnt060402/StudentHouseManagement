@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.Services
+﻿/*namespace StudentHouseMembershipCart.Application.Features.Services
 {
     public class ServiceData
     {
@@ -15,3 +15,4 @@
         public bool? IsDelete { get; set; }
     }
 }
+*/

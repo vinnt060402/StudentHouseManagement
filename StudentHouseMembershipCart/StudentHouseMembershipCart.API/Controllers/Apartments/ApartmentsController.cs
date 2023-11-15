@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Apartments;
 using StudentHouseMembershipCart.Application.Features.Apartments.Commands.CreateApartment;
@@ -73,3 +73,4 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
         }
     }
 }
+*/

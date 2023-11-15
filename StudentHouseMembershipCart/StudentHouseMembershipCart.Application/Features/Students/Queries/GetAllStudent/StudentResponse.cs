@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Domain.Entities;
+﻿/*using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
         public ApplicationUser? ApplicationUserTableData { get; set; }
     }
 }
+*/

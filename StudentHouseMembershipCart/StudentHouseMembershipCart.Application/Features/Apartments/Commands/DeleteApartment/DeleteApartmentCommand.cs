@@ -1,15 +1,10 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Domain.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.DeleteApartment
 {
@@ -53,3 +48,4 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.De
         }
     }
 }
+*/

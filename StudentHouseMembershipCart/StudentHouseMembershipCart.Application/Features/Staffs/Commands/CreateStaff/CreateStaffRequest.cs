@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
@@ -21,3 +21,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
         public DateTime? Birthday { get; set; }
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadPackageAndService
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         public string PackageId { get; set; } = null!;
     }
 }
+*/

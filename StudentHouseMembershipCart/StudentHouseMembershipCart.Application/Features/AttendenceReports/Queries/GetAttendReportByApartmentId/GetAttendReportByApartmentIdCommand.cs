@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByApartmentId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
         public string BookingDetailId { get; set; } = null!;
     }
 }
+*/

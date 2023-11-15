@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
@@ -43,3 +43,4 @@ namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Comman
         }
     }
 }
+*/

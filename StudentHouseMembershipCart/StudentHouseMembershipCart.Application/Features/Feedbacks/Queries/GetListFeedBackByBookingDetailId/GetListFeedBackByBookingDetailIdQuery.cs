@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetListFeedBackByBookingDetailId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetL
         public string BookingDetailId { get; set; } = null!;
     }
 }
+*/

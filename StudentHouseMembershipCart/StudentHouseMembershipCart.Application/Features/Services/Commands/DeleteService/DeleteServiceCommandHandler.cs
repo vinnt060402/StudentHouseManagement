@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
@@ -39,3 +39,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Dele
         }
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 using StudentHouseMembershipCart.Domain.Entities;
@@ -17,3 +17,4 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
         public string? CreateBy { get; set; }
     }
 }
+*/

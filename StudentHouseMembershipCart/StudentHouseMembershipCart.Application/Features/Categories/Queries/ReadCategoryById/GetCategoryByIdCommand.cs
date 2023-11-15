@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Categories.Queries.ReadCategoryById
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Categories.Queries.Rea
         public string CategoriesId { get; set; } = null!;
     }
 }
+*/

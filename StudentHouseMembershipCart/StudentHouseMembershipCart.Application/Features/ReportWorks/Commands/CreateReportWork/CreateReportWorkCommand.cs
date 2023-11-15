@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.CreateReportWork
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.C
         public string BookingDetailId { get; set; } = null!;
     }
 }
+*/

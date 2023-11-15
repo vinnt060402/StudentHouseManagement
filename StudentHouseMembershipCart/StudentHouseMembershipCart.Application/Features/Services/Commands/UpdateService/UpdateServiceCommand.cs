@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Commands.UpdateService
@@ -14,3 +14,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
         public string? UpdateBy { get; set; }
     }
 }
+*/

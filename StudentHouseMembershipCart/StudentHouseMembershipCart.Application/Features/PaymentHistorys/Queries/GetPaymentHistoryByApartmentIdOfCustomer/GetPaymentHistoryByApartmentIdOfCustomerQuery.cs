@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries.GetPaymentHistoryByApartmentIdOfCustomer
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Querie
         public Guid ApartmentId { get; set; }
     }
 }
+*/

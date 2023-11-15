@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         public Guid CategoryId { get; set; }
     }
 }
+*/

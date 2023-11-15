@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries.GetBookingDetailByStaffId;
@@ -45,3 +45,4 @@ namespace StudentHouseMembershipCart.API.Controllers.ReportWorks
         }
     }
 }
+*/

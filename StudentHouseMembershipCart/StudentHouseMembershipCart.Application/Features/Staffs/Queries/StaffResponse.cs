@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Domain.Entities;
+﻿/*using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -33,3 +33,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries
     }
 
 }
+*/
