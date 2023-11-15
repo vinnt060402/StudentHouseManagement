@@ -25,6 +25,22 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetF
                 throw new NotFoundException("Can not find this feedback!");
             }
             var data = _mapper.Map<FeedBackData>(feedback);
+            if (data.FeedBackDescription == null)
+            {
+                data.FeedBackDescription = string.Empty;
+            }
+            if (data.FeedBackRating == null)
+            {
+                data.FeedBackRating = string.Empty;
+            }
+            if (data.FeedBackImage == null)
+            {
+                data.FeedBackImage = string.Empty;
+            }
+            if (data.FeedBackName == null)
+            {
+                data.FeedBackName = string.Empty;
+            }
             return data;
         }
     }

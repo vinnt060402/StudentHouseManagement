@@ -33,6 +33,22 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetL
             foreach(var fb in listFeedback)
             {
                 var data = _mapper.Map<FeedBackData>(fb);   
+                if(data.FeedBackDescription == null)
+                {
+                    data.FeedBackDescription = string.Empty;
+                }
+                if (data.FeedBackRating == null)
+                {
+                    data.FeedBackRating = string.Empty;
+                }
+                if (data.FeedBackImage == null)
+                {
+                    data.FeedBackImage = string.Empty;
+                }
+                if (data.FeedBackName == null)
+                {
+                    data.FeedBackName = string.Empty;
+                }
                 listData.Add(data);
             }
             return listData;
