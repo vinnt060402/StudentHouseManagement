@@ -11,7 +11,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings
         public string? Contract { get; set; }
         public double TotalPay { get; set; }
         public Guid ApartmentId { get; set; }
-        public ApartmentDto? ApartmentData { get; set; } 
+        public ApartmentDto? ApartmentData { get; set; }
         /// <summary>
         /// If StatusContract is 0 -> On going
         /// Is 1 -> Finished

@@ -31,7 +31,8 @@ namespace StudentHouseMembershipCart.Application.Features.Regions.Queries.GetAll
         {
             var list = await _context.Region.Where(r => r.IsDelete == false)
                 .ProjectTo<RegionDto>(_mapper.ConfigurationProvider).ToListAsync();
-            if(list == null) {
+            if (list == null)
+            {
                 throw new NotFoundException(nameof(Region));
             }
 

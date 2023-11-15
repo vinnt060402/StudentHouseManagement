@@ -5,7 +5,6 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment;
 using StudentHouseMembershipCart.Application.Features.Students;
-using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByStudentId
 {
@@ -48,7 +47,7 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.Get
                                         InforRegionData = region,
                                     }
                                 )
-                                .ToListAsync(); 
+                                .ToListAsync();
             if (!apartments.Any())
             {
                 throw new NotFoundException(nameof(StudentDto), request.StudentId);

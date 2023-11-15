@@ -37,10 +37,12 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Dele
         public async Task<Unit> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
         {
             var studentDelete = await _context.Student.Where(e => e.Id == request.Id).FirstOrDefaultAsync();
-            if (studentDelete == null) {
+            if (studentDelete == null)
+            {
                 throw new NotFoundException(nameof(studentDelete.ApplicationUser.Email), request.Id);
             }
-            else if(studentDelete.IsDelete == true) {
+            else if (studentDelete.IsDelete == true)
+            {
                 throw new NotFoundException("The student have been deleted");
             }
 

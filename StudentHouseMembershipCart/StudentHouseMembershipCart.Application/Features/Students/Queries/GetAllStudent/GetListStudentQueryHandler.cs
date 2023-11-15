@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Contracts.Persistance;
-using StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaff;
-using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAllStudent
@@ -33,12 +30,14 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
         public async Task<List<StudentResponse>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
         {
             var student = await _context.Student.Where(e => e.IsDelete == false).ToListAsync();
-            if (!student.Any()) {
+            if (!student.Any())
+            {
                 throw new NotFoundException("Have no Student!");
             }
 
             var listResult = new List<StudentResponse>();
-            foreach (var item in student) {
+            foreach (var item in student)
+            {
                 var studentInfor = await _userManager.FindByIdAsync(item.ApplicationUserId);
                 var result = new StudentResponse
                 {

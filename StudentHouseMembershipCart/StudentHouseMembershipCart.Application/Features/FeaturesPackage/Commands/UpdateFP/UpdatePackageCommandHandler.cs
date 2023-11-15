@@ -4,7 +4,6 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Commands.CreateFP;
 using StudentHouseMembershipCart.Application.Features.PackageServices.Commands.UpdatePackageServiceCommand;
 using System.Transactions;
 
@@ -71,15 +70,6 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                     flag++;
                     price += (getService.Price * request.WeekNumberBooking * request.NumberOfPerWeekDoPackage) ?? 0;
                 }
-            }
-            if (flag == 2)
-            {
-                price = price * 0.95;
-            }
-            else if (flag > 2)
-            {
-                var discout = (5 * (flag - 1) > 20) ? 20 : (5 * (flag - 1));
-                price = price * (100 - discout);
             }
             return price;
         }

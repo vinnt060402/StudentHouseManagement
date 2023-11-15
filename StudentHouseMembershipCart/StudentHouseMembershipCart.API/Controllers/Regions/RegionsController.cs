@@ -47,6 +47,6 @@ namespace StudentHouseMembershipCart.API.Controllers.Regions
             return Ok(response);
         }
 
-        
+
     }
 }

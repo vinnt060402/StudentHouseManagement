@@ -10,7 +10,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
         //public string? RemainingTaskDuration { get; set; }
         public Guid StudentId { get; set; }
         public Guid BookingId { get; set; }
-        public DateTime StartDate { get; set; } 
+        public DateTime StartDate { get; set; }
         public int? QuantityOfPackageOrdered { get; set; }
         public Guid PackageId { get; set; }
         public Package PackageDataRequest { get; set; } = null!;

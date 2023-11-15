@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
-using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByStudentId
@@ -44,7 +42,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
             List<ApartmentData> data = new List<ApartmentData>();
             if (apartment.Any())
             {
-                foreach(var item in apartment)
+                foreach (var item in apartment)
                 {
                     var ap = _mapper.Map<ApartmentData>(item);
                     data.Add(ap);

@@ -3,7 +3,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadFPById;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFPByCategoryId
@@ -44,7 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 throw new NotFoundException("Does not have Package have Category like that!!");
             }
             var listResult = new List<PackageData>();
-            foreach(var item in packageByCategoryId)
+            foreach (var item in packageByCategoryId)
             {
                 var getPakcage = new GetPackageByIdCommand
                 {

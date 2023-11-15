@@ -4,6 +4,6 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaf
 {
     public class GetStaffQuery : IRequest<StaffResponse>
     {
-        public Guid Id { get; set; }    
+        public Guid Id { get; set; }
     }
 }

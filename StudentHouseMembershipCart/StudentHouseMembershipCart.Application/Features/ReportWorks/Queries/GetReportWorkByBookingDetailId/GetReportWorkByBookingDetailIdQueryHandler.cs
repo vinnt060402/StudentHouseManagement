@@ -35,7 +35,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.Ge
                                     WorkingStatus = rw.WorkingStatus
                                 }
                                 ).ToListAsync();
-            if(!listRW.Any() )
+            if (!listRW.Any())
             {
                 throw new NotFoundException("Do not have this booking detail for staff!!");
             }

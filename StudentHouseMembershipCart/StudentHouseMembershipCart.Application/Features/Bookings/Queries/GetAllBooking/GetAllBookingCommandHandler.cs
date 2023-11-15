@@ -78,7 +78,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAl
                         break;
                 }
                 var bookingPaymentHistory = _dbContext.PaymentHistory.Where(x => x.BookingId == booking.Id).FirstOrDefault();
-                if(bookingPaymentHistory != null)
+                if (bookingPaymentHistory != null)
                 {
                     bookingResult.PaymentMethodName = _dbContext.PaymentMethod.Where(x => x.Id == bookingPaymentHistory.PaymentMethodId).Select(x => x.PaymentMethodName).FirstOrDefault() ?? null;
                 }

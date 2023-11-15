@@ -41,7 +41,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Services
         {
             return await _mediator.Send(request);
         }
-        [HttpPatch]
+        [HttpPut]
         [Route("services")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]

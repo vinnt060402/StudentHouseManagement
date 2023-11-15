@@ -23,7 +23,7 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Upd
             {
                 throw new BadRequestException("Can not find this feedback!");
             }
-            if(feedBack != null && (feedBack.FeedBackStatus == 2 || feedBack.FeedBackStatus == 1))
+            if (feedBack != null && (feedBack.FeedBackStatus == 2 || feedBack.FeedBackStatus == 1))
             {
                 throw new BadRequestException("This feedback has done!");
             }

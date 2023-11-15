@@ -2,7 +2,7 @@
 {
     public class PackageServiceData
     {
-        public Guid Id { get; set; }    
+        public Guid Id { get; set; }
         public Guid PackageId { get; set; }
         public Guid ServiceId { get; set; }
         public DateTime? Created { get; set; }

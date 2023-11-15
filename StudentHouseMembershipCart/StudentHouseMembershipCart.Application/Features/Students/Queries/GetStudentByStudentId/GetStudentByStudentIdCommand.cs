@@ -4,6 +4,6 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
 {
     public class GetStudentByStudentIdCommand : IRequest<StudentDataNew>
     {
-        public Guid StudentId { get; set; } 
+        public Guid StudentId { get; set; }
     }
 }

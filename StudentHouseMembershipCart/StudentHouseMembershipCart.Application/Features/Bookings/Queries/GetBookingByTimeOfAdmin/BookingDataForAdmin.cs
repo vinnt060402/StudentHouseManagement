@@ -3,6 +3,6 @@
     public class BookingDataForAdmin
     {
         public double TotalPrice { get; set; }
-        public List<BookingData>? ListBookingData { get; set; }    
+        public List<BookingData>? ListBookingData { get; set; }
     }
 }

@@ -19,11 +19,11 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
         {
             var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).ToListAsync();
             List<AttendReportData> response = new List<AttendReportData>();
-            foreach(var item in  attendReportData)
+            foreach (var item in attendReportData)
             {
                 var atdRpData = _mapper.Map<AttendReportData>(item);
             }
             throw new NotImplementedException();
-        }    
+        }
     }
 }

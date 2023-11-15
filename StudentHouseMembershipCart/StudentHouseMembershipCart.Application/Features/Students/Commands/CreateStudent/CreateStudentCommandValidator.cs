@@ -14,7 +14,7 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 .NotEmpty().WithMessage("{UserName} is required")
                 .NotNull()
                 .MaximumLength(100).WithMessage("{UserName} must be fewer than 100 characters");
-                /*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*/
+            /*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*/
 
             RuleFor(p => p.FullName)
                 .NotEmpty().WithMessage("{FullName} is required")

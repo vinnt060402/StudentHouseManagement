@@ -41,7 +41,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         }
         [HttpGet]
         [Route("datetime")]
-        public async Task<BookingDataForAdmin> GetAllPackagesByTimeOfAdmin([FromQuery]GetBookingByTimeOfAdminQuery request)
+        public async Task<BookingDataForAdmin> GetAllPackagesByTimeOfAdmin([FromQuery] GetBookingByTimeOfAdminQuery request)
         {
             return await _mediator.Send(request);
         }
@@ -53,12 +53,12 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             {
                 ApartmentId = apartmentId
             };
-                
+
             return await _mediator.Send(request);
         }
         [HttpGet]
         [Route("bookingid")]
-        public async Task<BookingData> GetBookingByBookingId([FromQuery]GetBookingAndBookingDetailByBookingIdCommand request)
+        public async Task<BookingData> GetBookingByBookingId([FromQuery] GetBookingAndBookingDetailByBookingIdCommand request)
         {
             return await _mediator.Send(request);
         }

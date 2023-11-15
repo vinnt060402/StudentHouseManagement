@@ -33,7 +33,8 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
                 {
                     Message = Extensions.CreateSuccessfully
                 };
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new BadRequestException(ex.Message);
             }

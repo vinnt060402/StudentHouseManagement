@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage;
-using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP
 {
@@ -29,7 +28,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 throw new NotFoundException("Have no package!");
             }
             var listResult = new List<PackageData>();
-            foreach(var item in listPackage)
+            foreach (var item in listPackage)
             {
                 var getTotalPrice = new GetTotalPriceOfPackageQuery
                 {

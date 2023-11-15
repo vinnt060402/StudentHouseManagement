@@ -18,15 +18,15 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
 
         public async Task<AttendReportDataResponse> Handle(GetAttendReportByBookingDetailIdCommand request, CancellationToken cancellationToken)
         {
-            var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId).ToListAsync();
+            var attendReportData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId).OrderBy(x => x.DateDoPackage).ToListAsync();
             List<AttendReportData> response = new List<AttendReportData>();
             foreach (var item in attendReportData)
             {
                 var atdRpData = _mapper.Map<AttendReportData>(item);
                 var feedback = await _dbContext.FeedBack.Where(x => x.AttendReportId == item.Id).SingleOrDefaultAsync();
-                if(feedback != null)
+                if (feedback != null)
                 {
-                    if(feedback.FeedBackStatus == 1)
+                    if (feedback.FeedBackStatus == 1)
                     {
                         atdRpData.FeedbackAvailable = "Can feedback";
                     }

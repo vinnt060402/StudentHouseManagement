@@ -84,7 +84,8 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Create
                     {
                         throw new BadRequestException("Can not create Staff");
                     }
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }

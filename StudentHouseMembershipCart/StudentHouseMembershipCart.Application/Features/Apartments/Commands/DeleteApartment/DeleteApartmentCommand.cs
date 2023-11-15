@@ -5,17 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Domain.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.DeleteApartment
 {
     public class DeleteApartmentCommand : IRequest<Unit>
-    { 
-        public Guid Id { get; set; }    
+    {
+        public Guid Id { get; set; }
     }
 
     public class DeleteApartmentCommandHandler : IRequestHandler<DeleteApartmentCommand, Unit>
@@ -38,10 +33,12 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.De
         public async Task<Unit> Handle(DeleteApartmentCommand request, CancellationToken cancellationToken)
         {
             var apartmentIdExist = await _context.Apartment.Where(a => a.Id == request.Id).FirstOrDefaultAsync();
-            if(apartmentIdExist == null) {
+            if (apartmentIdExist == null)
+            {
                 throw new NotFoundException(nameof(apartmentIdExist.Student.ApplicationUser.Email), request.Id);
             }
-            else if (apartmentIdExist.IsDelete == true) {
+            else if (apartmentIdExist.IsDelete == true)
+            {
                 throw new NotFoundException("The apartment have been deleted");
             }
 

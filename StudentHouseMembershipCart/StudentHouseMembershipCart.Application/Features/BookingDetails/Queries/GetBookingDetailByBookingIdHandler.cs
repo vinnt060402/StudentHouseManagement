@@ -25,10 +25,11 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
                 foreach (var item in bookingDetail)
                 {
                     var bdd = _mapper.Map<BookingDetailData>(item);
-                    if(item.BookingDetailStatus == 0)
+                    if (item.BookingDetailStatus == 0)
                     {
                         bdd.BookingDetailStatus = "On going";
-                    }else if (item.BookingDetailStatus == 1)
+                    }
+                    else if (item.BookingDetailStatus == 1)
                     {
                         bdd.BookingDetailStatus = "Finished";
                     }

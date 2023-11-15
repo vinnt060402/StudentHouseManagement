@@ -6,7 +6,7 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Cre
     public class CreateFeedBackCommand : IRequest<SHMResponse>
     {
         public Guid StudentId { get; set; }
-        public Guid AttendReportId { get; set; }    
-        public string? CreateBy { get; set; }    
+        public Guid AttendReportId { get; set; }
+        public string? CreateBy { get; set; }
     }
 }

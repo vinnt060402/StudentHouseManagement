@@ -39,14 +39,14 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 throw new NotFoundException("Have no package!");
             }
             var listService = new List<ServiceData>();
-            foreach ( var item in packageService)
+            foreach (var item in packageService)
             {
                 var getServiceDataRequest = new GetServiceByIdQuery
                 {
                     SerivceId = item.ServiceId.ToString()
                 };
                 var serviceData = await _mediator.Send(getServiceDataRequest);
-                if(serviceData != null)
+                if (serviceData != null)
                 {
                     listService.Add(serviceData);
                 }

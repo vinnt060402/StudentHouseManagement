@@ -31,7 +31,8 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
         public async Task<StudentDto> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)
         {
             var studentId = _context.Student.Where(s => s.Id == request.Id).AsNoTracking();
-            if (studentId == null || studentId.Count() == 0) {
+            if (studentId == null || studentId.Count() == 0)
+            {
                 throw new NotFoundException(nameof(StudentDto), request.Id);
             }
 

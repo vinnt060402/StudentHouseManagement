@@ -30,12 +30,13 @@ namespace StudentHouseMembershipCart.Application.Features.Regions.Commands.Creat
         {
             // name co dinh : quan8, quan1, quan2, quan....
             var regionNameExist = await _context.Region.Where(r => r.RegionName == request.RegionName).FirstOrDefaultAsync();
-            if(regionNameExist != null) {
+            if (regionNameExist != null)
+            {
                 throw new NotFoundException("Region is exist!");
             }
 
-            var entity = new Region { RegionName = request.RegionName }; 
-            
+            var entity = new Region { RegionName = request.RegionName };
+
             _context.Region.Add(entity);
             await _context.SaveChangesAsync();
             return entity.Id;

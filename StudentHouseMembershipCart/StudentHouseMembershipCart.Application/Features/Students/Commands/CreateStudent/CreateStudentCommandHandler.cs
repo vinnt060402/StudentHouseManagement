@@ -27,7 +27,8 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
         public async Task<Guid> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
         {
             var emailExist = await _userManager.FindByEmailAsync(request.Email);
-            if (emailExist != null) {
+            if (emailExist != null)
+            {
                 throw new BadRequestException("The username already exists!");
             }
 
@@ -46,11 +47,13 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 EmailConfirmed = true,
             };
             var result = await _userManager.CreateAsync(user, request.Password);
-            if (result.Succeeded) {
+            if (result.Succeeded)
+            {
                 await _userManager.AddToRoleAsync(user, "Student");
                 await _signInManager.SignInAsync(user, isPersistent: false);
             }
-            else {
+            else
+            {
                 throw new BadRequestException("Account creation failed !");
             }
             var customer = new Student

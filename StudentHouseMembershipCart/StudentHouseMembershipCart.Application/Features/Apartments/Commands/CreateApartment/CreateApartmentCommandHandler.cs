@@ -30,7 +30,8 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.Cr
         {
             // address la so nha, so tang, quan, phuong . Fe Validate cho User chọn theo thứ tự, chứu ko đc nhập tùy thích
             var addressOfApartmentExist = await _context.Apartment.Where(a => a.Address == request.AddressOfApartment).FirstOrDefaultAsync();
-            if(addressOfApartmentExist != null) {
+            if (addressOfApartmentExist != null)
+            {
                 throw new NotFoundException("The student has already registered for this apartment.");
             }
             var entity = new Apartment

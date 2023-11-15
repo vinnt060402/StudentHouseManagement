@@ -6,6 +6,7 @@ using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries.Get
 using StudentHouseMembershipCart.Application.Features.Bookings;
 using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
+using StudentHouseMembershipCart.Application.Features.Feedbacks.Queries;
 using StudentHouseMembershipCart.Application.Features.PackageServices;
 using StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries;
 using StudentHouseMembershipCart.Application.Features.PaymentMethods;
@@ -67,7 +68,7 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
             CreateMap<ApartmentData, Apartment>().ReverseMap();
             CreateMap<Apartment, ApartmentData>().ReverseMap();
 
-            CreateMap<ApplicationStudent,ApplicationUser>().ReverseMap();
+            CreateMap<ApplicationStudent, ApplicationUser>().ReverseMap();
             CreateMap<ApplicationUser, ApplicationStudent>().ReverseMap();
 
             CreateMap<BookingDetailData, BookingDetail>().ReverseMap();
@@ -78,6 +79,9 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<PaymentHistory, PaymentHistoryData>().ReverseMap();
             CreateMap<PaymentHistoryData, PaymentHistory>().ReverseMap();
+
+            CreateMap<FeedBack, FeedBackData>().ReverseMap();
+            CreateMap<FeedBackData, FeedBack>().ReverseMap();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
     /// </summary>
     public class UpdateReportWorkByStaffCommand : IRequest<SHMResponse>
     {
-        public Guid StaffId { get; set; }   
+        public Guid StaffId { get; set; }
         public Guid AttendReportId { get; set; }
         public string? DescriptionProcess { get; set; }
         public string ImageURL { get; set; } = null!;

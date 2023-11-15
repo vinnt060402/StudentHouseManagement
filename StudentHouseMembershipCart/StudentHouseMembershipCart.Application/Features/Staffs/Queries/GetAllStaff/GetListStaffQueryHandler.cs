@@ -46,7 +46,8 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaf
                         inforOfStaffData = applicationStaffData,
                     };
                     listResult.Add(result);
-                } catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     throw new Exception(ex.Message);
                 }

@@ -33,7 +33,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Apartments
 
         [HttpGet]
         [Route("studentid")]
-        public async Task<List<ApartmentResponse>> GetAparmentByStudentId([FromQuery]GetApartmentByStudentIdCommand request)
+        public async Task<List<ApartmentResponse>> GetAparmentByStudentId([FromQuery] GetApartmentByStudentIdCommand request)
         {
             var response = await _mediator.Send(request);
             return response;

@@ -31,7 +31,7 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
                 throw new BadRequestException("The package have already existed!");
             }
             var listPackageService = new List<PackageService>();
-            foreach(var serviceId in request.ListServiceId)
+            foreach (var serviceId in request.ListServiceId)
             {
                 var packageItem = new PackageService
                 {

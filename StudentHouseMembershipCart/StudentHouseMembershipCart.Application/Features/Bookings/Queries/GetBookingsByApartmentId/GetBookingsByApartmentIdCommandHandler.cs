@@ -32,7 +32,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
                     ApartmentId = booking.ApartmentId
                 };
                 var apartmentResponse = await _mediator.Send(apartmentIdRequest);
-                
+
                 var bookingResult = _mapper.Map<BookingData>(booking);
                 bookingResult.ApartmentData = apartmentResponse;
                 switch (booking.StatusContract)

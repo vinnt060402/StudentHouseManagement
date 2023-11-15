@@ -28,7 +28,7 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
             {
                 throw new BadRequestException("This list package service have been deleted before!");
             }
-            foreach(var packageService in listPackageService)
+            foreach (var packageService in listPackageService)
             {
                 packageService.IsDelete = true;
             }

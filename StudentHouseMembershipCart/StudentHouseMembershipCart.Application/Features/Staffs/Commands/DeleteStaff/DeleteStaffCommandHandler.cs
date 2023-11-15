@@ -43,7 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
                     StaffId = request.Id.ToString()
                 };
                 var deleteStaffCategoryResponse = await _mediator.Send(deleteStaffCategory);
-                if(deleteStaffCategoryResponse == null || deleteStaffCategoryResponse.Message != Extensions.DeleteSuccessfully)
+                if (deleteStaffCategoryResponse == null || deleteStaffCategoryResponse.Message != Extensions.DeleteSuccessfully)
                 {
                     throw new BadRequestException("Can not delete Staff Staff");
                 }

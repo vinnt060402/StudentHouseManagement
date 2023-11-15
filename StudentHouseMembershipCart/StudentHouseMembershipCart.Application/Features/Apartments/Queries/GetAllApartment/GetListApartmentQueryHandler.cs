@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetAllApartment
@@ -34,7 +31,7 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Queries.Get
                                     _context.Student,
                                     apartment => apartment.StudentId,
                                     student => student.Id,
-                                    (apartment, student) => new 
+                                    (apartment, student) => new
                                     {
                                         Apartment = apartment,
                                         Student = student

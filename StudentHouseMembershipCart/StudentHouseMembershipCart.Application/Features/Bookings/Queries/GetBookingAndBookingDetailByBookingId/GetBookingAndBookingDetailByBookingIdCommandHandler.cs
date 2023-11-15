@@ -29,7 +29,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
             var bd = _mapper.Map<BookingData>(booking);
             if (booking == null)
             {
-                throw new NotFoundException("Can not find this booking!"); 
+                throw new NotFoundException("Can not find this booking!");
             }
             var bookingDetail = await _dbContext.BookingDetail.Where(x => x.BookingId == request.BookingId).ToListAsync();
             List<BookingDetailData> Details = new List<BookingDetailData>();
@@ -58,7 +58,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
                     break;
             }
             bd.ApartmentData = apartmentResponse;
-            bd.Details =  Details;
+            bd.Details = Details;
             return bd;
         }
     }

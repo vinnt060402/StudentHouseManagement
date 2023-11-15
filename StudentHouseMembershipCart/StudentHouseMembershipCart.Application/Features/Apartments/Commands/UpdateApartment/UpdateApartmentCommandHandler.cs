@@ -31,12 +31,14 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.Up
                 .Include(s => s.Student)
                 .Include(s => s.Region)
                 .FirstOrDefaultAsync(s => s.Id == request.ApartmentId);
-            if (apartmentIdExist == null) {
+            if (apartmentIdExist == null)
+            {
                 throw new NotFoundException("Apartment does not exist !");
             }
 
-            
-            if (apartmentIdExist.Student != null && apartmentIdExist.Region != null) {
+
+            if (apartmentIdExist.Student != null && apartmentIdExist.Region != null)
+            {
                 apartmentIdExist.Student.ApplicationUser.FullName = request.FullName;
                 apartmentIdExist.Student.Phone = request.Phone;
                 apartmentIdExist.Student.Birthday = request.Birthday;
@@ -50,7 +52,8 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.Up
             await _context.SaveChangesAsync();
 
             var user = await _userManager.FindByIdAsync(apartmentIdExist.Student.ApplicationUser.Id);
-            if (user != null) {
+            if (user != null)
+            {
                 var userRoles = await _userManager.GetRolesAsync(user);
                 // Xóa role hiện tại
                 await _userManager.RemoveFromRolesAsync(user, userRoles);

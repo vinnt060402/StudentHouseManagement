@@ -5,10 +5,10 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Upd
 {
     public class UpdateFeedbackByCustomerCommand : IRequest<SHMResponse>
     {
-        public Guid FeedBackId { get; set; }    
+        public Guid FeedBackId { get; set; }
         public string? FeedBackName { get; set; }
         public string? FeedBackDescription { get; set; }
-        public string? FeedBackImageUrl { get; set;}
-        public string FeedBackRating { get; set; }  
+        public string? FeedBackImageUrl { get; set; }
+        public string FeedBackRating { get; set; }
     }
 }

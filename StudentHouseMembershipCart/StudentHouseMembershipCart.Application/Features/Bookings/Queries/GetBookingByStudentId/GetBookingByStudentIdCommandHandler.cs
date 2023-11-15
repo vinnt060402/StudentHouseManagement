@@ -31,16 +31,16 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
                                  select b).ToListAsync();
 
             List<BookingData> result = new List<BookingData>();
-            if(!booking.Any())
+            if (!booking.Any())
             {
                 throw new NotFoundException("This student do not booking before!");
             }
-            foreach(var bookingData in booking)
+            foreach (var bookingData in booking)
             {
-                var bd = _mapper.Map<BookingData>(bookingData); 
+                var bd = _mapper.Map<BookingData>(bookingData);
                 var bdd = await _dbContext.BookingDetail.Where(x => x.BookingId == bd.Id).ToListAsync();
                 List<BookingDetailData> bookingDetailDatas = new List<BookingDetailData>();
-                foreach(var item in bdd)
+                foreach (var item in bdd)
                 {
                     var bddd = _mapper.Map<BookingDetailData>(item);
                     bookingDetailDatas.Add(bddd);

@@ -4,6 +4,6 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
 {
     public class GetAttendReportByBookingDetailIdCommand : IRequest<AttendReportDataResponse>
     {
-        public Guid BookingDetailId { get; set; }   
+        public Guid BookingDetailId { get; set; }
     }
 }

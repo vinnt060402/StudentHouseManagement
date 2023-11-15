@@ -6,7 +6,7 @@ using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Commands.CreateStaffCategory
 {
-    public class CreateStaffCategoryCommandHandler : IRequestHandler<CreateStaffCategoryCommand,SHMResponse>
+    public class CreateStaffCategoryCommandHandler : IRequestHandler<CreateStaffCategoryCommand, SHMResponse>
     {
         private IApplicationDbContext _dbContext;
 
@@ -18,7 +18,7 @@ namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Comman
         public async Task<SHMResponse> Handle(CreateStaffCategoryCommand request, CancellationToken cancellationToken)
         {
             List<StaffCategory> staffCategories = new List<StaffCategory>();
-            foreach(var category in request.ListCategoryId)
+            foreach (var category in request.ListCategoryId)
             {
                 var staffCategory = new StaffCategory
                 {

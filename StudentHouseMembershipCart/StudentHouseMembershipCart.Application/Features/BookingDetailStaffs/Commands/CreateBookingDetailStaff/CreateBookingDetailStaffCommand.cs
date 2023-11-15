@@ -9,7 +9,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
     public class CreateBookingDetailStaffCommand : IRequest<SHMResponse>
     {
         public string BookingDetailId { get; set; } = null!;
-        public string StaffId { get; set; } = null!; 
-        public string? AssignBy { get; set; } 
+        public string StaffId { get; set; } = null!;
+        public string? AssignBy { get; set; }
     }
 }

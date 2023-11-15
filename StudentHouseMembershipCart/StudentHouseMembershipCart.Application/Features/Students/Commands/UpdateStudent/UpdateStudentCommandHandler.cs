@@ -28,16 +28,19 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
         public async Task<Unit> Handle(UpdateStudentCommand request, CancellationToken cancellationToken)
         {
             var student = await _context.Student.Include(s => s.ApplicationUser).FirstOrDefaultAsync(s => s.Id == request.StudentId);
-            if(student == null) {
+            if (student == null)
+            {
                 throw new NotFoundException("Student does not exist !");
             }
-            else if (student.IsDelete == true) {
+            else if (student.IsDelete == true)
+            {
                 throw new NotFoundException("The student have been deleted");
             }
 
             var validator = new UpdateStudentCommandValidator();
             var validationResult = await validator.ValidateAsync(request);
-            if (validationResult.Errors.Any()) {
+            if (validationResult.Errors.Any())
+            {
                 throw new BadRequestException("Invalid Customer", validationResult);
             }
 
@@ -45,14 +48,16 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Upda
             student.Birthday = request.Birthday;
             student.Address = request.Address;
 
-            if (student.ApplicationUser != null) {
+            if (student.ApplicationUser != null)
+            {
                 student.ApplicationUser.FullName = request.FullName;
             }
             _context.Student.Update(student);
             await _context.SaveChangesAsync();
 
             var user = await _userManager.FindByIdAsync(student.ApplicationUser.Id);
-            if (user != null) {
+            if (user != null)
+            {
                 var userRoles = await _userManager.GetRolesAsync(user);
                 // Xóa role hiện tại
                 await _userManager.RemoveFromRolesAsync(user, userRoles);

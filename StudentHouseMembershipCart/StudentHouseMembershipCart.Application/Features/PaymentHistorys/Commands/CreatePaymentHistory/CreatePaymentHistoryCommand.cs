@@ -9,6 +9,6 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Comman
         public Guid BookingId { get; set; }
         public double Amount { get; set; }
         public int PaymentStatus { get; set; }
-        public string? CreateBy { get; set; } 
+        public string? CreateBy { get; set; }
     }
 }

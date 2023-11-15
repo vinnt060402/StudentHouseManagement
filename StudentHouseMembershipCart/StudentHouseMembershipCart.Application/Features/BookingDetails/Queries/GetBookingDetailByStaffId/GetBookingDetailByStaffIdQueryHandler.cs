@@ -25,7 +25,7 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
                 throw new NotFoundException("Do not assign task for this staff before!!");
             }
             var listData = new List<BookingDetailByStaffIdModel>();
-            foreach(var item in listBookingDetailIdByStaffId)
+            foreach (var item in listBookingDetailIdByStaffId)
             {
                 var data = await _dbContext.BookingDetail.Where(x => x.Id == item).FirstOrDefaultAsync();
                 if (data != null)

@@ -6,6 +6,6 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Comman
     public class UpdatePaymentHistoryCommand : IRequest<SHMResponse>
     {
         public Guid PaymentHistoryId { get; set; }
-        public int PaymentHistoryStatus { get; set; } 
+        public int PaymentHistoryStatus { get; set; }
     }
 }

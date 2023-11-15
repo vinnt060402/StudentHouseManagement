@@ -5,6 +5,6 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Upd
 {
     public class UpdateFeedBackStatusByReportWorkedCommand : IRequest<SHMResponse>
     {
-        public Guid AttendReportId { get; set; }    
+        public Guid AttendReportId { get; set; }
     }
 }

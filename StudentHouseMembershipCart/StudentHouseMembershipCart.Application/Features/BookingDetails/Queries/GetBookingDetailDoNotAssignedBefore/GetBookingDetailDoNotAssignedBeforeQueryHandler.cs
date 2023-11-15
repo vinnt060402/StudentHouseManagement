@@ -25,24 +25,24 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
             List<BookingDetailDoNotAssignedBeforeData> response = new List<BookingDetailDoNotAssignedBeforeData>();
             var bookingDetail = await _dbContext.BookingDetail.Where(x => x.BookingDetailStatus != 1).OrderBy(x => x.Created).ToListAsync();
             var bookingDetailStaff = await _dbContext.BookingDetailStaff.ToListAsync();
-            foreach(var item in bookingDetail)
+            foreach (var item in bookingDetail)
             {
                 var data = bookingDetailStaff.Where(x => x.BookingDetailId == item.Id).FirstOrDefault();
-                if(data == null)
+                if (data == null)
                 {
                     var date = item.Created.ToString("dd/MM/yyyy");
                     var packageName = _dbContext.Package.Where(x => x.Id == item.PackageId).Select(x => x.PackageName).FirstOrDefault();
                     var studentInfor = await (from b in _dbContext.Booking
 
-                                        join a in _dbContext.Apartment
-                                        on b.ApartmentId equals a.Id
+                                              join a in _dbContext.Apartment
+                                              on b.ApartmentId equals a.Id
 
-                                        join s in _dbContext.Student
-                                        on a.StudentId equals s.Id
+                                              join s in _dbContext.Student
+                                              on a.StudentId equals s.Id
 
-                                        where b.Id == item.BookingId
+                                              where b.Id == item.BookingId
 
-                                        select s.ApplicationUserId).FirstOrDefaultAsync();
+                                              select s.ApplicationUserId).FirstOrDefaultAsync();
                     var applicationUser = await _userManager.FindByIdAsync(studentInfor);
                     var studentName = applicationUser.FullName;
                     var nameBookingdetail = "Booking Details Of " + studentName + " " + packageName + " " + date;

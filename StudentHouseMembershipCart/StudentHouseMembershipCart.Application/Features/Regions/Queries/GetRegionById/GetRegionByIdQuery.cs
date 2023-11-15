@@ -5,14 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Application.Features.Students;
-using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Regions.Queries.GetRegionById
 {
@@ -42,7 +35,8 @@ namespace StudentHouseMembershipCart.Application.Features.Regions.Queries.GetReg
         {
             var region = _context.Region.Where(r => r.Id == request.Id).AsNoTracking();
 
-            if (region == null || region.Count() == 0) {
+            if (region == null || region.Count() == 0)
+            {
                 throw new NotFoundException(nameof(RegionDto), request.Id);
             }
             var map = region.ProjectTo<RegionDto>(_mapper.ConfigurationProvider);
