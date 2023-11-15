@@ -11,5 +11,6 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
         public int TotalDayNeedWork { get; set; }
         public int TotalDayWorkingInWeek { get; set; }
         public string BookingDetailId { get; set; } = null!;
+
     }
 }
