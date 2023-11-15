@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Commands.DeleteService
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Dele
         public string DeleteBy { get; set; } = null!;
     }
 }
+*/

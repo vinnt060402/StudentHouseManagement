@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -74,3 +74,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
         }
     }
 }
+*/

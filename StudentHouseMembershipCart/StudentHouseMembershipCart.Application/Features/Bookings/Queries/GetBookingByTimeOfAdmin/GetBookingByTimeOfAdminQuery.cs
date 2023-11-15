@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin
 {
@@ -8,3 +8,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBo
         public DateTime? EndDate { get; set; }
     }
 }
+*/

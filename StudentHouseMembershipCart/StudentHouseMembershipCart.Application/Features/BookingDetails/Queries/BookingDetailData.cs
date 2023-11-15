@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
+﻿/*namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Queries
 {
     public class BookingDetailData
     {
@@ -17,3 +17,4 @@
         public bool IsDelete { get; set; }
     }
 }
+*/

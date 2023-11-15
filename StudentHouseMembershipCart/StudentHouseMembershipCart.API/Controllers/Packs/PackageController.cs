@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Features.Categories.Queries.ReadCategoryById;
@@ -76,3 +76,4 @@ namespace StudentHouseMembershipCart.API.Controllers.Packs
         }
     }
 }
+*/

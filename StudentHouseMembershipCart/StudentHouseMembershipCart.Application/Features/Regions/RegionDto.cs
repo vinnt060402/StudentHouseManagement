@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StudentHouseMembershipCart.Application.Features.Regions
+﻿/*namespace StudentHouseMembershipCart.Application.Features.Regions
 {
     public class RegionDto
     {
@@ -12,3 +6,4 @@ namespace StudentHouseMembershipCart.Application.Features.Regions
         public string RegionName { get; set; }
     }
 }
+*/

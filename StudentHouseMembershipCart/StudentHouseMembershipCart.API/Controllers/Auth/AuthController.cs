@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -72,7 +72,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Auth
             }
             catch (Exception ex)
             {
-                /*_logger.LogError(ex, "User not found");*/
+                *//*_logger.LogError(ex, "User not found");*//*
                 throw new BadRequestException("User does not exist.");
             }
         }
@@ -106,3 +106,4 @@ namespace StudentHouseMembershipCart.API.Controllers.Auth
         }
     }
 }
+*/

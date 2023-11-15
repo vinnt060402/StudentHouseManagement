@@ -1,4 +1,4 @@
-﻿using AutoMapper.QueryableExtensions;
+﻿/*using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.Entities;
@@ -15,3 +15,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
 
     }
 }
+*/

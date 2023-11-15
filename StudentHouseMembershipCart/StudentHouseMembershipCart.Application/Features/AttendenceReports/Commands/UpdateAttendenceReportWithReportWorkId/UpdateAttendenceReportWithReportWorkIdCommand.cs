@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Commands.UpdateAttendenceReportWithReportWorkId
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
         public string ReportWorkId { get; set; } = null!;
     }
 }
+*/

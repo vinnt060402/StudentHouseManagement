@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Commands.CreatePaymentHistory
@@ -12,3 +12,4 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Comman
         public string? CreateBy { get; set; } 
     }
 }
+*/

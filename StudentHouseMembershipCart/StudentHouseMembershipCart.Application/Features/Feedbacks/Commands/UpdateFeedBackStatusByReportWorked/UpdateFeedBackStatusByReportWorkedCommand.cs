@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.UpdateFeedBackStatusByReportWorked
@@ -8,3 +8,4 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Commands.Upd
         public Guid AttendReportId { get; set; }    
     }
 }
+*/

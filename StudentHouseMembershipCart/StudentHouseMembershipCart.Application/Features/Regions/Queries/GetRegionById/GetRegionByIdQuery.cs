@@ -1,18 +1,11 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Application.Features.Students;
-using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentHouseMembershipCart.Application.Features.Regions.Queries.GetRegionById
 {
@@ -51,3 +44,4 @@ namespace StudentHouseMembershipCart.Application.Features.Regions.Queries.GetReg
         }
     }
 }
+*/

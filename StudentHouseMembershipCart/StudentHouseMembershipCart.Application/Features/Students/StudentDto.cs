@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -18,3 +18,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students
         public DateTime? Birthday { get; set; }
     }
 }
+*/

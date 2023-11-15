@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.PaymentMethods
+﻿/*namespace StudentHouseMembershipCart.Application.Features.PaymentMethods
 {
     public class PaymentMethodData
     {
@@ -12,3 +12,4 @@
 
     }
 }
+*/

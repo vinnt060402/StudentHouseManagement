@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage
+﻿/*namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage
 {
     public class PackageData
     {
@@ -18,3 +18,4 @@
         public bool IsDelete { get; set; }
     }
 }
+*/

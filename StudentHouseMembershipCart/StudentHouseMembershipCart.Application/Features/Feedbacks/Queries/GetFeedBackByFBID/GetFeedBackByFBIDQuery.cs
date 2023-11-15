@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetFeedBackByFBID
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Feedbacks.Queries.GetF
         public string FeedBackId { get; set; } = null!;
     }
 }
+*/

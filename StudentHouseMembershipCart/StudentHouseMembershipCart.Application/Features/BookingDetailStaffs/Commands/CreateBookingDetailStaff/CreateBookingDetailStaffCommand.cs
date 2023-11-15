@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Commands.CreateBookingDetailStaff
@@ -13,3 +13,4 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
         public string? AssignBy { get; set; } 
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -71,3 +71,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Update
         }
     }
 }
+*/

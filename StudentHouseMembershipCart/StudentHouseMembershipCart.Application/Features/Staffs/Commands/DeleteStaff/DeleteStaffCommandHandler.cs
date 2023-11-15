@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
@@ -57,3 +57,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
         }
     }
 }
+*/

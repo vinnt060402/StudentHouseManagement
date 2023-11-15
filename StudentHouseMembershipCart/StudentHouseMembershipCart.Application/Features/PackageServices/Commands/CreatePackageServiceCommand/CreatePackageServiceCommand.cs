@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.PackageServices.Commands.CreatePackageServiceCommand
@@ -10,3 +10,4 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
         public string? CreateBy { get; set; }
     }
 }
+*/

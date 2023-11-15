@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadServiceById
 {
@@ -7,3 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadS
         public string SerivceId { get; set; } = null!;
     }
 }
+*/

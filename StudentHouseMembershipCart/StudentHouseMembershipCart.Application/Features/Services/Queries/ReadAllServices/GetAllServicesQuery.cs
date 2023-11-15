@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadAllServices
 {
@@ -6,3 +6,4 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadA
     {
     }
 }
+*/

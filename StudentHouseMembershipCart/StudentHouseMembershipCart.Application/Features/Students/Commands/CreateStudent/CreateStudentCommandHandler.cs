@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -31,11 +31,11 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
                 throw new BadRequestException("The username already exists!");
             }
 
-            /*var validator = new CreateStudentCommandValidator(_context);
+            *//*var validator = new CreateStudentCommandValidator(_context);
             var validatorResult = await validator.ValidateAsync(request);
             if (validatorResult.Errors.Any()) {
                 throw new BadRequestException("Invalid Create user", validatorResult);
-            }*/
+            }*//*
 
             var user = new ApplicationUser
             {
@@ -55,9 +55,9 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
             }
             var customer = new Student
             {
-                /*Address = request.Address,
+                *//*Address = request.Address,
                 Birthday = request.Birthday,
-                Phone = request.Phone,*/
+                Phone = request.Phone,*//*
                 ApplicationUserId = user.Id,
             };
 
@@ -67,3 +67,4 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
         }
     }
 }
+*/

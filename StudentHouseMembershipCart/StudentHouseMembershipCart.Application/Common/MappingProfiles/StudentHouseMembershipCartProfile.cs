@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using StudentHouseMembershipCart.Application.Features.Apartments;
 using StudentHouseMembershipCart.Application.Features.AttendenceReports;
 using StudentHouseMembershipCart.Application.Features.BookingDetails.Queries;
@@ -85,3 +85,4 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
         }
     }
 }
+*/

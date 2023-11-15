@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+﻿/*using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 
@@ -7,14 +7,14 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
     public class CreateStudentCommandValidator : AbstractValidator<CreateStudentCommand>
     {
         private readonly IApplicationDbContext _context;
-        public CreateStudentCommandValidator(/*IApplicationDbContext context*/)
+        public CreateStudentCommandValidator(*//*IApplicationDbContext context*//*)
         {
-            /*_context = context;*/
+            *//*_context = context;*//*
             RuleFor(p => p.UserName)
                 .NotEmpty().WithMessage("{UserName} is required")
                 .NotNull()
                 .MaximumLength(100).WithMessage("{UserName} must be fewer than 100 characters");
-                /*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*/
+                *//*.MustAsync(BeUniqueCustomerName).WithMessage("UserName already exist!");*//*
 
             RuleFor(p => p.FullName)
                 .NotEmpty().WithMessage("{FullName} is required")
@@ -51,9 +51,10 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Commands.Crea
 
         }
 
-        /*private async Task<bool> BeUniqueCustomerName(string customerName, CancellationToken token)
+        *//*private async Task<bool> BeUniqueCustomerName(string customerName, CancellationToken token)
         {
             return await _context.Student.AllAsync(r => r.ApplicationUser.UserName == customerName) == false;
-        }*/
+        }*//*
     }
 }
+*/

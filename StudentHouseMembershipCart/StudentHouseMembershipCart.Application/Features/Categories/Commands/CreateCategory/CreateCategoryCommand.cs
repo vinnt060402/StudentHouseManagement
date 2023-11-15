@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Categories.Commands.CreateCategory
@@ -10,3 +10,4 @@ namespace StudentHouseMembershipCart.Application.Features.Categories.Commands.Cr
         public string? CreateBy { get; set; }
     }
 }
+*/

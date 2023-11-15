@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Commands.CreateStaffCategory
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.StaffCategories.Comman
         public string StaffId { get; set; } = null!;
     }
 }
+*/

@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries
+﻿/*namespace StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries
 {
     public class PaymentHistoryData
     {
@@ -13,3 +13,4 @@
         public bool IsDelete { get; set; }
     }
 }
+*/

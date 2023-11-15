@@ -1,9 +1,4 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*using MediatR;
 
 namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.CreateApartment
 {
@@ -12,7 +7,8 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.Cr
         public Guid StudentId { get; set; }
         public Guid RegionId { get; set; }
 
-       /* public string NameApartment { get; set; }*/
+       *//* public string NameApartment { get; set; }*//*
         public string AddressOfApartment { get; set; }
     }
 }
+*/

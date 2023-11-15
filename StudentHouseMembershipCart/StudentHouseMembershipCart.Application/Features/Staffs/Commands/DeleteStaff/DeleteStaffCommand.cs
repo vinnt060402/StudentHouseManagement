@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.DeleteStaff
@@ -9,3 +9,4 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Commands.Delete
         public string? DeleteBy { get; set; }
     }
 }
+*/

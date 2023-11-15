@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings;
@@ -25,3 +25,4 @@ namespace StudentHouseMembershipCart.API.Controllers.AttendReports
         }
     }
 }
+*/

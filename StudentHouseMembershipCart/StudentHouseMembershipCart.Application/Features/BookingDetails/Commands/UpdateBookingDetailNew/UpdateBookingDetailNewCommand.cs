@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Commands.UpdateBookingDetailNew
@@ -16,3 +16,4 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
         public DateTime RenewStartDate { get; set; }
     }
 }
+*/

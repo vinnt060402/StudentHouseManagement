@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries
+﻿/*namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries
 {
     public class ReportWorkData
     {
@@ -32,3 +32,4 @@
         public Guid? ReportByStaffId { get; set; }
     }
 }
+*/
