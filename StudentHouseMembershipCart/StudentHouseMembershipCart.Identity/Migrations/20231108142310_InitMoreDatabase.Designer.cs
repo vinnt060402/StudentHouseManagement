@@ -12,8 +12,13 @@ using StudentHouseMembershipCart.Identity.DbContext;
 namespace StudentHouseMembershipCart.Identity.Migrations
 {
     [DbContext(typeof(StudentHouseMembershipCartDatabaseContext))]
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
     [Migration("20231108142310_InitMoreDatabase")]
     partial class InitMoreDatabase
+========
+    [Migration("20231114182507_InitDatabase")]
+    partial class InitDatabase
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,21 +59,33 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "8d1d93e3-1ab0-441d-825c-6a96376854ab",
+========
+                            ConcurrencyStamp = "bca720cb-1ea6-4499-9ae5-f13cf78bc5fb",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "cbe391a2-e83e-4ed1-99a2-15ac76b327ca",
+========
+                            ConcurrencyStamp = "303eed15-0b04-472d-9176-f179c57c93ca",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "fffffed7-95d6-474a-9d68-35a53fe76187",
+========
+                            ConcurrencyStamp = "f4da6835-b31d-47a1-bf36-7c1da32a86a7",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -269,7 +286,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("90ca347f-831f-4b75-98bb-ae825b3efc15"),
                             AdminName = "Admin",
                             ApplicationUserId = "ACCOUNT4",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 736, DateTimeKind.Local).AddTicks(719),
+========
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 416, DateTimeKind.Local).AddTicks(2694),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false
                         });
                 });
@@ -312,6 +333,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("Apartment");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -341,6 +363,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             RegionId = new Guid("34303ccb-2c3e-4cee-84f3-b3352d67d790"),
                             StudentId = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939")
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.AttendReport", b =>
@@ -381,6 +405,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("BookingDetailId");
 
                     b.ToTable("AttendReport");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -428,6 +453,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             IsDelete = false,
                             ReportWorkId = new Guid("6323937a-3b10-4277-8d7b-e61368bd8cf9")
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Booking", b =>
@@ -472,6 +499,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("ApartmentId");
 
                     b.ToTable("Booking");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -534,6 +562,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             StartDate = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(6763),
                             TotalPay = 2233.3000000000002
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.BookingDetail", b =>
@@ -588,6 +618,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("PackageId");
 
                     b.ToTable("BookingDetail");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -662,6 +693,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             RemainingTaskDuration = 3,
                             TotalPriceOfQuantity = 3232.3000000000002
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.BookingDetailStaff", b =>
@@ -698,6 +731,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("StaffId");
 
                     b.ToTable("BookingDetailStaff");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -724,6 +758,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             IsDelete = false,
                             StaffId = new Guid("a8ded7dd-683f-4231-8c47-560375560eea")
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Category", b =>
@@ -757,6 +793,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -808,6 +845,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(7161),
                             IsDelete = false
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.FeedBack", b =>
@@ -860,6 +899,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("FeedBack");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -927,6 +967,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             IsDelete = false,
                             StudentId = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485")
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Package", b =>
@@ -975,6 +1017,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Package");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1067,6 +1110,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             TotalPrice = 0.0,
                             WeekNumberBooking = 6
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.PackageService", b =>
@@ -1103,6 +1148,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("ServiceId");
 
                     b.ToTable("PackageService");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1145,6 +1191,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             PackageId = new Guid("ee75ea18-f6a7-4025-84b7-588ab1c6bf2d"),
                             ServiceId = new Guid("4fcc0684-ad33-433f-9338-d9e949b6f0d8")
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.PaymentHistory", b =>
@@ -1217,6 +1265,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PaymentMethod");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1243,6 +1292,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             IsDelete = false,
                             PaymentMethodName = "Bank Transfer"
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Region", b =>
@@ -1273,6 +1324,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Region");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1373,6 +1425,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             IsDelete = false,
                             RegionName = "Quận 6"
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.ReportWork", b =>
@@ -1433,6 +1487,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("StaffId");
 
                     b.ToTable("ReportWork");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1468,6 +1523,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             StaffId = new Guid("a8ded7dd-683f-4231-8c47-560375560eea"),
                             WorkingStatus = 0
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Service", b =>
@@ -1513,6 +1570,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Service");
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
 
                     b.HasData(
                         new
@@ -1647,6 +1705,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             ServiceDescription = "kiểm tra, xác định và khắc phục vấn đề",
                             ServiceName = "Sửa wifi"
                         });
+========
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Staff", b =>
@@ -1697,7 +1757,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Dong Nai",
                             ApplicationUserId = "ACCOUNT5",
                             Birthday = new DateTime(1999, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8508),
+========
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6112),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             staffName = "Staff 1"
                         },
@@ -1707,7 +1771,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "An Giang",
                             ApplicationUserId = "ACCOUNT6",
                             Birthday = new DateTime(1990, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8582),
+========
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6228),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             staffName = "Staff 2"
                         },
@@ -1717,7 +1785,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Long An",
                             ApplicationUserId = "ACCOUNT7",
                             Birthday = new DateTime(2000, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8589),
+========
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6235),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             staffName = "Staff 3"
                         });
@@ -1807,7 +1879,11 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Đà Nẵng",
                             ApplicationUserId = "ACCOUNT9",
                             Birthday = new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8711),
+========
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6447),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             Phone = "0961868641"
                         },
@@ -1816,8 +1892,13 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"),
                             Address = "Hồ Chí Minh",
                             ApplicationUserId = "ACCOUNT10",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Birthday = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8723),
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8722),
+========
+                            Birthday = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6628),
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6625),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             Phone = "0312357823"
                         },
@@ -1826,8 +1907,13 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"),
                             Address = "Hà Nội",
                             ApplicationUserId = "ACCOUNT11",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             Birthday = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8729),
                             Created = new DateTime(2023, 11, 8, 21, 23, 8, 797, DateTimeKind.Local).AddTicks(8728),
+========
+                            Birthday = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6637),
+                            Created = new DateTime(2023, 11, 15, 1, 25, 7, 486, DateTimeKind.Local).AddTicks(6634),
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             IsDelete = false,
                             Phone = "0987451632"
                         });
@@ -1906,16 +1992,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "85d973f5-07a3-4979-afc8-c4ed6d823a76",
+========
+                            ConcurrencyStamp = "2438ec4e-3126-443a-8aca-0c50d0518989",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEE4TgWF0DDO9Sr0ppdD+yFoQ5f1qQLqCy4zg6tJj4G5y5qR1QdYhLAtlX5QW8+FlRA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "2380332a-e5f3-4cee-80e5-d83ad0d9ba0b",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEKfddI3VoJRNuw1tPl0UfE8CSrbIo36wYRjFMzCWr2B597J4yc1QYKjd+/r8q4rOww==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "96f59abe-8868-4a74-bdcd-711d7f416e2d",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -1923,16 +2019,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "2f0b7fe2-288b-4e6d-b450-a4c47f0782ff",
+========
+                            ConcurrencyStamp = "106f9557-6aeb-4577-be31-e7b60c20e3d8",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAENgnkP++PmnsY0OCDk/NQyJyapIxKnMb+UpbOW5ZJlQVsRXUHHllATKWiEsViOXiAA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7cbddc18-2a24-45cf-85b6-bdc57f0b1085",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEEl0ugSGH4aeLGjSWnMeO1cMuRI6HSw/IFUC9sThNvtbB9RLosPUfOfDBt96/ylKgQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "e3f57805-90c2-441e-970d-d0a26a859be9",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -1940,16 +2046,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "47d4d616-ff9f-4809-87ff-418a136bf64c",
+========
+                            ConcurrencyStamp = "b165f7b8-03d7-4d81-957b-ba77a4547c09",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEHmEoap2g1/exml82wphJJPBLtxcmxClC7wdQO4GjpM76NdwWkm8RD2PjyfDORlG5w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "5ab375c6-a75a-47b2-9a82-9a21698382fc",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEDLrCdBefy681joc0b8qvRfB2e1uriZJIxyXFNOewWg586zpjtVicpnrkSBr9VzbWw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "00ec7f5d-36cc-4d7e-9683-e3f0955e6ddc",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         },
@@ -1957,16 +2073,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT4",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "cd937e9e-16d0-453a-ba74-175c97e5a6c7",
+========
+                            ConcurrencyStamp = "de0aff32-7fe3-4c5f-be87-fde481c57e38",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             FullName = "admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEJOUDVfC+3Y2TscCDqBJVYfUn98COHjq/Sjgw9W0SqPBdEFGPXWqSw4evzUauYdlbw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "05ee3f55-0b64-48c3-aae7-64cdea7d5ee7",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEEqqzs/ufSTRUenMVdjsUQyBaSsv9MSSdV4l/PkoJZ8PVBrldtZbKV9zLIG3d1ObmA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "8fab6ec4-1bb4-4441-a67c-8c2cc7eccb74",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -1974,16 +2100,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT5",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "4471fdf8-c688-4adc-9f0f-5f4ee2dc2e14",
+========
+                            ConcurrencyStamp = "2353e903-c963-4fd7-96d4-ff32d2b28cee",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "staff1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF1@GMAIL.COM",
                             NormalizedUserName = "STAFF",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEOxIsLmhD6UQ8/hR/TFCHrOw2+cqxKWw/kys+vHw2BYlg+bhi8c/BCDnG6V+ay+irg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "1bffb42f-8995-424d-ae9e-b7a2949e6183",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEAB3GCgQDKcxB9hEhDk7CxLUnSbRYGCacGq3frL2YH56hmAndRaKr+XwFqrH8GaHhw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "84f6a038-c529-43a8-a1ad-e27ad95651fc",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "staff"
                         },
@@ -1991,16 +2127,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT6",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "fa7b8959-0f8f-4516-8535-bf89a4e911b5",
+========
+                            ConcurrencyStamp = "8cd53977-9bd5-46dc-8fd0-a6f779f98e58",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "staff2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF2@GMAIL.COM",
                             NormalizedUserName = "STAFF2",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEKLdHLn0nSxPY3GkdhX/T1qg2ZtWHn2rzYeJgPb8yeO3dU+XPV9by2c4QPvCrZK4eg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "a670f5ca-6ebf-493d-8f7c-eceb7c47f4f7",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEKbM2t22vpj5Y66eiG+ryJrs9zqZiTqxLygMSfLrhoBeK6IF5HS5oNY5i2pWNBhy0A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b9b3934d-cfe4-4c6c-a154-d703b3ff07a7",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "staff2"
                         },
@@ -2008,16 +2154,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT7",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "a439ecd2-da0b-4e1a-a334-37da6aa98a70",
+========
+                            ConcurrencyStamp = "f448f34c-5299-46a6-bb18-f6344730a4b4",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "staff3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF3@GMAIL.COM",
                             NormalizedUserName = "STAFF3",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEEUZFjgiLDs+17+LuRKFflA7SCauFtD0oQ5GHoXh16QII+7l1dLRb9V+TvDg6/x4wA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "d00feb79-e4f0-43d8-b0b0-a30b05d4cb3d",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEMx2k4sLVpkP1qCYlQlzD7IZyUpseJuQImFMUZ+YXohT9C+tLHMOK5q++N7nt+UpHw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d3e41f63-1fe4-4175-8afe-ef1aff22713c",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "staff3"
                         },
@@ -2025,16 +2181,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT9",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "c8425098-db4e-4f7b-8640-440fa6e6bf2d",
+========
+                            ConcurrencyStamp = "a40003e6-8a6d-45ed-8a36-9a8c8809196f",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "student1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student1",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT1@GMAIL.COM",
                             NormalizedUserName = "STUDENT1",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEEbDCb02RZ4MAQhTZYLuFYGARUbsxucrrZVT6JHek/vPMs+7VMIaz4ehxm1rIpfgww==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "6d67fcb0-c2f2-433a-9543-97c6fad204bc",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEEzblDrLXMfphYG6N3omhNPTKivwipmdrxowM4euo+x7rNDOlfE/ZaI+iK/J3pIByg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "1a918bff-52f7-4ab6-8b63-2d2de0e71d78",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "student1"
                         },
@@ -2042,16 +2208,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT10",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "347db8b9-8e32-4002-997c-48dbdc824806",
+========
+                            ConcurrencyStamp = "d53408ae-aae4-4df5-bcf7-6f51eec940f1",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "student2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT2@GMAIL.COM",
                             NormalizedUserName = "STUDENT2",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAEGuvEYMLJTcXIWsG3LliE8AqFRDoTBURt89bURwO4Y5KKKut0CShTOkhS6hNp3nRSQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "9fcff7d4-6b3c-4324-9486-9ebcb0565048",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEISYfp1/a6y+MPIqNfHUboydUteM5hRnjOCHmGnweHvDEtNwPeipOufibhbEjp/UbA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "29c44f30-63f1-4026-9260-87a4d8d80750",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "student2"
                         },
@@ -2059,16 +2235,26 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT11",
                             AccessFailedCount = 0,
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             ConcurrencyStamp = "b6c10767-b2ed-4d43-8809-79e43b7c502e",
+========
+                            ConcurrencyStamp = "d7452384-86ca-425d-8330-d9f9a3a47758",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             Email = "student3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT3@GMAIL.COM",
                             NormalizedUserName = "STUDENT3",
+<<<<<<<< HEAD:StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231108142310_InitMoreDatabase.Designer.cs
                             PasswordHash = "AQAAAAEAACcQAAAAENgIU/qxPKC5iC//4Onb6iB4NqNoxDhjg9MqGXcDsgydWO1mo4emz44XHJdKM8TzLQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "799fb528-791d-4c48-af5f-06e76209c7e2",
+========
+                            PasswordHash = "AQAAAAEAACcQAAAAEKYLnzlw6mowqr0u0rJaRU383tXTB+9aXamko8mlxZ37TPuI2ck6n4eUb6NokuZgMQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "a8e1afa0-0fc2-4a82-9e8c-e92755bd2493",
+>>>>>>>> 21faa21 (4h00 11/16/2023):StudentHouseMembershipCart/StudentHouseMembershipCart.Identity/Migrations/20231114182507_InitDatabase.Designer.cs
                             TwoFactorEnabled = false,
                             UserName = "student3"
                         });
