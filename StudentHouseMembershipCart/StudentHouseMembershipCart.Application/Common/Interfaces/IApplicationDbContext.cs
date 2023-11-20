@@ -19,9 +19,11 @@ namespace StudentHouseMembershipCart.Application.Common.Interfaces
         public DbSet<PackageService> PackageService { get; set; }
         public DbSet<PaymentHistory> PaymentHistory { get; set; }
         public DbSet<PaymentMethod> PaymentMethod { get; set; }
+        public DbSet<PaymentNew> PaymentNew { get; set; }
+        public DbSet<PaymentTransaction> PaymentTransaction { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<ReportWork> ReportWork { get; set; }
-        public DbSet<Service> Service { get; set; }
+        public DbSet<Domain.Entities.Service> Service { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Student> Student { get; set; }
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

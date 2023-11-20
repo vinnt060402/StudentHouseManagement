@@ -36,7 +36,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
             {
                 throw new NotFoundException("The category have not existed!");
             }
-            var service = new Service
+            var service = new Domain.Entities.Service
             {
                 ServiceName = request.ServiceName,
                 ServiceDescription = request.ServiceDescription,

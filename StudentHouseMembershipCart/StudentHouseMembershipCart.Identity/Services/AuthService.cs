@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -61,7 +63,6 @@ namespace StudentHouseMembershipCart.Identity.Services
             {
                 userIdInTableMain = checkAdmin.Id.ToString();
             }
-
             var response = new AuthResponse
             {
                 Id = user.Id,
@@ -70,6 +71,7 @@ namespace StudentHouseMembershipCart.Identity.Services
                 Email = user.Email,
                 UserName = user.UserName
             };
+            CustomSessionManager.SetString("username", response.UserName);
             return response;
         }
 

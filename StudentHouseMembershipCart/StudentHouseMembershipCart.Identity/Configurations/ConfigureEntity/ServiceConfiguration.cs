@@ -4,12 +4,12 @@ using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
 {
-    internal class ServiceConfiguration : IEntityTypeConfiguration<Service>
+    internal class ServiceConfiguration : IEntityTypeConfiguration<Domain.Entities.Service>
     {
-        public void Configure(EntityTypeBuilder<Service> builder)
+        public void Configure(EntityTypeBuilder<Domain.Entities.Service> builder)
         {
             builder.HasData(
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("FA87282B-0C28-4DC7-831D-E1D8F8026270"),
                     ServiceName = "Dịch vụ rửa xe máy",
@@ -18,7 +18,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("9D3A81B8-A470-4F46-861E-772D55D73668"),
                     ServiceName = "Dịch vụ rửa xe hơi",
@@ -27,7 +27,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("7635D149-2A74-4562-B779-C81056594BFB"),
                     ServiceName = "Giặt áo vest",
@@ -36,7 +36,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("A3CCB973-D6C4-4EF4-AE4B-36A97429A0B0"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("E430FCFB-DE6A-4C64-A6CA-B607E1357843"),
                     ServiceName = "Giặt quần áo hằng ngày",
@@ -45,7 +45,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("A3CCB973-D6C4-4EF4-AE4B-36A97429A0B0"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("29140864-8E89-41B6-8FD7-A440800E6E00"),
                     ServiceName = "Hỗ trợ vay tiền học",
@@ -57,7 +57,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("8940E7F6-FD91-4402-A515-B9D55448C522"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("A9A16DCF-6C63-4392-9EC2-BE727FCD6081"),
                     ServiceName = "Rửa xe đạp",
@@ -66,7 +66,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("8ABB3DDA-208B-4397-93C0-3A5269A90E3D"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("1E064ACA-EF1A-4705-9931-A49A807765FD"),
                     ServiceName = "Chuyển nhà",
@@ -75,7 +75,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("375A894D-E8E5-4A84-A0B8-09F907992B46"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("16209D12-4E67-41E5-B419-F3285B8958E6"),
                     ServiceName = "Giao nước uống",
@@ -84,7 +84,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("375A894D-E8E5-4A84-A0B8-09F907992B46"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("FBDA5A61-C0E1-4039-97A5-841FB84EC5CE"),
                     ServiceName = "Nấu cơm",
@@ -93,7 +93,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("9DF988F5-0382-4939-8EEE-09D47B182BBB"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("30743744-754B-4A87-B828-6186CCC7ECE6"),
                     ServiceName = "Dọn dẹp nhà cửa",
@@ -102,7 +102,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("21291667-7546-4825-9BAD-840D648900A3"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("4FCC0684-AD33-433F-9338-D9E949B6F0D8"),
                     ServiceName = "Sửa ống nước",
@@ -111,7 +111,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
                     Image = "abc",
                     CategoryId = Guid.Parse("BA0F3F23-9425-44AD-9D73-A7608381FD5F"),
                 },
-                new Service
+                new Domain.Entities.Service
                 {
                     Id = Guid.Parse("6BBD52B8-A4B7-407E-BABA-A4F4FCA65D24"),
                     ServiceName = "Sửa wifi",

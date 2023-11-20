@@ -2,7 +2,7 @@
 
 namespace StudentHouseMembershipCart.Application.Contracts.Persistance
 {
-    public interface IServiceRepository : IGenericRepository<Service>
+    public interface IServiceRepository : IGenericRepository<Domain.Entities.Service>
     {
 
     }

@@ -1,8 +1,12 @@
 
+using MediatR;
 using StudentHouseMembershipCart.API.Middleware;
+using StudentHouseMembershipCart.API.Service;
 using StudentHouseMembershipCart.Application;
+using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Identity;
 using StudentHouseMembershipCart.Infrastucture;
+using StudentHouseMembershipCart.Service.VnPay.Config;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,7 +37,9 @@ builder.Services.AddControllers()
         .AddJsonOptions(options => {
             options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         });
-
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.Configure<VnpayConfig>(
+    builder.Configuration.GetSection(VnpayConfig.ConfigName));
 // Add Database Service
 
 var app = builder.Build();
@@ -44,8 +50,6 @@ app.UseMiddleware<ExceptionMiddleware>();
 //if (app.Environment.IsDevelopment()) {
 app.UseSwagger();
 app.UseSwaggerUI();
-
-
 app.UseHttpsRedirection();
 
 app.UseAuthentication();

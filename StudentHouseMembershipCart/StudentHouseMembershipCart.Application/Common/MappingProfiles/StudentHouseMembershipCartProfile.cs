@@ -10,6 +10,7 @@ using StudentHouseMembershipCart.Application.Features.Feedbacks.Queries;
 using StudentHouseMembershipCart.Application.Features.PackageServices;
 using StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries;
 using StudentHouseMembershipCart.Application.Features.PaymentMethods;
+using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
 using StudentHouseMembershipCart.Application.Features.Regions;
 using StudentHouseMembershipCart.Application.Features.Services;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
@@ -41,8 +42,8 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
             CreateMap<ApplicationStaff, ApplicationUser>();
             CreateMap<ApplicationUser, ApplicationStaff>();
 
-            CreateMap<Service, ServiceData>().ReverseMap();
-            CreateMap<ServiceData, Service>().ReverseMap();
+            CreateMap<Domain.Entities.Service, ServiceData>().ReverseMap();
+            CreateMap<ServiceData, Domain.Entities.Service>().ReverseMap();
 
             CreateMap<Category, CategoryData>().ReverseMap();
             CreateMap<CategoryData, Category>().ReverseMap();
@@ -82,6 +83,9 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<FeedBack, FeedBackData>().ReverseMap();
             CreateMap<FeedBackData, FeedBack>().ReverseMap();
+
+            CreateMap<PaymentNew, PaymentDto>().ReverseMap();
+            CreateMap<PaymentDto, PaymentNew>().ReverseMap();
         }
     }
 }

@@ -8,6 +8,7 @@ using StudentHouseMembershipCart.Application.Features.Auth.Queries.ChangePasswor
 using StudentHouseMembershipCart.Application.Features.Auth.Queries.ResetPassword;
 using StudentHouseMembershipCart.Application.Models.Identity;
 using StudentHouseMembershipCart.Domain.IdentityModels;
+using StudentHouseMembershipCart.Identity.Services;
 
 namespace StudentHouseMembershipCart.API.Controllers.Auth
 {
@@ -37,7 +38,9 @@ namespace StudentHouseMembershipCart.API.Controllers.Auth
             {
                 return BadRequest("You have logged in.");
             }
-            return Ok(await _authenticationService.Login(request));
+            var result = await _authenticationService.Login(request);
+            var test = CustomSessionManager.GetString("username");
+            return Ok(result);
         }
 
         [HttpPost("register-user")]
