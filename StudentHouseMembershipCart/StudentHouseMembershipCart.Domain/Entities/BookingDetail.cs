@@ -30,10 +30,13 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public Guid BookingId { get; set; }
         [ForeignKey("Package")]
         public Guid PackageId { get; set; }
+        [ForeignKey("Service")]
+        public Guid ServiceId { get; set; }
 
         // relationShip
         public virtual Booking Booking { get; set; }
         public virtual Package Package { get; set; }
+        public virtual Service Service { get; set; }
         public IList<AttendReport> AttendReport { get; private set; }
         public IList<BookingDetailStaff> BookingDetailStaff { get; private set; }
 
