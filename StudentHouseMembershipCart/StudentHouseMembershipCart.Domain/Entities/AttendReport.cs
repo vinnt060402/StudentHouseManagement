@@ -8,7 +8,11 @@ namespace StudentHouseMembershipCart.Domain.Entities
     { 
         public DateTime DateDoPackage { get; set; }
 
-        [ForeignKey("BookingDetail")]
+        [ForeignKey("Service")]
+        public Guid ServiceId { get; set; }
+        /// <summary>
+        /// Có thể là Service hoặc Package Đều được
+        /// </summary>
         public Guid BookingDetailId { get; set; }
         public Guid? ReportWorkId { get; set; }
         /// <summary>
@@ -21,7 +25,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public Guid FeedbackId { get; set; } */
 
         // relationShip
-        public virtual BookingDetail BookingDetail { get; set; }
+        public virtual Service Service { get; set; }
         public virtual FeedBack FeedBack { get; set; }
 
     }

@@ -34,8 +34,6 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
                 package.IsDelete = true;
-                package.LastModified = DateTime.Now;
-                package.LastModifiedBy = request.DeleteBy;
                 _dbContext.Package.Update(package);
                 var deletePackageServiceRequest = new DeletePackageServiceCommand()
                 {

@@ -1,9 +1,9 @@
-﻿using StudentHouseMembershipCart.Service.VnPay.Lib;
+﻿using StudentHouseMembershipCart.VnPay.Lib;
 using StudentHouseMembershipCart.Ultils.Helpers;
 using System.Net;
 using System.Text;
 
-namespace StudentHouseMembershipCart.Service.VnPay.Request
+namespace StudentHouseMembershipCart.VnPay.Request
 {
     public class VnpayPayRequest
     {

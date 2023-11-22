@@ -3,7 +3,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.GetTotalPriceOfPackage;
 
 namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP
 {
@@ -30,21 +29,13 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
             var listResult = new List<PackageData>();
             foreach (var item in listPackage)
             {
-                var getTotalPrice = new GetTotalPriceOfPackageQuery
-                {
-                    PackageId = item.Id.ToString(),
-                    NumberOfPerWeekDoPackage = item.NumberOfPerWeekDoPackage,
-                    WeekNumberBooking = item.WeekNumberBooking
-                };
-                var getTotalPriceResponse = await _mediator.Send(getTotalPrice);
                 var result = _mapper.Map<PackageData>(item);
-                result.DayDoInWeek = ReturnDayInWeekByDayDoServiceInWeek(item.DayDoServiceInWeek);
-                result.TotalPrice = getTotalPriceResponse;
+                //result.DayDoInWeek = ReturnDayInWeekByDayDoServiceInWeek(item.DayDoServiceInWeek);
                 listResult.Add(result);
             }
             return listResult;
         }
-        private List<string> ReturnDayInWeekByDayDoServiceInWeek(string day)
+/*        private List<string> ReturnDayInWeekByDayDoServiceInWeek(string day)
         {
             int lengthDay = day.Length;
             var result = new List<string>();
@@ -77,6 +68,6 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
                 }
             }
             return result;
-        }
+        }*/
     }
 }

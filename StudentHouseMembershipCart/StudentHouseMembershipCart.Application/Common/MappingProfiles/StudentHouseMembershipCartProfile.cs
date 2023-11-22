@@ -60,9 +60,6 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
             CreateMap<AttendReport, AttendReportData>().ReverseMap();
             CreateMap<AttendReportData, AttendReport>().ReverseMap();
 
-            CreateMap<PaymentMethod, PaymentMethodData>().ReverseMap();
-            CreateMap<PaymentMethodData, PaymentMethod>().ReverseMap();
-
             CreateMap<StudentData, Student>().ReverseMap();
             CreateMap<Student, StudentData>().ReverseMap();
 
@@ -71,15 +68,12 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<ApplicationStudent, ApplicationUser>().ReverseMap();
             CreateMap<ApplicationUser, ApplicationStudent>().ReverseMap();
-
+/*
             CreateMap<BookingDetailData, BookingDetail>().ReverseMap();
             CreateMap<BookingDetail, BookingDetailData>().ReverseMap();
 
             CreateMap<BookingDetailDoNotAssignedBeforeData, BookingDetail>().ReverseMap();
-            CreateMap<BookingDetail, BookingDetailDoNotAssignedBeforeData>().ReverseMap();
-
-            CreateMap<PaymentHistory, PaymentHistoryData>().ReverseMap();
-            CreateMap<PaymentHistoryData, PaymentHistory>().ReverseMap();
+            CreateMap<BookingDetail, BookingDetailDoNotAssignedBeforeData>().ReverseMap();*/
 
             CreateMap<FeedBack, FeedBackData>().ReverseMap();
             CreateMap<FeedBackData, FeedBack>().ReverseMap();

@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -43,17 +43,17 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
             {
                 throw new NotFoundException("Some package does not existed or was deleted before!!");
             }
-            /*
+            *//*
              * Trường hợp khi mà IsRe_New not null và bằng true 
              * thì có nghĩa sẽ được gia hạn
              * Và gia hạn đồng nghĩa với việc re new start date not null
-             */
+             *//*
             if (request.IsRe_Newed != null && request.IsRe_Newed == true && request.RenewStartDate != null && bookingDetail.PackageId == request.PackageId)
             {
-                /*
+                *//*
                  * Cập nhật các field như lastmodified và last modifiedby
                  * Cập nhật thêm vào trong Attendence Report
-                 */
+                 *//*
                 bookingDetail.IsRe_Newed = request.IsRe_Newed ?? true;
                 bookingDetail.RenewStartDate = request.RenewStartDate;
                 bookingDetail.LastModifiedBy = request.UpdateBy;
@@ -77,4 +77,4 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetails.Command
             };
         }
     }
-}
+}*/

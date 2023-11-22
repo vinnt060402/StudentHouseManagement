@@ -23,7 +23,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadA
 
         public async Task<List<ServiceData>> Handle(GetAllServicesQuery request, CancellationToken cancellationToken)
         {
-            var listServices = await _context.Service.ToListAsync();
+            var listServices = await _context.Service.Where(x => !x.IsDelete).ToListAsync();
             if (!listServices.Any())
             {
                 throw new NotFoundException("Have no service!");

@@ -3,8 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
-using StudentHouseMembershipCart.Service.VnPay.Config;
-using StudentHouseMembershipCart.Service.VnPay.Request;
+using StudentHouseMembershipCart.VnPay.Config;
+using StudentHouseMembershipCart.VnPay.Request;
 using StudentHouseMembershipCart.Ultils.Helpers;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.CreatePaymentCommand

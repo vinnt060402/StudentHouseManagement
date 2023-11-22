@@ -1,17 +1,21 @@
 ﻿using MediatR;
-using Org.BouncyCastle.Math.EC.Rfc7748;
 using StudentHouseMembershipCart.Application.Common.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking
 {
     public class CreateNewBookingCommand : IRequest<SHMResponse>
     {
-        public string ApartmentId { get; set; } = null!;
         /// <summary>
-        /// UserName
+        /// Ngay bat dau dich vu
         /// </summary>
-        public string CreateBy { get; set; } = null!;
-        public string PaymentMethodId { get; set; } = null!;
+        public DateTime? StartDate { get; set; }
+        /// <summary>
+        /// Ngay ket thuc dich vu
+        /// </summary>
+        public DateTime? EndDate { get; set; }
+        public string ApartmentId { get; set; } = null!;
+        public double TotalPrice { get; set; }
+        public string PaymentNew { get; set; } = null!;
         public List<PackageCreateDate>? ListPackage { get; set; }
         public List<ServiceCreateDate>? ListService { get; set; }
 

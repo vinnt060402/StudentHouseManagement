@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.CreatePaymentCommand
 {
@@ -9,5 +10,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Cr
         public string PaymentRefId { get; set; } = string.Empty;
         public decimal? RequiredAmount { get; set; }
         public string? PaymentDestinationId { get; set; } = string.Empty;
+
+        public CreateNewBookingCommand CreateNewBookingCommand { get; set; } = null!;
     }
 }

@@ -6,7 +6,7 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
 using StudentHouseMembershipCart.Domain.Entities;
-using StudentHouseMembershipCart.Service.VnPay.Config;
+using StudentHouseMembershipCart.VnPay.Config;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentReturnCommand
 {

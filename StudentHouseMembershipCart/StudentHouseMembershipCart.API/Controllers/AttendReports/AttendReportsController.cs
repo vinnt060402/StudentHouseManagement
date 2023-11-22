@@ -1,9 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
-using StudentHouseMembershipCart.Application.Features.Bookings;
-using StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByBookingDetailId;
-using StudentHouseMembershipCart.Application.Features.AttendenceReports;
 
 namespace StudentHouseMembershipCart.API.Controllers.AttendReports
 {
@@ -17,11 +13,11 @@ namespace StudentHouseMembershipCart.API.Controllers.AttendReports
         {
             _mediator = mediator;
         }
-        [HttpGet]
+/*        [HttpGet]
         [Route("bookingdetailid")]
         public async Task<AttendReportDataResponse> GetAttendReportByBookingDetailId([FromQuery] GetAttendReportByBookingDetailIdCommand request)
         {
             return await _mediator.Send(request);
-        }
+        }*/
     }
 }

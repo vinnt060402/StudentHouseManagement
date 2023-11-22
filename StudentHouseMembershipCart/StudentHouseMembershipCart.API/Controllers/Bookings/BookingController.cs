@@ -1,18 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
-using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
-using StudentHouseMembershipCart.Application.Features.Categories.Commands.CreateCategory;
-using StudentHouseMembershipCart.Application.Features.Categories.Queries.ReadAllCategories;
-using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.Bookings;
+using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByStudentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {

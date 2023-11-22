@@ -6,7 +6,7 @@ using StudentHouseMembershipCart.Application;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Identity;
 using StudentHouseMembershipCart.Infrastucture;
-using StudentHouseMembershipCart.Service.VnPay.Config;
+using StudentHouseMembershipCart.VnPay.Config;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);

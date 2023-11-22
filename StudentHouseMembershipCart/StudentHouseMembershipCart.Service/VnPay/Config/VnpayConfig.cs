@@ -1,4 +1,4 @@
-﻿namespace StudentHouseMembershipCart.Service.VnPay.Config
+﻿namespace StudentHouseMembershipCart.VnPay.Config
 {
     public class VnpayConfig
     {

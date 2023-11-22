@@ -36,14 +36,19 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
             {
                 throw new NotFoundException("The category have not existed!");
             }
+            double priceAfterDiscount = request.OriginalPrice - (request.DiscountPercent/100)*request.OriginalPrice;
             var service = new Domain.Entities.Service
             {
                 ServiceName = request.ServiceName,
                 ServiceDescription = request.ServiceDescription,
-                Price = request.Price,
+                //Giá bán
+                Price = priceAfterDiscount,
+                //Giá gốc
+                OriginalPrice = request.OriginalPrice,
+                Unit = request.Unit,
+                ServiceType = request.ServiceType,
                 Image = request.ImageURL,
                 CategoryId = Guid.Parse(request.CategoryId),
-                CreateBy = request.CreateBy,
                 Created = DateTime.Now,
                 IsDelete = false
             };

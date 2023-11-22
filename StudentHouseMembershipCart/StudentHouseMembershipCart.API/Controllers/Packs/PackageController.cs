@@ -27,31 +27,43 @@ namespace StudentHouseMembershipCart.API.Controllers.Packs
             _mediator = mediator;
         }
         [HttpGet]
-        [Route("packages")]
+        //[Route("packages")]
         public async Task<List<PackageData>> GetAllPackages()
         {
             return await _mediator.Send(new GetAllPackageQuery());
         }
-        [HttpGet]
-        [Route("packagesbyid")]
-        public async Task<PackageData> GetPackageById([FromQuery] GetPackageByIdCommand request)
+/*        [HttpGet]
+        [Route("{packageid}")]
+        public async Task<PackageData> GetPackageById(string packageid)
         {
+            var request = new GetPackageByIdCommand()
+            {
+                PakageId = packageid
+            };
+            return await _mediator.Send(request);
+        }*/
+        [HttpGet]
+        [Route("categorys/{categoryid}")]
+        public async Task<List<PackageData>> GetPackageByCategoryId(string categoryid)
+        {
+            var request = new GetListPackageByCategoryIdQuery()
+            {
+                CategoryId = Guid.Parse(categoryid)
+            };
             return await _mediator.Send(request);
         }
         [HttpGet]
-        [Route("packagesbycategoryid")]
-        public async Task<List<PackageData>> GetPackageByCategoryId([FromQuery] GetListPackageByCategoryIdQuery request)
+        [Route("{packageid}")]
+        public async Task<PackageDataAndServiceData> GetPackageAndServiceByPackageId(string packageid)
         {
-            return await _mediator.Send(request);
-        }
-        [HttpGet]
-        [Route("packageandservicebypackageid")]
-        public async Task<PackageDataAndServiceData> GetPackageAndServiceByPackageId([FromQuery] GetPackageDataWithServiceDataWithPackageIdQuery request)
-        {
+            var request = new GetPackageDataWithServiceDataWithPackageIdQuery()
+            {
+                PackageId = packageid
+            };
             return await _mediator.Send(request);
         }
         [HttpPost]
-        [Route("packages")]
+        //[Route("packages")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> CreatePackage(CreatePakageCommand request)
@@ -59,7 +71,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Packs
             return await _mediator.Send(request);
         }
         [HttpPut]
-        [Route("packages")]
+        //[Route("packages")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> UpdatePackage(UpdatePackageCommand request)
@@ -67,7 +79,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Packs
             return await _mediator.Send(request);
         }
         [HttpDelete]
-        [Route("packages")]
+        //[Route("packages")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> DeletePackage(DeletePackageCommand request)

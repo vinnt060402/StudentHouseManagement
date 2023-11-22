@@ -30,18 +30,16 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
             }
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-                double? totalPrice = await HandlePriceOfPackage(request);
+                double totalOriginalPrice = await HandleOriginalPriceOfPackage(request);
 
                 var package = new Package()
                 {
                     PackageName = request.PackageName,
-                    WeekNumberBooking = request.WeekNumberBooking,
-                    NumberOfPerWeekDoPackage = request.NumberOfPerWeekDoPackage,
-                    DayDoServiceInWeek = request.DayDoServiceInWeek,
                     PackageDescription = request.PackageDescription,
                     Image = request.ImageUrl,
-                    TotalPrice = totalPrice,
-                    CreateBy = request.CreateBy,
+                    TotalPrice = totalOriginalPrice - (totalOriginalPrice * (request.DiscountPercent/100)),
+                    DiscountPercent = request.DiscountPercent,
+                    TotalOriginalPrice = totalOriginalPrice,
                     Created = DateTime.Now,
                     IsDelete = false
                 };
@@ -49,8 +47,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 var createPackageServiceRequest = new CreatePackageServiceCommand()
                 {
                     PackageId = package.Id,
-                    ListServiceId = request.ListServiceId,
-                    CreateBy = package.CreateBy,
+                    ListServiceWithQuantity = request.ListServiceWithQuantity,
                 };
                 var createPackageServiceResponse = await _mediator.Send(createPackageServiceRequest);
                 await _dbContext.SaveChangesAsync();
@@ -63,20 +60,21 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 Message = packageIdResult
             };
         }
-
-        private async Task<double> HandlePriceOfPackage(CreatePakageCommand request)
+        /// <summary>
+        /// Tính toán số tiền gốc của Package : TotalOriginalPrice
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        private async Task<double> HandleOriginalPriceOfPackage(CreatePakageCommand request)
         {
-            int flag = 0;
             double price = 0;
-            foreach (var serviceId in request.ListServiceId)
+
+            foreach(var item in request.ListServiceWithQuantity)
             {
-                var getService = await _dbContext.Service.Where(x => x.Id == serviceId).SingleOrDefaultAsync();
-                if (getService != null)
-                {
-                    flag++;
-                    price += (getService.Price * request.WeekNumberBooking * request.NumberOfPerWeekDoPackage) ?? 0;
-                }
+                var service = await _dbContext.Service.Where(x => x.Id == item.ServiceId).SingleAsync();
+                price += (service.Price * item.Quantity) ?? 0;
             }
+
             return price;
         }
     }

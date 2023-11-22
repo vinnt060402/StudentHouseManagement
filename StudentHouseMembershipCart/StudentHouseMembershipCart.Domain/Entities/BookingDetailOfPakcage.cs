@@ -3,8 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentHouseMembershipCart.Domain.Entities
 {
-    public class BookingDetail : BaseAuditableEntity 
-    { 
+    public class BookingDetailOfPakcage : BaseAuditableEntity
+    {
+        /// <summary>
+        /// Ngay bat dau dich vu
+        /// </summary>
+        public DateTime? StartDate { get; set; }
+        /// <summary>
+        /// Ngay ket thuc dich vu
+        /// </summary>
+        public DateTime? EndDate { get; set; }
         /// <summary>
         /// This variable is mean that total price of
         /// package price * quantiy of package ordered 
@@ -13,11 +21,14 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public double TotalPriceOfQuantity { get; set; }
         public bool IsRe_Newed { get; set; }
         public DateTime? RenewStartDate { get; set; }
+        /// <summary>
+        /// Số lượng 
+        /// </summary>
         public int RemainingTaskDuration { get; set; }
         /// <summary>
         /// The same with total price of booking det
         /// </summary>
-        public int QuantityOfPackageOrdered { get; set; } = 0;
+        public int QuantityOfPackageOrdered { get; set; }
         /// <summary>
         /// 0. On going
         /// 1. Finished
@@ -30,16 +41,12 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public Guid BookingId { get; set; }
         [ForeignKey("Package")]
         public Guid PackageId { get; set; }
-        [ForeignKey("Service")]
-        public Guid ServiceId { get; set; }
 
         // relationShip
         public virtual Booking Booking { get; set; }
         public virtual Package Package { get; set; }
-        public virtual Service Service { get; set; }
         public IList<AttendReport> AttendReport { get; private set; }
         public IList<BookingDetailStaff> BookingDetailStaff { get; private set; }
 
     }
-
 }

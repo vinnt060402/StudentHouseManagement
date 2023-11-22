@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using StudentHouseMembershipCart.Service.VnPay.Response;
+using StudentHouseMembershipCart.VnPay.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentIpnCommand
 {

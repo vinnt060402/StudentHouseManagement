@@ -9,6 +9,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public Guid PackageId { get; set; }
         [ForeignKey("Service")]
         public Guid ServiceId { get; set; }
+        public int? QuantityOfService { get; set; }
 
         // relationShip
         public virtual Package Package { get; set; }

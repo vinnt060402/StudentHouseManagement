@@ -6,8 +6,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
 {
     public class PaymentNew : BaseAuditableEntity
     {
-        //[ForeignKey("Apartment")]
-        //public string BookingId { get; set; } = string.Empty;
         [Key]
         public string PaymentNewId { get; set; } = string.Empty;
         public string PaymentContent { get; set; } = string.Empty;

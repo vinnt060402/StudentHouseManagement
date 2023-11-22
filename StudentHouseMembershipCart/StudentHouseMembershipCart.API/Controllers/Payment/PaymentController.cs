@@ -6,7 +6,7 @@ using StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Create
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentIpnCommand;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentReturnCommand;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
-using StudentHouseMembershipCart.Service.VnPay.Response;
+using StudentHouseMembershipCart.VnPay.Response;
 using StudentHouseMembershipCart.Ultils.Extensions;
 
 namespace StudentHouseMembershipCart.API.Controllers.Payment

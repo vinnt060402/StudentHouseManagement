@@ -26,22 +26,57 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
 
         public async Task<SHMResponse> Handle(CreateNewBookingCommand request, CancellationToken cancellationToken)
         {
-            try {
+            try
+            {
                 // list package
                 var listPakageData = new List<Package>();
-                foreach (var item in request.ListPackage.Select(x => x.PackageId).ToList()) {
-                    var package = await _dbContext.Package.Where(x => x.Id == Guid.Parse(item)).SingleOrDefaultAsync();
-                    listPakageData.Add(package);
+                if (request.ListPackage != null && request.ListPackage.Any())
+                {
+                    foreach (var item in request.ListPackage.Select(x => x.PackageId).ToList())
+                    {
+                        var package = await _dbContext.Package.Where(x => x.Id == Guid.Parse(item)).SingleOrDefaultAsync();
+                        if (package != null)
+                        {
+                            listPakageData.Add(package);
+                        }
+                    }
                 }
-
                 // list service
                 var listServiceData = new List<Service>();
-                foreach (var item in request.ListService.Select(x => x.ServiceId).ToList()) {
-                    var service = await _dbContext.Service.Where(x => x.Id == Guid.Parse(item)).SingleOrDefaultAsync();
-                    listServiceData.Add(service);
+                if (request.ListPackage != null && request.ListPackage.Any())
+                {
+                    foreach (var item in request.ListService.Select(x => x.ServiceId).ToList())
+                    {
+                        var service = await _dbContext.Service.Where(x => x.Id == Guid.Parse(item)).SingleOrDefaultAsync();
+                        if(service != null)
+                        {
+                            listServiceData.Add(service);
+                        }
+                    }
+                }
+                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+                {
+                    var booking = new Booking
+                    {
+                        Contract = CreateContractByApartmentId(request.ApartmentId),
+                        TotalPay = request.TotalPrice,
+                        StartDate = DateTime.Now,
+                        ApartmentId = Guid.Parse(request.ApartmentId),
+                        StatusContract = 0,
+                    };
+                    _dbContext.Booking.Add(booking);
+
+                    if (listPakageData.Any())
+                    {
+                        foreach(var package in listPakageData)
+                        {
+
+                        }
+                    }
                 }
 
-                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled)) {
+                /*
+                {
                     var apartment = await _dbContext.Apartment.Where(x => x.Id == Guid.Parse(request.ApartmentId)).SingleOrDefaultAsync();
                     var studentId = apartment.StudentId.ToString();
                     //Đầu tiên kiểm tra xem ở căn hộ đó đã booking cái service hay cái package nào hay chưa,
@@ -61,7 +96,8 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                     //Tạo sẵn 1 booking entity ở đây
                     var listPackageId = request.ListPackage.Select(x => x.PackageId).ToList();
                     double totalPrice = 0;
-                    foreach (var package in listPackageId) {
+                    foreach (var package in listPackageId)
+                    {
                         var getPackageIdRequest = listPakageData.Where(x => x.Id == Guid.Parse(package)).FirstOrDefault();
 
                         var priceOfPackage = getPackageIdRequest.TotalPrice * request.ListPackage.Where(x => x.PackageId == package).Select(x => x.QuantityOfPackageOrdered).FirstOrDefault();
@@ -113,8 +149,10 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                                                                BookingDetailStatus = bd.BookingDetailStatus ?? 0
                                                            }
                                                            ).ToListAsync();
-                    if (listContractAtApartmentId.Any()) {
-                        foreach (var item in listContractAtApartmentId) {
+                    if (listContractAtApartmentId.Any())
+                    {
+                        foreach (var item in listContractAtApartmentId)
+                        {
                             // Kiểm tra xem có PackageId của Request có cái nào trùng với Pcakge của căn hộ đó đang
                             // Trong trạng thái on going hay không
                             // Và kiểm tra trạng thái is renew, bởi vì đối với từng lần đăng ký trùng, thì hệ thống sẽ
@@ -122,11 +160,12 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                             // Nếu có thì cập nhật cái trạng thái 
                             if (request.ListPackage.Select(x => x.PackageId).ToList().Contains(item.PackageId.ToString().ToUpper()) &&
                                                                                                item.BookingDetailStatus == 0 &&
-                                                                                               !item.IsRe_Newed) {
+                                                                                               !item.IsRe_Newed)
+                            {
                                 var updateBookingDetail = new UpdateBookingDetailNewCommand
                                 {
                                     BookingDetailId = item.BookingdetailId,
-                                    
+
                                 };
                                 var updateBookingDetailResponse = await _mediator.Send(updateBookingDetail);
                             }
@@ -135,13 +174,14 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
 
                     await _dbContext.SaveChangesAsync();
                     scope.Complete();
-                }
+                }*/
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw new BadRequestException(ex.Message);
             }
 
-            return new SHMResponse 
+            return new SHMResponse
             {
                 Message = Extensions.CreateSuccessfully
             };

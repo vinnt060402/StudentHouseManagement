@@ -5,8 +5,8 @@ using Newtonsoft.Json;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
 using StudentHouseMembershipCart.Domain.Entities;
-using StudentHouseMembershipCart.Service.VnPay.Config;
-using StudentHouseMembershipCart.Service.VnPay.Response;
+using StudentHouseMembershipCart.VnPay.Config;
+using StudentHouseMembershipCart.VnPay.Response;
 
 namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentIpnCommand
 {

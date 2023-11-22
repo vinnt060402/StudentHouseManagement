@@ -11,6 +11,8 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         [ForeignKey("Apartment")]
         public Guid ApartmentId { get; set; }
+        [ForeignKey("PaymentNew")]
+        public string PaymentNewId { get; set; } = null!;
         /// <summary>
         /// 0. On going
         /// 1. Finished
@@ -18,9 +20,10 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public int? StatusContract { get; set; }
 
         // relationShip
+        public virtual PaymentNew PaymentNew { get; set; } 
         public virtual Apartment Apartment { get; set; }
-        public IList<BookingDetail> BookingDetail { get; private set; }
-        public IList<PaymentHistory> PaymentMethod { get; private set; }
+        public IList<BookingDetailOfPakcage> BookingDetailOfPakcage { get; private set; }
+        public IList<BookingDetailOfService> BookingDetailOfService { get; private set; }
 
 
     }

@@ -6,6 +6,5 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
     public class DeletePackageCommand : IRequest<SHMResponse>
     {
         public string PackageId { get; set; } = null!;
-        public string DeleteBy { get; set; } = null!;
     }
 }

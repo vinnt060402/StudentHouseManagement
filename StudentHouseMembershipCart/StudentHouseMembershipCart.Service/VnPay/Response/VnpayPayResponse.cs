@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StudentHouseMembershipCart.Service.VnPay.Lib;
+using StudentHouseMembershipCart.VnPay.Lib;
 using StudentHouseMembershipCart.Ultils.Helpers;
 using System.Net;
 using System.Text;
 
-namespace StudentHouseMembershipCart.Service.VnPay.Response
+namespace StudentHouseMembershipCart.VnPay.Response
 {
     [BindProperties]
     public class VnpayPayResponse

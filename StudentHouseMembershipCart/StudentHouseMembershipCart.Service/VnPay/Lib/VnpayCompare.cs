@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace StudentHouseMembershipCart.Service.VnPay.Lib
+namespace StudentHouseMembershipCart.VnPay.Lib
 {
     public class VnpayCompare : IComparer<string>
     {
