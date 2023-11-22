@@ -16,11 +16,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
         /// </summary>
         public double? OriginalPrice { get; set; }
         /// <summary>
-        /// 1. Khách hàng giao và nhận kết quả
-        /// 2. Giao sản phẩm hoặc thực hiện dịch vụ tại nhà khách hàng
-        /// </summary>
-        public string? ServiceType { get; set; }
-        /// <summary>
         /// Đại diện đơn vị
         /// </summary>
         public string? Unit { get; set; }
