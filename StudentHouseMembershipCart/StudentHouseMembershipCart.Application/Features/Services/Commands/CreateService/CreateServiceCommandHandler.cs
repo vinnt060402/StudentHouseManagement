@@ -46,7 +46,6 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
                 //Giá gốc
                 OriginalPrice = request.OriginalPrice,
                 Unit = request.Unit,
-                ServiceType = request.ServiceType,
                 Image = request.ImageURL,
                 CategoryId = Guid.Parse(request.CategoryId),
                 Created = DateTime.Now,

@@ -11,10 +11,6 @@ namespace StudentHouseMembershipCart.Domain.Entities
         /// Ngày nhận việc (giống như giặt quần áo thì sẽ có ngày nhận việc) hoặc ngày làm việc
         /// </summary>
         public DateTime DateDoService { get; set; }
-        /// <summary>
-        /// Thời gian nhận
-        /// </summary>
-        public TimeOnly TimeDoService { get; set; }
         [ForeignKey("Service")]
         public Guid ServiceId { get; set; }
         /// <summary>

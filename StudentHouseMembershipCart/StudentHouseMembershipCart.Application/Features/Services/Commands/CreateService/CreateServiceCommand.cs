@@ -16,11 +16,6 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Crea
         /// </summary>
         public string? Unit { get; set; }
         /// <summary>
-        /// 1. Khách hàng giao và nhận kết quả
-        /// 2. Giao sản phẩm hoặc thực hiện dịch vụ tại nhà khách hàng
-        /// </summary>
-        public string? ServiceType { get; set; }
-        /// <summary>
         /// Phần trăm giảm giá
         /// </summary>
         public double DiscountPercent { get; set; }

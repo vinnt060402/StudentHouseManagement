@@ -40,7 +40,6 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
             service.Image = request.ImageURL ?? service.Image;
             service.OriginalPrice = request.OriginalPrice;
             service.Unit = request.Unit;
-            service.ServiceType = request.ServiceType;
             service.Price = request.OriginalPrice - (request.DiscountPercent / 100) * request.OriginalPrice;
             service.CategoryId = request.CategoryId != null ? Guid.Parse(request.CategoryId) : service.CategoryId;
             _dbContext.Service.Update(service);
