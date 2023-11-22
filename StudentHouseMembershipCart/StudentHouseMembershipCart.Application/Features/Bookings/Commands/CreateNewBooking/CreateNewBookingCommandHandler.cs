@@ -43,7 +43,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                 }
                 // list service
                 var listServiceData = new List<Service>();
-                if (request.ListPackage != null && request.ListPackage.Any())
+                if (request.ListPackage != null && request.ListService.Any())
                 {
                     foreach (var item in request.ListService.Select(x => x.ServiceId).ToList())
                     {
