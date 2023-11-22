@@ -21,10 +21,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public double TotalPriceOfQuantity { get; set; }
         public bool IsRe_Newed { get; set; }
         public DateTime? RenewStartDate { get; set; }
-        /// <summary>
-        /// Số lượng 
-        /// </summary>
-        public int RemainingTaskDuration { get; set; }
+
         /// <summary>
         /// The same with total price of booking det
         /// </summary>
@@ -46,7 +43,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
         public virtual Booking Booking { get; set; }
         public virtual Service Service { get; set; }
         public IList<AttendReport> AttendReport { get; private set; }
+        public IList<ServiceRemainingTaskDuration> ServiceRemainingTaskDuration { get; private set; }
         public IList<BookingDetailStaff> BookingDetailStaff { get; private set; }
-
     }
 }

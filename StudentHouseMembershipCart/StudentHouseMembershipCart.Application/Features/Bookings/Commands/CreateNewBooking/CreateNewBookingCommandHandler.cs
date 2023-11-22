@@ -70,7 +70,12 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                     {
                         foreach(var package in listPakageData)
                         {
-
+                            var bookingDetailOfPackage = new BookingDetailOfPakcage()
+                            {
+                                StartDate = request.StartDate,
+                                EndDate = request.EndDate,
+                                TotalPriceOfQuantity = request.TotalPrice,
+                            };
                         }
                     }
                 }

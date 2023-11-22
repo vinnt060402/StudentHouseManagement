@@ -26,6 +26,7 @@ namespace StudentHouseMembershipCart.Domain.Entities
 
         // relationShip
         public virtual Category Category { get; set; }
+        public IList<ServiceRemainingTaskDuration> ServiceRemainingTaskDuration { get; private set; }
         public IList<PackageService> PackageService { get; private set; }
     }
 
