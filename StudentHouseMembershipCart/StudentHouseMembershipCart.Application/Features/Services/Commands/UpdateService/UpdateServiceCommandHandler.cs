@@ -37,7 +37,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
             }
             service.ServiceName = request.ServiceName ?? service.ServiceName;
             service.ServiceDescription = request.ServiceDescription ?? service.ServiceDescription;
-            service.Image = request.ImageURL ?? service.Image;
+            service.Image = request.ImageURL;
             service.OriginalPrice = request.OriginalPrice;
             service.Unit = request.Unit;
             service.Price = request.OriginalPrice - (request.DiscountPercent / 100) * request.OriginalPrice;
