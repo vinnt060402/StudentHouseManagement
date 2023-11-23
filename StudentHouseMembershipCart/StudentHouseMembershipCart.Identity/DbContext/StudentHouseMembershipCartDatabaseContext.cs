@@ -38,6 +38,7 @@ namespace StudentHouseMembershipCart.Identity.DbContext
         public DbSet<Domain.Entities.Service> Service { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Student> Student { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
 
 

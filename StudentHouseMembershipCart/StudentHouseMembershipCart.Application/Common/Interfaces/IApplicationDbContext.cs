@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.Entities;
+using StudentHouseMembershipCart.Domain.IdentityModels;
 
 namespace StudentHouseMembershipCart.Application.Common.Interfaces
 {
@@ -25,6 +26,7 @@ namespace StudentHouseMembershipCart.Application.Common.Interfaces
         public DbSet<Domain.Entities.Service> Service { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Student> Student { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }

@@ -56,6 +56,8 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<Booking, BookingData>().ReverseMap();
             CreateMap<BookingData, Booking>().ReverseMap();
+            CreateMap<Booking, BookingDataNew>().ReverseMap();
+            CreateMap<BookingDataNew, Booking>().ReverseMap();
 
             CreateMap<AttendReport, AttendReportData>().ReverseMap();
             CreateMap<AttendReportData, AttendReport>().ReverseMap();
