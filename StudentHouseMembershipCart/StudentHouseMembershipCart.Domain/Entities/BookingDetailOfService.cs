@@ -12,13 +12,13 @@ namespace StudentHouseMembershipCart.Domain.Entities
         /// <summary>
         /// Ngay ket thuc dich vu
         /// </summary>
-        public DateTime? EndDate { get; set; }
+        public DateTime? EndDate { get; set; }/*
         /// <summary>
         /// This variable is mean that total price of
         /// package price * quantiy of package ordered 
         /// If booking detail is renewed, it will be add on
         /// </summary>
-        public double TotalPriceOfQuantity { get; set; }
+        public double TotalPriceOfQuantity { get; set; }*/
         public bool IsRe_Newed { get; set; }
         public DateTime? RenewStartDate { get; set; }
 

@@ -19,6 +19,7 @@ namespace StudentHouseMembershipCart.Application.Common.Interfaces
         public DbSet<PackageService> PackageService { get; set; }
         public DbSet<PaymentNew> PaymentNew { get; set; }
         public DbSet<PaymentTransaction> PaymentTransaction { get; set; }
+        public DbSet<ServiceRemainingTaskDuration> ServiceRemainingTaskDuration { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<ReportWork> ReportWork { get; set; }
         public DbSet<Domain.Entities.Service> Service { get; set; }

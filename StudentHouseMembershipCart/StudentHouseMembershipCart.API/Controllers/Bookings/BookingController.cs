@@ -29,6 +29,13 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         {
             return await _mediator.Send(request);
         }
+        [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<SHMResponse> CreateNewBookingCommand(CreateNewBookingCommand request)
+        {
+            return await _mediator.Send(request);
+        }
         [HttpGet]
         public async Task<List<BookingData>> GetAllBooking()
         {

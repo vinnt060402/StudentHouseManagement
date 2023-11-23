@@ -30,6 +30,7 @@ namespace StudentHouseMembershipCart.Identity.DbContext
         public DbSet<PackageService> PackageService { get; set; }
         public DbSet<BookingDetailOfPakcage> BookingDetailOfPakcage { get; set; }
         public DbSet<BookingDetailOfService> BookingDetailOfService { get; set; }
+        public DbSet<ServiceRemainingTaskDuration> ServiceRemainingTaskDuration { get; set; }
         public DbSet<Region> Region { get; set; }
         public DbSet<PaymentNew> PaymentNew { get; set; }
         public DbSet<PaymentTransaction> PaymentTransaction { get; set; }
