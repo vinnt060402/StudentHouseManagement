@@ -52,21 +52,21 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         new
                         {
                             Id = "ROLE1",
-                            ConcurrencyStamp = "032e22dd-1e7e-4791-b141-caa57f22aba7",
+                            ConcurrencyStamp = "fe6f7bf2-4e35-4002-8532-221f0cd78f0d",
                             Name = "Student",
                             NormalizedName = "Student"
                         },
                         new
                         {
                             Id = "ROLE2",
-                            ConcurrencyStamp = "9990f82d-a3d5-4812-9932-773a6a30672b",
+                            ConcurrencyStamp = "3c65797f-b225-4a22-b825-21a644467e58",
                             Name = "Staff",
                             NormalizedName = "Staff"
                         },
                         new
                         {
                             Id = "ROLE3",
-                            ConcurrencyStamp = "f402fd26-331e-40c7-a2a3-609996dc60a9",
+                            ConcurrencyStamp = "3cedd742-ca37-409e-9cb2-0b983f96db76",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         });
@@ -267,7 +267,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("90ca347f-831f-4b75-98bb-ae825b3efc15"),
                             AdminName = "Admin",
                             ApplicationUserId = "ACCOUNT4",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 644, DateTimeKind.Local).AddTicks(674),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 561, DateTimeKind.Local).AddTicks(3987),
                             IsDelete = false
                         });
                 });
@@ -318,6 +318,12 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AttendReportForType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AttendTittle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("AttendenceStatus")
                         .HasColumnType("int");
 
@@ -336,7 +342,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateDoPackage")
+                    b.Property<DateTime>("DateDoService")
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsDelete")
@@ -346,6 +352,9 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("ReportWorkId")
@@ -451,10 +460,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<Guid>("PackageId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("QuantityOfPackageOrdered")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RemainingTaskDuration")
+                    b.Property<int>("QuantityOfServiceOrdered")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("RenewStartDate")
@@ -512,9 +518,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("QuantityOfPackageOrdered")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RemainingTaskDuration")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("RenewStartDate")
@@ -621,49 +624,49 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = new Guid("8abb3dda-208b-4397-93c0-3a5269a90e3d"),
                             CategoryName = "Rửa xe",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4669),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9909),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("9df988f5-0382-4939-8eee-09d47b182bbb"),
                             CategoryName = "Nấu ăn cho em",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4773),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9936),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("375a894d-e8e5-4a84-a0b8-09f907992b46"),
                             CategoryName = "Shipping",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4776),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9938),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("8940e7f6-fd91-4402-a515-b9d55448c522"),
                             CategoryName = "hỗ trợ tài chính",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4779),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9941),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("21291667-7546-4825-9bad-840d648900a3"),
                             CategoryName = "dọn vệ sinh nhà cửa",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4781),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9943),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("ba0f3f23-9425-44ad-9d73-a7608381fd5f"),
                             CategoryName = "Bảo trì và sửa chữa",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4783),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9945),
                             IsDelete = false
                         },
                         new
                         {
                             Id = new Guid("a3ccb973-d6c4-4ef4-ae4b-36a97429a0b0"),
                             CategoryName = "Giặt đồ",
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4785),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 640, DateTimeKind.Local).AddTicks(9951),
                             IsDelete = false
                         });
                 });
@@ -1057,9 +1060,6 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Property<string>("ServiceName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ServiceType")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
 
@@ -1068,6 +1068,56 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Service");
+                });
+
+            modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.ServiceRemainingTaskDuration", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AttendReportForType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("BookingDetailId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BookingDetailOfPakcageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("BookingDetailOfServiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreateBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RemainingTaskDuration")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ServiceId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingDetailOfPakcageId");
+
+                    b.HasIndex("BookingDetailOfServiceId");
+
+                    b.HasIndex("ServiceId");
+
+                    b.ToTable("ServiceRemainingTaskDuration");
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Staff", b =>
@@ -1118,7 +1168,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Dong Nai",
                             ApplicationUserId = "ACCOUNT5",
                             Birthday = new DateTime(1999, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(4947),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(119),
                             IsDelete = false,
                             staffName = "Staff 1"
                         },
@@ -1128,7 +1178,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "An Giang",
                             ApplicationUserId = "ACCOUNT6",
                             Birthday = new DateTime(1990, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5025),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(274),
                             IsDelete = false,
                             staffName = "Staff 2"
                         },
@@ -1138,7 +1188,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Long An",
                             ApplicationUserId = "ACCOUNT7",
                             Birthday = new DateTime(2000, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5036),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(289),
                             IsDelete = false,
                             staffName = "Staff 3"
                         });
@@ -1228,7 +1278,7 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Address = "Đà Nẵng",
                             ApplicationUserId = "ACCOUNT9",
                             Birthday = new DateTime(2023, 5, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5170),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(559),
                             IsDelete = false,
                             Phone = "0961868641"
                         },
@@ -1237,8 +1287,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("b9cf3487-3d04-4cbf-85b7-e33360566485"),
                             Address = "Hồ Chí Minh",
                             ApplicationUserId = "ACCOUNT10",
-                            Birthday = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5184),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5183),
+                            Birthday = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(578),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(577),
                             IsDelete = false,
                             Phone = "0312357823"
                         },
@@ -1247,8 +1297,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                             Id = new Guid("46f50a4a-327e-47f1-a43c-d31b6b39b939"),
                             Address = "Hà Nội",
                             ApplicationUserId = "ACCOUNT11",
-                            Birthday = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5187),
-                            Created = new DateTime(2023, 11, 22, 23, 54, 59, 728, DateTimeKind.Local).AddTicks(5186),
+                            Birthday = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(581),
+                            Created = new DateTime(2023, 11, 23, 1, 38, 15, 641, DateTimeKind.Local).AddTicks(580),
                             IsDelete = false,
                             Phone = "0987451632"
                         });
@@ -1327,16 +1377,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "44b32d48-a11a-4e95-b77b-90e090a486c2",
+                            ConcurrencyStamp = "38cb7b69-b342-4137-9f9b-d94c71590bf3",
                             Email = "vi@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Vi",
                             LockoutEnabled = false,
                             NormalizedEmail = "VI@GMAIL.COM",
                             NormalizedUserName = "VI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOT7iBkclLxUkD4QiOQD1dbbKsLAz91zEic1OzxBNTZ3ZuwtGC9t1jjTiR7y7/vq4A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAVMZXCzMn9LRMu8mz9mZ8We7S2a/R9l9MYBj22smOdeqGrH+0xsZY8i+AH8YaEaeg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "30476ffd-45d7-4f1d-b93d-08678623ce49",
+                            SecurityStamp = "897035a1-ffce-4cf3-b406-1503d1abf3e3",
                             TwoFactorEnabled = false,
                             UserName = "vi@gmail.com"
                         },
@@ -1344,16 +1394,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dc6c2372-0b87-44c5-9255-47b33a1b5770",
+                            ConcurrencyStamp = "ab8cab5b-6cce-4f8a-838e-4a380a46f32b",
                             Email = "nhan@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Nhan",
                             LockoutEnabled = false,
                             NormalizedEmail = "NHAN@GMAIL.COM",
                             NormalizedUserName = "NHAN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG5a1Ep/sM5UoHeupRhiNvTrnLQ1a71agE9oGBYE1Hk1lWVzMtzfKD9nQ78olKHkFA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGBF93PotKbe53VDFRvyCyyVm8u2qkqCGKAN/laxb6kpdXnJJ3WEXLtpycubT8Ma8w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "90d59afb-8e92-4243-a447-f8de6c41bc76",
+                            SecurityStamp = "a43ebb83-8ca2-4a16-b690-1409e0677910",
                             TwoFactorEnabled = false,
                             UserName = "nhan@gmail.com"
                         },
@@ -1361,16 +1411,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5412a8ff-21e2-4a07-a5c9-0953073d108d",
+                            ConcurrencyStamp = "3a6431bc-b007-498e-841b-cfa531be1e0b",
                             Email = "dai@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Nguyen Dai",
                             LockoutEnabled = false,
                             NormalizedEmail = "DAI@GMAIL.COM",
                             NormalizedUserName = "DAI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAED9T+bPYt3y6WZ5TL+PiwdxMVlmNmAw4kUiic9vNYg49e8TZLWqxMZDxq9x1rvoEfw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM0aI6qj0RGvDOFDdrdRIoLIMS8uL6nIzPjbVeKsewzJMh3r/gH/Vke1oywfVNGGkA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "db1d6de1-8272-425c-871a-4787e877852a",
+                            SecurityStamp = "7ead33e8-19b6-4425-9565-dbade6f763d5",
                             TwoFactorEnabled = false,
                             UserName = "dai@gmail.com"
                         },
@@ -1378,16 +1428,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fce7035d-38f9-4170-8d00-1bdac076137e",
+                            ConcurrencyStamp = "dc0984d0-76ac-4bb1-a48e-27a942144218",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             FullName = "admin",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAENRXrcI03PmJEIAHDQm7N0NFyHIRi61lMEZOp7I3nxpDBlvuE/2mZzvdvhb3Ovmeag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHphRkk0TrQu2xIahhdSuHYVfh63BPZBQ7B6+e/Oo+0HEfihSwUDvxVV26LlD4ZLpA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "231d072b-8448-4425-9a86-d57233367d6e",
+                            SecurityStamp = "7d5dcf80-add7-4105-a82f-54e2211d8312",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -1395,16 +1445,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "781836e0-9614-4919-9463-e8fb95621a51",
+                            ConcurrencyStamp = "408bd43d-f1fa-4ce1-949d-a1d425ed1068",
                             Email = "staff1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF1@GMAIL.COM",
                             NormalizedUserName = "STAFF",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFkFawmxECPDZyHsbQDkfl5IyRhEcmcH4q+7vtJ79Sj4/7qIFtTDi9HYb7YBWhBdMQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELZVUU0cNUoG4K4TqqXGH/RZZTNIcJm1lkG6vnsYx3fbBC9KSGjEFufAIkoutIzAJA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9fd59020-44ab-4c37-93e4-09cc1c74eaa0",
+                            SecurityStamp = "3ee63bbe-3efb-4745-9f8b-82ac4b584d52",
                             TwoFactorEnabled = false,
                             UserName = "staff"
                         },
@@ -1412,16 +1462,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a0cbdec7-f95a-426d-a1dd-0d407068f241",
+                            ConcurrencyStamp = "d2f5d87a-e357-4f74-8754-7127439b7d85",
                             Email = "staff2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF2@GMAIL.COM",
                             NormalizedUserName = "STAFF2",
-                            PasswordHash = "AQAAAAEAACcQAAAAELjF2Qo9ZpmtNr/z+n0pEgwv+Eni/DaD2bxctXN1TF773PapnrG72CY0/8auTpAHKQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDCxjXB345NMQ+LcaHPJag2C3kGyRdQKqyCobE0/PMJGNK1HvLD14zz+7z1WRDSb7w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "812de10f-4fa8-46cb-8fe4-5bf06cb6b18a",
+                            SecurityStamp = "bc73a53b-a8a2-40f8-bee4-3040b974bd89",
                             TwoFactorEnabled = false,
                             UserName = "staff2"
                         },
@@ -1429,16 +1479,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "550e9fe2-43ee-4e5e-b1b6-89344306c923",
+                            ConcurrencyStamp = "a7959f11-b588-4809-bd46-ae9805935a43",
                             Email = "staff3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "staff3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STAFF3@GMAIL.COM",
                             NormalizedUserName = "STAFF3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFdZ3o0ZA6AoOHQZkS8uy3uqHMz0uxiVVvjYaegAd+WJNxMgP0D8oW+4Qr9vVaxbuw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKusGk3hI/5MbreCeH3sm6sMrMrZYIifwXqB+RsW/VT0VmLJg5q6e0MPv0grnh9+5w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "76ea003e-1822-451b-93f2-3d99c7762f7b",
+                            SecurityStamp = "abf3d919-fd25-47fa-8266-544e626a5fe9",
                             TwoFactorEnabled = false,
                             UserName = "staff3"
                         },
@@ -1446,16 +1496,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9b4724f0-72fb-4e25-9db2-a2f30996db03",
+                            ConcurrencyStamp = "9e8adb0c-774d-4845-a6f2-d13f0bccae01",
                             Email = "student1@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student1",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT1@GMAIL.COM",
                             NormalizedUserName = "STUDENT1",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFKTcERnS+vNVee4VLexb7Hj6C69xBBM+OrjfWQRrkBGHaAC1//GW4dv857f/czOfA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOcUw2Wybv6sU3IMKrUKSoLUWa9mGcfMV2K97tsyoFqu/pkWoJiL0pR5pLDRzyKNuw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2c451dae-956c-4a80-8b18-a68c6939fbf6",
+                            SecurityStamp = "07c0275b-4dcf-4772-9e01-7db1a4a6dc60",
                             TwoFactorEnabled = false,
                             UserName = "student1"
                         },
@@ -1463,16 +1513,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT10",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0df6c77d-ce82-45c1-98f7-fe499bf02d8e",
+                            ConcurrencyStamp = "134b4429-2974-4952-981e-9d0596f6f880",
                             Email = "student2@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student2",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT2@GMAIL.COM",
                             NormalizedUserName = "STUDENT2",
-                            PasswordHash = "AQAAAAEAACcQAAAAEG++CZYQ+T2q6FAbNJxNVN6TAcK7JEGGnaMrtHHsTjYuZBQP+wnmybwsJGBc6COXMw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFvNwTmb8nFzqaGml74mmBgQ2KrQwJQmuw2FatNc8AWHHxV/68kd8jqnGmL6HpOK1g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1d822b3f-d2f4-48af-b111-285b86c41a75",
+                            SecurityStamp = "5201303b-27eb-49c8-9088-28a13a887735",
                             TwoFactorEnabled = false,
                             UserName = "student2"
                         },
@@ -1480,16 +1530,16 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                         {
                             Id = "ACCOUNT11",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5f235f56-5225-4233-97f1-ac37b2b5f2f7",
+                            ConcurrencyStamp = "905745d9-764d-4107-a99d-0c0d17ac4a7e",
                             Email = "student3@gmail.com",
                             EmailConfirmed = true,
                             FullName = "student3",
                             LockoutEnabled = false,
                             NormalizedEmail = "STUDENT3@GMAIL.COM",
                             NormalizedUserName = "STUDENT3",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMyLUiTVbzG+PDRWbwkSje1kTUsOzuoap6amx2glixY5e2ArByugZmhrKXsUI0fdUQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJH39W6ZNnSpuZWp0GG8TylqKYd74Axvd3gkE+FcBF50G0cuen8qqIxYmCFrZsv7Dw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e844e583-83be-4292-a766-0af7d3f0750d",
+                            SecurityStamp = "e69f6bf1-5848-4357-a0fb-c01441888a23",
                             TwoFactorEnabled = false,
                             UserName = "student3"
                         });
@@ -1754,6 +1804,25 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.ServiceRemainingTaskDuration", b =>
+                {
+                    b.HasOne("StudentHouseMembershipCart.Domain.Entities.BookingDetailOfPakcage", null)
+                        .WithMany("ServiceRemainingTaskDuration")
+                        .HasForeignKey("BookingDetailOfPakcageId");
+
+                    b.HasOne("StudentHouseMembershipCart.Domain.Entities.BookingDetailOfService", null)
+                        .WithMany("ServiceRemainingTaskDuration")
+                        .HasForeignKey("BookingDetailOfServiceId");
+
+                    b.HasOne("StudentHouseMembershipCart.Domain.Entities.Service", "Service")
+                        .WithMany("ServiceRemainingTaskDuration")
+                        .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Service");
+                });
+
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Staff", b =>
                 {
                     b.HasOne("StudentHouseMembershipCart.Domain.IdentityModels.ApplicationUser", "ApplicationUser")
@@ -1818,6 +1887,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Navigation("AttendReport");
 
                     b.Navigation("BookingDetailStaff");
+
+                    b.Navigation("ServiceRemainingTaskDuration");
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.BookingDetailOfService", b =>
@@ -1825,6 +1896,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
                     b.Navigation("AttendReport");
 
                     b.Navigation("BookingDetailStaff");
+
+                    b.Navigation("ServiceRemainingTaskDuration");
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Category", b =>
@@ -1856,6 +1929,8 @@ namespace StudentHouseMembershipCart.Identity.Migrations
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Service", b =>
                 {
                     b.Navigation("PackageService");
+
+                    b.Navigation("ServiceRemainingTaskDuration");
                 });
 
             modelBuilder.Entity("StudentHouseMembershipCart.Domain.Entities.Staff", b =>
