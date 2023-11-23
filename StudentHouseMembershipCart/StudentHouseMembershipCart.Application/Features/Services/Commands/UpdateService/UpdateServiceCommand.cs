@@ -21,7 +21,7 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
         /// Phần trăm giảm giá
         /// </summary>
         public double DiscountPercent { get; set; }
-        public string? ImageURL { get; set; }
+        public string ImageURL { get; set; } = null!;
         public string? CategoryId { get; set; }
     }
 }
