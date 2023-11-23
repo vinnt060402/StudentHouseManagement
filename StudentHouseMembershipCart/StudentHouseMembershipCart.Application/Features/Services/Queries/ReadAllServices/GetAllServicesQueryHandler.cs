@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
+using StudentHouseMembershipCart.Domain.Entities;
 using StudentHouseMembershipCart.Domain.IdentityModels;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadAllServices
 {
@@ -31,7 +33,25 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Queries.ReadA
             var listResponse = new List<ServiceData>();
             foreach (var service in listServices)
             {
-                var response = _mapper.Map<ServiceData>(service);
+                var discountService = (double)(100 - (service.Price / service.OriginalPrice) * 100);
+                var response = new ServiceData
+                {
+                    Id = service.Id,
+                    ServiceName = service.ServiceName,
+                    ServiceDescription = service.ServiceDescription,
+                    Price = service.Price,
+                    Image = service.Image,
+                    OriginalPrice = service.OriginalPrice,
+                    Unit = service.Unit,
+                    DiscountPercent = discountService,
+                    CategoryId = service.CategoryId,
+                    Created = service.Created,
+                    CreateBy = service.CreateBy,
+                    LastModified = service.LastModified,
+                    LastModifiedBy = service.LastModifiedBy,
+                    IsDelete = service.IsDelete,
+                };
+                
                 listResponse.Add(response);
             }
             return listResponse;

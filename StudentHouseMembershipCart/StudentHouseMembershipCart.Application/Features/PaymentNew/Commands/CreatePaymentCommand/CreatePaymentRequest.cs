@@ -7,7 +7,6 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Cr
     {
         public string PaymentContent { get; set; } = string.Empty;
         public string PaymentCurrency { get; set; } = string.Empty;
-        public string PaymentRefId { get; set; } = string.Empty;
         public decimal? RequiredAmount { get; set; }
         public string? PaymentDestinationId { get; set; } = string.Empty;
 

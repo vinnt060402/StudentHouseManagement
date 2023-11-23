@@ -37,7 +37,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Cr
                     PaymentNewId = DateTime.Now.Ticks.ToString(),
                     PaymentContent = request.PaymentContent,
                     PaymentCurrency = request.PaymentCurrency ?? string.Empty,
-                    PaymentRefId = request.PaymentRefId ?? string.Empty,
+                    PaymentRefId = Guid.NewGuid().ToString(),
                     RequiredAmount = request.RequiredAmount ?? 0,
                     PaymentDate = DateTime.Now,
                     PaymentStatus = "0",
