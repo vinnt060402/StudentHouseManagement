@@ -47,7 +47,8 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 var createPackageServiceRequest = new CreatePackageServiceCommand()
                 {
                     PackageId = package.Id,
-                    ListServiceWithQuantity = request.ListServiceWithQuantity,
+                    ListSerivceId = request.ListServiceId,
+                    Quantity = request.Quantity
                 };
                 var createPackageServiceResponse = await _mediator.Send(createPackageServiceRequest);
                 await _dbContext.SaveChangesAsync();
@@ -69,10 +70,10 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         {
             double price = 0;
 
-            foreach(var item in request.ListServiceWithQuantity)
+            foreach(var item in request.ListServiceId)
             {
-                var service = await _dbContext.Service.Where(x => x.Id == item.ServiceId).SingleAsync();
-                price += (service.Price * item.Quantity) ?? 0;
+                var service = await _dbContext.Service.Where(x => x.Id == item).SingleAsync();
+                price += (service.Price * request.Quantity) ?? 0;
             }
 
             return price;

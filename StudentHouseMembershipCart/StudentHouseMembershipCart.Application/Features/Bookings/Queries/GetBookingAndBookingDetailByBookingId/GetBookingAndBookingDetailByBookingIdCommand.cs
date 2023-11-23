@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId
 {

@@ -12,7 +12,8 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         /// Phần trăm giảm giá
         /// </summary>
         public double? DiscountPercent { get; set; }
-        public List<ServiceWithQuantity> ListServiceWithQuantity { get; set; } = null!;
+        public List<Guid> ListServiceId { get; set; } = null!;
+        public int Quantity { get; set; }
         public string? PackageName { get; set; } = null!;
         public string? PackageDescription { get; set; }
         public string? ImageUrl { get; set; }

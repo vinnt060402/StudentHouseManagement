@@ -45,7 +45,8 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 _dbContext.Package.Update(package);
                 var updatePackageServiceRequest = new UpdatePackageServiceCommand()
                 {
-                    ListServiceWithQuantity = request.ListServiceWithQuantity,
+                    ListServiceId = request.ListServiceId,
+                    Quantity = request.Quantity,
                     PackageId = Guid.Parse(request.PackageId),
                 };
                 var updatePackageServiceResponse = await _mediator.Send(updatePackageServiceRequest);
@@ -66,10 +67,10 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         {
             double price = 0;
 
-            foreach (var item in request.ListServiceWithQuantity)
+            foreach (var item in request.ListServiceId)
             {
-                var service = await _dbContext.Service.Where(x => x.Id == item.ServiceId).SingleAsync();
-                price += (service.Price * item.Quantity) ?? 0;
+                var service = await _dbContext.Service.Where(x => x.Id == item).SingleAsync();
+                price += (service.Price * request.Quantity) ?? 0;
             }
 
             return price;

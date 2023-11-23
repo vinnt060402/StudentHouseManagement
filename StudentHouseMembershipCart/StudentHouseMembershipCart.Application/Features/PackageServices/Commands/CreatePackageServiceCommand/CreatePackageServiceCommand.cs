@@ -7,6 +7,7 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
     public class CreatePackageServiceCommand : IRequest<SHMResponse>
     {
         public Guid PackageId { get; set; }
-        public List<ServiceWithQuantity> ListServiceWithQuantity{ get; set; } = null!;
+        public List<Guid> ListSerivceId { get; set; } = null!;
+        public int Quantity { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
 
         public async Task<SHMResponse> Handle(UpdatePackageServiceCommand request, CancellationToken cancellationToken)
         {
-            var serviceExisted = await _dbContext.Service.AsNoTracking().Where(x => request.ListServiceWithQuantity.Select(x => x.ServiceId).Contains(x.Id)).ToListAsync();
+            var serviceExisted = await _dbContext.Service.AsNoTracking().Where(x => request.ListServiceId.Contains(x.Id)).ToListAsync();
             if (!serviceExisted.Any())
             {
                 throw new NotFoundException("Have no service like this before!!");
@@ -29,13 +29,13 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
             var localCreateBy = packageServiceList.Select(x => x.CreateBy).FirstOrDefault();
             _dbContext.PackageService.RemoveRange(packageServiceList);
             var listPackageService = new List<PackageService>();
-            foreach (var serviceId in request.ListServiceWithQuantity)
+            foreach (var serviceId in request.ListServiceId)
             {
                 var packageItem = new PackageService
                 {
                     PackageId = request.PackageId,
-                    ServiceId = serviceId.ServiceId,
-                    QuantityOfService = serviceId.Quantity,
+                    ServiceId = serviceId,
+                    QuantityOfService = request.Quantity,
                     Created = localCreated,
                     CreateBy = localCreateBy,
                     IsDelete = false,

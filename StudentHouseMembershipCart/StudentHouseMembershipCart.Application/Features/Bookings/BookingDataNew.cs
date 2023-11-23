@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using StudentHouseMembershipCart.Application.Features.Apartments;
 
 namespace StudentHouseMembershipCart.Application.Features.Bookings
 {
-    internal class BookingDataNew
+    public class BookingDataNew
     {
+        public Guid Id { get; set; }
+        public string? StudentName { get; set; }
+        public double TotalPay { get; set; }
+        public Guid ApartmentId { get; set; }
+        public ApartmentDto? ApartmentData { get; set; }
+        /// <summary>
+        /// If StatusContract is 0 -> On going
+        /// Is 1 -> Finished
+        /// </summary>
+        public string? StatusContract { get; set; }
+        public DateTime Created { get; set; }
+
     }
 }

@@ -13,11 +13,7 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
         /// </summary>
         public double? DiscountPercent { get; set; }
         public string? ImageUrl { get; set; }
-        public List<ServiceWithQuantity> ListServiceWithQuantity { get; set; } = null!;
-    }
-    public class ServiceWithQuantity
-    {
-        public Guid ServiceId { get; set; }
-        public int Quantity { get; set; }    
+        public List<Guid> ListServiceId { get; set; } = null!;
+        public int Quantity { get; set; }
     }
 }
