@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Features.Apartments;
 using StudentHouseMembershipCart.Application.Features.Apartments.Queries.GetApartmentByApartmentId;
@@ -26,38 +27,52 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
 
         public async Task<List<BookingDataNew>> Handle(GetAllBookingNewCommand request, CancellationToken cancellationToken)
         {
-            var bookingList = await _dbContext.Booking.Where(b => !b.IsDelete)
-                                                .Join(
-                                                    _dbContext.Apartment,
-                                                    booking => booking.ApartmentId,
-                                                    apartment => apartment.Id,
-                                                    (booking, apartment) => new BookingDataNew
-                                                    {
-                                                        Id = booking.Id,
-                                                        StudentName = StudentName(apartment.Id),
-                                                        TotalPay = booking.TotalPay,
-                                                        ApartmentId = apartment.Id,
-                                                        ApartmentData = _mapper.Map<ApartmentDto>(apartment),
-                                                        StatusContract = StatusContract(booking.StatusContract),
-                                                        Created = booking.Created,
-                                                    }
-                                                )
-                                                .OrderBy(x => x.Created).ToListAsync();
-            
-            
+            var bookingList = await _dbContext.Booking
+                                                .Where(b => !b.IsDelete)
+                                                .OrderBy(x => x.Created)
+                                                .ToListAsync();
 
-            var data = _mapper.Map<List<BookingDataNew>>(bookingList);
+            var result = new List<BookingDataNew>();
 
-            return data;
+
+            foreach (var booking in bookingList) {
+                var apartment = await _dbContext.Apartment
+                    .FirstOrDefaultAsync(a => a.Id == booking.ApartmentId && !a.IsDelete);
+
+                if (apartment != null) {
+                    var studentName = await GetStudentName(apartment.Id);
+                    var statusContract = StatusContract(booking.StatusContract);
+
+                    var bookingData = new BookingDataNew
+                    {
+                        Id = booking.Id,
+                        StudentName = studentName,
+                        TotalPay = booking.TotalPay,
+                        ApartmentId = apartment.Id,
+                        ApartmentData = _mapper.Map<ApartmentDto>(apartment),
+                        StatusContract = statusContract,
+                        Created = booking.Created,
+                    };
+
+                    result.Add(bookingData);
+                }
+            }
+
+            return result;
         }
 
-        private string StudentName(Guid apartmentId)
+        private async Task<string> GetStudentName(Guid apartmentId)
         {
-            var studentExist = _dbContext.Apartment.Where(a => !a.IsDelete && a.Id == apartmentId).Select(a => a.StudentId).SingleOrDefault();
-            var applicationUserExist = _dbContext.Student.Where(s => !s.IsDelete && s.Id == studentExist).Select(s => s.ApplicationUserId).SingleOrDefault();
-            var studentNameExist = _dbContext.ApplicationUsers.Where(s => s.Id == applicationUserExist).Select(s => s.FullName).SingleOrDefault();
+            try {
+                var studentExist = await _dbContext.Apartment.Where(a => !a.IsDelete && a.Id == apartmentId).Select(a => a.StudentId).SingleOrDefaultAsync();
+                var applicationUserExist = await _dbContext.Student.Where(s => !s.IsDelete && s.Id == studentExist).Select(s => s.ApplicationUserId).SingleOrDefaultAsync();
+                var studentNameExist = await _dbContext.ApplicationUsers.Where(s => s.Id == applicationUserExist).Select(s => s.FullName).SingleOrDefaultAsync();
 
-            return studentNameExist;
+                return studentNameExist;
+            }
+            catch(Exception ex) {
+                throw new BadRequestException(ex.Message);
+            }
         }
 
         private string StatusContract(int? status)
