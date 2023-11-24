@@ -55,7 +55,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
                         ApartmentData = _mapper.Map<ApartmentDto>(apartment),
                         StatusContract = statusContract,
                         Created = booking.Created,
-                        ListServiceOfBookingDetail = await HandleFindServiceOfBookingDetail(booking.Id)
+                        //ListServiceOfBookingDetail = await HandleFindServiceOfBookingDetail(booking.Id)
                     };
 
                     result.Add(bookingData);

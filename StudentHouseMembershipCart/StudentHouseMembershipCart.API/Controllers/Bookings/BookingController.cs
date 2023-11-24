@@ -11,6 +11,7 @@ using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookin
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByStudentId;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetServiceOfBookingDetailByStudentId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -85,6 +86,16 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         public async Task<List<BookingDataNew>> GetBookingByStudentId(string studentid)
         {
             var request = new GetBookingByStudentIdNewCommand()
+            {
+                StudentId = Guid.Parse(studentid)
+            };
+            return await _mediator.Send(request);
+        }
+        [HttpGet]
+        [Route("serviceOfbookingdetails/{studentid}")]
+        public async Task<List<ServiceOfBookingDetail>> GetServiceOfBookingDetail(string studentid)
+        {
+            var request = new GetServiceOfBookingDetailByStudentIdCommand()
             {
                 StudentId = Guid.Parse(studentid)
             };

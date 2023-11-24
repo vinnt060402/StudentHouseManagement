@@ -14,11 +14,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings
         /// Is 1 -> Finished
         /// </summary>
         public string? StatusContract { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime Created { get; set; }/*
         /// <summary>
         /// List Service có trong Booking này
         /// </summary>
-        public List<ServiceOfBookingDetail>? ListServiceOfBookingDetail { get; set; }
+        public List<ServiceOfBookingDetail>? ListServiceOfBookingDetail { get; set; }*/
 
     }
     public class ServiceOfBookingDetail
@@ -36,6 +36,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings
     }
     public class BookingDetailDataNew
     {
+        public Guid BookingDetailId { get; set; }
         //BE tự tạo
         public string? BookingDetailName { get; set; }
         /// <summary>
