@@ -9,6 +9,7 @@ using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookin
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBooking;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBookingDoNotAssignBefore;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByStudentId;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByTimeOfAdmin;
 using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetServiceOfBookingDetailByStudentId;
@@ -32,14 +33,14 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         public async Task<SHMResponse> CreateBooking(CreateBookingCommand request)
         {
             return await _mediator.Send(request);
-        }*/
+        }*//*
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> CreateNewBookingCommand(CreateNewBookingCommand request)
         {
             return await _mediator.Send(request);
-        }
+        }*/
 
         /*[HttpGet]
         public async Task<List<BookingData>> GetAllBooking()
@@ -58,12 +59,18 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             return await _mediator.Send(new GetAllBookingNewCommand());
         }
         [HttpGet]
+        [Route("attendsdonotassignbefore")]
+        public async Task<List<BookingDetailDoNotAssignBeforeData>> GetAllBookingDetailDoNotAssignBefore()
+        {
+            return await _mediator.Send(new GetAllBookingDoNotAssignBeforeQuery());
+        }
+        [HttpGet]
         [Route("datetime")]
         public async Task<BookingDataForAdminNew> GetAllPackagesByTimeOfAdmin([FromQuery] GetBookingByTimeOfAdminNewQuery request)
         {
             return await _mediator.Send(request);
         }
-
+/*
         [HttpGet]
         [Route("{apartmentId}")]
         public async Task<List<BookingData>> GetBookingByApartmentId(string apartmentId)
@@ -74,13 +81,13 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
             };
 
             return await _mediator.Send(request);
-        }
+        }*//*
         [HttpGet]
         [Route("bookingid")]
         public async Task<BookingData> GetBookingByBookingId([FromQuery] GetBookingAndBookingDetailByBookingIdCommand request)
         {
             return await _mediator.Send(request);
-        }
+        }*/
         [HttpGet]
         [Route("students/{studentid}")]
         public async Task<List<BookingDataNew>> GetBookingByStudentId(string studentid)
