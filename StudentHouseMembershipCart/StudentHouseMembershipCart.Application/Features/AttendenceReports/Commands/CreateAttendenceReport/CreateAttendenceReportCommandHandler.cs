@@ -129,7 +129,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
                     BookingDetailId = Guid.Parse(request.BookingDetailId),
                     AttendReportForType = request.BookingDetailType,
                     AttendenceStatus = 0,
-                    Note = request.Note,
+                    Note = request.Note + " Quantity to do: "+request.QuantityDoService,
                 };
                 _dbContext.AttendReport.Add(aR);
 
