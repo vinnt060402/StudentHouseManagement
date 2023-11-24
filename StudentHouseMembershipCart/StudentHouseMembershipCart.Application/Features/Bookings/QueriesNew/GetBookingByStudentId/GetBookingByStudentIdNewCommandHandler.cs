@@ -24,7 +24,9 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
             var bookingList = await (from b in _dbContext.Booking
                                 join a in _dbContext.Apartment
                                 on b.ApartmentId equals a.Id
-                                where a.StudentId == request.StudentId
+                                where 
+                                a.StudentId == request.StudentId &&
+                                a.IsDelete == false
                                 select b)
                                 .OrderBy(x => x.Created).ToListAsync();
 

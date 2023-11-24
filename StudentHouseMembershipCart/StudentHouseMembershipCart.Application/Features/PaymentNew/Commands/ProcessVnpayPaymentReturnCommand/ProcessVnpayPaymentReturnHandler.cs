@@ -58,22 +58,52 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                         {
                             status = "1";
                             message = "Tran success";
+                            payment.PaymentStatus = "1";
+                            payment.Signature = request.vnp_SecureHash;
+                            payment.PaymentRefId = request.vnp_TxnRef;
+                            _dbContext.PaymentNew.Update(payment);
+
+                            resultData.PaymentStatus = "00";
+                            resultData.PaymentId = payment.PaymentNewId;
+                            ///TODO: Make signature
+                            resultData.Signature = Guid.NewGuid().ToString();
+                            returnUrl = vnpayConfig.HomeUrl;
                         }
                         else
                         {
                             status = "-0";
                             message = "Tran error";
-                        }
-                        payment.PaymentStatus = "1";
-                        payment.Signature = request.vnp_SecureHash;
-                        payment.PaymentRefId = request.vnp_TxnRef;
-                        _dbContext.PaymentNew.Update(payment);
+                            payment.PaymentStatus = "-1";
+                            payment.Signature = request.vnp_SecureHash;
+                            payment.PaymentRefId = request.vnp_TxnRef;
+                            _dbContext.PaymentNew.Update(payment);
 
-                        resultData.PaymentStatus = "00"; 
-                        resultData.PaymentId = payment.PaymentNewId;
-                        ///TODO: Make signature
-                        resultData.Signature = Guid.NewGuid().ToString();
-                        returnUrl = vnpayConfig.HomeUrl;
+                            //Find Booking
+                            var booking = await _dbContext.Booking.Where(x => x.PaymentNewId == payment.PaymentNewId).FirstOrDefaultAsync();
+                            if (booking != null)
+                            {
+                                booking.IsDelete = true;
+                                var bookingDetailPackage = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == booking.Id).ToListAsync();
+                                foreach(var item in bookingDetailPackage)
+                                {
+                                    item.IsDelete = true;
+                                    _dbContext.BookingDetailOfPakcage.Update(item);
+                                }
+                                var bookingDetailService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == booking.Id).ToListAsync();
+                                foreach(var item in bookingDetailService)
+                                {
+                                    item.IsDelete = true;
+                                    _dbContext.BookingDetailOfService.Update(item);
+                                }
+                                _dbContext.Booking.Update(booking);
+                            }
+
+                            resultData.PaymentStatus = "-1";
+                            resultData.PaymentId = payment.PaymentNewId;
+                            ///TODO: Make signature
+                            resultData.Signature = Guid.NewGuid().ToString();
+                            returnUrl = vnpayConfig.HomeUrl;
+                        }
                     }
                     else
                     {

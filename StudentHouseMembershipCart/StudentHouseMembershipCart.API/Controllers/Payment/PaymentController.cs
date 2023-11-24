@@ -26,8 +26,17 @@ namespace StudentHouseMembershipCart.API.Controllers.Payment
         public async Task<PaymentLinkDto> CreatePaymentLink(CreatePaymentRequest request)
         {
             var response = await _mediator.Send(request);
-            SessionHelper.SetObject(HttpContext.Session, response.PaymentId!, request.NewBooking);
-            var test = SessionHelper.GetObject<NewBooking>(HttpContext.Session, response.PaymentId!);
+            var createBooking = new CreateNewBookingCommand()
+            {
+                ApartmentId = request.NewBooking.ApartmentId,
+                StartDate = request.NewBooking.StartDate,
+                EndDate = request.NewBooking.EndDate,
+                ListPackage = request.NewBooking.ListPackage,
+                ListService = request.NewBooking.ListService,
+                TotalPrice = request.NewBooking.TotalPrice,
+                PaymentNew = response.PaymentId!
+            };
+            await _mediator.Send(createBooking);
             return response;
         }
         [HttpGet]
@@ -42,18 +51,6 @@ namespace StudentHouseMembershipCart.API.Controllers.Payment
                 returnModel = processResult.Item1 as PaymentReturnDto;
                 returnUrl = processResult.Item2 as string;
             }
-            keepBooking = SessionHelper.GetObject<NewBooking>(HttpContext.Session, returnModel.PaymentId!);
-            var createBooking = new CreateNewBookingCommand()
-            {
-                ApartmentId = keepBooking.ApartmentId,
-                StartDate = keepBooking.StartDate,
-                EndDate = keepBooking.EndDate,
-                ListPackage = keepBooking.ListPackage,
-                ListService = keepBooking.ListService,
-                TotalPrice = keepBooking.TotalPrice,
-                PaymentNew = returnModel.PaymentId!
-            };
-            await _mediator.Send(createBooking);
             SessionHelper.DeleteObject<NewBooking>(HttpContext.Session, returnModel.PaymentId!);
             if (returnUrl.EndsWith("/"))
                 returnUrl = returnUrl.Remove(returnUrl.Length - 1, 1);
