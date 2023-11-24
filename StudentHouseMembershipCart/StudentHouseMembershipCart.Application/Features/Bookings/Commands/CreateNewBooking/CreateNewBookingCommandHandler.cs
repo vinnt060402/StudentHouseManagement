@@ -73,7 +73,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                         foreach (var package in listPakageData)
                         {
                             //Thêm Data vào trong bảng BookingDetailOfPackage
-                            var packRequest = request.ListPackage!.Where(x => x.PackageId == package.Id.ToString().ToUpper()).SingleOrDefault();
+                            var packRequest = request.ListPackage!.Where(x => Guid.Parse(x.PackageId) == package.Id).SingleOrDefault();
                             var priceOfPackage = package.TotalPrice * packRequest!.QuantityOfPackageOrdered;
                             var bookingDetailOfPackage = new BookingDetailOfPakcage()
                             {
@@ -108,7 +108,7 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                         //Tương tự như ở trên
                         foreach (var service in listServiceData)
                         {
-                            var serviceRequest = request.ListService!.Where(x => x.ServiceId == service.Id.ToString().ToUpper()).SingleOrDefault();
+                            var serviceRequest = request.ListService!.Where(x => Guid.Parse(x.ServiceId) == service.Id).SingleOrDefault();
                             var bookingDetailService = new BookingDetailOfService()
                             {
                                 StartDate = request.StartDate,
