@@ -21,6 +21,30 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
 
         public async Task<SHMResponse> Handle(CreateAttendenceReportCommand request, CancellationToken cancellationToken)
         {
+            var aRCheck = await _dbContext.AttendReport.Where(x => x.ServiceId == Guid.Parse(request.ServiceId) &&
+                                                             x.BookingDetailId == Guid.Parse(request.BookingDetailId) &&
+                                                             x.AttendReportForType == request.BookingDetailType).ToListAsync();
+            var listCheckInt = new List<int>();
+            int numFlag = 0;
+            if(aRCheck != null)
+            {
+                var titleNumber = aRCheck.Select(x => x.AttendTittle).ToList();
+                foreach(var item in titleNumber)
+                {
+                    var getlast3character = item!.Substring(item.Length - 3);
+                    if(getlast3character != null)
+                    {
+                        int number = int.Parse(getlast3character.Split('(')[1].Split(')')[0]);
+                        listCheckInt.Add(number);
+                    }
+
+                }
+            }
+            if (listCheckInt.Any())
+            {
+                numFlag = listCheckInt.Max();
+            }
+
             var service = await _dbContext.Service.Where(x => x.Id == Guid.Parse(request.ServiceId)).SingleOrDefaultAsync();
             //Local Variable
             BookingDetailOfPakcage bookingDetailPackage = new BookingDetailOfPakcage();
@@ -80,18 +104,26 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
              * ( thứ 6 tuần 1 - thứ 6 tuần 2 - thứ 6 tuần 3 - thứ 6 tuần 4)
              * Tương tự cho các loại chu kỳ còn lại
             */
-            var listDateDoService = HandleCreateListTimeDoService(request.DateDoService, EndDateCheck, request.WorkingCycle, request.FrequencyDaysPerOccurrence);
+            var listDateDoService = HandleCreateListTimeDoService(request.DateDoService, EndDateCheck, request.WorkingCycle, request.FrequencyDaysPerOccurrence,request.QuantityDoService,serviceTaskRemain.RemainingTaskDuration);
             if (serviceTaskRemain != null)
             {
-                serviceTaskRemain.RemainingTaskDuration = serviceTaskRemain.RemainingTaskDuration - listDateDoService.Count;
+                serviceTaskRemain.RemainingTaskDuration = serviceTaskRemain.RemainingTaskDuration - listDateDoService.Count*request.QuantityDoService;
                 _dbContext.ServiceRemainingTaskDuration.Update(serviceTaskRemain);
+            }
+            if(numFlag == 0)
+            {
+                numFlag = 1;
+            }
+            else
+            {
+                numFlag++;
             }
             foreach (var item in listDateDoService)
             {
                 //Tạo AttendReport
                 var aR = new AttendReport()
                 {
-                    AttendTittle = "Work for Service " + service!.ServiceName!.Trim() + ", Date: " + item.ToString("yyyy/MM/dd HH:mm"),
+                    AttendTittle = "Work for Service " + service!.ServiceName!.Trim() + ", Date: " + item.ToString("yyyy/MM/dd HH:mm") + " "+"("+numFlag.ToString()+")",
                     DateDoService = item,
                     ServiceId = Guid.Parse(request.ServiceId),
                     BookingDetailId = Guid.Parse(request.BookingDetailId),
@@ -111,15 +143,21 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             };
         }
 
-        private List<DateTime> HandleCreateListTimeDoService(DateTime DateDoService, DateTime EndDate, int WorkingCycle, int FrequencyDaysPerOccurrence)
+        private List<DateTime> HandleCreateListTimeDoService(DateTime DateDoService, DateTime EndDate, int WorkingCycle, int FrequencyDaysPerOccurrence, int quantityDoService, int reaminingTaskDuration)
         {
             List<DateTime> list = new List<DateTime>();
             int i = 0;
+            int flagCheckQuantityAfterDo = reaminingTaskDuration;
             do
             {
                 if (WorkingCycle == 1)
                 {
                     list.Add(DateDoService);
+                    flagCheckQuantityAfterDo = flagCheckQuantityAfterDo - quantityDoService;
+                    if(flagCheckQuantityAfterDo < 0)
+                    {
+                        throw new BadRequestException("The remaining amount of service is not enough");
+                    }
                     break;
                 }
                 //Add ngày đầu tiên vào list vì nó luôn là ngày hợp lệ
@@ -128,64 +166,23 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
                     list.Add(DateDoService);
                 }
                 //Theo BR thì luôn + 7 ngày
-                var nextDateDoService = DateDoService.AddDays(7);
-                if (nextDateDoService > EndDate)
+                DateDoService = DateDoService.AddDays(FrequencyDaysPerOccurrence);
+                if (DateDoService > EndDate)
                 {
                     break;
                 }
                 else
                 {
-                    list.Add(nextDateDoService);
+                    flagCheckQuantityAfterDo = flagCheckQuantityAfterDo - quantityDoService;
+                    if (flagCheckQuantityAfterDo < 0)
+                    {
+                        break;
+                    }
+                    list.Add(DateDoService);
                     i += FrequencyDaysPerOccurrence;
                 }
             } while (i < WorkingCycle);
             return list;
-        }
-
-
-        public List<DateTime> GenerateAttendanceDates(DateTime startDate, int totalDays, int workDaysPerWeek, string workDays)
-        {
-            // Chuyển đổi chuỗi workDays thành danh sách các ngày làm việc (workDaysArray).
-            List<int> workDaysArray = workDays.ToCharArray().Select(c => int.Parse(c.ToString())).ToList();
-
-            // Tạo danh sách để lưu trữ các ngày điểm danh.
-            List<DateTime> attendanceDates = new List<DateTime>();
-
-            // Bắt đầu từ ngày sau ngày khởi đầu.
-            DateTime currentDate = startDate.AddDays(1);
-
-            // Lặp để tạo danh sách các ngày điểm danh cho đến khi đủ số ngày cần tạo.
-            while (attendanceDates.Count < totalDays)
-            {
-                // Kiểm tra xem ngày hiện tại có nằm trong danh sách ngày làm việc không.
-                if (workDaysArray.Contains((int)currentDate.DayOfWeek + 1))
-                {
-                    attendanceDates.Add(currentDate);
-                }
-
-                // Tăng ngày hiện tại lên 1.
-                currentDate = currentDate.AddDays(1);
-
-                // Nếu đã đủ một tuần làm việc (workDaysPerWeek ngày), thì điều chỉnh ngày tiếp theo.
-                if (attendanceDates.Count % workDaysPerWeek == 0)
-                {
-                    currentDate = GetNextWorkDay(currentDate, workDaysArray);
-                }
-            }
-
-            // Trả về danh sách các ngày điểm danh đã tạo.
-            return attendanceDates;
-        }
-
-        // Phương thức để tìm ngày làm việc tiếp theo sau một ngày cụ thể.
-        public DateTime GetNextWorkDay(DateTime currentDate, List<int> workDays)
-        {
-            do
-            {
-                currentDate = currentDate.AddDays(1);
-            } while (!workDays.Contains((int)currentDate.DayOfWeek + 1));
-
-            return currentDate;
         }
     }
 }
