@@ -32,30 +32,28 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
             string message = "";
             string status = "";
             var result = (new PaymentReturnDto(), "");
-            try
-            {
+            try {
                 var resultData = new PaymentReturnDto();
                 var isValidSignature = request.IsValidSignature(vnpayConfig.HashSecret);
 
-                if (isValidSignature)
-                {
+                if (isValidSignature) {
                     var payment = await _dbContext.PaymentNew.Where(x => x.PaymentNewId == request.vnp_TxnRef).SingleOrDefaultAsync();
-                    if (payment == null)
-                    {
-                        throw new NotFoundException("Not found this payment!!!!!");
+                    if (payment == null) {
+                        message = "Not found this payment!!!!!";
+                        status = "99";
+                        //throw new NotFoundException("Not found this payment!!!!!");
                     }
-                    if(payment.PaymentStatus == "1")
-                    {
-                        throw new NotFoundException("Order already confirmed!!!!!");
+                    if (payment.PaymentStatus == "1") {
+                        message = "Order already confirmed!!!!!";
+                        status = "99";
+                        //throw new NotFoundException("Order already confirmed!!!!!");
                     }
-/*                    if((int?)payment.RequiredAmount == (request.vnp_Amount / 100))
-                    {
-                        throw new NotFoundException("Invalid amount!!!!!");
-                    }*/
-                    if (request.vnp_ResponseCode == "00")
-                    {
-                        if (request.vnp_TransactionStatus == "00")
-                        {
+                    /*                    if((int?)payment.RequiredAmount == (request.vnp_Amount / 100))
+                                        {
+                                            throw new NotFoundException("Invalid amount!!!!!");
+                                        }*/
+                    if (request.vnp_ResponseCode == "00") {
+                        if (request.vnp_TransactionStatus == "00") {
                             status = "1";
                             message = "Tran success";
                             payment.PaymentStatus = "1";
@@ -69,8 +67,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                             resultData.Signature = Guid.NewGuid().ToString();
                             returnUrl = vnpayConfig.HomeUrl;
                         }
-                        else
-                        {
+                        else {
                             status = "-0";
                             message = "Tran error";
                             payment.PaymentStatus = "-1";
@@ -80,18 +77,15 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
 
                             //Find Booking
                             var booking = await _dbContext.Booking.Where(x => x.PaymentNewId == payment.PaymentNewId).FirstOrDefaultAsync();
-                            if (booking != null)
-                            {
+                            if (booking != null) {
                                 booking.IsDelete = true;
                                 var bookingDetailPackage = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == booking.Id).ToListAsync();
-                                foreach(var item in bookingDetailPackage)
-                                {
+                                foreach (var item in bookingDetailPackage) {
                                     item.IsDelete = true;
                                     _dbContext.BookingDetailOfPakcage.Update(item);
                                 }
                                 var bookingDetailService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == booking.Id).ToListAsync();
-                                foreach(var item in bookingDetailService)
-                                {
+                                foreach (var item in bookingDetailService) {
                                     item.IsDelete = true;
                                     _dbContext.BookingDetailOfService.Update(item);
                                 }
@@ -105,22 +99,27 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                             returnUrl = vnpayConfig.HomeUrl;
                         }
                     }
-                    else
-                    {
+                    else {
                         resultData.PaymentStatus = "10";
                         resultData.PaymentMessage = "Payment process failed";
                     }
                     result = (resultData, returnUrl);
                 }
-                else
-                {
-                    throw new NotFoundException("Invalid signature in response!!!!!");
-
+                else {
+                    message = "Invalid signature in response!!!!!!!";
+                    status = "99";
+                    resultData.PaymentStatus = status;
+                    resultData.PaymentMessage = message;
+                    result = (resultData, returnUrl);
                 }
             }
-            catch (Exception ex)
-            {
-                throw new BadRequestException("Somethings are wrong!!");
+            catch (Exception ex) {
+                message = "Somethings are wrong!!";
+                status = "99";
+                var resultData = new PaymentReturnDto();
+                resultData.PaymentStatus = status;
+                resultData.PaymentMessage = message;
+                result = (resultData, returnUrl);
             };
             var paymentTransaction = new PaymentTransaction()
             {

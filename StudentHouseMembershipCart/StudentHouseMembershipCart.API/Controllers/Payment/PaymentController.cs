@@ -51,7 +51,6 @@ namespace StudentHouseMembershipCart.API.Controllers.Payment
                 returnModel = processResult.Item1 as PaymentReturnDto;
                 returnUrl = processResult.Item2 as string;
             }
-            SessionHelper.DeleteObject<NewBooking>(HttpContext.Session, returnModel.PaymentId!);
             if (returnUrl.EndsWith("/"))
                 returnUrl = returnUrl.Remove(returnUrl.Length - 1, 1);
             return Redirect($"{returnUrl}?{returnModel.ToQueryString()}");
