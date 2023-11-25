@@ -36,9 +36,13 @@ namespace StudentHouseMembershipCart.API.Controllers.StaffController
             return Ok(response);
         }
         [HttpGet]
-        [Route("staffsbyCategoryId")]
-        public async Task<List<StaffResponse>> GetStaffByCategoryId([FromQuery] GetAllStaffByCategoryIdQuery request)
+        [Route("categoryid")]
+        public async Task<List<StaffResponse>> GetStaffByCategoryId(string categoryid)
         {
+            var request = new GetAllStaffByCategoryIdQuery()
+            {
+                ServiceId = categoryid
+            };
             return await _mediator.Send(request);
         }
         [HttpPost]

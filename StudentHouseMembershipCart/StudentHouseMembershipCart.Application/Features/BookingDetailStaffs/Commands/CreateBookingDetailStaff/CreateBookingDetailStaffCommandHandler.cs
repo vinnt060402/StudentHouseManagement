@@ -25,39 +25,45 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
         {
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-                var checkExistedAssign = await _dbContext.BookingDetailStaff.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).SingleOrDefaultAsync();
-                if (checkExistedAssign != null)
+                var numberInTittle = request.BookingDetailTittle.Substring(request.BookingDetailTittle.Length - 3);
+                var checkAttendReportHaveReportWork = await _dbContext.AttendReport.Where(x => x.BookingDetailId == request.BookingDetailId &&
+                                                                                         x.AttendReportForType == request.BookingDetailType &&
+                                                                                         x.AttendTittle!.Contains(numberInTittle)
+                                                                                         ).ToListAsync();
+                bool flag = true;
+                foreach(var check in checkAttendReportHaveReportWork)
+                {
+                    if(check.ReportWorkId.HasValue)
+                    {
+                        flag = false;
+                        break;
+                    }
+                    else
+                    {
+                        flag = true;
+                    }
+                }
+                if (!flag)
                 {
                     throw new BadRequestException("This booking detail have been asign for another one"!);
                 }
-                var checkExistedAssignInAttendReport = await _dbContext.AttendReport.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).ToListAsync();
-                if (checkExistedAssignInAttendReport.Any())
+                var list = new List<ReportWork>();
+                foreach(var item in checkAttendReportHaveReportWork)
                 {
-                    foreach (var atd in checkExistedAssignInAttendReport)
+                    var reportWork = new ReportWork
                     {
-                        if (atd.ReportWorkId.HasValue)
-                        {
-                            throw new BadRequestException("This booking detail have been asign for another one"!);
-                        }
-                    }
+                        WorkingDayExpect = item.DateDoService,
+                        WorkingStatus = 0,
+                        StaffId = request.StaffId,
+                        AttendReportId = item.Id
+                    };
+                    list.Add(reportWork);
+                    item.ReportWorkId = reportWork.Id;
+                    _dbContext.AttendReport.Update(item);
                 }
-                var bdS = new BookingDetailStaff
-                {
-                    BookingDetailId = Guid.Parse(request.BookingDetailId),
-                    StaffId = Guid.Parse(request.StaffId),
-                    CreateBy = request.AssignBy
-                };
-                _dbContext.BookingDetailStaff.Add(bdS);
-                //After create Bookingdetail staff
-                //Coutinue create ReportWork of staff
-                var createReportWork = new CreateReportWorkCommand
-                {
-                    BookingDetailId = request.BookingDetailId,
-                    StaffId = request.StaffId
-                };
-                var createReportWorkResponse = await _mediator.Send(createReportWork);
+                list.OrderBy(x => x.WorkingDayExpect);
+                _dbContext.ReportWork.AddRange(list);
                 await _dbContext.SaveChangesAsync();
-
                 scope.Complete();
             }
             return new SHMResponse
