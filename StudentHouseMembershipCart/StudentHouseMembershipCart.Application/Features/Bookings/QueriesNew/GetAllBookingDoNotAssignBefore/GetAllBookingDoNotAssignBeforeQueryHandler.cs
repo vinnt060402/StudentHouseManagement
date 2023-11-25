@@ -79,7 +79,12 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
         }
         private string HandleNote(string note)
         {
+
             string result = string.Empty;
+            if (string.IsNullOrEmpty(note))
+            {
+                return result;
+            }
             int noteIndex = note.IndexOf("Quantity to do: ");
             if (noteIndex != -1)
             {

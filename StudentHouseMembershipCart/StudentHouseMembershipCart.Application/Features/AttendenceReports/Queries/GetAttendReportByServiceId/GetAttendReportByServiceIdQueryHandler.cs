@@ -105,9 +105,11 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
             result.OrderBy(x => x.DateDoService);
             foreach (var item in result)
             {
+                item.Note = HandleNote(item.Note);
                 item.FeedbackAvailable = await HandleFeedBackString(item.AttendId);
             }
-            return await Task.FromResult(result);
+            var response = result.OrderBy(x => x.DateDoService).ToList();
+            return await Task.FromResult(response);
         }
         private async Task<string> HandleFeedBackString(Guid AttendReportId)
         {
@@ -131,6 +133,24 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
             {
                 return "Can not feedback";
             }
+        }
+        private string HandleNote(string note)
+        {
+            string result = string.Empty;
+            if (string.IsNullOrEmpty(note))
+            {
+                return result;
+            }
+            int noteIndex = note.IndexOf("Quantity to do: ");
+            if (noteIndex != -1)
+            {
+                result = note.Substring(0, noteIndex);
+            }
+            else
+            {
+                result = note;
+            }
+            return result;
         }
     }
 }
