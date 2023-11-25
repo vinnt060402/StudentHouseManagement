@@ -41,11 +41,13 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                     if (payment == null) {
                         message = "Not found this payment!!!!!";
                         status = "99";
+                        returnUrl = vnpayConfig.HomeUrl;
                         //throw new NotFoundException("Not found this payment!!!!!");
                     }
                     if (payment.PaymentStatus == "1") {
                         message = "Order already confirmed!!!!!";
                         status = "99";
+                        returnUrl = vnpayConfig.HomeUrl;
                         //throw new NotFoundException("Order already confirmed!!!!!");
                     }
                     /*                    if((int?)payment.RequiredAmount == (request.vnp_Amount / 100))
@@ -102,6 +104,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                     else {
                         resultData.PaymentStatus = "10";
                         resultData.PaymentMessage = "Payment process failed";
+                        returnUrl = vnpayConfig.HomeUrl;
                     }
                     result = (resultData, returnUrl);
                 }
@@ -110,6 +113,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                     status = "99";
                     resultData.PaymentStatus = status;
                     resultData.PaymentMessage = message;
+                    returnUrl = vnpayConfig.HomeUrl;
                     result = (resultData, returnUrl);
                 }
             }
@@ -119,6 +123,7 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                 var resultData = new PaymentReturnDto();
                 resultData.PaymentStatus = status;
                 resultData.PaymentMessage = message;
+                returnUrl = vnpayConfig.HomeUrl;
                 result = (resultData, returnUrl);
             };
             var paymentTransaction = new PaymentTransaction()
