@@ -7,6 +7,7 @@
         /// </summary>
         public DateTime? WorkingDayExpect { get; set; }
         public string? DescriptionProcess { get; set; }
+        public string? WorkingAt { get; set; }
         public string? Image { get; set; }
         /// <summary>
         /// Id của staff được nhờ làm giúp

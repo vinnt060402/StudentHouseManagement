@@ -7,6 +7,7 @@ using StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.Creat
 using StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.UpdateReportWorkByStaff;
 using StudentHouseMembershipCart.Application.Features.ReportWorks.Queries;
 using StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.GetReportWorkByBookingDetailId;
+using StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.GetReportWorkByStaffIdAndServiceId;
 
 namespace StudentHouseMembershipCart.API.Controllers.ReportWorks
 {
@@ -42,6 +43,12 @@ namespace StudentHouseMembershipCart.API.Controllers.ReportWorks
             {
                 BookingDetailId = id
             });
+        }
+        [HttpGet]
+        [Route("get-report-work-by-staffid-and-service-id")]
+        public async Task<List<ReportWorkData>> GetRWByStaffAndService([FromQuery] GetReportWorkByStaffIdAndServiceIdQuery request)
+        {
+            return await _mediator.Send(request);
         }
     }
 }

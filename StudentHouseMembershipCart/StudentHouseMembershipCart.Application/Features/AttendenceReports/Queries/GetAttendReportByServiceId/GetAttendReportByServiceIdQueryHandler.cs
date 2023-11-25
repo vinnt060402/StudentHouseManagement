@@ -107,9 +107,33 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
             {
                 item.Note = HandleNote(item.Note);
                 item.FeedbackAvailable = await HandleFeedBackString(item.AttendId);
+                item.FeedbackStatus = await HandleFeedBackStatus(item.AttendId);
             }
             var response = result.OrderBy(x => x.DateDoService).ToList();
             return await Task.FromResult(response);
+        }
+        private async Task<string> HandleFeedBackStatus(Guid AttendReportId)
+        {
+            var feedback = await _dbContext.FeedBack.Where(x => x.AttendReportId == AttendReportId).SingleOrDefaultAsync();
+            if (feedback != null)
+            {
+                if (feedback.FeedBackStatus == 1)
+                {
+                    return "1";
+                }
+                else if (feedback.FeedBackStatus == 2)
+                {
+                    return "2";
+                }
+                else
+                {
+                    return "0";
+                }
+            }
+            else
+            {
+                return "0";
+            }
         }
         private async Task<string> HandleFeedBackString(Guid AttendReportId)
         {

@@ -12,6 +12,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
         public DateTime DateDoService { get; set; }
         public string? ApartmentRegion { get; set; }
         public string? FeedbackAvailable { get; set; }
+        public string?  FeedbackStatus { get; set; }
         public Guid ServiceId { get; set; }
         /// <summary>
         /// Có thể là Service hoặc Package Đều được
