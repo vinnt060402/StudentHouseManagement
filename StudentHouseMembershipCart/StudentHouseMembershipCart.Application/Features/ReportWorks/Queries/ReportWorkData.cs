@@ -2,6 +2,7 @@
 {
     public class ReportWorkData
     {
+        public Guid AttendReportId {  get; set; }   
         /// <summary>
         /// Đánh dấu ngày staff đi làm đươc generate tự động bởi BookingDetailStaff
         /// </summary>

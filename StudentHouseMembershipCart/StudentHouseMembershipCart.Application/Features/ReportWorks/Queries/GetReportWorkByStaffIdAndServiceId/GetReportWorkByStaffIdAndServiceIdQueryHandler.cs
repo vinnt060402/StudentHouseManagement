@@ -24,7 +24,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.Ge
                                 ar.ServiceId == request.ServiceId &&
                                 rw.StaffId == request.StaffId
                                 orderby rw.WorkingDayExpect
-                                select rw /*new ReportWorkData
+                                select new { rw,ar} /*new ReportWorkData
                                 {
                                     AlternativeReason = rw.AlternativeReason,
                                     DescriptionProcess = rw.DescriptionProcess,
@@ -40,7 +40,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.Ge
             foreach (var item in listRW)
             {
                 var workingAt = string.Empty;
-                var ar = _dbContext.AttendReport.Where(x => x.ReportWorkId == item.Id).FirstOrDefault();
+                var ar = _dbContext.AttendReport.Where(x => x.ReportWorkId == item.rw.Id).FirstOrDefault();
                 if (ar != null)
                 {
                     if (ar.AttendReportForType == "1")
@@ -59,14 +59,15 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.Ge
                                        select ap.Address).FirstOrDefaultAsync();
                         var rw = new ReportWorkData
                         {
-                            AlternativeReason = item.AlternativeReason,
-                            DescriptionProcess = item.DescriptionProcess,
-                            Image = item.Image,
-                            ReportByStaffId = item.ReportByStaffId,
-                            StaffSubstitableId = item.StaffSubstitableId,
-                            WorkingDayExpect = item.WorkingDayExpect,
-                            WorkingDayReport = item.WorkingDayReport,
-                            WorkingStatus = item.WorkingStatus,
+                            AttendReportId = item.ar.Id,
+                            AlternativeReason = item.rw.AlternativeReason,
+                            DescriptionProcess = item.rw.DescriptionProcess,
+                            Image = item.rw.Image,
+                            ReportByStaffId = item.rw.ReportByStaffId,
+                            StaffSubstitableId = item.rw.StaffSubstitableId,
+                            WorkingDayExpect = item.rw.WorkingDayExpect,
+                            WorkingDayReport = item.rw.WorkingDayReport,
+                            WorkingStatus = item.rw.WorkingStatus,
                             WorkingAt = "Working at " + a
                         };
                         result.Add(rw);
@@ -87,14 +88,15 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Queries.Ge
                                        select ap.Address).FirstOrDefaultAsync();
                         var rw = new ReportWorkData
                         {
-                            AlternativeReason = item.AlternativeReason,
-                            DescriptionProcess = item.DescriptionProcess,
-                            Image = item.Image,
-                            ReportByStaffId = item.ReportByStaffId,
-                            StaffSubstitableId = item.StaffSubstitableId,
-                            WorkingDayExpect = item.WorkingDayExpect,
-                            WorkingDayReport = item.WorkingDayReport,
-                            WorkingStatus = item.WorkingStatus,
+                            AttendReportId = item.ar.Id,
+                            AlternativeReason = item.rw.AlternativeReason,
+                            DescriptionProcess = item.rw.DescriptionProcess,
+                            Image = item.rw.Image,
+                            ReportByStaffId = item.rw.ReportByStaffId,
+                            StaffSubstitableId = item.rw.StaffSubstitableId,
+                            WorkingDayExpect = item.rw.WorkingDayExpect,
+                            WorkingDayReport = item.rw.WorkingDayReport,
+                            WorkingStatus = item.rw.WorkingStatus,
                             WorkingAt = "Working at " + a
                         };
                         result.Add(rw);
