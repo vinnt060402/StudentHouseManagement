@@ -112,11 +112,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
                                 EndDate = bookingDetailPackage.EndDate,
                                 BookingDetailType = "1",
                                 RemainingTaskDuration = await _dbContext.ServiceRemainingTaskDuration.Where(x => x.BookingDetailId == item.BookingDetailId && x.ServiceId == service.Id).Select(x => x.RemainingTaskDuration).FirstAsync()
-                            };
+                            };/*
                             if (bookingDetailDataNew.RemainingTaskDuration == 0)
                             {
                                 continue;
-                            }
+                            }*/
                             BookingDetailThatServiceIsBelongTo.Add(bookingDetailDataNew);
                         }
                         if (item.TypeOfBookingDetail == "2")
@@ -130,11 +130,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
                                 EndDate = bookingDetailService.EndDate,
                                 BookingDetailType = "2",
                                 RemainingTaskDuration = await _dbContext.ServiceRemainingTaskDuration.Where(x => x.BookingDetailId == item.BookingDetailId && x.ServiceId == service.Id).Select(x => x.RemainingTaskDuration).FirstAsync()
-                            };
+                            };/*
                             if (bookingDetailDataNew.RemainingTaskDuration == 0)
                             {
                                 continue;
-                            }
+                            }*/
                             BookingDetailThatServiceIsBelongTo.Add(bookingDetailDataNew);
                         }
                         serviceOfBookingDetail.BookingDetailThatServiceIsBelongTo = BookingDetailThatServiceIsBelongTo;
@@ -157,11 +157,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
                                 EndDate = bookingDetailPackage.EndDate,
                                 BookingDetailType = "1",
                                 RemainingTaskDuration = await _dbContext.ServiceRemainingTaskDuration.Where(x => x.BookingDetailId == item.BookingDetailId && x.ServiceId == service.Id).Select(x => x.RemainingTaskDuration).FirstAsync()
-                            };
+                            };/*
                             if(bookingDetailDataNew.RemainingTaskDuration == 0)
                             {
                                 continue;
-                            }
+                            }*/
                             serviceOfBookingDetail!.BookingDetailThatServiceIsBelongTo!.Add(bookingDetailDataNew);
                         }
                         if (item.TypeOfBookingDetail == "2")
@@ -175,11 +175,11 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.Ge
                                 EndDate = bookingDetailService.EndDate,
                                 BookingDetailType = "2",
                                 RemainingTaskDuration = await _dbContext.ServiceRemainingTaskDuration.Where(x => x.BookingDetailId == item.BookingDetailId && x.ServiceId == service.Id).Select(x => x.RemainingTaskDuration).FirstAsync()
-                            };
+                            };/*
                             if (bookingDetailDataNew.RemainingTaskDuration == 0)
                             {
                                 continue;
-                            }
+                            }*/
                             serviceOfBookingDetail!.BookingDetailThatServiceIsBelongTo!.Add(bookingDetailDataNew);
                         }
                     }
