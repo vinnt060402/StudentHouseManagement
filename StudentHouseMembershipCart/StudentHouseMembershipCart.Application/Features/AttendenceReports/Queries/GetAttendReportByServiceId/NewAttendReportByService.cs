@@ -5,6 +5,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
     public class NewAttendReportByService
     {
         public Guid AttendId { get; set; }
+        public Guid? FeedBackId { get; set; }
         public string? AttendTittle { get; set; }
         /// <summary>
         /// Ngày nhận việc (giống như giặt quần áo thì sẽ có ngày nhận việc) hoặc ngày làm việc

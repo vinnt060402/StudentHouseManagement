@@ -105,6 +105,15 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
             result.OrderBy(x => x.DateDoService);
             foreach (var item in result)
             {
+                var feedBackId = await _dbContext.FeedBack.Where(x => x.AttendReportId == item.AttendId).FirstOrDefaultAsync();
+                if (feedBackId != null)
+                {
+                    item.FeedBackId = feedBackId.Id;
+                }
+                else
+                {
+                    item.FeedBackId = null;
+                }
                 item.Note = HandleNote(item.Note);
                 item.FeedbackAvailable = await HandleFeedBackString(item.AttendId);
                 item.FeedbackStatus = await HandleFeedBackStatus(item.AttendId);
