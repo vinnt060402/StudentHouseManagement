@@ -104,6 +104,25 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                     else {
                         resultData.PaymentStatus = "10";
                         resultData.PaymentMessage = "Payment process failed";
+                        //Find Booking
+                        var booking = await _dbContext.Booking.Where(x => x.PaymentNewId == payment.PaymentNewId).FirstOrDefaultAsync();
+                        if (booking != null)
+                        {
+                            booking.IsDelete = true;
+                            var bookingDetailPackage = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == booking.Id).ToListAsync();
+                            foreach (var item in bookingDetailPackage)
+                            {
+                                item.IsDelete = true;
+                                _dbContext.BookingDetailOfPakcage.Update(item);
+                            }
+                            var bookingDetailService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == booking.Id).ToListAsync();
+                            foreach (var item in bookingDetailService)
+                            {
+                                item.IsDelete = true;
+                                _dbContext.BookingDetailOfService.Update(item);
+                            }
+                            _dbContext.Booking.Update(booking);
+                        }
                         returnUrl = vnpayConfig.HomeUrl;
                     }
                     result = (resultData, returnUrl);
@@ -114,6 +133,29 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                     resultData.PaymentStatus = status;
                     resultData.PaymentMessage = message;
                     returnUrl = vnpayConfig.HomeUrl;
+                    //Find Booking
+                    var payment = await _dbContext.PaymentNew.Where(x => x.PaymentNewId == request.vnp_TxnRef).SingleOrDefaultAsync();
+                    if( payment != null )
+                    {
+                        var booking = await _dbContext.Booking.Where(x => x.PaymentNewId == payment.PaymentNewId).FirstOrDefaultAsync();
+                        if (booking != null)
+                        {
+                            booking.IsDelete = true;
+                            var bookingDetailPackage = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == booking.Id).ToListAsync();
+                            foreach (var item in bookingDetailPackage)
+                            {
+                                item.IsDelete = true;
+                                _dbContext.BookingDetailOfPakcage.Update(item);
+                            }
+                            var bookingDetailService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == booking.Id).ToListAsync();
+                            foreach (var item in bookingDetailService)
+                            {
+                                item.IsDelete = true;
+                                _dbContext.BookingDetailOfService.Update(item);
+                            }
+                            _dbContext.Booking.Update(booking);
+                        }
+                    }
                     result = (resultData, returnUrl);
                 }
             }
@@ -124,6 +166,29 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                 resultData.PaymentStatus = status;
                 resultData.PaymentMessage = message;
                 returnUrl = vnpayConfig.HomeUrl;
+                //Find Booking
+                var payment = await _dbContext.PaymentNew.Where(x => x.PaymentNewId == request.vnp_TxnRef).SingleOrDefaultAsync();
+                if (payment != null)
+                {
+                    var booking = await _dbContext.Booking.Where(x => x.PaymentNewId == payment.PaymentNewId).FirstOrDefaultAsync();
+                    if (booking != null)
+                    {
+                        booking.IsDelete = true;
+                        var bookingDetailPackage = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == booking.Id).ToListAsync();
+                        foreach (var item in bookingDetailPackage)
+                        {
+                            item.IsDelete = true;
+                            _dbContext.BookingDetailOfPakcage.Update(item);
+                        }
+                        var bookingDetailService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == booking.Id).ToListAsync();
+                        foreach (var item in bookingDetailService)
+                        {
+                            item.IsDelete = true;
+                            _dbContext.BookingDetailOfService.Update(item);
+                        }
+                        _dbContext.Booking.Update(booking);
+                    }
+                }
                 result = (resultData, returnUrl);
             };
             var paymentTransaction = new PaymentTransaction()
@@ -138,7 +203,13 @@ namespace StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.Pr
                 TranRefId = request.vnp_TransactionNo
             };
             _dbContext.PaymentTransaction.Add(paymentTransaction);
-            await _dbContext.SaveChangesAsync();
+            try
+            {
+                await _dbContext.SaveChangesAsync();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
             return result;
         }
     }

@@ -14,7 +14,9 @@ namespace StudentHouseMembershipCart.Infrastucture
             services, IConfiguration configuration)
         {
             services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
+            services.Configure<EmailSenderTest>(configuration.GetSection("EmailSenderTest"));
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IEmailServiceTest, EmailServiceTest>();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
             return services;
         }

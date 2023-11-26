@@ -7,6 +7,9 @@ using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBo
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.CreatePaymentCommand;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Commands.ProcessVnpayPaymentReturnCommand;
 using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
+using StudentHouseMembershipCart.Application.Features.Students.Queries.GetStudentByApartmentId;
+using StudentHouseMembershipCart.Application.Models.Email.EmailMessage;
+using StudentHouseMembershipCart.Infrastucture.EmailService;
 using StudentHouseMembershipCart.Ultils.Extensions;
 using StudentHouseMembershipCart.VnPay.Response;
 
@@ -17,11 +20,14 @@ namespace StudentHouseMembershipCart.API.Controllers.Payment
     public class PaymentController : ControllerBase
     {
         private IMediator _mediator;
-        private NewBooking keepBooking = new NewBooking();
-        public PaymentController(IMediator mediator)
+        private IEmailServiceTest _email;
+
+        public PaymentController(IMediator mediator,IEmailServiceTest email)
         {
             _mediator = mediator;
+            _email = email;
         }
+
         [HttpPost]
         public async Task<PaymentLinkDto> CreatePaymentLink(CreatePaymentRequest request)
         {
@@ -51,9 +57,27 @@ namespace StudentHouseMembershipCart.API.Controllers.Payment
                 returnModel = processResult.Item1 as PaymentReturnDto;
                 returnUrl = processResult.Item2 as string;
             }
+
             if (returnUrl.EndsWith("/"))
                 returnUrl = returnUrl.Remove(returnUrl.Length - 1, 1);
-            return Redirect($"{returnUrl}?{returnModel.ToQueryString()}");
+
+            try
+            {
+                if(returnModel.PaymentStatus == "00")
+                {
+                    var studentData = await _mediator.Send(new GetStudentByApartmentIdQuery()
+                    {
+                        PaymentnewId = returnModel.PaymentId!
+                    });
+                    _email.SendEmailConfirmPaymentSuccessfully(studentData.ApplicationUserData.Email!, studentData.ApplicationUserData.FullName!);
+                }
+                return Redirect($"{returnUrl}?{returnModel.ToQueryString()}");
+            }
+            catch
+            {
+                return Redirect($"{returnUrl}?{returnModel.ToQueryString()}");
+            }
+
         }
     }
 }
