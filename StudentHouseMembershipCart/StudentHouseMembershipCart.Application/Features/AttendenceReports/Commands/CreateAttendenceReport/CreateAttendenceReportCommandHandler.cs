@@ -84,7 +84,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
                 throw new BadRequestException("Remaining Task Duration Is Not Enough For Your Create Attend!!");
             }
 
-            var flagCheckDate = DateTime.Compare(DateTime.Now, request.DateDoService) >= 0;
+/*            var flagCheckDate = DateTime.Compare(DateTime.Now, request.DateDoService) >= 0;
             //Nếu ngày chọn nhỏ hơn hoặc bằng ngày hiện tại thì không được
             if (flagCheckDate)
             {
@@ -95,7 +95,7 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Comm
             if (flagCheckDate)
             {
                 throw new BadRequestException("Service date cannot be less than the end date");
-            }
+            }*/
             Guid StudentId;
             if (request.BookingDetailType == "1")
             {
