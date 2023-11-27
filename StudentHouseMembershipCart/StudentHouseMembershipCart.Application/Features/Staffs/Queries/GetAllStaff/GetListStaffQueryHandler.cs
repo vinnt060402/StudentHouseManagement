@@ -27,11 +27,7 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetStaf
 
         public async Task<List<StaffResponse>> Handle(GetListStaffQuery request, CancellationToken cancellationToken)
         {
-            var staff = await _context.Staff.ToListAsync();
-            if (!staff.Any())
-            {
-                throw new NotFoundException("Have no Staff!");
-            }
+            var staff = await _context.Staff.Where(x => !x.IsDelete).ToListAsync();
             var listResult = new List<StaffResponse>();
             foreach (var item in staff)
             {

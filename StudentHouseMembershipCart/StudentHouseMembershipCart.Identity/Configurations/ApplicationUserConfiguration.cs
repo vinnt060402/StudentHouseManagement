@@ -14,23 +14,23 @@ namespace StudentHouseMembershipCart.Identity.Configurations
                 new ApplicationUser
                 {
                     Id = "ACCOUNT1",
-                    Email = "vi@gmail.com",
-                    NormalizedEmail = "VI@GMAIL.COM",
-                    FullName = "Nguyen Vi",
-                    UserName = "vi@gmail.com",
-                    NormalizedUserName = "VI@GMAIL.COM",
-                    PasswordHash = hasher.HashPassword(null, "Passw0rd1"),
+                    Email = "admin@gmail.com",
+                    NormalizedEmail = "ADMIN@GMAIL.COM",
+                    FullName = "Admin",
+                    UserName = "admin",
+                    NormalizedUserName = "admin",
+                    PasswordHash = hasher.HashPassword(null, "1"),
                     EmailConfirmed = true,
-                },
+                }/*,
                 new ApplicationUser
                 {
                     Id = "ACCOUNT2",
-                    Email = "nhan@gmail.com",
-                    NormalizedEmail = "NHAN@GMAIL.COM",
-                    FullName = "Nguyen Nhan",
-                    UserName = "nhan@gmail.com",
-                    NormalizedUserName = "NHAN@GMAIL.COM",
-                    PasswordHash = hasher.HashPassword(null, "Passw0rd1"),
+                    Email = "vinntse160956@gmail.com",
+                    NormalizedEmail = "VINNTSE160956@GMAIL.COM",
+                    FullName = "Nguyễn Ngọc Thái Vĩ",
+                    UserName = "vinntse160956",
+                    NormalizedUserName = "VINNTSE160956",
+                    PasswordHash = hasher.HashPassword(null, "1"),
                     EmailConfirmed = true,
                 },
                 new ApplicationUser
@@ -120,7 +120,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations
                     NormalizedUserName = "STUDENT3",
                     PasswordHash = hasher.HashPassword(null, "Passw0rd1"),
                     EmailConfirmed = true,
-                }
+                }*/
                 );
         }
     }

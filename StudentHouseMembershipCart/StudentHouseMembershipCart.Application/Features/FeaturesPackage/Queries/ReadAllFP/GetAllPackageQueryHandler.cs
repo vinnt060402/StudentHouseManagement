@@ -22,10 +22,6 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Querie
         public async Task<List<PackageData>> Handle(GetAllPackageQuery request, CancellationToken cancellationToken)
         {
             var listPackage = await _dbContext.Package.Where(x => !x.IsDelete).ToListAsync();
-            if (!listPackage.Any())
-            {
-                throw new NotFoundException("Have no package!");
-            }
             var listResult = new List<PackageData>();
             foreach (var item in listPackage)
             {
