@@ -22,7 +22,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.C
 
         public async Task<SHMResponse> Handle(CreateReportWorkCommand request, CancellationToken cancellationToken)
         {
-            var attendenceReport = await _dbContext.AttendReport.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).ToListAsync();
+/*            var attendenceReport = await _dbContext.AttendReport.Where(x => x.BookingDetailId == Guid.Parse(request.BookingDetailId)).ToListAsync();
             if (!attendenceReport.Any())
             {
                 //Bởi vì mặc định khi được booking xong sẽ tự động sinh ra records có chứa bookingdetailid 
@@ -55,7 +55,7 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.C
                 var updateAttendReportResponse = await _mediator.Send(updateAttendReport);
             }
             _dbContext.ReportWork.AddRange(listRecord);
-            await _dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();*/
             return new SHMResponse
             {
                 Message = Extensions.CreateSuccessfully

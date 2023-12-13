@@ -1,4 +1,4 @@
-﻿using StudentHouseMembershipCart.Domain.Entities;
+﻿/*using StudentHouseMembershipCart.Domain.Entities;
 
 namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByBookingDetailId
 {
@@ -7,4 +7,4 @@ namespace StudentHouseMembershipCart.Application.Features.AttendenceReports.Quer
         public BookingDetail? BookingDetail { get; set; }
         public List<AttendReportData> AttendReports { get; set; }
     }
-}
+}*/

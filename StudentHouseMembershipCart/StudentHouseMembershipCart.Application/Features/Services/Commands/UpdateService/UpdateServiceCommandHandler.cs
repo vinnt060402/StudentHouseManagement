@@ -13,15 +13,10 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
     public class UpdateServiceCommandHandler : IRequestHandler<UpdateServiceCommand, SHMResponse>
     {
         private IApplicationDbContext _dbContext { get; set; }
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IMapper _mapper;
 
-        public UpdateServiceCommandHandler(IApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, IMapper mapper
-            )
+        public UpdateServiceCommandHandler(IApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
-            _userManager = userManager;
-            _mapper = mapper;
         }
 
         public async Task<SHMResponse> Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
@@ -42,11 +37,11 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Upda
             }
             service.ServiceName = request.ServiceName ?? service.ServiceName;
             service.ServiceDescription = request.ServiceDescription ?? service.ServiceDescription;
-            /*service.Quantity = request.Quantity ?? service.Quantity;*/
-            service.Image = request.ImageURL ?? service.Image;
+            service.Image = request.ImageURL;
+            service.OriginalPrice = request.OriginalPrice;
+            service.Unit = request.Unit;
+            service.Price = request.OriginalPrice - (request.DiscountPercent / 100) * request.OriginalPrice;
             service.CategoryId = request.CategoryId != null ? Guid.Parse(request.CategoryId) : service.CategoryId;
-            service.LastModified = DateTime.Now;
-            service.LastModifiedBy = request.UpdateBy ?? service.LastModifiedBy;
             _dbContext.Service.Update(service);
             await _dbContext.SaveChangesAsync();
             return new SHMResponse

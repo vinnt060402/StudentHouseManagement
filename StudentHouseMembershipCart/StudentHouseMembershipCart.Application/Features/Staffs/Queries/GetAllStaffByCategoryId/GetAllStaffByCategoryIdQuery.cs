@@ -4,6 +4,6 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetAllS
 {
     public class GetAllStaffByCategoryIdQuery : IRequest<List<StaffResponse>>
     {
-        public string CategoryId { get; set; }
+        public string ServiceId { get; set; }
     }
 }

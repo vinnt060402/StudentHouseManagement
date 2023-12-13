@@ -28,8 +28,6 @@ namespace StudentHouseMembershipCart.Application.Features.Services.Commands.Dele
                 throw new BadRequestException("The service have been deleted!");
             }
             service.IsDelete = true;
-            service.LastModifiedBy = request.DeleteBy;
-            service.LastModified = DateTime.Now;
             _dbContext.Service.Update(service);
             await _dbContext.SaveChangesAsync();
             return new SHMResponse

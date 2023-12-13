@@ -16,24 +16,18 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetAl
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IMapper _mapper;
-        private readonly IStudentRepository _studentRepository;
-        public GetListStudentQueryHandler(IApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IStudentRepository studentRepository)
+        public GetListStudentQueryHandler(IApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
-            _studentRepository = studentRepository;
         }
 
         public async Task<List<StudentResponse>> Handle(GetListStudentQuery request, CancellationToken cancellationToken)
         {
             var student = await _context.Student.Where(e => e.IsDelete == false).ToListAsync();
-            if (!student.Any())
-            {
-                throw new NotFoundException("Have no Student!");
-            }
 
             var listResult = new List<StudentResponse>();
             foreach (var item in student)

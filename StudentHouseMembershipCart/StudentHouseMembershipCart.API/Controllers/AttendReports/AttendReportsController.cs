@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
-using StudentHouseMembershipCart.Application.Features.Bookings;
-using StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByBookingDetailId;
-using StudentHouseMembershipCart.Application.Features.AttendenceReports;
+using StudentHouseMembershipCart.Application.Common.Response;
+using StudentHouseMembershipCart.Application.Features.AttendenceReports.Commands.CreateAttendenceReport;
+using StudentHouseMembershipCart.Application.Features.AttendenceReports.Queries.GetAttendReportByServiceId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBookingDoNotAssignBefore;
 
 namespace StudentHouseMembershipCart.API.Controllers.AttendReports
 {
@@ -17,9 +18,15 @@ namespace StudentHouseMembershipCart.API.Controllers.AttendReports
         {
             _mediator = mediator;
         }
+
+        [HttpPost]
+        public async Task<SHMResponse> CreateNewAttendData(CreateAttendenceReportCommand request)
+        {
+            return await _mediator.Send(request);
+        }
         [HttpGet]
-        [Route("bookingdetailid")]
-        public async Task<AttendReportDataResponse> GetAttendReportByBookingDetailId([FromQuery] GetAttendReportByBookingDetailIdCommand request)
+        [Route("get-attendreport-by-student-id-and-service-id")]
+        public async Task<List<NewAttendReportByService>> GetAllBookingDetailDoNotAssignBefore([FromQuery]GetAttendReportByServiceIdQuery request)
         {
             return await _mediator.Send(request);
         }

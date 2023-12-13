@@ -19,26 +19,19 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
 
         public async Task<SHMResponse> Handle(CreatePackageServiceCommand request, CancellationToken cancellationToken)
         {
-            var serviceExisted = await _dbContext.Service.AsNoTracking().Where(x => request.ListServiceId.Contains(x.Id)).ToListAsync();
+            var serviceExisted = await _dbContext.Service.AsNoTracking().Where(x => request.ListSerivceId.Contains(x.Id)).ToListAsync();
             if (!serviceExisted.Any())
             {
                 throw new NotFoundException("Have no service like this before!!");
             }
-            var packageExisted = await _dbContext.PackageService.Where(x => x.PackageId == request.PackageId &&
-                                                                            request.ListServiceId.Contains(x.Id)).ToListAsync();
-            if (packageExisted.Any())
-            {
-                throw new BadRequestException("The package have already existed!");
-            }
             var listPackageService = new List<PackageService>();
-            foreach (var serviceId in request.ListServiceId)
+            foreach (var serviceId in request.ListSerivceId)
             {
                 var packageItem = new PackageService
                 {
                     PackageId = request.PackageId,
                     ServiceId = serviceId,
-                    Created = DateTime.Now,
-                    CreateBy = request.CreateBy,
+                    QuantityOfService = request.Quantity,
                     IsDelete = false,
                 };
                 listPackageService.Add(packageItem);

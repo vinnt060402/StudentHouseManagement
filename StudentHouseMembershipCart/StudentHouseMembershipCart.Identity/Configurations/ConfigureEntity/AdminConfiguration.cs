@@ -13,7 +13,7 @@ namespace StudentHouseMembershipCart.Identity.Configurations
                  {
                      Id = Guid.Parse("90CA347F-831F-4B75-98BB-AE825B3EFC15"),
                      AdminName = "Admin",
-                     ApplicationUserId = "ACCOUNT4",
+                     ApplicationUserId = "ACCOUNT1",
                  }
             ) ; 
         }

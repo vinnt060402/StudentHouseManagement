@@ -7,5 +7,8 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.C
     {
         public string StaffId { get; set; } = null!;
         public string BookingDetailId { get; set; } = null!;
+        public string BookingDetailType { get; set; } = null!;
+        public string BookingDetailTille { get; set; } = null!;
+
     }
 }

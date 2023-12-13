@@ -1,4 +1,4 @@
-﻿using MediatR;
+﻿/*using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Features.PaymentHistorys.Commands.UpdatePaymentHistory;
@@ -46,4 +46,4 @@ namespace StudentHouseMembershipCart.API.Controllers.PaymentHistorys
             return await _mediator.Send(request);
         }
     }
-}
+}*/

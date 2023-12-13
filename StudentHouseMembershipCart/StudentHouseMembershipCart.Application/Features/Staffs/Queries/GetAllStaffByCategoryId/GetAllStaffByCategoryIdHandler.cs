@@ -27,7 +27,9 @@ namespace StudentHouseMembershipCart.Application.Features.Staffs.Queries.GetAllS
                                    on staff.Id equals staffCategory.StaffId
                                    join cate in _dbContext.Category
                                    on staffCategory.CategoryId equals cate.Id
-                                   where cate.Id == Guid.Parse(request.CategoryId)
+                                   join service in _dbContext.Service
+                                   on cate.Id equals service.CategoryId
+                                   where service.Id == Guid.Parse(request.ServiceId)
                                    select staff
                                    ).ToListAsync();
             var listResult = new List<StaffResponse>();

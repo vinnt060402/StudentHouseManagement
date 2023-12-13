@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿/*using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Domain.Entities;
 
@@ -37,3 +37,4 @@ namespace StudentHouseMembershipCart.Identity.Configurations.ConfigureEntity
         }
     }
 }
+*/

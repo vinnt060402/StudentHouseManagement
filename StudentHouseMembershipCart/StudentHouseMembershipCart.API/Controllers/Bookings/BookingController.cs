@@ -1,18 +1,19 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using StudentHouseMembershipCart.Application.Common.Response;
-using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
-using StudentHouseMembershipCart.Application.Features.Categories.Commands.CreateCategory;
-using StudentHouseMembershipCart.Application.Features.Categories.Queries.ReadAllCategories;
-using StudentHouseMembershipCart.Application.Features.Categories.Queries;
 using StudentHouseMembershipCart.Application.Features.Bookings;
+using StudentHouseMembershipCart.Application.Features.Bookings.Commands.CreateBooking;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetAllBooking;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
-using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Queries.ReadAllFP;
-using StudentHouseMembershipCart.Application.Features.FeaturesPackage;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingAndBookingDetailByBookingId;
 using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByStudentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.Bookings.Queries.GetBookingsByApartmentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBooking;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetAllBookingDoNotAssignBefore;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByStudentId;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetBookingByTimeOfAdmin;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetServiceOfBookingDetailByStaffId;
+using StudentHouseMembershipCart.Application.Features.Bookings.QueriesNew.GetServiceOfBookingDetailByStudentId;
 
 namespace StudentHouseMembershipCart.API.Controllers.Bookings
 {
@@ -26,46 +27,52 @@ namespace StudentHouseMembershipCart.API.Controllers.Bookings
         {
             _mediator = mediator;
         }
-        [HttpPost]
-        [Route("bookings")]
-        [ProducesResponseType(201)]
-        [ProducesResponseType(400)]
-        public async Task<SHMResponse> CreateBooking(CreateBookingCommand request)
+        [HttpGet]
+        public async Task<List<BookingDataNew>> GetAllBooking()
         {
-            return await _mediator.Send(request);
+            return await _mediator.Send(new GetAllBookingNewCommand());
         }
         [HttpGet]
-        public async Task<List<BookingData>> GetAllBooking()
+        [Route("attendsdonotassignbefore")]
+        public async Task<List<BookingDetailDoNotAssignBeforeData>> GetAllBookingDetailDoNotAssignBefore()
         {
-            return await _mediator.Send(new GetAllBookingCommand());
+            return await _mediator.Send(new GetAllBookingDoNotAssignBeforeQuery());
         }
         [HttpGet]
         [Route("datetime")]
-        public async Task<BookingDataForAdmin> GetAllPackagesByTimeOfAdmin([FromQuery] GetBookingByTimeOfAdminQuery request)
+        public async Task<BookingDataForAdminNew> GetAllPackagesByTimeOfAdmin([FromQuery] GetBookingByTimeOfAdminNewQuery request)
         {
             return await _mediator.Send(request);
         }
         [HttpGet]
-        [Route("{apartmentId}")]
-        public async Task<List<BookingData>> GetBookingByApartmentId(string apartmentId)
+        [Route("students/{studentid}")]
+        public async Task<List<BookingDataNew>> GetBookingByStudentId(string studentid)
         {
-            var request = new GetBookingsByApartmentIdCommand
+            var request = new GetBookingByStudentIdNewCommand()
             {
-                ApartmentId = apartmentId
+                StudentId = Guid.Parse(studentid)
             };
+            return await _mediator.Send(request);
+        }
 
+        [HttpGet]
+        [Route("serviceOfbookingdetails/{studentid}")]
+        public async Task<List<ServiceOfBookingDetail>> GetServiceOfBookingDetail(string studentid)
+        {
+            var request = new GetServiceOfBookingDetailByStudentIdCommand()
+            {
+                StudentId = Guid.Parse(studentid)
+            };
             return await _mediator.Send(request);
         }
         [HttpGet]
-        [Route("bookingid")]
-        public async Task<BookingData> GetBookingByBookingId([FromQuery] GetBookingAndBookingDetailByBookingIdCommand request)
+        [Route("serviceOfbookingdetails/staffs/{staffid}")]
+        public async Task<List<ServiceOfBookingDetailOfStaff>> GetServiceOfBookingDetailByStaffId(string staffid)
         {
-            return await _mediator.Send(request);
-        }
-        [HttpGet]
-        [Route("studentid")]
-        public async Task<List<BookingData>> GetBookingByStudentId([FromQuery] GetBookingByStudentIdCommand request)
-        {
+            var request = new GetServiceOfBookingDetailByStaffIdQuery
+            {
+                StaffId = Guid.Parse(staffid)
+            };
             return await _mediator.Send(request);
         }
     }

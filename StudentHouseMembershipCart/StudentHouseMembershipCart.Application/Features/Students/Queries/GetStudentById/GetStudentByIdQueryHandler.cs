@@ -17,15 +17,13 @@ namespace StudentHouseMembershipCart.Application.Features.Students.Queries.GetSt
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IMapper _mapper;
-        private readonly IStudentRepository _studentRepository;
-        public GetStudentByIdQueryHandler(IApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager, IStudentRepository studentRepository)
+        public GetStudentByIdQueryHandler(IApplicationDbContext context, IMapper mapper, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _mapper = mapper;
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
-            _studentRepository = studentRepository;
         }
 
         public async Task<StudentDto> Handle(GetStudentByIdQuery request, CancellationToken cancellationToken)

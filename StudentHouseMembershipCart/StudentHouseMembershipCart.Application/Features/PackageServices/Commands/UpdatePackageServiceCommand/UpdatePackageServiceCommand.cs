@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using StudentHouseMembershipCart.Application.Common.Response;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Commands.CreateFP;
 
 namespace StudentHouseMembershipCart.Application.Features.PackageServices.Commands.UpdatePackageServiceCommand
 {
@@ -7,6 +8,6 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
     {
         public Guid PackageId { get; set; }
         public List<Guid> ListServiceId { get; set; } = null!;
-        public string? UpdateBy { get; set; }
+        public int Quantity { get; set; }
     }
 }

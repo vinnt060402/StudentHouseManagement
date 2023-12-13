@@ -42,7 +42,13 @@ namespace StudentHouseMembershipCart.Application.Features.Apartments.Commands.Cr
             };
 
             _context.Apartment.Add(entity);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
             return entity.Id;
         }
     }

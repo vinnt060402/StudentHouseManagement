@@ -2,11 +2,13 @@
 {
     public class ReportWorkData
     {
+        public Guid AttendReportId {  get; set; }   
         /// <summary>
         /// Đánh dấu ngày staff đi làm đươc generate tự động bởi BookingDetailStaff
         /// </summary>
         public DateTime? WorkingDayExpect { get; set; }
         public string? DescriptionProcess { get; set; }
+        public string? WorkingAt { get; set; }
         public string? Image { get; set; }
         /// <summary>
         /// Id của staff được nhờ làm giúp

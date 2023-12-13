@@ -8,8 +8,15 @@ namespace StudentHouseMembershipCart.Application.Features.BookingDetailStaffs.Co
     /// </summary>
     public class CreateBookingDetailStaffCommand : IRequest<SHMResponse>
     {
-        public string BookingDetailId { get; set; } = null!;
-        public string StaffId { get; set; } = null!;
-        public string? AssignBy { get; set; }
+        public Guid BookingDetailId { get; set; } 
+        public Guid StaffId { get; set; }
+        /// <summary>
+        /// Cái này dùng để check existed!
+        /// </summary>
+        public string BookingDetailType { get; set; } = null!;
+        /// <summary>
+        /// Cái này dùng để check existed!
+        /// </summary>
+        public string BookingDetailTittle { get; set; } = null!;
     }
 }

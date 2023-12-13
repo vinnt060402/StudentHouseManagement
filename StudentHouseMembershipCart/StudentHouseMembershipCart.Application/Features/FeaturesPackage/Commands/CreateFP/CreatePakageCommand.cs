@@ -5,13 +5,15 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
 {
     public class CreatePakageCommand : IRequest<SHMResponse>
     {
-        public List<Guid> ListServiceId { get; set; } = null!;
-        public string? PackageDescription { get; set; }
         public string PackageName { get; set; } = null!;
-        public int WeekNumberBooking { get; set; }
-        public int NumberOfPerWeekDoPackage { get; set; }
-        public string? DayDoServiceInWeek { get; set; }
+        public string? PackageDescription { get; set; }
+
+        /// <summary>
+        /// Phần trăm giảm giá
+        /// </summary>
+        public double? DiscountPercent { get; set; }
         public string? ImageUrl { get; set; }
-        public string? CreateBy { get; set; }
+        public List<Guid> ListServiceId { get; set; } = null!;
+        public int Quantity { get; set; }
     }
 }

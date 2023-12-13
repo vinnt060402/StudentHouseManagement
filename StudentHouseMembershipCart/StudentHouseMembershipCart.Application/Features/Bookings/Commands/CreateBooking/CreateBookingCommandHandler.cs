@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -80,12 +80,12 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
                     double totalPrice = 0;
                     foreach (var package in listPackageId)
                     {
-                        var getPackageIdRequest = listPakageData.Where(x => x.Id == Guid.Parse(package)).FirstOrDefault(); /*new GetPackageByIdCommand
+                        var getPackageIdRequest = listPakageData.Where(x => x.Id == Guid.Parse(package)).FirstOrDefault(); *//*new GetPackageByIdCommand
                         {
                             PakageId = package
                         };
 
-                        var getPackageIdResponse = await _mediator.Send(getPackageIdRequest);*/
+                        var getPackageIdResponse = await _mediator.Send(getPackageIdRequest);*//*
                         var priceOfPackage = getPackageIdRequest.TotalPrice * request.ListPackage.Where(x => x.PackageId == package).Select(x => x.QuantityOfPackageOrdered).FirstOrDefault();
                         totalPrice += priceOfPackage ?? 0;
                     }
@@ -441,4 +441,4 @@ namespace StudentHouseMembershipCart.Application.Features.Bookings.Commands.Crea
         public int BookingDetailStatus { get; set; }
     }
     #endregion
-}
+}*/

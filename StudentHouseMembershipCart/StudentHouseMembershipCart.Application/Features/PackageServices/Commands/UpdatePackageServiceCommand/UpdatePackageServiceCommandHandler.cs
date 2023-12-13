@@ -35,10 +35,9 @@ namespace StudentHouseMembershipCart.Application.Features.PackageServices.Comman
                 {
                     PackageId = request.PackageId,
                     ServiceId = serviceId,
+                    QuantityOfService = request.Quantity,
                     Created = localCreated,
                     CreateBy = localCreateBy,
-                    LastModified = DateTime.Now,
-                    LastModifiedBy = request.UpdateBy,
                     IsDelete = false,
                 };
                 listPackageService.Add(packageItem);

@@ -4,6 +4,7 @@ using StudentHouseMembershipCart.Application.Common.Exceptions;
 using StudentHouseMembershipCart.Application.Common.Interfaces;
 using StudentHouseMembershipCart.Application.Common.Response;
 using StudentHouseMembershipCart.Application.Constant;
+using StudentHouseMembershipCart.Application.Features.FeaturesPackage.Commands.CreateFP;
 using StudentHouseMembershipCart.Application.Features.PackageServices.Commands.UpdatePackageServiceCommand;
 using System.Transactions;
 
@@ -33,21 +34,20 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
             }
             using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-                double? totalPrice = await HandlePriceOfPackage(request);
-                package.DayDoServiceInWeek = request.DayDoServiceInWeek;
-                package.TotalPrice = totalPrice;
-                package.PackageDescription = request.PackageDescription;
-                package.WeekNumberBooking = request.WeekNumberBooking;
-                package.NumberOfPerWeekDoPackage = request.NumberOfPerWeekDoPackage;
+                double totalOriginalPrice = await HandleOriginalPriceOfPackage(request);
+
                 package.PackageName = request.PackageName ?? package.PackageName;
-                package.LastModified = DateTime.Now;
-                package.LastModifiedBy = request.UpdateBy ?? package.LastModifiedBy;
+                package.PackageDescription = request.PackageDescription;
+                package.Image = request.ImageUrl;
+                package.TotalPrice = totalOriginalPrice - (totalOriginalPrice * (request.DiscountPercent / 100));
+                package.DiscountPercent = request.DiscountPercent;
+                package.TotalOriginalPrice = totalOriginalPrice;
                 _dbContext.Package.Update(package);
                 var updatePackageServiceRequest = new UpdatePackageServiceCommand()
                 {
                     ListServiceId = request.ListServiceId,
+                    Quantity = request.Quantity,
                     PackageId = Guid.Parse(request.PackageId),
-                    UpdateBy = request.UpdateBy,
                 };
                 var updatePackageServiceResponse = await _mediator.Send(updatePackageServiceRequest);
                 await _dbContext.SaveChangesAsync();
@@ -58,19 +58,21 @@ namespace StudentHouseMembershipCart.Application.Features.FeaturesPackage.Comman
                 Message = Extensions.UpdateSuccessfully
             };
         }
-        private async Task<double> HandlePriceOfPackage(UpdatePackageCommand request)
+        /// <summary>
+        /// Tính toán số tiền gốc của Package : TotalOriginalPrice
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        private async Task<double> HandleOriginalPriceOfPackage(UpdatePackageCommand request)
         {
-            int flag = 0;
             double price = 0;
-            foreach (var serviceId in request.ListServiceId)
+
+            foreach (var item in request.ListServiceId)
             {
-                var getService = await _dbContext.Service.Where(x => x.Id == serviceId).SingleOrDefaultAsync();
-                if (getService != null)
-                {
-                    flag++;
-                    price += (getService.Price * request.WeekNumberBooking * request.NumberOfPerWeekDoPackage) ?? 0;
-                }
+                var service = await _dbContext.Service.Where(x => x.Id == item).SingleAsync();
+                price += (service.Price * request.Quantity) ?? 0;
             }
+
             return price;
         }
     }

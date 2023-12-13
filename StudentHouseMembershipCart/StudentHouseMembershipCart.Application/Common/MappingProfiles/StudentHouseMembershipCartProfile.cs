@@ -10,6 +10,7 @@ using StudentHouseMembershipCart.Application.Features.Feedbacks.Queries;
 using StudentHouseMembershipCart.Application.Features.PackageServices;
 using StudentHouseMembershipCart.Application.Features.PaymentHistorys.Queries;
 using StudentHouseMembershipCart.Application.Features.PaymentMethods;
+using StudentHouseMembershipCart.Application.Features.PaymentNew.Dto;
 using StudentHouseMembershipCart.Application.Features.Regions;
 using StudentHouseMembershipCart.Application.Features.Services;
 using StudentHouseMembershipCart.Application.Features.Staffs.Queries;
@@ -41,8 +42,8 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
             CreateMap<ApplicationStaff, ApplicationUser>();
             CreateMap<ApplicationUser, ApplicationStaff>();
 
-            CreateMap<Service, ServiceData>().ReverseMap();
-            CreateMap<ServiceData, Service>().ReverseMap();
+            CreateMap<Domain.Entities.Service, ServiceData>().ReverseMap();
+            CreateMap<ServiceData, Domain.Entities.Service>().ReverseMap();
 
             CreateMap<Category, CategoryData>().ReverseMap();
             CreateMap<CategoryData, Category>().ReverseMap();
@@ -55,12 +56,11 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<Booking, BookingData>().ReverseMap();
             CreateMap<BookingData, Booking>().ReverseMap();
+            CreateMap<Booking, BookingDataNew>().ReverseMap();
+            CreateMap<BookingDataNew, Booking>().ReverseMap();
 
             CreateMap<AttendReport, AttendReportData>().ReverseMap();
             CreateMap<AttendReportData, AttendReport>().ReverseMap();
-
-            CreateMap<PaymentMethod, PaymentMethodData>().ReverseMap();
-            CreateMap<PaymentMethodData, PaymentMethod>().ReverseMap();
 
             CreateMap<StudentData, Student>().ReverseMap();
             CreateMap<Student, StudentData>().ReverseMap();
@@ -70,18 +70,18 @@ namespace StudentHouseMembershipCart.Application.Common.MappingProfiles
 
             CreateMap<ApplicationStudent, ApplicationUser>().ReverseMap();
             CreateMap<ApplicationUser, ApplicationStudent>().ReverseMap();
-
+/*
             CreateMap<BookingDetailData, BookingDetail>().ReverseMap();
             CreateMap<BookingDetail, BookingDetailData>().ReverseMap();
 
             CreateMap<BookingDetailDoNotAssignedBeforeData, BookingDetail>().ReverseMap();
-            CreateMap<BookingDetail, BookingDetailDoNotAssignedBeforeData>().ReverseMap();
-
-            CreateMap<PaymentHistory, PaymentHistoryData>().ReverseMap();
-            CreateMap<PaymentHistoryData, PaymentHistory>().ReverseMap();
+            CreateMap<BookingDetail, BookingDetailDoNotAssignedBeforeData>().ReverseMap();*/
 
             CreateMap<FeedBack, FeedBackData>().ReverseMap();
             CreateMap<FeedBackData, FeedBack>().ReverseMap();
+
+            CreateMap<PaymentNew, PaymentDto>().ReverseMap();
+            CreateMap<PaymentDto, PaymentNew>().ReverseMap();
         }
     }
 }

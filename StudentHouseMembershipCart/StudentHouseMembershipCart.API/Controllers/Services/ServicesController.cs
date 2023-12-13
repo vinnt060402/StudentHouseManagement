@@ -22,19 +22,23 @@ namespace StudentHouseMembershipCart.API.Controllers.Services
         }
 
         [HttpGet]
-        [Route("services")]
+        //[Route("services")]
         public async Task<List<ServiceData>> GetAllService()
         {
             return await _mediator.Send(new GetAllServicesQuery());
         }
         [HttpGet]
-        [Route("serivcesbyId")]
-        public async Task<ServiceData> GetServiceById([FromQuery] GetServiceByIdQuery request)
+        [Route("{serviceid}")]
+        public async Task<ServiceData> GetServiceById(string serviceid)
         {
+            var request = new GetServiceByIdQuery()
+            {
+                SerivceId = serviceid
+            };
             return await _mediator.Send(request);
         }
         [HttpPost]
-        [Route("services")]
+   //     [Route("services")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> CreateService(CreateServiceCommand request)
@@ -42,7 +46,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Services
             return await _mediator.Send(request);
         }
         [HttpPut]
-        [Route("services")]
+        //[Route("services")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> UpdateService(UpdateServiceCommand request)
@@ -50,7 +54,7 @@ namespace StudentHouseMembershipCart.API.Controllers.Services
             return await _mediator.Send(request);
         }
         [HttpDelete]
-        [Route("services")]
+        //[Route("services")]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         public async Task<SHMResponse> DeleteService(DeleteServiceCommand request)

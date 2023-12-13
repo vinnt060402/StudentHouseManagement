@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation.Results;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using StudentHouseMembershipCart.Application.Common.Exceptions;
@@ -58,54 +59,85 @@ namespace StudentHouseMembershipCart.Application.Features.ReportWorks.Commands.U
                     AttendReportId = request.AttendReportId
                 };
                 var updateFeedbackStatusResponse = await _mediator.Send(updateFeedbackStatus);
-
-                var bookingDetail = await (from bd in _dbContext.BookingDetail
-                                           join ar in _dbContext.AttendReport
-                                           on bd.Id equals ar.BookingDetailId
-                                           where ar.Id == request.AttendReportId
-                                           select bd).FirstOrDefaultAsync();
-                if (bookingDetail == null)
+                Guid localVariable = Guid.NewGuid();
+                var attendDataToupdate = _dbContext.AttendReport.Where(x => x.Id == request.AttendReportId).FirstOrDefault();
+                if (attendDataToupdate != null)
                 {
-                    throw new BadRequestException("Somethings is wrong!!");
-                }
-                bookingDetail.RemainingTaskDuration = bookingDetail.RemainingTaskDuration - 1;
-                _dbContext.BookingDetail.Update(bookingDetail);
-                if (bookingDetail.RemainingTaskDuration == 0)
-                {
-                    /// <summary>
-                    /// 0. On going
-                    /// 1. Finished
-                    /// </summary>
-                    bookingDetail.BookingDetailStatus = 1;
-                    //Check all bookingdetail of booking
-                    var listBookingdetail = await _dbContext.BookingDetail.Where(x => x.BookingId == bookingDetail.BookingId).ToListAsync();
-                    var totalBDinB = listBookingdetail.Count;
-                    var flag = 0;
-                    foreach (var item in listBookingdetail)
+                    /*
+                     * Nếu RemainTaskDuration của BookingDetail đó = 0 và tất cả các ngày trong AttendReport Được làm thành công
+                     * Thì Booking Detail đó sẽ Finish
+                     * Check tiếp theo là check all booking detail của booking đó đã được thành công hay chưa, xong hết r thì cập nhật luôn booking
+                     */
+                    bool flagBookingDetailFinish = false;
+                    var serviceRemmainTaskDuration = _dbContext.ServiceRemainingTaskDuration.Where(x => x.BookingDetailId == attendDataToupdate.BookingDetailId &&
+                                                                                                        x.ServiceId == attendDataToupdate.ServiceId &&
+                                                                                                        x.AttendReportForType == attendDataToupdate.AttendReportForType).FirstOrDefault();
+                    if (serviceRemmainTaskDuration != null && serviceRemmainTaskDuration.RemainingTaskDuration == 0)
                     {
-                        if (item.RemainingTaskDuration == 0)
+                        flagBookingDetailFinish = true;
+                        //Kiểm tra xem tất cả attendreportdata đã được làm xong hết hay chưa
+                        var listAttendData = await _dbContext.AttendReport.Where(x => x.BookingDetailId == serviceRemmainTaskDuration.BookingDetailId).ToListAsync();
+                        var cout = listAttendData.Where(x => x.AttendenceStatus == 0).ToList().Count;
+                        if (cout > 0)
                         {
-                            flag++;
-                        }
-                    }
-                    if (flag == totalBDinB)
-                    {
-                        var booking = await _dbContext.Booking.Where(x => x.Id == bookingDetail.BookingId).FirstOrDefaultAsync();
-                        if (booking == null)
-                        {
-                            throw new BadRequestException("Somethings is wrong!!");
+                            flagBookingDetailFinish = false;
                         }
                         else
                         {
-                            /// <summary>
-                            /// 0. On going
-                            /// 1. Finished
-                            /// </summary>
-                            booking.StatusContract = 1;
-                            _dbContext.Booking.Update(booking);
+                            if (serviceRemmainTaskDuration.AttendReportForType == "1")
+                            {
+                                var bookingDetail = await _dbContext.BookingDetailOfPakcage.Where(x => x.Id == serviceRemmainTaskDuration.BookingDetailId).FirstOrDefaultAsync();
+                                if (bookingDetail != null)
+                                {
+                                    bookingDetail.BookingDetailStatus = 1;
+                                    localVariable = bookingDetail.BookingId;
+                                    _dbContext.BookingDetailOfPakcage.Update(bookingDetail);
+                                }
+                            }
+                            else if (serviceRemmainTaskDuration.AttendReportForType == "2")
+                            {
+                                var bookingDetail = await _dbContext.BookingDetailOfService.Where(x => x.Id == serviceRemmainTaskDuration.BookingDetailId).FirstOrDefaultAsync();
+                                if (bookingDetail != null)
+                                {
+                                    bookingDetail.BookingDetailStatus = 1;
+                                    localVariable = bookingDetail.BookingId;
+                                    _dbContext.BookingDetailOfService.Update(bookingDetail);
+                                }
+                            }
                         }
+
+                    }
+
+                }
+                var flagCheckBookingFinish = true;
+                var bookingDetailPackageOfBooking = await _dbContext.BookingDetailOfPakcage.Where(x => x.BookingId == localVariable).ToListAsync();
+                if (bookingDetailPackageOfBooking.Any())
+                {
+                    var count = bookingDetailPackageOfBooking.Where(x => x.BookingDetailStatus == 0).Count();
+                    if (count > 0)
+                    {
+                        flagCheckBookingFinish = false;
                     }
                 }
+                var bookingDetailPackageOfService = await _dbContext.BookingDetailOfService.Where(x => x.BookingId == localVariable).ToListAsync();
+                if (bookingDetailPackageOfService.Any())
+                {
+                    var count = bookingDetailPackageOfService.Where(x => x.BookingDetailStatus == 0).Count();
+                    if (count > 0)
+                    {
+                        flagCheckBookingFinish = false;
+                    }
+                }
+                if (flagCheckBookingFinish)
+                {
+                    var booking = await _dbContext.Booking.Where(x => x.Id == localVariable).FirstOrDefaultAsync();
+                    if (booking != null)
+                    {
+                        booking.StatusContract = 1;
+                        _dbContext.Booking.Update(booking);
+                    }
+                }
+
                 Task.WaitAll();
                 await _dbContext.SaveChangesAsync();
                 scope.Complete();
